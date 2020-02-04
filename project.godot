@@ -13,20 +13,26 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://Source/Actors/actor.gd"
+}, {
+"base": "Actor",
+"class": "Square",
+"language": "GDScript",
+"path": "res://Source/Actors/square.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Square": ""
 }
 
 [application]
 
 config/name="Paralyzed"
+run/main_scene="res://Source/main.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=1020
 
 [input]
 

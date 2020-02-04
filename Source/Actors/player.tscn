@@ -1,11 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=1]
-[ext_resource path="res://Source/Actors/player.gd" type="Script" id=2]
-[ext_resource path="res://Character models/World/White Background.png" type="Texture" id=3]
+[ext_resource path="res://Character models/World/White Background.png" type="Texture" id=2]
+[ext_resource path="res://Source/Actors/player.gd" type="Script" id=3]
 [ext_resource path="res://Character models/Enemies/Purple_square.png" type="Texture" id=4]
 [ext_resource path="res://Character models/Enemies/Red_square.png" type="Texture" id=5]
 [ext_resource path="res://Character models/Enemies/Yellow_square.png" type="Texture" id=6]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -38,7 +39,7 @@ extents = Vector2( 31, 1 )
 
 [node name="player" type="KinematicBody2D"]
 collision_mask = 14
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="player_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -32 )
@@ -52,11 +53,11 @@ shape = SubResource( 2 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="White Background" type="Sprite" parent="ParallaxBackground"]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 650, -300 )
+offset = Vector2( 250, -150 )
 current = true
 
 [node name="Area2D" type="Area2D" parent="."]

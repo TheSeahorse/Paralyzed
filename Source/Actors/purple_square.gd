@@ -2,7 +2,7 @@ extends Square
 
 var SAME_COLOR: = false
 
-func is_red():
+func is_purple():
 	return
 
 func turn_on():
