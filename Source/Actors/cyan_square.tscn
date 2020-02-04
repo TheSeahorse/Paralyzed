@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Source/Actors/cyan_square.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=2]
+[ext_resource path="res://Character models/World/Left spikes.png" type="Texture" id=3]
+[ext_resource path="res://Character models/World/Right spikes.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -14,6 +16,22 @@ script = ExtResource( 1 )
 [node name="cyan_square_sprite" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
+
+[node name="leftspike1" type="Sprite" parent="."]
+position = Vector2( -38, -47 )
+texture = ExtResource( 3 )
+
+[node name="leftspike2" type="Sprite" parent="."]
+position = Vector2( -38, -17 )
+texture = ExtResource( 3 )
+
+[node name="rightspike1" type="Sprite" parent="."]
+position = Vector2( 38, -47 )
+texture = ExtResource( 4 )
+
+[node name="rightspike2" type="Sprite" parent="."]
+position = Vector2( 38, -17 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -32 )
