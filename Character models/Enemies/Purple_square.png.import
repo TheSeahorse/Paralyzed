@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White Background.png-268c53563ae6f390837389cff4f9faf6.stex"
+path="res://.import/Purple_square.png-441189a8d2e610b2f23241610e40d468.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/White Background.png"
-dest_files=[ "res://.import/White Background.png-268c53563ae6f390837389cff4f9faf6.stex" ]
+source_file="res://Character models/Enemies/Purple_square.png"
+dest_files=[ "res://.import/Purple_square.png-441189a8d2e610b2f23241610e40d468.stex" ]
 
 [params]
 

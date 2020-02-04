@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Right wall.png-6a692fedc0db560ae40160c9bee20ff8.stex"
+path="res://.import/Red_square.png-88ce179c15c9c2d69729fa533b931520.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Right wall.png"
-dest_files=[ "res://.import/Right wall.png-6a692fedc0db560ae40160c9bee20ff8.stex" ]
+source_file="res://Character models/Enemies/Red_square.png"
+dest_files=[ "res://.import/Red_square.png-88ce179c15c9c2d69729fa533b931520.stex" ]
 
 [params]
 

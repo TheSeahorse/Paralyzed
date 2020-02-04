@@ -1,11 +1,15 @@
 extends KinematicBody2D
 class_name Actor
 
-export var _maxspeed: = Vector2(500.0, 2000.0)
-export var _gravity: = 1000.0
-var _velocity: = Vector2.ZERO
-var _color_status: = 1
+const FLOOR_NORMAL: = Vector2.UP
+export var MAX_SPEED: = Vector2(300.0, 1500.0)
+export var GRAVITY: = 4000.0
+var VELOCITY: = Vector2.ZERO
+var COLOR_STATUS: = "cyan"
 
-func _physics_process(delta: float) -> void:
-	_velocity.y += _gravity*delta
-	_velocity = move_and_slide(_velocity)
+func get_velocity() -> Vector2:
+	return VELOCITY
+
+
+func get_color_status() -> String:
+	return COLOR_STATUS

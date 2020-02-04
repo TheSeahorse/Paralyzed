@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Character models/Cyan_square.png" type="Texture" id=1]
+[ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=1]
 [ext_resource path="res://Source/Actors/player.gd" type="Script" id=2]
-[ext_resource path="res://Character models/White Background.png" type="Texture" id=3]
-[ext_resource path="res://Character models/Purple_square.png" type="Texture" id=4]
-[ext_resource path="res://Character models/Red_square.png" type="Texture" id=5]
-[ext_resource path="res://Character models/Yellow_square.png" type="Texture" id=6]
+[ext_resource path="res://Character models/World/White Background.png" type="Texture" id=3]
+[ext_resource path="res://Character models/Enemies/Purple_square.png" type="Texture" id=4]
+[ext_resource path="res://Character models/Enemies/Red_square.png" type="Texture" id=5]
+[ext_resource path="res://Character models/Enemies/Yellow_square.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,6 +33,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 32 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 31, 1 )
+
 [node name="player" type="KinematicBody2D"]
 collision_mask = 14
 script = ExtResource( 2 )
@@ -55,3 +58,12 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 650, -300 )
 current = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color( 0.141176, 0.152941, 0.992157, 1 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_enemy_head_entered"]

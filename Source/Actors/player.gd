@@ -1,19 +1,24 @@
 extends Actor
 
 func _physics_process(delta: float) -> void:
-	_velocity.x = 300.0
-	
-	if Input.is_action_pressed("cyan"):
+	toggle_color()
+	VELOCITY.y += GRAVITY * delta
+	VELOCITY.x = MAX_SPEED.x
+	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
+
+
+func _on_enemy_head_entered(body: Node) -> void:
+	VELOCITY = body.get_velocity() # DU ÄR HÄR
+
+
+func toggle_color():
+	if Input.is_action_just_pressed("cyan"):
 		$player_sprite.play("cyan")
-		_color_status = 1
-	elif Input.is_action_pressed("red"):
+	elif Input.is_action_just_pressed("red"):
 		$player_sprite.play("red")
-		_color_status = 2
-	elif Input.is_action_pressed("purple"):
+	elif Input.is_action_just_pressed("purple"):
 		$player_sprite.play("purple")
-		_color_status = 3
-	elif Input.is_action_pressed("yellow"):
+	elif Input.is_action_just_pressed("yellow"):
 		$player_sprite.play("yellow")
-		_color_status = 4
-	
-	_velocity = move_and_slide(_velocity)
+
+

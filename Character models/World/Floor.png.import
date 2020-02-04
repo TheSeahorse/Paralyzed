@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Corner.png-34f64f20eda87f926d84aeaeb5708373.stex"
+path="res://.import/Floor.png-3023c10a43f6f775c889e0ebc714f812.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Corner.png"
-dest_files=[ "res://.import/Corner.png-34f64f20eda87f926d84aeaeb5708373.stex" ]
+source_file="res://Character models/World/Floor.png"
+dest_files=[ "res://.import/Floor.png-3023c10a43f6f775c889e0ebc714f812.stex" ]
 
 [params]
 
