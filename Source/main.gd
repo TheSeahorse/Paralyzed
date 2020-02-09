@@ -12,7 +12,6 @@ func _ready():
 	add_child(player)
 	add_child(leveltemplate)
 	player.is_cyan()
-	leveltemplate.turn_on_cyan()
 
 
 func _physics_process(delta: float) -> void:
@@ -22,18 +21,16 @@ func _physics_process(delta: float) -> void:
 
 func handle_action():
 	if Input.is_action_just_pressed("action"):
-		leveltemplate.action()
+		print("space")
+		leveltemplate.action(player.PLAYER_COLOR)
+
 
 func toggle_color():
 	if Input.is_action_just_pressed("cyan"):
 		player.is_cyan()
-		leveltemplate.turn_on_cyan()
 	elif Input.is_action_just_pressed("red"):
 		player.is_red()
-		leveltemplate.turn_on_red()
 	elif Input.is_action_just_pressed("purple"):
 		player.is_purple()
-		leveltemplate.turn_on_purple()
 	elif Input.is_action_just_pressed("yellow"):
 		player.is_yellow()
-		leveltemplate.turn_on_yellow()
