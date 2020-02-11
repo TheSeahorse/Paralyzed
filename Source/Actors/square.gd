@@ -3,6 +3,7 @@ class_name Square
 
 export var COLOR: = "cyan"
 var TOGGLE_ACTION: = false
+var ON_FLOOR: = false
 var SPRING_JUMP: = 0
 
 func _ready() -> void:
@@ -23,11 +24,18 @@ func _physics_process(delta: float) -> void:
 	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 
+func _on_tileMap_body_entered(body: Node) -> void: #Area2D, not tilemap
+	ON_FLOOR = true
+
+
+func _on_tileMap_body_exited(body: Node) -> void: #Area2D, not tilemap
+	ON_FLOOR = false #this gets changed faster in the jump functions
+
+
 func jump() -> Vector2:
 	TOGGLE_ACTION = false
-	print("jump_before")
-	if is_on_floor():
-		print("jump")
+	if ON_FLOOR:
+		ON_FLOOR = false
 		SPRING_JUMP = 23
 		return Vector2(0.0, -1.0)
 	else:

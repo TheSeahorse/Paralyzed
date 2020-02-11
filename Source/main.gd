@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 
 func handle_action():
 	if Input.is_action_just_pressed("action"):
-		print("space")
+		#player.activate_spring_jump()
 		leveltemplate.action(player.PLAYER_COLOR)
 
 

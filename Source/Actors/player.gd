@@ -1,4 +1,5 @@
 extends Actor
+class_name Player
 
 var PLAYER_COLOR: = "cyan"
 var ON_HEAD: = false
@@ -15,14 +16,13 @@ func _physics_process(delta: float) -> void:
 
 func _on_enemy_head_entered(body: Node) -> void:
 	if body is Square:
-		print("yes")
+		print("player_on_head")
 		ON_HEAD = true
-	
 
 
 func _on_enemy_head_body_exited(body: Node) -> void:
 	if body is Square:
-		ON_HEAD = false
+		ON_HEAD = false 
 
 
 func spring_jump(delta: float) -> Vector2:
@@ -40,7 +40,9 @@ func spring_jump(delta: float) -> Vector2:
 
 
 func activate_spring_jump():
-	JUMP_ACTIVATED = true
+	if ON_HEAD:
+		print("player_jump")
+		JUMP_ACTIVATED = true
 
 
 func is_cyan():
@@ -58,6 +60,3 @@ func is_purple():
 func is_yellow():
 	$player_sprite.play("yellow")
 	PLAYER_COLOR = "yellow"
-
-
-
