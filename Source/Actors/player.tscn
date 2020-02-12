@@ -1,20 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=1]
+[ext_resource path="res://Character models/Player/Purple_square.png" type="Texture" id=1]
 [ext_resource path="res://Character models/World/White Background.png" type="Texture" id=2]
 [ext_resource path="res://Source/Actors/player.gd" type="Script" id=3]
-[ext_resource path="res://Character models/Enemies/Purple_square.png" type="Texture" id=4]
-[ext_resource path="res://Character models/Enemies/Red_square.png" type="Texture" id=5]
-[ext_resource path="res://Character models/Enemies/Yellow_square.png" type="Texture" id=6]
+[ext_resource path="res://Character models/Player/Yellow_square.png" type="Texture" id=4]
+[ext_resource path="res://Character models/Player/Red_square.png" type="Texture" id=5]
+[ext_resource path="res://Character models/Player/Cyan_square.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "cyan",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "purple",
 "speed": 5.0
@@ -24,11 +24,14 @@ animations = [ {
 "name": "red",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "yellow",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 33, 31 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 32 )
@@ -45,6 +48,13 @@ position = Vector2( 0, -32 )
 frames = SubResource( 1 )
 animation = "cyan"
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+modulate = Color( 0.0509804, 0.847059, 0.156863, 1 )
+position = Vector2( 0, -32 )
+shape = SubResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -32 )
 shape = SubResource( 2 )
@@ -56,7 +66,6 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 250, -150 )
 current = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -66,5 +75,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 0.141176, 0.152941, 0.992157, 1 )
 shape = SubResource( 3 )
+[connection signal="area_entered" from="Area2D2" to="." method="_on_laserBeam_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemy_head_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_enemy_head_body_exited"]
