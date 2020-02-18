@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character models/World/Corner.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Character models/World/Right wall.png" type="Texture" id=6]
 [ext_resource path="res://Source/Actors/laserbeam.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=8]
+[ext_resource path="res://Source/Actors/spikes.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -122,7 +123,7 @@ position = Vector2( 374, 103 )
 COLOR = "yellow"
 
 [node name="square2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1228, 167 )
+position = Vector2( 1209, 167 )
 
 [node name="square3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 535, 103 )
@@ -135,3 +136,6 @@ COLOR = "red"
 [node name="square5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1766, 103 )
 COLOR = "yellow"
+
+[node name="spikes" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1359, 167 )

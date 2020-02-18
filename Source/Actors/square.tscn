@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character models/Enemies/Cyan_square.png" type="Texture" id=1]
 [ext_resource path="res://Source/Actors/square.gd" type="Script" id=2]
-[ext_resource path="res://Character models/World/Left spikes.png" type="Texture" id=3]
+[ext_resource path="res://Source/Actors/spikes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Character models/Enemies/Purple_square.png" type="Texture" id=4]
 [ext_resource path="res://Character models/Enemies/Red_square.png" type="Texture" id=5]
 [ext_resource path="res://Character models/Enemies/Yellow_square.png" type="Texture" id=6]
-[ext_resource path="res://Character models/World/Right spikes.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -47,6 +46,13 @@ position = Vector2( 0, -32 )
 frames = SubResource( 1 )
 animation = "cyan"
 
+[node name="spikes" parent="." instance=ExtResource( 3 )]
+position = Vector2( -34, -1 )
+
+[node name="spikes2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 34, -64 )
+rotation = 3.14146
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -32 )
 shape = SubResource( 2 )
@@ -55,13 +61,5 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
-
-[node name="Left spikes" type="Sprite" parent="."]
-position = Vector2( -34, -32 )
-texture = ExtResource( 3 )
-
-[node name="Right spikes" type="Sprite" parent="."]
-position = Vector2( 34, -32 )
-texture = ExtResource( 7 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_tileMap_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_tileMap_body_exited"]

@@ -10,7 +10,7 @@
 [ext_resource path="res://Character models/World/Animations/yellow beam fade.png" type="Texture" id=8]
 [ext_resource path="res://Character models/World/Animations/red beam fade.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": false,
@@ -53,17 +53,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 48 )
 
 [node name="laserbeam" type="Area2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="beam_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -48 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "yellow fade"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -48 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )

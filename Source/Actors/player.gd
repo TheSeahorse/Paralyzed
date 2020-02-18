@@ -21,8 +21,11 @@ func _on_enemy_head_body_exited(body: Node) -> void:
 		ON_HEADS -= 1
 
 
-func _on_laserBeam_area_entered(area: Area2D) -> void:
+
+func _on_area2D_area_entered(area: Area2D) -> void:
 	if area is LaserBeam and area.get_color() != PLAYER_COLOR:
+		queue_free()
+	elif area is Spikes:
 		queue_free()
 
 
@@ -55,6 +58,8 @@ func is_purple():
 func is_yellow():
 	$player_sprite.play("yellow")
 	PLAYER_COLOR = "yellow"
+
+
 
 
 
