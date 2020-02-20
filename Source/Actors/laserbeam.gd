@@ -8,7 +8,6 @@ func _ready() -> void:
 
 
 func play_anim():
-	print("yes")
 	$beam_sprite.play(str(COLOR, " fade"))
 
 

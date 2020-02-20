@@ -1,7 +1,5 @@
 extends Node2D
 
-const Player = preload("res://Source/Actors/player.tscn")
-const LevelTemplate = preload("res://Source/Levels/LevelTemplate.tscn")
 const MainMenu = preload("res://Source/Menues/mainMenu.tscn")
 
 var mainmenu
@@ -9,18 +7,19 @@ var player
 var level
 
 func _ready():
-	
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
 
 
 func _input(event: InputEvent) -> void:
-	toggle_color()
-	handle_action()
+	if player:
+		toggle_color()
+		handle_action()
 
 
 func play_level(levelName: String):
-	player = Player.instance()
+	player = load("res://Source/Actors/player.tscn").instance()
+	player.connect("levelcleared", self, "playerClearedLevel")
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
 	add_child(player)
 	add_child(level)
@@ -46,3 +45,11 @@ func handle_action():
 	if Input.is_action_just_pressed("action"):
 		player.SPRING_JUMP = 10
 		level.action(player.PLAYER_COLOR)
+
+
+func playerClearedLevel():
+	print("playerclear")
+	player.queue_free()
+	level.queue_free()
+	mainmenu.get_child(0).show()
+	
