@@ -32,9 +32,9 @@ animations = [ {
 "name": "yellow",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": false,
-"name": "red fade",
+"name": "purple fade",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -42,9 +42,9 @@ animations = [ {
 "name": "yellow fade",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "purple fade",
+"name": "red fade",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],

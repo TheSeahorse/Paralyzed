@@ -3,8 +3,9 @@
 [ext_resource path="res://Character models/World/finish.png" type="Texture" id=1]
 [ext_resource path="res://Source/Actors/goal.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11, 92 )
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 0, -74 )
+b = Vector2( 0, 91 )
 
 [node name="goal" type="Area2D"]
 collision_layer = 8

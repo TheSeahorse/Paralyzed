@@ -48,7 +48,6 @@ func handle_action():
 
 
 func playerClearedLevel():
-	print("playerclear")
 	player.queue_free()
 	level.queue_free()
 	mainmenu.get_child(0).show()

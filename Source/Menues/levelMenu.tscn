@@ -28,4 +28,6 @@ text = "Level template"
 margin_top = 24.0
 margin_right = 700.0
 margin_bottom = 44.0
+text = "Level1"
 [connection signal="pressed" from="levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
+[connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
