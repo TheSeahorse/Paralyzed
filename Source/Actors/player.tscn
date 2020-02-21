@@ -68,6 +68,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 381, -195 )
 current = true
 
 [node name="Jumpcollision" type="Area2D" parent="."]

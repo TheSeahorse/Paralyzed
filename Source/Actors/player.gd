@@ -1,6 +1,7 @@
 extends Actor
 class_name Player
 signal levelcleared
+signal playerdead
 
 var PLAYER_COLOR: = "cyan"
 var ON_HEADS: = 0 #the amount of enemy heads the player is currently on
@@ -25,12 +26,11 @@ func _on_enemy_head_body_exited(body: Node) -> void:
 func _on_area2D_area_entered(area: Area2D) -> void:
 	print("area2d")
 	if area is LaserBeam and area.get_color() != PLAYER_COLOR:
-		queue_free()
+		emit_signal("playerdead")
 	elif area is Spikes:
-		queue_free()
+		emit_signal("playerdead")
 	elif area is Goal:
 		emit_signal("levelcleared")
-		print("clearinPLayer")
 
 
 func calculate_y(velocity: Vector2, delta: float) -> Vector2:
