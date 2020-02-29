@@ -1,10 +1,10 @@
 extends Control
-const LevelTemplate = preload("res://Source/Menues/levelMenu.tscn")
+const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
 
-var leveltemplate
+var levelmenu
 
 func _on_Start_pressed() -> void:
-	leveltemplate = LevelTemplate.instance()
-	leveltemplate.connect("levelselected", self.get_parent(), "play_level")
-	add_child(leveltemplate)
+	levelmenu = LevelMenu.instance()
+	levelmenu.connect("levelselected", self.get_parent(), "play_level")
+	add_child(levelmenu)
 	$menu.hide()

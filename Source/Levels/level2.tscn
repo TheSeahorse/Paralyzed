@@ -114,42 +114,51 @@ tile_data = PoolIntArray( 1376187, 0, 0, 1376188, 0, 0, 1376189, 0, 0, 1376190, 
 position = Vector2( 7138, 29 )
 
 [node name="square" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1025, 29 )
+position = Vector2( 1130, 29 )
+COLOR = "purple"
 
 [node name="square2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1978, 29 )
+position = Vector2( 1662, 29 )
 COLOR = "red"
 
 [node name="square3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4932, 29 )
-COLOR = "purple"
-
-[node name="square4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5014, 29 )
-COLOR = "purple"
-
-[node name="square5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2982, 29 )
-COLOR = "purple"
-
-[node name="square6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6856, 29 )
+position = Vector2( 2209, 29 )
 COLOR = "yellow"
 
-[node name="square7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6939, 30 )
+[node name="square4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3340, 29 )
+
+[node name="square5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3428, 29 )
+COLOR = "red"
+
+[node name="square6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4582, 29 )
 COLOR = "yellow"
 
 [node name="square8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 7022, 29 )
+position = Vector2( 4825, 29 )
 COLOR = "yellow"
 
 [node name="square9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3982, 29 )
+position = Vector2( 4744, 29 )
 COLOR = "yellow"
 
 [node name="square10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5876, 29 )
+position = Vector2( 4663, 29 )
+COLOR = "yellow"
 
 [node name="square11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5961, 28 )
+position = Vector2( 5572, 29 )
+COLOR = "red"
+
+[node name="square12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6668, 29 )
+COLOR = "purple"
+
+[node name="square13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6771, 29 )
+
+[node name="square14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6875, 29 )
+COLOR = "yellow"

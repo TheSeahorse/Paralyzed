@@ -24,7 +24,6 @@ func _on_enemy_head_body_exited(body: Node) -> void:
 
 
 func _on_area2D_area_entered(area: Area2D) -> void:
-	print("area2d")
 	if area is LaserBeam and area.get_color() != PLAYER_COLOR:
 		emit_signal("playerdead")
 	elif area is Spikes:
@@ -47,21 +46,10 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 	return velocity
 
 
-func is_cyan():
-	$player_sprite.play("cyan")
-	PLAYER_COLOR = "cyan"
+func is_color(color: String):
+	$player_sprite.play(color)
+	PLAYER_COLOR = color
 
-func is_red():
-	$player_sprite.play("red")
-	PLAYER_COLOR = "red"
-
-func is_purple():
-	$player_sprite.play("purple")
-	PLAYER_COLOR = "purple"
-
-func is_yellow():
-	$player_sprite.play("yellow")
-	PLAYER_COLOR = "yellow"
 
 
 
