@@ -37,11 +37,6 @@ animations = [ {
 "name": "purple fade",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": false,
-"name": "yellow fade",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
 "name": "red fade",
@@ -50,6 +45,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": false,
 "name": "cyan fade",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "yellow fade",
 "speed": 5.0
 } ]
 

@@ -1,7 +1,6 @@
 extends Node2D
 
 const MainMenu = preload("res://Source/Menues/mainMenu.tscn")
-const GameOver = preload("res://Source/Menues/gameover.tscn")
 
 var mainmenu # main menu node
 var player # player node
@@ -13,18 +12,28 @@ var CURRENT_LEVEL # name of most recent level as a string
 func _ready():
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
+	mainmenu.show_menu()
 
 
 func _input(event: InputEvent) -> void:
 	if player:
 		toggle_color()
 		handle_action()
+		handle_pause()
+
+
+func _on_backMainMenu() -> void:
+	if player or level:
+		remove_player_and_level()
+	show_main_menu()
+
+
+func _on_gameover_restartLevel() -> void:
+	play_level(CURRENT_LEVEL)
 
 
 func play_level(levelName: String):
 	CURRENT_LEVEL = levelName
-	if gameover and gameover.visible:
-		gameover.hide()
 	player = load("res://Source/Actors/player.tscn").instance()
 	player.connect("levelcleared", self, "player_cleared_level")
 	player.connect("playerdead", self, "game_over_screen", [levelName])
@@ -55,28 +64,31 @@ func handle_action():
 		level.action(player.PLAYER_COLOR)
 
 
+func handle_pause():
+	if Input.is_action_just_pressed("escape"):
+		$pauseMenu.show_menu()
+		get_tree().paused = true
+
+
 func player_cleared_level():
-	mainmenu.get_child(1).get_child(0).show() #level menu
+	mainmenu.show_level_menu() #level menu
 	remove_player_and_level()
 
 
 func game_over_screen(levelName: String):
-	if !gameover:
-		gameover = GameOver.instance()
-		gameover.connect("backMenu", self, "show_main_menu")
-		gameover.connect("restartLevel", self, "play_level", [CURRENT_LEVEL])
-		add_child(gameover)
-	gameover.show()
+	$gameover.show_menu()
 	remove_player_and_level()
 
 
 func show_main_menu():
-	gameover.hide()
-	mainmenu.get_child(0).show()
+	mainmenu.show_menu()
 
 
 func remove_player_and_level():
-	player.queue_free()
-	player = null
-	level.queue_free()
-	level = null
+	if player:
+		player.queue_free()
+		player = null
+	if level:
+		level.queue_free()
+		level = null
+
