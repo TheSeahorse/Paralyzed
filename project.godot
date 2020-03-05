@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Source/Actors/laserbeam.gd"
 }, {
 "base": "Actor",
+"class": "Lava",
+"language": "GDScript",
+"path": "res://Source/Actors/lava.gd"
+}, {
+"base": "Actor",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Source/Actors/player.gd"
@@ -49,6 +54,7 @@ _global_script_class_icons={
 "GlobalLevel": "",
 "Goal": "",
 "LaserBeam": "",
+"Lava": "",
 "Player": "",
 "Spikes": "",
 "Square": ""

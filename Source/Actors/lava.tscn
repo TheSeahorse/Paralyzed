@@ -1,0 +1,93 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Source/Actors/lava.gd" type="Script" id=1]
+[ext_resource path="res://Character models/World/Lava floor/cyan lava 0.png" type="Texture" id=2]
+[ext_resource path="res://Character models/World/Lava floor/cyan lava 1.png" type="Texture" id=3]
+[ext_resource path="res://Character models/World/Lava floor/cyan lava 3.png" type="Texture" id=4]
+[ext_resource path="res://Character models/World/Lava floor/cyan lava off.png" type="Texture" id=5]
+[ext_resource path="res://Character models/World/Lava floor/cyan lava 2.png" type="Texture" id=6]
+[ext_resource path="res://Character models/World/Lava floor/yellow lava off.png" type="Texture" id=7]
+[ext_resource path="res://Character models/World/Lava floor/yellow lava 0.png" type="Texture" id=8]
+[ext_resource path="res://Character models/World/Lava floor/yellow lava 3.png" type="Texture" id=9]
+[ext_resource path="res://Character models/World/Lava floor/purple lava 1.png" type="Texture" id=10]
+[ext_resource path="res://Character models/World/Lava floor/red lava 1.png" type="Texture" id=11]
+[ext_resource path="res://Character models/World/Lava floor/red lava off.png" type="Texture" id=12]
+[ext_resource path="res://Character models/World/Lava floor/yellow lava 2.png" type="Texture" id=13]
+[ext_resource path="res://Character models/World/Lava floor/purple lava off.png" type="Texture" id=14]
+[ext_resource path="res://Character models/World/Lava floor/red lava 3.png" type="Texture" id=15]
+[ext_resource path="res://Character models/World/Lava floor/yellow lava 1.png" type="Texture" id=16]
+[ext_resource path="res://Character models/World/Lava floor/purple lava 2.png" type="Texture" id=17]
+[ext_resource path="res://Character models/World/Lava floor/purple lava 0.png" type="Texture" id=18]
+[ext_resource path="res://Character models/World/Lava floor/purple lava 3.png" type="Texture" id=19]
+[ext_resource path="res://Character models/World/Lava floor/red lava 0.png" type="Texture" id=20]
+[ext_resource path="res://Character models/World/Lava floor/red lava 2.png" type="Texture" id=21]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "yellow on",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "cyan on",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "purple on",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "cyan off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "red on",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "yellow off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "red off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "purple off",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29, 2 )
+
+[node name="lava" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12 )
+frames = SubResource( 1 )
+animation = "cyan off"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color( 0.054902, 0.709804, 0, 1 )
+position = Vector2( 0, -17 )
+shape = SubResource( 3 )

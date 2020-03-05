@@ -7,11 +7,11 @@ func _ready() -> void:
 	$beam_sprite.play(COLOR)
 
 
-func play_anim():
+func fade_out():
 	$beam_sprite.play(str(COLOR, " fade"))
 
 
-func stop_anim():
+func fade_in():
 	$beam_sprite.play(COLOR)
 
 
