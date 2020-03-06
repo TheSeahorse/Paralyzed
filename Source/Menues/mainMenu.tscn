@@ -26,6 +26,7 @@ margin_bottom = 20.0
 text = "Start"
 
 [node name="Settings" type="Button" parent="menu"]
+visible = false
 margin_top = 24.0
 margin_right = 1680.0
 margin_bottom = 44.0
@@ -37,3 +38,4 @@ margin_right = 1680.0
 margin_bottom = 68.0
 text = "Quit"
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="menu/Quit" to="." method="_on_Quit_pressed"]

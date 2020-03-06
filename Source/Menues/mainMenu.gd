@@ -15,8 +15,18 @@ func show_level_menu():
 	levelmenu.show_menu()
 
 
+func levelmenu_show_level(level: String):
+	levelmenu.show_level(level)
+
+
 func _on_Start_pressed() -> void:
-	levelmenu = load("res://Source/Menues/levelMenu.tscn").instance()
-	levelmenu.connect("levelselected", self.get_parent(), "play_level")
-	add_child(levelmenu)
+	if !levelmenu:
+		levelmenu = load("res://Source/Menues/levelMenu.tscn").instance()
+		levelmenu.connect("levelselected", self.get_parent(), "play_level")
+		add_child(levelmenu)
+	levelmenu.show_menu()
 	$menu.hide()
+
+
+func _on_Quit_pressed() -> void:
+	get_tree().quit()

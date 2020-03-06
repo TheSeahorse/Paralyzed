@@ -73,6 +73,20 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 631, -329 )
 current = true
+drag_margin_v_enabled = true
+drag_margin_top = 1.0
+drag_margin_bottom = 0.0
+editor_draw_drag_margin = true
+
+[node name="hud_space" type="Sprite" parent="Camera2D"]
+position = Vector2( -738, 489 )
+scale = Vector2( 0.555556, 0.555556 )
+texture = ExtResource( 8 )
+
+[node name="keyboard_hud" type="Sprite" parent="Camera2D"]
+position = Vector2( -737.443, 429.75 )
+scale = Vector2( 0.568763, 0.572222 )
+texture = ExtResource( 7 )
 
 [node name="Jumpcollision" type="Area2D" parent="."]
 collision_layer = 0
@@ -81,16 +95,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpcollision"]
 modulate = Color( 0.141176, 0.152941, 0.992157, 1 )
 shape = SubResource( 4 )
-
-[node name="keyboard_hud" type="Sprite" parent="."]
-position = Vector2( -106.443, 100.75 )
-scale = Vector2( 0.568763, 0.572222 )
-texture = ExtResource( 7 )
-
-[node name="hud_space" type="Sprite" parent="."]
-position = Vector2( -107, 160 )
-scale = Vector2( 0.555556, 0.555556 )
-texture = ExtResource( 8 )
 [connection signal="area_entered" from="Deathcollision" to="." method="_on_Deathcollision_area_entered"]
 [connection signal="area_exited" from="Deathcollision" to="." method="_on_Deathcollision_area_exited"]
 [connection signal="body_entered" from="Jumpcollision" to="." method="_on_enemy_head_entered"]

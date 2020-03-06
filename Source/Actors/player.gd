@@ -11,11 +11,6 @@ var lava2
 var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 0
 
 func _physics_process(delta: float) -> void:
-	#if lava1:
-		#print("player = " + PLAYER_COLOR)
-		#print("lava1 = " + lava1.get_parent().COLOR)
-	#if lava2:
-		#print("lava2 = " + lava2.get_parent().COLOR)
 	check_if_dead()
 	VELOCITY.x = MAX_SPEED.x
 	VELOCITY = calculate_y(VELOCITY, delta)
@@ -43,10 +38,8 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 	elif area.get_parent() is Lava:
 		ON_LAVA += 1
 		if ON_LAVA == 1:
-			print("enter 1")
 			lava1 = area
 		elif ON_LAVA == 2:
-			print("enter 2")
 			lava2 = area
 
 
@@ -54,10 +47,8 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Lava:
 		ON_LAVA -= 1
 		if ON_LAVA == 0:
-			print("exit 1")
 			lava1 = null
 		elif ON_LAVA == 1:
-			print("exit 2")
 			lava1 = lava2
 			lava2 = null
 

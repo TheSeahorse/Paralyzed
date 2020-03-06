@@ -24,14 +24,11 @@ func _on_tileMap_body_exited(body: Node) -> void: #Area2D, not tilemap
 	ON_FLOOR = false #this gets changed faster in the jump functions
 
 
-func jump() -> Vector2:
+func jump():
 	TOGGLE_ACTION = false
 	if ON_FLOOR:
 		ON_FLOOR = false
 		SPRING_JUMP = 26
-		return Vector2(0.0, -1.0)
-	else:
-		return Vector2(0.0, 0.0)
 
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:

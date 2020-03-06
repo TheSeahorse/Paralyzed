@@ -8,6 +8,8 @@ var level # current level node
 var gameover # game over menu node
 
 var CURRENT_LEVEL # name of most recent level as a string
+var LEVEL_ORDER: = ["level1", "level2", "level3", "leveltemplate"] # order in which the levels should appear
+var LEVELS_CLEARED: = [] # the amount of unique levels cleared in an array
 
 func _ready():
 	mainmenu = MainMenu.instance()
@@ -35,7 +37,7 @@ func _on_gameover_restartLevel() -> void:
 func play_level(levelName: String):
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
-	player.connect("levelcleared", self, "player_cleared_level")
+	player.connect("levelcleared", self, "player_cleared_level", [levelName])
 	player.connect("playerdead", self, "game_over_screen", [levelName])
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
 	add_child(player)
@@ -70,8 +72,12 @@ func handle_pause():
 		get_tree().paused = true
 
 
-func player_cleared_level():
-	mainmenu.show_level_menu() #level menu
+func player_cleared_level(level: String):
+	if not LEVELS_CLEARED.has(level):
+		LEVELS_CLEARED.append(level)
+		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(level) + 1]
+		mainmenu.levelmenu_show_level(next_level)
+	mainmenu.show_level_menu() 
 	remove_player_and_level()
 
 
