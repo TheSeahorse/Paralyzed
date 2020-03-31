@@ -25,39 +25,44 @@ __meta__ = {
 visible = false
 margin_left = 700.0
 margin_top = 402.0
-margin_right = 1220.0
+margin_right = 900.0
 margin_bottom = 682.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="level1" type="Button" parent="levels"]
-margin_right = 520.0
+margin_right = 200.0
 margin_bottom = 20.0
 text = "Level1"
 
 [node name="level2" type="Button" parent="levels"]
-visible = false
 margin_top = 24.0
-margin_right = 520.0
+margin_right = 200.0
 margin_bottom = 44.0
 text = "Level2"
 
 [node name="level3" type="Button" parent="levels"]
-visible = false
-margin_top = 24.0
-margin_right = 520.0
-margin_bottom = 44.0
+margin_top = 48.0
+margin_right = 200.0
+margin_bottom = 68.0
 text = "Level3"
+
+[node name="level4" type="Button" parent="levels"]
+margin_top = 72.0
+margin_right = 200.0
+margin_bottom = 92.0
+text = "Level4"
 
 [node name="leveltemplate" type="Button" parent="levels"]
 visible = false
-margin_top = 24.0
-margin_right = 520.0
-margin_bottom = 44.0
+margin_top = 96.0
+margin_right = 200.0
+margin_bottom = 116.0
 text = "Level template"
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
 [connection signal="pressed" from="levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
+[connection signal="pressed" from="levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
 [connection signal="pressed" from="levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]

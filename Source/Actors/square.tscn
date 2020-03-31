@@ -7,10 +7,6 @@
 [ext_resource path="res://Character models/Enemies/Squares/Red_square.png" type="Texture" id=5]
 [ext_resource path="res://Character models/Enemies/Squares/Yellow_square.png" type="Texture" id=6]
 
-
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],

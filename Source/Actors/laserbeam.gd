@@ -4,7 +4,10 @@ class_name LaserBeam
 export var COLOR: = "cyan"
 
 func _ready() -> void:
-	$beam_sprite.play(COLOR)
+	if COLOR == "cyan":
+		$beam_sprite.play(str(COLOR, " fade"))
+	else:
+		$beam_sprite.play(COLOR)
 
 
 func fade_out():

@@ -79,13 +79,13 @@ drag_margin_bottom = 0.0
 editor_draw_drag_margin = true
 
 [node name="hud_space" type="Sprite" parent="Camera2D"]
-position = Vector2( -738, 489 )
-scale = Vector2( 0.555556, 0.555556 )
+position = Vector2( -651, 411 )
+scale = Vector2( 0.433332, 0.433332 )
 texture = ExtResource( 8 )
 
 [node name="keyboard_hud" type="Sprite" parent="Camera2D"]
-position = Vector2( -737.443, 429.75 )
-scale = Vector2( 0.568763, 0.572222 )
+position = Vector2( -651, 366 )
+scale = Vector2( 0.438997, 0.441667 )
 texture = ExtResource( 7 )
 
 [node name="Jumpcollision" type="Area2D" parent="."]
