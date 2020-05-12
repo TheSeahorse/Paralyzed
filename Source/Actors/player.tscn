@@ -46,11 +46,12 @@ collision_mask = 14
 script = ExtResource( 3 )
 
 [node name="player_sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -32 )
+position = Vector2( 84, -104 )
 frames = SubResource( 1 )
 animation = "cyan"
 
 [node name="Deathcollision" type="Area2D" parent="."]
+position = Vector2( 84, -72 )
 collision_layer = 0
 collision_mask = 10
 
@@ -60,13 +61,13 @@ position = Vector2( 0, -33 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -31 )
+position = Vector2( 84, -103 )
 shape = SubResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="White Background" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( -2339, -1298 )
+position = Vector2( -1459, -1473 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -79,16 +80,17 @@ drag_margin_bottom = 0.0
 editor_draw_drag_margin = true
 
 [node name="hud_space" type="Sprite" parent="Camera2D"]
-position = Vector2( -651, 411 )
+position = Vector2( -550, 351 )
 scale = Vector2( 0.433332, 0.433332 )
 texture = ExtResource( 8 )
 
 [node name="keyboard_hud" type="Sprite" parent="Camera2D"]
-position = Vector2( -651, 366 )
+position = Vector2( -546, 303 )
 scale = Vector2( 0.438997, 0.441667 )
 texture = ExtResource( 7 )
 
 [node name="Jumpcollision" type="Area2D" parent="."]
+position = Vector2( 84, -72 )
 collision_layer = 0
 collision_mask = 2
 

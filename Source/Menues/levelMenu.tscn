@@ -1,6 +1,35 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
+[ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=2]
+[ext_resource path="res://Character models/Menues/Levels_header.png" type="Texture" id=3]
+[ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Character models/Menues/Fonts/RetroNewVersion-v6Jy.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+outline_size = 1
+outline_color = Color( 0.639216, 0.509804, 0.054902, 1 )
+extra_spacing_top = 5
+font_data = ExtResource( 5 )
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -10,49 +39,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="go_back" type="Button" parent="."]
-visible = false
-margin_left = 74.0
-margin_top = 47.0
-margin_right = 138.0
-margin_bottom = 67.0
-text = "Go Back"
+[node name="levels" type="VBoxContainer" parent="."]
+margin_left = 590.0
+margin_top = 120.0
+margin_right = 1010.0
+margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="levels" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 700.0
-margin_top = 402.0
-margin_right = 900.0
-margin_bottom = 682.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="background" type="Sprite" parent="levels"]
+position = Vector2( -1115, -498 )
+texture = ExtResource( 2 )
+
+[node name="levels_header" type="TextureRect" parent="levels"]
+margin_right = 420.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
 
 [node name="level1" type="Button" parent="levels"]
-margin_right = 200.0
-margin_bottom = 20.0
-text = "Level1"
+margin_top = 132.0
+margin_right = 420.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 1 )
+text = "Level one"
 
 [node name="level2" type="Button" parent="levels"]
-margin_top = 24.0
-margin_right = 200.0
-margin_bottom = 44.0
-text = "Level2"
+visible = false
+margin_top = 210.0
+margin_right = 420.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 2 )
+text = "Level two"
 
 [node name="level3" type="Button" parent="levels"]
-margin_top = 48.0
-margin_right = 200.0
-margin_bottom = 68.0
-text = "Level3"
+visible = false
+margin_top = 210.0
+margin_right = 420.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 3 )
+text = "Level three"
 
 [node name="level4" type="Button" parent="levels"]
-margin_top = 72.0
-margin_right = 200.0
-margin_bottom = 92.0
-text = "Level4"
+visible = false
+margin_top = 210.0
+margin_right = 420.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 4 )
+text = "Level four"
 
 [node name="leveltemplate" type="Button" parent="levels"]
 visible = false
@@ -60,9 +94,20 @@ margin_top = 96.0
 margin_right = 200.0
 margin_bottom = 116.0
 text = "Level template"
-[connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
+
+[node name="go_back" type="Button" parent="."]
+margin_left = 74.0
+margin_top = 46.0
+margin_right = 203.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 5 )
+text = "Go Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
 [connection signal="pressed" from="levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
 [connection signal="pressed" from="levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
 [connection signal="pressed" from="levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
+[connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
