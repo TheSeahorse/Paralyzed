@@ -9,8 +9,6 @@ func _ready() -> void:
 	$car_sprite.play(COLOR)
 
 func _physics_process(delta: float) -> void:
-	print(str("floor", ON_FLOOR))
-	print(str("action", TOGGLE_ACTION))
 	if TOGGLE_ACTION:
 		jump()
 	VELOCITY.x =- MAX_SPEED.x

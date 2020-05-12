@@ -98,3 +98,9 @@ func remove_player_and_level():
 		level.queue_free()
 		level = null
 
+
+func display_popup(tutorial_name: String):
+	print("inside display popup")
+	var tutorial = load("res://Source/Tutorials/" + tutorial_name + ".tscn").instance()
+	add_child(tutorial)
+	get_tree().paused = true

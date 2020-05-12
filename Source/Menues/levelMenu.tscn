@@ -65,7 +65,6 @@ custom_fonts/font = SubResource( 1 )
 text = "Level one"
 
 [node name="level2" type="Button" parent="levels"]
-visible = false
 margin_top = 210.0
 margin_right = 420.0
 margin_bottom = 284.0
@@ -73,26 +72,23 @@ custom_fonts/font = SubResource( 2 )
 text = "Level two"
 
 [node name="level3" type="Button" parent="levels"]
-visible = false
-margin_top = 210.0
+margin_top = 288.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 362.0
 custom_fonts/font = SubResource( 3 )
 text = "Level three"
 
 [node name="level4" type="Button" parent="levels"]
-visible = false
-margin_top = 210.0
+margin_top = 366.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 440.0
 custom_fonts/font = SubResource( 4 )
 text = "Level four"
 
 [node name="leveltemplate" type="Button" parent="levels"]
-visible = false
-margin_top = 96.0
-margin_right = 200.0
-margin_bottom = 116.0
+margin_top = 444.0
+margin_right = 420.0
+margin_bottom = 464.0
 text = "Level template"
 
 [node name="go_back" type="Button" parent="."]
