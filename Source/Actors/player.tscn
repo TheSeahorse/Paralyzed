@@ -80,11 +80,13 @@ drag_margin_bottom = 0.0
 editor_draw_drag_margin = true
 
 [node name="hud_space" type="Sprite" parent="Camera2D"]
+visible = false
 position = Vector2( -550, 351 )
 scale = Vector2( 0.433332, 0.433332 )
 texture = ExtResource( 8 )
 
 [node name="keyboard_hud" type="Sprite" parent="Camera2D"]
+visible = false
 position = Vector2( -546, 303 )
 scale = Vector2( 0.438997, 0.441667 )
 texture = ExtResource( 7 )

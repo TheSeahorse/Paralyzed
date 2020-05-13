@@ -27,9 +27,9 @@ func jump() -> void:
 		ON_FLOOR = false
 
 
-func _on_Area2D_body_exited(body: Node) -> void:
+func _on_Area2D_body_exited(_body: Node) -> void:
 	ON_FLOOR = false
 
 
-func _on_Area2D_body_entered(body: Node) -> void:
+func _on_Area2D_body_entered(_body: Node) -> void:
 	ON_FLOOR = true

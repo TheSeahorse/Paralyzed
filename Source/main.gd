@@ -17,7 +17,7 @@ func _ready():
 	mainmenu.show_menu()
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if player:
 		toggle_color()
 		handle_action()
@@ -72,16 +72,16 @@ func handle_pause():
 		get_tree().paused = true
 
 
-func player_cleared_level(level: String):
-	if not LEVELS_CLEARED.has(level):
-		LEVELS_CLEARED.append(level)
-		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(level) + 1]
+func player_cleared_level(nlevel: String):
+	if not LEVELS_CLEARED.has(nlevel):
+		LEVELS_CLEARED.append(nlevel)
+		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(nlevel) + 1]
 		mainmenu.levelmenu_show_level(next_level)
 	mainmenu.show_level_menu() 
 	remove_player_and_level()
 
 
-func game_over_screen(levelName: String):
+func game_over_screen(_levelName: String):
 	$gameover.show_menu()
 	remove_player_and_level()
 
@@ -100,7 +100,6 @@ func remove_player_and_level():
 
 
 func display_popup(tutorial_name: String):
-	print("inside display popup")
 	var tutorial = load("res://Source/Tutorials/" + tutorial_name + ".tscn").instance()
 	add_child(tutorial)
 	get_tree().paused = true
