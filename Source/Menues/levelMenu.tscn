@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=2]
@@ -9,19 +9,55 @@
 [sub_resource type="DynamicFont" id=1]
 size = 64
 outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0, 0.501961, 0.00784314, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+outline_size = 1
+outline_color = Color( 0.14902, 0.509804, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
+outline_size = 1
+outline_color = Color( 0.282353, 0.498039, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
+outline_size = 1
+outline_color = Color( 0.356863, 0.501961, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 64
+outline_size = 1
+outline_color = Color( 0.490196, 0.494118, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 64
+outline_size = 1
+outline_color = Color( 0.505882, 0.403922, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 64
+outline_size = 1
+outline_color = Color( 0.498039, 0.262745, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+outline_size = 1
+outline_color = Color( 0.498039, 0.0862745, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
+outline_size = 2
+outline_color = Color( 0.490196, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -41,9 +77,9 @@ __meta__ = {
 
 [node name="levels" type="VBoxContainer" parent="."]
 margin_left = 590.0
-margin_top = 120.0
+margin_top = 24.0
 margin_right = 1010.0
-margin_bottom = 494.0
+margin_bottom = 854.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -57,38 +93,75 @@ margin_right = 420.0
 margin_bottom = 128.0
 texture = ExtResource( 3 )
 
-[node name="level1" type="Button" parent="levels"]
+[node name="tutorial" type="Button" parent="levels"]
 margin_top = 132.0
 margin_right = 420.0
 margin_bottom = 206.0
 custom_fonts/font = SubResource( 1 )
-text = "Level one"
+text = "Tutorial"
 
-[node name="level2" type="Button" parent="levels"]
+[node name="level1" type="Button" parent="levels"]
 margin_top = 210.0
 margin_right = 420.0
 margin_bottom = 284.0
+custom_fonts/font = SubResource( 6 )
+text = "level one"
+
+[node name="level2" type="Button" parent="levels"]
+margin_top = 288.0
+margin_right = 420.0
+margin_bottom = 362.0
 custom_fonts/font = SubResource( 2 )
 text = "Level two"
 
 [node name="level3" type="Button" parent="levels"]
-margin_top = 288.0
+margin_top = 366.0
 margin_right = 420.0
-margin_bottom = 362.0
+margin_bottom = 440.0
 custom_fonts/font = SubResource( 3 )
 text = "Level three"
 
 [node name="level4" type="Button" parent="levels"]
-margin_top = 366.0
+margin_top = 444.0
 margin_right = 420.0
-margin_bottom = 440.0
+margin_bottom = 518.0
 custom_fonts/font = SubResource( 4 )
 text = "Level four"
 
-[node name="leveltemplate" type="Button" parent="levels"]
-margin_top = 444.0
+[node name="level5" type="Button" parent="levels"]
+margin_top = 522.0
 margin_right = 420.0
-margin_bottom = 464.0
+margin_bottom = 596.0
+custom_fonts/font = SubResource( 7 )
+text = "level five"
+
+[node name="level6" type="Button" parent="levels"]
+pause_mode = 1
+margin_top = 600.0
+margin_right = 420.0
+margin_bottom = 674.0
+custom_fonts/font = SubResource( 8 )
+text = "level six"
+
+[node name="level7" type="Button" parent="levels"]
+margin_top = 678.0
+margin_right = 420.0
+margin_bottom = 752.0
+custom_fonts/font = SubResource( 9 )
+text = "level seven"
+
+[node name="level8" type="Button" parent="levels"]
+margin_top = 756.0
+margin_right = 420.0
+margin_bottom = 830.0
+custom_fonts/font = SubResource( 10 )
+text = "level eight"
+
+[node name="leveltemplate" type="Button" parent="levels"]
+visible = false
+margin_top = 834.0
+margin_right = 420.0
+margin_bottom = 854.0
 text = "Level template"
 
 [node name="go_back" type="Button" parent="."]
@@ -101,6 +174,7 @@ text = "Go Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial" ]]
 [connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
 [connection signal="pressed" from="levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]

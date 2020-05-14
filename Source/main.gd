@@ -8,7 +8,7 @@ var level # current level node
 var gameover # game over menu node
 
 var CURRENT_LEVEL # name of most recent level as a string
-var LEVEL_ORDER: = ["level1", "level2", "level3", "leveltemplate"] # order in which the levels should appear
+var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8"] # order in which the levels should appear
 var LEVELS_CLEARED: = [] # the amount of unique levels cleared in an array
 
 func _ready():
@@ -21,7 +21,7 @@ func _input(_event: InputEvent) -> void:
 	if player:
 		toggle_color()
 		handle_action()
-		handle_pause()
+		handle_pause(false)
 
 
 func _on_backMainMenu() -> void:
@@ -66,8 +66,8 @@ func handle_action():
 		level.action(player.PLAYER_COLOR)
 
 
-func handle_pause():
-	if Input.is_action_just_pressed("escape"):
+func handle_pause(auto: bool):
+	if Input.is_action_just_pressed("escape") or auto:
 		$pauseMenu.show_menu()
 		get_tree().paused = true
 

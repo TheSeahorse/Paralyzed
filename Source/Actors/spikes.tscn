@@ -4,7 +4,7 @@
 [ext_resource path="res://Character models/World/Spikes.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3, 29 )
+extents = Vector2( 3, 30 )
 
 [node name="spikes" type="Area2D"]
 collision_layer = 8
@@ -16,5 +16,5 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.992157, 0.901961, 0.301961, 1 )
-position = Vector2( 0, -32 )
+position = Vector2( 0, -31 )
 shape = SubResource( 1 )
