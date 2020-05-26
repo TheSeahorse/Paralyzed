@@ -148,6 +148,9 @@ COLOR = "yellow"
 position = Vector2( 2726, 93 )
 COLOR = "red"
 
+[node name="square9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1265, 93 )
+
 [node name="spikes3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3073, 89 )
 rotation = 1.57081
@@ -211,10 +214,6 @@ rotation = 4.71228
 [node name="spikes16" parent="." instance=ExtResource( 7 )]
 position = Vector2( 4128, -415 )
 rotation = 4.71228
-
-[node name="spikes12" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2768, 89 )
-rotation = 1.57081
 
 [node name="spikes11" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2829, 89 )

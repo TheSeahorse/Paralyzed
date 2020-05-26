@@ -5,6 +5,7 @@ const MainMenu = preload("res://Source/Menues/mainMenu.tscn")
 var mainmenu # main menu node
 var player # player node
 var level # current level node
+var hud # the player hud
 var gameover # game over menu node
 
 var CURRENT_LEVEL # name of most recent level as a string
@@ -40,8 +41,10 @@ func play_level(levelName: String):
 	player.connect("levelcleared", self, "player_cleared_level", [levelName])
 	player.connect("playerdead", self, "restart_level", [levelName])
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
+	hud = load("res://Source/Tutorials/playerHud.tscn").instance()
 	add_child(level)
 	add_child(player)
+	add_child(hud)
 	player.is_color("cyan")
 
 
@@ -67,7 +70,7 @@ func handle_action():
 
 
 func handle_pause(auto: bool):
-	if Input.is_action_just_pressed("escape") or auto:
+	if (Input.is_action_just_pressed("escape") or auto) and !player.DEAD:
 		$pauseMenu.show_menu()
 		get_tree().paused = true
 
@@ -99,6 +102,9 @@ func remove_player_and_level():
 	if level:
 		level.queue_free()
 		level = null
+	if hud:
+		hud.queue_free()
+		hud = null
 
 
 func display_popup(tutorial_name: String):
