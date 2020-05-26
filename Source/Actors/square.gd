@@ -2,14 +2,19 @@ extends Actor
 class_name Square
 
 export var COLOR: = "cyan"
+var ENABLED: = false #turns true the first time physics process is run
 var TOGGLE_ACTION: = false #if "action" has been input by the user
 var ON_FLOOR: = false #if the square is on any kind of KinematicBody2D
 var SPRING_JUMP: = 0 #variable to control the flingy jump of the square, if greater than 0 we're calculating the jump
 
 func _ready() -> void:
 	$square_sprite.play(COLOR)
+	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
+	if !ENABLED:
+		TOGGLE_ACTION = false
+		ENABLED = true
 	if TOGGLE_ACTION:
 		jump()
 	VELOCITY = calculate_move_velocity(VELOCITY, delta)

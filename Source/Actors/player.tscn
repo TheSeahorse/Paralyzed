@@ -101,7 +101,7 @@ shape = SubResource( 3 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="White Background" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( -1459, -1473 )
+position = Vector2( -1482, -1462 )
 texture = ExtResource( 2 )
 centered = false
 

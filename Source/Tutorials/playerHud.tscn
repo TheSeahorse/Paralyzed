@@ -12,6 +12,6 @@ position = Vector2( 273, 846 )
 texture = ExtResource( 1 )
 
 [node name="qwer" type="Sprite" parent="."]
-position = Vector2( 280, 800 )
+position = Vector2( 251, 803 )
 scale = Vector2( 0.660816, 0.660816 )
 texture = ExtResource( 2 )

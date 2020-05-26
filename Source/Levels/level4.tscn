@@ -120,7 +120,7 @@ position = Vector2( 7138, 29 )
 position = Vector2( 28, 29 )
 
 [node name="car" parent="." instance=ExtResource( 11 )]
-position = Vector2( -85, -3 )
+position = Vector2( 1267, -18 )
 
 [node name="laserbeam14" parent="." instance=ExtResource( 7 )]
 position = Vector2( 292, 29 )

@@ -2,13 +2,18 @@ extends Actor
 class_name Car
 
 export var COLOR: = "cyan"
+var ENABLED: = false # turns true the first time physics process is called
 var TOGGLE_ACTION: = false #if "action" has been input by the user
 var ON_FLOOR: = true #if the square is on any kind of KinematicBody2D
 
 func _ready() -> void:
 	$car_sprite.play(COLOR)
+	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
+	if !ENABLED:
+		TOGGLE_ACTION = false
+		ENABLED = true
 	if TOGGLE_ACTION:
 		jump()
 	VELOCITY.x =- MAX_SPEED.x
