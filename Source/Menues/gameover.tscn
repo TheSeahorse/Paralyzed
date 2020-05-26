@@ -1,9 +1,28 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Source/Menues/gameover.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=3]
 [ext_resource path="res://Character models/Menues/Game_over_header.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends CanvasLayer
+signal restartLevel
+signal backMenu
+
+
+func show_menu():
+	$VBoxContainer.show()
+
+
+func _on_restartLevel_pressed() -> void:
+	$VBoxContainer.hide()
+	emit_signal(\"restartLevel\")
+
+
+func _on_backMenu_pressed() -> void:
+	$VBoxContainer.hide()
+	emit_signal(\"backMenu\")
+"
 
 [sub_resource type="DynamicFont" id=1]
 size = 96
@@ -18,7 +37,7 @@ outline_color = Color( 0.196078, 0.172549, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="gameover" type="CanvasLayer"]
-script = ExtResource( 1 )
+script = SubResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false

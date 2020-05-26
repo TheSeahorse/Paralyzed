@@ -38,10 +38,10 @@ func play_level(levelName: String):
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
 	player.connect("levelcleared", self, "player_cleared_level", [levelName])
-	player.connect("playerdead", self, "game_over_screen", [levelName])
+	player.connect("playerdead", self, "restart_level", [levelName])
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
-	add_child(player)
 	add_child(level)
+	add_child(player)
 	player.is_color("cyan")
 
 
@@ -81,9 +81,11 @@ func player_cleared_level(nlevel: String):
 	remove_player_and_level()
 
 
-func game_over_screen(_levelName: String):
-	$gameover.show_menu()
+func restart_level(_levelName: String):
+	player.play_death_animation()
+	yield(get_tree().create_timer(1), "timeout")
 	remove_player_and_level()
+	play_level(CURRENT_LEVEL)
 
 
 func show_main_menu():
@@ -103,3 +105,4 @@ func display_popup(tutorial_name: String):
 	var tutorial = load("res://Source/Tutorials/" + tutorial_name + ".tscn").instance()
 	add_child(tutorial)
 	get_tree().paused = true
+

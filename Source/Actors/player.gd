@@ -4,6 +4,7 @@ signal levelcleared
 signal playerdead
 
 var PLAYER_COLOR: = "cyan"
+var DEAD: = false
 var ON_HEADS: = 0 # the amount of enemy heads the player is currently on
 var ON_LAVA: = 0 # the amount of lava tiles the player is currently on
 var ON_BEAM: = false # true if player is currently on a beam
@@ -13,10 +14,13 @@ var LAVA2 # right most lava tile the player is on (only if player is on two tile
 var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 0
 
 func _physics_process(delta: float) -> void:
-	check_if_dead()
-	VELOCITY.x = MAX_SPEED.x
-	VELOCITY = calculate_y(VELOCITY, delta)
-	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
+	if DEAD:
+		VELOCITY = move_and_slide(Vector2(0,0), FLOOR_NORMAL)
+	else:
+		check_if_dead()
+		VELOCITY.x = MAX_SPEED.x
+		VELOCITY = calculate_y(VELOCITY, delta)
+		VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 
 func _on_enemy_head_entered(body: Node) -> void:
@@ -36,6 +40,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		BEAM_COLOR = area.get_color()
 	elif area is Spikes:
 		emit_signal("playerdead")
+		DEAD = true
 	elif area is Goal:
 		emit_signal("levelcleared")
 	elif area.get_parent() is Lava:
@@ -46,6 +51,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 			LAVA2 = area
 	elif area.get_parent() is Car:
 		emit_signal("playerdead")
+		DEAD = true
 
 
 func _on_Deathcollision_area_exited(area: Area2D) -> void:
@@ -59,6 +65,10 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 		elif ON_LAVA == 1:
 			LAVA1 = LAVA2
 			LAVA2 = null
+
+
+func play_death_animation():
+	$player_sprite.play(PLAYER_COLOR + " dead")
 
 
 func check_if_dead():
