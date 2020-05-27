@@ -4,7 +4,7 @@
 [ext_resource path="res://Character models/World/Spikes.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3, 30 )
+extents = Vector2( 4, 30 )
 
 [node name="spikes" type="Area2D"]
 collision_layer = 8
