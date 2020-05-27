@@ -8,6 +8,8 @@ var level # current level node
 var hud # the player hud
 var gameover # game over menu node
 
+var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
+var DEATHS: = [0, 0, 0, 0, 0, 0, 0, 0, 0] # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
 var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8"] # order in which the levels should appear
 var LEVELS_CLEARED: = [] # the amount of unique levels cleared in an array
@@ -26,13 +28,9 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_backMainMenu() -> void:
-	if player or level:
-		remove_player_and_level()
+	remove_player_and_level()
+	add_deaths(CURRENT_LEVEL)
 	show_main_menu()
-
-
-func _on_gameover_restartLevel() -> void:
-	play_level(CURRENT_LEVEL)
 
 
 func play_level(levelName: String):
@@ -68,23 +66,32 @@ func handle_action():
 		player.SPRING_JUMP = 10
 		level.action(player.PLAYER_COLOR)
 
-
+# auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
 	if (Input.is_action_just_pressed("escape") or auto) and !player.DEAD:
 		$pauseMenu.show_menu()
 		get_tree().paused = true
 
 
-func player_cleared_level(nlevel: String):
-	if not LEVELS_CLEARED.has(nlevel):
-		LEVELS_CLEARED.append(nlevel)
-		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(nlevel) + 1]
+func player_cleared_level(level_name: String):
+	add_deaths(level_name)
+	print(DEATHS)
+	if not LEVELS_CLEARED.has(level_name):
+		LEVELS_CLEARED.append(level_name)
+		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(level_name) + 1]
 		mainmenu.levelmenu_show_level(next_level)
 	mainmenu.show_level_menu() 
 	remove_player_and_level()
 
 
+func add_deaths(level_name: String):
+	DEATHS[LEVEL_ORDER.find(level_name)] += CURRENT_DEATHS
+	CURRENT_DEATHS = 0
+	CURRENT_LEVEL = null
+
+
 func restart_level(_levelName: String):
+	CURRENT_DEATHS += 1
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	remove_player_and_level()
