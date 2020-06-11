@@ -12,18 +12,23 @@ func show_menu():
 
 
 func show_level_menu():
+	display_cleared_levels()
 	levelmenu.show_menu()
 
 
-func levelmenu_show_level(level: String):
-	levelmenu.show_level(level)
-
+func display_cleared_levels():
+	var levels_cleared = get_parent().LEVELS_CLEARED
+	var level_order = get_parent().LEVEL_ORDER
+	for level in levels_cleared:
+		var next_level = level_order[level_order.find(level) + 1]
+		levelmenu.show_level(next_level)
 
 func _on_Start_pressed() -> void:
 	if !levelmenu:
 		levelmenu = load("res://Source/Menues/levelMenu.tscn").instance()
 		levelmenu.connect("levelselected", self.get_parent(), "play_level")
 		add_child(levelmenu)
+	display_cleared_levels()
 	levelmenu.show_menu()
 	$menu.hide()
 

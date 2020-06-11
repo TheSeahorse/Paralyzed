@@ -9,12 +9,13 @@ var hud # the player hud
 var gameover # game over menu node
 
 var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
-var DEATHS: = [0, 0, 0, 0, 0, 0, 0, 0, 0] # amount of deaths in each stage
+var DEATHS # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
 var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8"] # order in which the levels should appear
-var LEVELS_CLEARED: = [] # the amount of unique levels cleared in an array
+var LEVELS_CLEARED # the amount of unique levels cleared in an array
 
 func _ready():
+	load_savestate()
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
 	mainmenu.show_menu()
@@ -29,7 +30,7 @@ func _input(_event: InputEvent) -> void:
 
 func _on_backMainMenu() -> void:
 	remove_player_and_level()
-	add_deaths(CURRENT_LEVEL)
+	save_deaths(CURRENT_LEVEL)
 	show_main_menu()
 
 
@@ -74,20 +75,44 @@ func handle_pause(auto: bool):
 
 
 func player_cleared_level(level_name: String):
-	add_deaths(level_name)
-	print(DEATHS)
+	save_deaths(level_name)
 	if not LEVELS_CLEARED.has(level_name):
 		LEVELS_CLEARED.append(level_name)
-		var next_level = LEVEL_ORDER[LEVEL_ORDER.find(level_name) + 1]
-		mainmenu.levelmenu_show_level(next_level)
-	mainmenu.show_level_menu() 
+	var next_level = LEVEL_ORDER[LEVEL_ORDER.find(level_name) + 1]
+	save_game()
+	mainmenu.show_level_menu()
 	remove_player_and_level()
 
 
-func add_deaths(level_name: String):
+func save_deaths(level_name: String):
 	DEATHS[LEVEL_ORDER.find(level_name)] += CURRENT_DEATHS
+	save_game()
 	CURRENT_DEATHS = 0
 	CURRENT_LEVEL = null
+
+
+func save_game():
+	var save_data = {
+		"death_stats" : DEATHS,
+		"levels_cleared" : LEVELS_CLEARED
+	}
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.store_line(to_json(save_data))
+	save_game.close()
+
+
+func load_savestate():
+	var load_game = File.new()
+	if not load_game.file_exists("user://savegame.save"):
+		DEATHS = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+		LEVELS_CLEARED = []
+	else:
+		load_game.open("user://savegame.save", File.READ)
+		var savestate = parse_json(load_game.get_line())
+		load_game.close()
+		DEATHS = savestate.death_stats
+		LEVELS_CLEARED = savestate.levels_cleared
 
 
 func restart_level(_levelName: String):
