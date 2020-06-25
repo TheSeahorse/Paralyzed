@@ -42,7 +42,7 @@ collision_mask = 9
 script = ExtResource( 2 )
 
 [node name="spikes3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32, -2 )
+position = Vector2( 33, -2 )
 rotation = -1.57097
 
 [node name="square_sprite" type="AnimatedSprite" parent="."]
