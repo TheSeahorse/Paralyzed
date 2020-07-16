@@ -50,6 +50,7 @@ func play_level(levelName: String):
 	add_child(player)
 	add_child(hud)
 	player.is_color("cyan")
+	player.display_background(levelName)
 
 
 func toggle_color():

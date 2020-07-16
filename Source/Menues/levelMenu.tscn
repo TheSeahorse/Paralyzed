@@ -102,7 +102,6 @@ custom_fonts/font = SubResource( 1 )
 text = "Tutorial"
 
 [node name="level1" type="Button" parent="levels"]
-visible = false
 margin_top = 210.0
 margin_right = 420.0
 margin_bottom = 284.0
@@ -110,67 +109,63 @@ custom_fonts/font = SubResource( 2 )
 text = "level one"
 
 [node name="level2" type="Button" parent="levels"]
-visible = false
-margin_top = 210.0
+margin_top = 288.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 362.0
 custom_fonts/font = SubResource( 3 )
 text = "Level two"
 
 [node name="level3" type="Button" parent="levels"]
-visible = false
-margin_top = 210.0
+margin_top = 366.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 440.0
 custom_fonts/font = SubResource( 4 )
 text = "Level three"
 
 [node name="level4" type="Button" parent="levels"]
-visible = false
-margin_top = 288.0
+margin_top = 444.0
 margin_right = 420.0
-margin_bottom = 362.0
+margin_bottom = 518.0
 custom_fonts/font = SubResource( 5 )
 text = "Level four"
 
 [node name="level5" type="Button" parent="levels"]
-visible = false
-margin_top = 210.0
+margin_top = 522.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 596.0
 custom_fonts/font = SubResource( 6 )
 text = "level five"
 
 [node name="level6" type="Button" parent="levels"]
 pause_mode = 1
 visible = false
-margin_top = 210.0
+margin_top = 600.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 674.0
 custom_fonts/font = SubResource( 7 )
 text = "level six"
 
 [node name="level7" type="Button" parent="levels"]
 visible = false
-margin_top = 210.0
+margin_top = 600.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 674.0
 custom_fonts/font = SubResource( 8 )
 text = "level seven"
 
 [node name="level8" type="Button" parent="levels"]
 visible = false
-margin_top = 210.0
+margin_top = 600.0
 margin_right = 420.0
-margin_bottom = 284.0
+margin_bottom = 674.0
 custom_fonts/font = SubResource( 9 )
 text = "level eight"
 
 [node name="leveltemplate" type="Button" parent="levels"]
 visible = false
-margin_top = 834.0
+margin_top = 600.0
 margin_right = 420.0
-margin_bottom = 854.0
+margin_bottom = 620.0
 text = "Level template"
 
 [node name="go_back" type="Button" parent="."]

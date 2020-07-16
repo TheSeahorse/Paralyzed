@@ -82,6 +82,7 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 func player_dead():
 	get_node("Hitbox").disabled = true
 	DEAD = true
+	$death.play()
 	emit_signal("playerdead")
 
 
@@ -115,6 +116,9 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 		velocity.y += GRAVITY * delta
 	return velocity
 
+
+func display_background(level: String):
+	$ParallaxBackground/background.play(level)
 
 func is_color(color: String):
 	if DEAD:
