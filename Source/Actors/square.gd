@@ -38,17 +38,17 @@ func jump():
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 	if SPRING_JUMP == 25 or SPRING_JUMP == 26: #stall for two fram so that the player jump works
-		SPRING_JUMP -= 1 
+		SPRING_JUMP -= 1
 	elif SPRING_JUMP == 24:
 		linear_velocity.y = -1.0 * MAX_SPEED.y * 2 #faster rise
 		SPRING_JUMP -= 1
-	elif SPRING_JUMP > 15: 
+	elif SPRING_JUMP > 15:
 		linear_velocity.y += GRAVITY * delta #start decreasing speed
 		SPRING_JUMP -= 1
-	elif SPRING_JUMP > 0: 
+	elif SPRING_JUMP > 0:
 		linear_velocity.y = 0.0 #stop for a short while
 		SPRING_JUMP -= 1
 	else:
 		linear_velocity.y += GRAVITY * 0.3 * delta #slower fall
-	
+
 	return linear_velocity

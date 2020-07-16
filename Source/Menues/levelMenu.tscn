@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=2]
 [ext_resource path="res://Character models/Menues/Levels_header.png" type="Texture" id=3]
 [ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Character models/Menues/Fonts/RetroNewVersion-v6Jy.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -182,10 +183,15 @@ text = "Go Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
 [connection signal="pressed" from="levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial" ]]
 [connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
 [connection signal="pressed" from="levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
 [connection signal="pressed" from="levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
+[connection signal="pressed" from="levels/level5" to="." method="_on_level_pressed" binds= [ "level5" ]]
 [connection signal="pressed" from="levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]

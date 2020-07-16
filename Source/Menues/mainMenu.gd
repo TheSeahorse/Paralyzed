@@ -30,6 +30,7 @@ func _on_Start_pressed() -> void:
 		add_child(levelmenu)
 	display_cleared_levels()
 	levelmenu.show_menu()
+	$click.play()
 	$menu.hide()
 
 

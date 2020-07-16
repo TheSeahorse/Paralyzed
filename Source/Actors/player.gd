@@ -26,14 +26,14 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_enemy_head_entered(body: Node) -> void:
-	if body is Square and body.ON_FLOOR: 
+	if body is Square and body.ON_FLOOR:
 		ON_HEADS += 1
 		if ON_HEADS == 1:
 			SQUARE1 = body
 		else:
 			SQUARE2 = body
-		
-		
+
+
 
 
 func _on_enemy_head_body_exited(body: Node) -> void:
@@ -104,12 +104,12 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 	# Om vi hoppar på ett huvud och square1 eller square2(givet sqaure2 finns) är samma färg som oss, hoppa.
 	if ((ON_HEADS > 0 and SPRING_JUMP == 10) and
 		((SQUARE1.COLOR == PLAYER_COLOR) or ((SQUARE2 and SQUARE2.COLOR == PLAYER_COLOR)))):
-		velocity.y = -1.0 * MAX_SPEED.y * 2 
+		velocity.y = -1.0 * MAX_SPEED.y * 2
 		SPRING_JUMP -= 1
 	elif SPRING_JUMP == 10: #then we were not on a head
 		SPRING_JUMP = 0
 	elif SPRING_JUMP > 0:
-		velocity.y += GRAVITY * delta 
+		velocity.y += GRAVITY * delta
 		SPRING_JUMP -= 1
 	else:
 		velocity.y += GRAVITY * delta
@@ -117,7 +117,11 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 
 
 func is_color(color: String):
-	if DEAD == false:
-		$player_sprite.play(color)
+	if DEAD:
+		return
+	if color == PLAYER_COLOR:
+		return
+	else:
+		$player_sprite.play(PLAYER_COLOR + " to " + color)
+		$change_color.play()
 		PLAYER_COLOR = color
-

@@ -12,6 +12,7 @@ func show_menu():
 
 
 func _on_level_pressed(level: String) -> void:
+	$click.play()
 	emit_signal("levelselected", level)
 	get_parent().get_parent().set_level_start_time()
 	$levels.hide()
@@ -23,6 +24,7 @@ func show_level(level: String):
 
 
 func _on_goBack_pressed() -> void:
+	$click.play()
 	$levels.hide()
 	$go_back.hide()
 	self.get_parent().show_menu()

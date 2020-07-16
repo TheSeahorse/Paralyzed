@@ -16,6 +16,7 @@ var DEATHS # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
 var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8"] # order in which the levels should appear
 var LEVELS_CLEARED # the amount of unique levels cleared in an array
+var CAN_PAUSE = true
 
 func _ready():
 	START_TIME = OS.get_unix_time()
@@ -73,10 +74,13 @@ func handle_action():
 
 # auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
-	if (Input.is_action_just_pressed("escape") or auto) and !player.DEAD:
+	if ((Input.is_action_just_pressed("escape") or auto) and !player.DEAD) and CAN_PAUSE:
 		$pauseMenu.show_menu()
 		get_tree().paused = true
-		
+		CAN_PAUSE = false
+	if Input.is_action_just_released("escape"):
+		CAN_PAUSE = true
+
 
 func player_cleared_level():
 	save_deaths()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Character models/Player/Purple_square.png" type="Texture" id=1]
 [ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=2]
@@ -22,6 +22,55 @@
 [ext_resource path="res://Character models/Player/All3.png" type="Texture" id=20]
 [ext_resource path="res://Character models/Player/Yellow0.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Player/Purple0.png" type="Texture" id=22]
+[ext_resource path="res://Character models/Player/Cyan_red0.png" type="Texture" id=23]
+[ext_resource path="res://Character models/Player/Cyan_red2.png" type="Texture" id=24]
+[ext_resource path="res://Character models/Player/Cyan_red1.png" type="Texture" id=25]
+[ext_resource path="res://Character models/Player/Cyan_red3.png" type="Texture" id=26]
+[ext_resource path="res://Character models/Player/Red_cyan0.png" type="Texture" id=27]
+[ext_resource path="res://Character models/Player/Cyan_yellow0.png" type="Texture" id=28]
+[ext_resource path="res://Character models/Player/Red_yellow3.png" type="Texture" id=29]
+[ext_resource path="res://Character models/Player/Red_cyan1.png" type="Texture" id=30]
+[ext_resource path="res://Character models/Player/Red_yellow0.png" type="Texture" id=31]
+[ext_resource path="res://Character models/Player/Cyan_yellow2.png" type="Texture" id=32]
+[ext_resource path="res://Character models/Player/Red_yellow1.png" type="Texture" id=33]
+[ext_resource path="res://Character models/Player/Red_cyan3.png" type="Texture" id=34]
+[ext_resource path="res://Character models/Player/Cyan_yellow1.png" type="Texture" id=35]
+[ext_resource path="res://Character models/Player/Cyan_purple1.png" type="Texture" id=36]
+[ext_resource path="res://Character models/Player/Red_purple3.png" type="Texture" id=37]
+[ext_resource path="res://Character models/Player/Cyan_purple3.png" type="Texture" id=38]
+[ext_resource path="res://Character models/Player/Cyan_yellow3.png" type="Texture" id=39]
+[ext_resource path="res://Character models/Player/Red_cyan2.png" type="Texture" id=40]
+[ext_resource path="res://Character models/Player/Cyan_purple2.png" type="Texture" id=41]
+[ext_resource path="res://Character models/Player/Cyan_purple0.png" type="Texture" id=42]
+[ext_resource path="res://Character models/Player/Red_yellow2.png" type="Texture" id=43]
+[ext_resource path="res://Character models/Player/Red_purple0.png" type="Texture" id=44]
+[ext_resource path="res://Character models/Player/Red_purple2.png" type="Texture" id=45]
+[ext_resource path="res://Character models/Player/Red_purple1.png" type="Texture" id=46]
+[ext_resource path="res://Character models/Player/Purple_cyan3.png" type="Texture" id=47]
+[ext_resource path="res://Character models/Player/Purple_cyan0.png" type="Texture" id=48]
+[ext_resource path="res://Character models/Player/Purple_cyan2.png" type="Texture" id=49]
+[ext_resource path="res://Character models/Player/Purple_cyan1.png" type="Texture" id=50]
+[ext_resource path="res://Character models/Player/Purple_red1.png" type="Texture" id=51]
+[ext_resource path="res://Character models/Player/Purple_red2.png" type="Texture" id=52]
+[ext_resource path="res://Character models/Player/Purple_red3.png" type="Texture" id=53]
+[ext_resource path="res://Character models/Player/Purple_red0.png" type="Texture" id=54]
+[ext_resource path="res://Character models/Player/Purple_yellow0.png" type="Texture" id=55]
+[ext_resource path="res://Character models/Player/Purple_yellow1.png" type="Texture" id=56]
+[ext_resource path="res://Character models/Player/Purple_yellow3.png" type="Texture" id=57]
+[ext_resource path="res://Character models/Player/Purple_yellow2.png" type="Texture" id=58]
+[ext_resource path="res://Character models/Player/Yellow_cyan3.png" type="Texture" id=59]
+[ext_resource path="res://Character models/Player/Yellow_cyan0.png" type="Texture" id=60]
+[ext_resource path="res://Character models/Player/Yellow_cyan2.png" type="Texture" id=61]
+[ext_resource path="res://Character models/Player/Yellow_cyan1.png" type="Texture" id=62]
+[ext_resource path="res://Character models/Player/Yellow_red1.png" type="Texture" id=63]
+[ext_resource path="res://Character models/Player/Yellow_red2.png" type="Texture" id=64]
+[ext_resource path="res://Character models/Player/Yellow_red3.png" type="Texture" id=65]
+[ext_resource path="res://Character models/Player/Yellow_red0.png" type="Texture" id=66]
+[ext_resource path="res://Character models/Player/Yellow_purple3.png" type="Texture" id=67]
+[ext_resource path="res://Character models/Player/Yellow_purple0.png" type="Texture" id=68]
+[ext_resource path="res://Character models/Player/Yellow_purple1.png" type="Texture" id=69]
+[ext_resource path="res://Character models/Player/Yellow_purple2.png" type="Texture" id=70]
+[ext_resource path="res://Sound/Player/change_color.wav" type="AudioStream" id=71]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,6 +94,16 @@ animations = [ {
 "name": "yellow",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "red to purple",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "cyan to purple",
+"speed": 30.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "yellow dead",
@@ -64,6 +123,56 @@ animations = [ {
 "loop": false,
 "name": "cyan dead",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "cyan to yellow",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "purple to cyan",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "purple to yellow",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "yellow to purple",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "red to cyan",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "cyan to red",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "purple to red",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "yellow to red",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "yellow to cyan",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "red to yellow",
+"speed": 30.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -83,6 +192,7 @@ script = ExtResource( 3 )
 position = Vector2( 84, -104 )
 frames = SubResource( 1 )
 animation = "cyan"
+playing = true
 
 [node name="Deathcollision" type="Area2D" parent="."]
 position = Vector2( 84, -72 )
@@ -133,6 +243,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpcollision"]
 modulate = Color( 0.141176, 0.152941, 0.992157, 1 )
 shape = SubResource( 4 )
+
+[node name="change_color" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 71 )
+volume_db = -25.0
 [connection signal="area_entered" from="Deathcollision" to="." method="_on_Deathcollision_area_entered"]
 [connection signal="area_exited" from="Deathcollision" to="." method="_on_Deathcollision_area_exited"]
 [connection signal="body_entered" from="Jumpcollision" to="." method="_on_enemy_head_entered"]
