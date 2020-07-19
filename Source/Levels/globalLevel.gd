@@ -4,7 +4,7 @@ class_name GlobalLevel
 func action(color: String):
 	for child in get_children():
 		if child is Square and color == child.COLOR:
-			child.TOGGLE_ACTION = true
+			child.action()
 		if child is Car and color == child.COLOR:
 			child.TOGGLE_ACTION = true
 

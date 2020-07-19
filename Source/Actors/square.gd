@@ -2,7 +2,9 @@ extends Actor
 class_name Square
 
 export var COLOR: = "cyan"
+var PLAYER_OVER: = false #true if the player is over
 var ENABLED: = false #turns true the first time physics process is run
+var GRACE_FRAMES: = 0 #how many frames the player can miss the jump on a square (if its in the air) but the square still jumps
 var TOGGLE_ACTION: = false #if "action" has been input by the user
 var ON_FLOOR: = false #if the square is on any kind of KinematicBody2D
 var SPRING_JUMP: = 0 #variable to control the flingy jump of the square, if greater than 0 we're calculating the jump
@@ -12,11 +14,11 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
-	if !ENABLED:
+	if !ENABLED: #tror det här förhindrar tidigare actions att påverka cuben, påverkas bara i bild
 		TOGGLE_ACTION = false
 		ENABLED = true
 	if TOGGLE_ACTION:
-		jump()
+		calculate_jump()
 	VELOCITY = calculate_move_velocity(VELOCITY, delta)
 	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
@@ -29,11 +31,31 @@ func _on_tileMap_body_exited(_body: Node) -> void: #Area2D, not tilemap
 	ON_FLOOR = false #this gets changed faster in the jump functions
 
 
-func jump():
-	TOGGLE_ACTION = false
-	if ON_FLOOR:
-		ON_FLOOR = false
-		SPRING_JUMP = 26
+func action():
+	GRACE_FRAMES = 7
+	TOGGLE_ACTION = true
+
+
+func calculate_jump():
+	if GRACE_FRAMES > 0:
+		if ON_FLOOR:
+			ON_FLOOR = false
+			if PLAYER_OVER:
+				SPRING_JUMP = 26
+			else:
+				SPRING_JUMP = 24
+			GRACE_FRAMES = 0
+			TOGGLE_ACTION = false
+		else:
+			GRACE_FRAMES -= 1
+	elif GRACE_FRAMES == 0:
+		TOGGLE_ACTION = false
+		if ON_FLOOR:
+			ON_FLOOR = false
+			if PLAYER_OVER:
+				SPRING_JUMP = 26
+			else:
+				SPRING_JUMP = 24
 
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
@@ -52,3 +74,11 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 		linear_velocity.y += GRAVITY * 0.3 * delta #slower fall
 
 	return linear_velocity
+
+
+func _on_player_detector_area_entered(area: Area2D) -> void:
+	PLAYER_OVER = true
+
+
+func _on_player_detector_area_exited(area: Area2D) -> void:
+	PLAYER_OVER = false

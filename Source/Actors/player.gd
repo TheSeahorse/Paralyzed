@@ -34,8 +34,6 @@ func _on_enemy_head_entered(body: Node) -> void:
 			SQUARE2 = body
 
 
-
-
 func _on_enemy_head_body_exited(body: Node) -> void:
 	if body is Square:
 		ON_HEADS -= 1

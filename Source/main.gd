@@ -14,7 +14,7 @@ var TIME_PLAYED # the total time the game has been played in seconds (since last
 var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
 var DEATHS # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
-var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3"] # order in which the levels should appear, used in mainMenu
+var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED # the amount of unique levels cleared in an array
 var CAN_PAUSE = true
 

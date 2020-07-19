@@ -44,7 +44,7 @@ func _on_Start_pressed() -> void:
 		levelmenu.connect("levelselected", self.get_parent(), "play_level")
 		add_child(levelmenu)
 	display_cleared_levels()
-	#levelmenu.show_menu()
+	levelmenu.show_menu()
 	$click.play()
 	$menu.hide()
 

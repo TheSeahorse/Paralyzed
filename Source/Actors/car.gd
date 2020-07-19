@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
-	linear_velocity.y += GRAVITY * delta 
+	linear_velocity.y += GRAVITY * delta
 	return linear_velocity
 
 
