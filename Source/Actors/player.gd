@@ -79,6 +79,13 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 			LAVA2 = null
 
 
+func play_music(level: String):
+	if level == "tutorial":
+		return
+	else:
+		$level_music.play(0.0)
+
+
 func player_dead():
 	get_node("Hitbox").disabled = true
 	DEAD = true

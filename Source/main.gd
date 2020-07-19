@@ -14,7 +14,7 @@ var TIME_PLAYED # the total time the game has been played in seconds (since last
 var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
 var DEATHS # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
-var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8"] # order in which the levels should appear
+var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED # the amount of unique levels cleared in an array
 var CAN_PAUSE = true
 
@@ -24,6 +24,7 @@ func _ready():
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
 	mainmenu.show_menu()
+	mainmenu.start_music()
 
 
 func _input(_event: InputEvent) -> void:
@@ -51,6 +52,7 @@ func play_level(levelName: String):
 	add_child(hud)
 	player.is_color("cyan")
 	player.display_background(levelName)
+	player.play_music(levelName)
 
 
 func toggle_color():
@@ -89,6 +91,7 @@ func player_cleared_level():
 		LEVELS_CLEARED.append(CURRENT_LEVEL)
 	save_game()
 	mainmenu.show_level_menu()
+	mainmenu.start_music()
 	remove_player_and_level()
 
 
@@ -137,6 +140,7 @@ func restart_level(_levelName: String):
 
 func show_main_menu():
 	mainmenu.show_menu()
+	mainmenu.start_music()
 
 
 func remove_player_and_level():

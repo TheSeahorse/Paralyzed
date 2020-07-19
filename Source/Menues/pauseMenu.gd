@@ -18,11 +18,13 @@ func _on_continue_pressed() -> void:
 	$click.play()
 	continue_game()
 
+
 func continue_game():
 	$unpause.play()
 	get_tree().paused = false
 	$VBoxContainer.hide()
 	can_press_escape = false
+
 
 func _on_mainMenu_pressed() -> void:
 	$click.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Character models/Menues/Fonts/RetroNewVersion-v6Jy.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=6]
+[ext_resource path="res://Character models/Menues/transparent 128 high.png" type="Texture" id=7]
+[ext_resource path="res://Character models/Menues/checkmark.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -76,67 +78,85 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="levels" type="VBoxContainer" parent="."]
+[node name="all" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 590.0
 margin_top = 24.0
-margin_right = 1010.0
-margin_bottom = 854.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="background" type="Sprite" parent="levels"]
-position = Vector2( -1115, -498 )
+[node name="levels" type="VBoxContainer" parent="all"]
+margin_right = 420.0
+margin_bottom = 876.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="all/levels"]
+position = Vector2( -1124, -500 )
 texture = ExtResource( 2 )
 
-[node name="levels_header" type="TextureRect" parent="levels"]
+[node name="levels_header" type="TextureRect" parent="all/levels"]
 margin_right = 420.0
 margin_bottom = 128.0
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="tutorial" type="Button" parent="levels"]
+[node name="tutorial" type="Button" parent="all/levels"]
 margin_top = 132.0
 margin_right = 420.0
 margin_bottom = 206.0
 custom_fonts/font = SubResource( 1 )
 text = "Tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="level1" type="Button" parent="levels"]
+[node name="level1" type="Button" parent="all/levels"]
+visible = false
 margin_top = 210.0
 margin_right = 420.0
 margin_bottom = 284.0
 custom_fonts/font = SubResource( 2 )
 text = "level one"
 
-[node name="level2" type="Button" parent="levels"]
+[node name="level2" type="Button" parent="all/levels"]
+visible = false
 margin_top = 288.0
 margin_right = 420.0
 margin_bottom = 362.0
 custom_fonts/font = SubResource( 3 )
 text = "Level two"
 
-[node name="level3" type="Button" parent="levels"]
+[node name="level3" type="Button" parent="all/levels"]
+visible = false
 margin_top = 366.0
 margin_right = 420.0
 margin_bottom = 440.0
 custom_fonts/font = SubResource( 4 )
 text = "Level three"
 
-[node name="level4" type="Button" parent="levels"]
+[node name="level4" type="Button" parent="all/levels"]
+visible = false
 margin_top = 444.0
 margin_right = 420.0
 margin_bottom = 518.0
 custom_fonts/font = SubResource( 5 )
 text = "Level four"
 
-[node name="level5" type="Button" parent="levels"]
+[node name="level5" type="Button" parent="all/levels"]
+visible = false
 margin_top = 522.0
 margin_right = 420.0
 margin_bottom = 596.0
 custom_fonts/font = SubResource( 6 )
 text = "level five"
 
-[node name="level6" type="Button" parent="levels"]
+[node name="level6" type="Button" parent="all/levels"]
 pause_mode = 1
 visible = false
 margin_top = 600.0
@@ -145,7 +165,7 @@ margin_bottom = 674.0
 custom_fonts/font = SubResource( 7 )
 text = "level six"
 
-[node name="level7" type="Button" parent="levels"]
+[node name="level7" type="Button" parent="all/levels"]
 visible = false
 margin_top = 600.0
 margin_right = 420.0
@@ -153,7 +173,7 @@ margin_bottom = 674.0
 custom_fonts/font = SubResource( 8 )
 text = "level seven"
 
-[node name="level8" type="Button" parent="levels"]
+[node name="level8" type="Button" parent="all/levels"]
 visible = false
 margin_top = 600.0
 margin_right = 420.0
@@ -161,12 +181,57 @@ margin_bottom = 674.0
 custom_fonts/font = SubResource( 9 )
 text = "level eight"
 
-[node name="leveltemplate" type="Button" parent="levels"]
+[node name="leveltemplate" type="Button" parent="all/levels"]
 visible = false
 margin_top = 600.0
 margin_right = 420.0
 margin_bottom = 620.0
 text = "Level template"
+
+[node name="checkboxes" type="VBoxContainer" parent="all"]
+margin_left = 424.0
+margin_right = 498.0
+margin_bottom = 876.0
+
+[node name="ColorRect" type="TextureRect" parent="all/checkboxes"]
+margin_right = 74.0
+margin_bottom = 128.0
+texture = ExtResource( 7 )
+
+[node name="tutorial" type="TextureRect" parent="all/checkboxes"]
+visible = false
+margin_top = 132.0
+margin_right = 74.0
+margin_bottom = 206.0
+texture = ExtResource( 8 )
+
+[node name="level1" type="TextureRect" parent="all/checkboxes"]
+visible = false
+margin_top = 210.0
+margin_right = 74.0
+margin_bottom = 284.0
+texture = ExtResource( 8 )
+
+[node name="level2" type="TextureRect" parent="all/checkboxes"]
+visible = false
+margin_top = 288.0
+margin_right = 74.0
+margin_bottom = 362.0
+texture = ExtResource( 8 )
+
+[node name="level3" type="TextureRect" parent="all/checkboxes"]
+visible = false
+margin_top = 366.0
+margin_right = 74.0
+margin_bottom = 440.0
+texture = ExtResource( 8 )
+
+[node name="level4" type="TextureRect" parent="all/checkboxes"]
+visible = false
+margin_top = 444.0
+margin_right = 74.0
+margin_bottom = 518.0
+texture = ExtResource( 8 )
 
 [node name="go_back" type="Button" parent="."]
 margin_left = 74.0
@@ -182,11 +247,11 @@ __meta__ = {
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -10.0
-[connection signal="pressed" from="levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial" ]]
-[connection signal="pressed" from="levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
-[connection signal="pressed" from="levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
-[connection signal="pressed" from="levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
-[connection signal="pressed" from="levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
-[connection signal="pressed" from="levels/level5" to="." method="_on_level_pressed" binds= [ "level5" ]]
-[connection signal="pressed" from="levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
+[connection signal="pressed" from="all/levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial" ]]
+[connection signal="pressed" from="all/levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
+[connection signal="pressed" from="all/levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
+[connection signal="pressed" from="all/levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
+[connection signal="pressed" from="all/levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
+[connection signal="pressed" from="all/levels/level5" to="." method="_on_level_pressed" binds= [ "level5" ]]
+[connection signal="pressed" from="all/levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
