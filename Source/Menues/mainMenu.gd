@@ -15,10 +15,12 @@ func stop_music():
 
 func hide_menu():
 	$menu.hide()
+	$logo.hide()
 
 
 func show_menu():
 	$menu.show()
+	$logo.show()
 
 
 func show_level_menu():
@@ -46,8 +48,9 @@ func _on_Start_pressed() -> void:
 	display_cleared_levels()
 	levelmenu.show_menu()
 	$click.play()
-	$menu.hide()
+	hide_menu()
 
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
+

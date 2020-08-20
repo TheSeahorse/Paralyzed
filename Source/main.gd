@@ -35,6 +35,7 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_backMainMenu() -> void:
+	CAN_PAUSE = true
 	remove_player_and_level()
 	save_deaths()
 	show_main_menu()

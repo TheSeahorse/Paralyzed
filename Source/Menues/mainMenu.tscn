@@ -1,29 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Character models/World/gray gradient.svg" type="Texture" id=3]
-[ext_resource path="res://Character models/Menues/Logo_template.png" type="Texture" id=4]
+[ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Character models/World/Backgrounds/menu_background.png" type="Texture" id=3]
+[ext_resource path="res://Character models/Menues/Fonts/Tourmaline-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/World/8bit_style.wav" type="AudioStream" id=6]
+[ext_resource path="res://Character models/Menues/main_button_normal.png" type="Texture" id=7]
+[ext_resource path="res://Character models/Menues/main_button_pressed.png" type="Texture" id=8]
+[ext_resource path="res://Character models/Menues/main_button_hover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-size = 96
-outline_size = 2
-outline_color = Color( 0, 0.211765, 0.0431373, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 96
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 96
-outline_size = 2
-outline_color = Color( 0.231373, 0, 0, 1 )
-font_data = ExtResource( 2 )
+size = 160
+outline_size = 5
+outline_color = Color( 0.792157, 0.215686, 0.152941, 1 )
+font_data = ExtResource( 4 )
 
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
@@ -38,48 +29,69 @@ stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="menu" type="VBoxContainer" parent="."]
-margin_left = 480.0
-margin_top = 200.0
-margin_right = 1120.0
+margin_left = 560.0
+margin_top = 350.0
 margin_bottom = 800.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="background" type="Sprite" parent="menu"]
-position = Vector2( 640, 356 )
-rotation = 0.979452
 texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -560, -350 )
 
-[node name="logo" type="TextureRect" parent="menu"]
-margin_right = 640.0
+[node name="Start" type="TextureButton" parent="menu"]
+margin_right = 480.0
 margin_bottom = 128.0
-texture = ExtResource( 4 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 
-[node name="Start" type="Button" parent="menu"]
+[node name="Label" type="Label" parent="menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="menu"]
 margin_top = 132.0
-margin_right = 640.0
-margin_bottom = 239.0
-custom_fonts/font = SubResource( 1 )
-text = "Start"
+margin_right = 480.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 
-[node name="Settings" type="Button" parent="menu"]
-visible = false
-margin_top = 243.0
-margin_right = 640.0
-margin_bottom = 350.0
-custom_fonts/font = SubResource( 2 )
-text = "Settings"
-
-[node name="Quit" type="Button" parent="menu"]
-margin_top = 243.0
-margin_right = 640.0
-margin_bottom = 350.0
-custom_fonts/font = SubResource( 3 )
-text = "Quit"
+[node name="Label" type="Label" parent="menu/Quit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -30.0
+
+[node name="logo" type="Label" parent="."]
+margin_left = 320.0
+margin_top = 125.0
+margin_right = 1301.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 1 )
+text = "PARALYZED"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Quit" to="." method="_on_Quit_pressed"]
