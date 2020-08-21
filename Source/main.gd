@@ -17,6 +17,7 @@ var CURRENT_LEVEL # name of most recent level as a string
 var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED # the amount of unique levels cleared in an array
 var CAN_PAUSE = true
+var SETTINGS: = [true, true, true] #settings in a "map" HUD, Sound, Music
 
 func _ready():
 	START_TIME = OS.get_unix_time()
@@ -47,7 +48,8 @@ func play_level(levelName: String):
 	player.connect("levelcleared", self, "display_popup", ["levelCleared"])
 	player.connect("playerdead", self, "restart_level", [levelName])
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
-	hud = load("res://Source/Tutorials/playerHud.tscn").instance()
+	if SETTINGS[0]:
+		hud = load("res://Source/Tutorials/playerHud.tscn").instance()
 	add_child(level)
 	add_child(player)
 	add_child(hud)

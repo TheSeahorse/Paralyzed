@@ -104,19 +104,24 @@ animations = [ {
 "name": "cyan to purple",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 60 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 6 ) ],
 "loop": false,
-"name": "yellow dead",
-"speed": 20.0
+"name": "yellow to cyan",
+"speed": 30.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "cyan dead",
-"speed": 20.0
+"name": "red to yellow",
+"speed": 30.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 5 ) ],
 "loop": false,
-"name": "cyan to yellow",
+"name": "cyan to red",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "purple to red",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 1 ) ],
@@ -149,47 +154,37 @@ animations = [ {
 "name": "yellow to red",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 60 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 9 ) ],
 "loop": false,
-"name": "yellow to cyan",
-"speed": 30.0
+"name": "yellow dead",
+"speed": 20.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 9 ) ],
 "loop": false,
-"name": "red to yellow",
-"speed": 30.0
+"name": "cyan dead",
+"speed": 20.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "cyan to red",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "purple to red",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 6 ) ],
-"loop": false,
-"name": "purple to cyan",
+"name": "cyan to yellow",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "purple to yellow",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "purple to cyan",
+"speed": 30.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 75 ) ],
+"frames": [ ExtResource( 73 ) ],
 "loop": false,
-"name": "level2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 74 ) ],
-"loop": false,
-"name": "level1",
+"name": "tutorial",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -197,9 +192,14 @@ animations = [ {
 "name": "level3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 73 ) ],
+"frames": [ ExtResource( 74 ) ],
 "loop": false,
-"name": "tutorial",
+"name": "level1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ) ],
+"loop": false,
+"name": "level2",
 "speed": 5.0
 } ]
 

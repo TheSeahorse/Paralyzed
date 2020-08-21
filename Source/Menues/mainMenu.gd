@@ -14,13 +14,24 @@ func stop_music():
 
 
 func hide_menu():
+	$background.hide()
 	$menu.hide()
 	$logo.hide()
 
 
 func show_menu():
+	$background.show()
 	$menu.show()
 	$logo.show()
+
+
+func show_settings():
+	$background.show()
+	$settings.show()
+
+
+func hide_settings():
+	$settings.hide()
 
 
 func show_level_menu():
@@ -54,3 +65,17 @@ func _on_Start_pressed() -> void:
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 
+
+
+func _on_Settings_pressed() -> void:
+	hide_menu()
+	show_settings()
+
+
+func _on_Back_pressed() -> void:
+	hide_settings()
+	show_menu()
+
+
+func setting_toggled(setting_nr: int):
+	get_parent().SETTINGS[setting_nr] = !get_parent().SETTINGS[setting_nr]
