@@ -10,24 +10,28 @@ func _input(event: InputEvent) -> void:
 		continue_game()
 
 func show_menu():
-	$pause.play()
+	if get_parent().SETTINGS[2]:
+		$pause.play()
 	$VBoxContainer.show()
 
 
 func _on_continue_pressed() -> void:
-	$click.play()
+	if get_parent().SETTINGS[2]:
+		$click.play()
 	continue_game()
 
 
 func continue_game():
-	$unpause.play()
+	if get_parent().SETTINGS[2]:
+		$unpause.play()
 	get_tree().paused = false
 	$VBoxContainer.hide()
 	can_press_escape = false
 
 
 func _on_mainMenu_pressed() -> void:
-	$click.play()
+	if get_parent().SETTINGS[2]:
+		$click.play()
 	$VBoxContainer.hide()
 	emit_signal("backMenu")
 	get_tree().paused = false

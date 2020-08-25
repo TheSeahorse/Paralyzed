@@ -86,13 +86,15 @@ func play_music(level: String):
 	if level == "tutorial":
 		return
 	else:
-		$level_music.play(0.0)
+		if get_parent().SETTINGS[1]:
+			$level_music.play(0.0)
 
 
 func player_dead():
 	get_node("Hitbox").disabled = true
 	DEAD = true
-	$death.play()
+	if get_parent().SETTINGS[2]:
+		$death.play()
 	emit_signal("playerdead")
 
 
@@ -137,5 +139,6 @@ func is_color(color: String):
 		return
 	else:
 		$player_sprite.play(PLAYER_COLOR + " to " + color)
-		$change_color.play()
+		if get_parent().SETTINGS[2]:
+			$change_color.play()
 		PLAYER_COLOR = color

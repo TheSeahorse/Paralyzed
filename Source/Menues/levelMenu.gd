@@ -12,7 +12,8 @@ func show_menu():
 
 
 func _on_level_pressed(level: String) -> void:
-	$click.play()
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
 	emit_signal("levelselected", level)
 	get_parent().get_parent().set_level_start_time()
 	get_parent().stop_music()
@@ -28,6 +29,7 @@ func show_checkbox(level: String):
 
 
 func _on_goBack_pressed() -> void:
-	$click.play()
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
 	hide_menu()
 	self.get_parent().show_menu()

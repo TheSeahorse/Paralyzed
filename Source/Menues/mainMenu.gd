@@ -3,6 +3,62 @@ extends Control
 
 const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
 var levelmenu
+var can_change_key = false
+var keybind_string #keybind being changed
+enum keybinds {cyan, red, purple, yellow, action}
+
+
+func _ready():
+	set_keys()
+
+
+func _input(event):
+	if event is InputEventKey:
+		if can_change_key:
+			$press_key.hide()
+			if event.as_text() != "Escape":
+				change_key(event)
+				can_change_key = false
+			else:
+				can_change_key = false
+
+
+func change_key(new_key):
+	#Delete key of pressed button
+	if !InputMap.get_action_list(keybind_string).empty():
+		InputMap.action_erase_event(keybind_string, InputMap.get_action_list(keybind_string)[0])
+
+	#Check if new key was assigned somewhere
+	for i in keybinds:
+		if InputMap.action_has_event(i, new_key):
+			InputMap.action_erase_event(i, new_key)
+
+	#Add new Key
+	InputMap.action_add_event(keybind_string, new_key)
+	set_keys()
+
+
+func set_keys():
+	for j in keybinds:
+		get_node("keybinds/" + str(j) + "/TextureButton").set_pressed(false)
+		if !InputMap.get_action_list(j).empty():
+			get_node("keybinds/" + str(j) + "/TextureButton/Label").set_text(InputMap.get_action_list(j)[0].as_text())
+		else:
+			get_node("keybinds/" + str(j) + "/TextureButton/Label").set_text("NaN!")
+
+
+func mark_button(string: String):
+	can_change_key = true
+	keybind_string = string
+
+	for j in keybinds:
+		if j != string:
+			get_node("keybinds/" + str(j) + "/TextureButton").set_pressed(false)
+
+
+func click_fx():
+	if get_parent().SETTINGS[2]:
+		$click.play()
 
 
 func start_music():
@@ -26,12 +82,21 @@ func show_menu():
 
 
 func show_settings():
-	$background.show()
 	$settings.show()
 
 
 func hide_settings():
 	$settings.hide()
+
+
+func show_keybinds():
+	$keybinds.show()
+
+
+func hide_keybinds():
+	$press_key.hide()
+	can_change_key = false
+	$keybinds.hide()
 
 
 func show_level_menu():
@@ -58,7 +123,7 @@ func _on_Start_pressed() -> void:
 		add_child(levelmenu)
 	display_cleared_levels()
 	levelmenu.show_menu()
-	$click.play()
+	click_fx()
 	hide_menu()
 
 
@@ -68,14 +133,41 @@ func _on_Quit_pressed() -> void:
 
 
 func _on_Settings_pressed() -> void:
+	click_fx()
 	hide_menu()
+	$background.show()
 	show_settings()
 
 
 func _on_Back_pressed() -> void:
+	click_fx()
 	hide_settings()
 	show_menu()
 
 
-func setting_toggled(setting_nr: int):
-	get_parent().SETTINGS[setting_nr] = !get_parent().SETTINGS[setting_nr]
+func _on_Keybindings_pressed() -> void:
+	click_fx()
+	hide_settings()
+	show_keybinds()
+
+
+func _on_Back_keybinds_pressed() -> void:
+	click_fx()
+	hide_keybinds()
+	show_settings()
+
+
+func _on_change_keybind_pressed(keybind: String) -> void:
+	click_fx()
+	mark_button(keybind)
+	$press_key.show()
+
+
+func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
+	click_fx()
+	get_parent().SETTINGS[setting_nr] = button_pressed
+	if setting_nr == 1:
+		if button_pressed:
+			start_music()
+		else:
+			stop_music()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -9,11 +9,31 @@
 [ext_resource path="res://Character models/Menues/main_button_normal.png" type="Texture" id=7]
 [ext_resource path="res://Character models/Menues/main_button_pressed.png" type="Texture" id=8]
 [ext_resource path="res://Character models/Menues/main_button_hover.png" type="Texture" id=9]
+[ext_resource path="res://Character models/Menues/Fonts/keybinds.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Character models/Menues/keybind_button_hover.png" type="Texture" id=11]
+[ext_resource path="res://Character models/Menues/keybind_button_normal.png" type="Texture" id=12]
+[ext_resource path="res://Character models/Menues/keybind_button_pressed.png" type="Texture" id=13]
+[ext_resource path="res://Character models/Menues/Fonts/settings.tres" type="DynamicFont" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 160
 outline_size = 5
 outline_color = Color( 0.792157, 0.215686, 0.152941, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="mainMenu" type="Control"]
@@ -29,10 +49,9 @@ stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 560, 350 )
+position = Vector2( -1, 0 )
 texture = ExtResource( 3 )
 centered = false
-offset = Vector2( -560, -350 )
 
 [node name="menu" type="VBoxContainer" parent="."]
 margin_left = 560.0
@@ -103,6 +122,7 @@ stream = ExtResource( 6 )
 volume_db = -30.0
 
 [node name="logo" type="Label" parent="."]
+visible = false
 margin_left = 320.0
 margin_top = 125.0
 margin_right = 1301.0
@@ -117,70 +137,94 @@ __meta__ = {
 [node name="settings" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 560.0
-margin_top = 150.0
+margin_top = 125.0
+margin_bottom = 709.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="settings"]
-visible = false
+[node name="hud" type="HBoxContainer" parent="settings"]
 margin_right = 480.0
-margin_bottom = 24.0
-text = "HUD"
+margin_bottom = 104.0
+alignment = 1
+
+[node name="Label" type="Label" parent="settings/hud"]
+margin_left = 98.0
+margin_right = 301.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 14 )
+text = "hud"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Hud" type="TextureButton" parent="settings"]
+[node name="CheckBox" type="CheckButton" parent="settings/hud"]
+margin_left = 305.0
+margin_right = 381.0
+margin_bottom = 104.0
+pressed = true
+
+[node name="music" type="HBoxContainer" parent="settings"]
+margin_top = 108.0
 margin_right = 480.0
-margin_bottom = 128.0
+margin_bottom = 212.0
+alignment = 1
+
+[node name="Label" type="Label" parent="settings/music"]
+margin_left = 51.0
+margin_right = 348.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 14 )
+text = "music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckButton" parent="settings/music"]
+margin_left = 352.0
+margin_right = 428.0
+margin_bottom = 104.0
+pressed = true
+
+[node name="soundfx" type="HBoxContainer" parent="settings"]
+margin_top = 216.0
+margin_right = 480.0
+margin_bottom = 320.0
+alignment = 1
+
+[node name="Label" type="Label" parent="settings/soundfx"]
+margin_left = 132.0
+margin_right = 268.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 14 )
+text = "fx"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckButton" parent="settings/soundfx"]
+margin_left = 272.0
+margin_right = 348.0
+margin_bottom = 104.0
+pressed = true
+
+[node name="Keybindings" type="TextureButton" parent="settings"]
+margin_top = 324.0
+margin_right = 480.0
+margin_bottom = 452.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="settings/Hud"]
+[node name="Label" type="Label" parent="settings/Keybindings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "HUD"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Music" type="TextureButton" parent="settings"]
-margin_top = 132.0
-margin_right = 480.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="settings/Music"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "Music"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sound" type="TextureButton" parent="settings"]
-margin_top = 264.0
-margin_right = 480.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="settings/Sound"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "Sound"
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 2 )
+text = "keybinds"
 align = 1
 valign = 1
 __meta__ = {
@@ -188,9 +232,9 @@ __meta__ = {
 }
 
 [node name="Back" type="TextureButton" parent="settings"]
-margin_top = 396.0
+margin_top = 456.0
 margin_right = 480.0
-margin_bottom = 524.0
+margin_bottom = 584.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
@@ -205,10 +249,241 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="keybinds" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 560.0
+margin_top = 125.0
+margin_right = 1040.0
+margin_bottom = 728.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cyan" type="HBoxContainer" parent="keybinds"]
+margin_right = 480.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="Label" type="Label" parent="keybinds/cyan"]
+margin_left = 43.0
+margin_top = 14.0
+margin_right = 232.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.517647, 1, 0.964706, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "cyan"
+
+[node name="TextureButton" type="TextureButton" parent="keybinds/cyan"]
+margin_left = 236.0
+margin_right = 436.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/cyan/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "q"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="HBoxContainer" parent="keybinds"]
+margin_top = 100.0
+margin_right = 480.0
+margin_bottom = 196.0
+alignment = 1
+
+[node name="Label" type="Label" parent="keybinds/red"]
+margin_left = 78.0
+margin_top = 14.0
+margin_right = 198.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 0.364706, 0.364706, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "red"
+
+[node name="TextureButton" type="TextureButton" parent="keybinds/red"]
+margin_left = 202.0
+margin_right = 402.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/red/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "W"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="purple" type="HBoxContainer" parent="keybinds"]
+margin_top = 200.0
+margin_right = 480.0
+margin_bottom = 296.0
+alignment = 1
+
+[node name="Label" type="Label" parent="keybinds/purple"]
+margin_left = 23.0
+margin_top = 14.0
+margin_right = 252.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.803922, 0.262745, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "purple"
+
+[node name="TextureButton" type="TextureButton" parent="keybinds/purple"]
+margin_left = 256.0
+margin_right = 456.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/purple/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "E"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yellow" type="HBoxContainer" parent="keybinds"]
+margin_top = 300.0
+margin_right = 480.0
+margin_bottom = 396.0
+alignment = 1
+
+[node name="Label" type="Label" parent="keybinds/yellow"]
+margin_left = 10.0
+margin_top = 14.0
+margin_right = 266.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 0.921569, 0.458824, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "yellow"
+
+[node name="TextureButton" type="TextureButton" parent="keybinds/yellow"]
+margin_left = 270.0
+margin_right = 470.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/yellow/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "r"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="action" type="HBoxContainer" parent="keybinds"]
+margin_top = 400.0
+margin_right = 480.0
+margin_bottom = 496.0
+alignment = 1
+
+[node name="Label" type="Label" parent="keybinds/action"]
+margin_left = 15.0
+margin_top = 14.0
+margin_right = 260.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "action"
+
+[node name="TextureButton" type="TextureButton" parent="keybinds/action"]
+margin_left = 264.0
+margin_right = 464.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/action/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "space"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back_keybinds" type="TextureButton" parent="keybinds"]
+margin_top = 500.0
+margin_right = 480.0
+margin_bottom = 628.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="keybinds/Back_keybinds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="press_key" type="Label" parent="."]
+visible = false
+margin_left = 240.0
+margin_top = 375.0
+custom_fonts/font = SubResource( 4 )
+text = "Press any key..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="menu/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="settings/Hud" to="." method="setting_toggled" binds= [ 0 ]]
-[connection signal="pressed" from="settings/Music" to="." method="setting_toggled" binds= [ 1 ]]
-[connection signal="pressed" from="settings/Sound" to="." method="setting_toggled" binds= [ 2 ]]
+[connection signal="toggled" from="settings/hud/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 0 ]]
+[connection signal="toggled" from="settings/music/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]
+[connection signal="toggled" from="settings/soundfx/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 2 ]]
+[connection signal="pressed" from="settings/Keybindings" to="." method="_on_Keybindings_pressed"]
 [connection signal="pressed" from="settings/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="keybinds/cyan/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
+[connection signal="pressed" from="keybinds/red/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
+[connection signal="pressed" from="keybinds/purple/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]
+[connection signal="pressed" from="keybinds/yellow/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
+[connection signal="pressed" from="keybinds/action/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
+[connection signal="pressed" from="keybinds/Back_keybinds" to="." method="_on_Back_keybinds_pressed"]
