@@ -1,13 +1,15 @@
 extends Control
 signal levelselected
 
-func hide_menu():
-	$all.hide()
+func hide_level_menu():
+	$background.hide()
+	$ScrollContainer.hide()
 	$go_back.hide()
 
 
-func show_menu():
-	$all.show()
+func show_level_menu():
+	$background.show()
+	$ScrollContainer.show()
 	$go_back.show()
 
 
@@ -17,19 +19,15 @@ func _on_level_pressed(level: String) -> void:
 	emit_signal("levelselected", level)
 	get_parent().get_parent().set_level_start_time()
 	get_parent().stop_music()
-	hide_menu()
+	hide_level_menu()
 
 
-func show_level(level: String):
-	get_node("all/levels/" + level).show()
-
-
-func show_checkbox(level: String):
-	get_node("all/checkboxes/" + level).show()
+func enable_level(level: String):
+	get_node("ScrollContainer/levels/" + level).set_disabled(false)
 
 
 func _on_goBack_pressed() -> void:
 	if get_parent().get_parent().SETTINGS[2]:
 		$click.play()
-	hide_menu()
+	hide_level_menu()
 	self.get_parent().show_menu()

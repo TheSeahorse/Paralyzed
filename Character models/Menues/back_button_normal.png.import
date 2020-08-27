@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_button_pressed.png-2913ca26246ced79760671cfb2a5670e.stex"
+path="res://.import/back_button_normal.png-5ef2be2f18e10c46af7a3b1ac2864f62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Menues/menu_button_pressed.png"
-dest_files=[ "res://.import/menu_button_pressed.png-2913ca26246ced79760671cfb2a5670e.stex" ]
+source_file="res://Character models/Menues/back_button_normal.png"
+dest_files=[ "res://.import/back_button_normal.png-5ef2be2f18e10c46af7a3b1ac2864f62.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

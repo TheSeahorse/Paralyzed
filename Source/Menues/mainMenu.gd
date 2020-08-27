@@ -5,7 +5,7 @@ const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
 var levelmenu
 var can_change_key = false
 var keybind_string #keybind being changed
-enum keybinds {cyan, red, purple, yellow, action}
+enum keybinds {cyan, red, purple, yellow, action, escape}
 
 
 func _ready():
@@ -16,11 +16,8 @@ func _input(event):
 	if event is InputEventKey:
 		if can_change_key:
 			$press_key.hide()
-			if event.as_text() != "Escape":
-				change_key(event)
-				can_change_key = false
-			else:
-				can_change_key = false
+			change_key(event)
+			can_change_key = false
 
 
 func change_key(new_key):
@@ -82,18 +79,22 @@ func show_menu():
 
 
 func show_settings():
+	$back_settings.show()
 	$settings.show()
 
 
 func hide_settings():
+	$back_settings.hide()
 	$settings.hide()
 
 
 func show_keybinds():
+	$back_keybinds.show()
 	$keybinds.show()
 
 
 func hide_keybinds():
+	$back_keybinds.hide()
 	$press_key.hide()
 	can_change_key = false
 	$keybinds.hide()
@@ -101,7 +102,7 @@ func hide_keybinds():
 
 func show_level_menu():
 	display_cleared_levels()
-	levelmenu.show_menu()
+	levelmenu.show_level_menu()
 
 
 func display_cleared_levels():
@@ -112,8 +113,7 @@ func display_cleared_levels():
 			return
 		else:
 			var next_level = level_order[level_order.find(level) + 1]
-			levelmenu.show_level(next_level)
-		levelmenu.show_checkbox(level)
+			levelmenu.enable_level(next_level)
 
 
 func _on_Start_pressed() -> void:
@@ -122,7 +122,7 @@ func _on_Start_pressed() -> void:
 		levelmenu.connect("levelselected", self.get_parent(), "play_level")
 		add_child(levelmenu)
 	display_cleared_levels()
-	levelmenu.show_menu()
+	levelmenu.show_level_menu()
 	click_fx()
 	hide_menu()
 

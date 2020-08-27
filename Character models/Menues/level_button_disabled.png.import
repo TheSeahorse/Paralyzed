@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_button_hover.png-3f4127d76ec636d97b41e7a1086b0711.stex"
+path="res://.import/level_button_disabled.png-05d6259bf0ac9e43b24880a11deb682f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Menues/menu_button_hover.png"
-dest_files=[ "res://.import/menu_button_hover.png-3f4127d76ec636d97b41e7a1086b0711.stex" ]
+source_file="res://Character models/Menues/level_button_disabled.png"
+dest_files=[ "res://.import/level_button_disabled.png-05d6259bf0ac9e43b24880a11deb682f.stex" ]
 
 [params]
 
