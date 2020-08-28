@@ -3,6 +3,7 @@ extends CanvasLayer
 func _ready() -> void:
 	calculate_deaths()
 	calculate_time()
+	$Sprite/continue_label.set_text("press " + InputMap.get_action_list("action")[0].as_text() + " to save & continue")
 
 
 func _input(_event: InputEvent) -> void:
@@ -16,8 +17,8 @@ func calculate_deaths():
 	var total_deaths = 0
 	for death in get_parent().DEATHS:
 		total_deaths += death
-	$totaldeaths.text = "Total deaths: " + str(total_deaths + get_parent().CURRENT_DEATHS)
-	$deaths.text = "Deaths: " + str(get_parent().CURRENT_DEATHS)
+	$Sprite/totaldeaths.text = "Total deaths: " + str(total_deaths + get_parent().CURRENT_DEATHS)
+	$Sprite/deaths.text = "Deaths: " + str(get_parent().CURRENT_DEATHS)
 
 
 func calculate_time():
@@ -34,4 +35,4 @@ func calculate_time():
 		str_seconds = "0" + str(seconds)
 	else:
 		str_seconds = str(seconds)
-	$timespent.text = "Time: " + str_minutes + ":" + str_seconds
+	$Sprite/timespent.text = "Time: " + str_minutes + ":" + str_seconds
