@@ -19,7 +19,6 @@ var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 
 func _ready() -> void:
 	pass
 
-
 func _physics_process(delta: float) -> void:
 	if DEAD:
 		VELOCITY = move_and_slide(Vector2(0,0), FLOOR_NORMAL)

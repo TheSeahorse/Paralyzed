@@ -301,8 +301,8 @@ __meta__ = {
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -10.0
-[connection signal="pressed" from="ScrollContainer/levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level1" to="." method="_on_level_pressed" binds= [ "level1" ]]
+[connection signal="pressed" from="ScrollContainer/levels/tutorial" to="." method="_on_level_pressed" binds= [ "tutorial", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level1" to="." method="_on_level_pressed" binds= [ "level1", true ]]
 [connection signal="pressed" from="ScrollContainer/levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
 [connection signal="pressed" from="ScrollContainer/levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
 [connection signal="pressed" from="ScrollContainer/levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]

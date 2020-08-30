@@ -20,3 +20,10 @@ func play_animation(color: String):
 				child.turn_on()
 			else:
 				child.turn_off()
+
+
+func spawn_flag(position: Vector2):
+	var flag = load("res://Source/Actors/flag.tscn").instance()
+	add_child(flag)
+	var new_position = position + Vector2(-950, -21)
+	flag.position = new_position

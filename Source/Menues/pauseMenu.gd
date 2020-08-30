@@ -18,6 +18,7 @@ func show_menu():
 func _on_continue_pressed() -> void:
 	if get_parent().SETTINGS[2]:
 		$click.play()
+	get_parent().CAN_PAUSE = true
 	continue_game()
 
 

@@ -65,6 +65,7 @@ position = Vector2( 1, -32 )
 shape = SubResource( 2 )
 
 [node name="floor_detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_detector"]
 shape = SubResource( 3 )

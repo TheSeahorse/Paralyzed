@@ -13,10 +13,10 @@ func show_level_menu():
 	$go_back.show()
 
 
-func _on_level_pressed(level: String) -> void:
+func _on_level_pressed(level: String, practice: bool) -> void:
 	if get_parent().get_parent().SETTINGS[2]:
 		$click.play()
-	emit_signal("levelselected", level)
+	emit_signal("levelselected", level, practice)
 	get_parent().get_parent().set_level_start_time()
 	get_parent().stop_music()
 	hide_level_menu()

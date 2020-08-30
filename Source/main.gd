@@ -14,9 +14,11 @@ var TIME_PLAYED # the total time the game has been played in seconds (since last
 var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
 var DEATHS # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
+var PRACTICE # true if practice play is on, false if real play is on
+var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED # the amount of unique levels cleared in an array
-var CAN_PAUSE = true
+var CAN_PAUSE: = true
 var SETTINGS: = [true, true, true] #settings in a "map" HUD, Music, Sound
 
 func _ready():
@@ -34,16 +36,23 @@ func _input(_event: InputEvent) -> void:
 		toggle_color()
 		handle_action()
 		handle_pause(false)
+		if PRACTICE:
+			if !player.DEAD:
+				handle_practice_save()
+			handle_practice_delete_save()
+			self_kill()
 
 
 func _on_backMainMenu() -> void:
 	CAN_PAUSE = true
+	PRACTICE_SAVED_PLAYER_VECTORS = []
 	remove_player_and_level()
 	save_deaths()
 	show_main_menu()
 
 
-func play_level(levelName: String):
+func play_level(levelName: String, practice: bool):
+	PRACTICE = practice
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
 	player.connect("levelcleared", self, "display_popup", ["levelCleared"])
@@ -51,9 +60,13 @@ func play_level(levelName: String):
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
 	if SETTINGS[0]:
 		hud = load("res://Source/Tutorials/playerHud.tscn").instance()
-	add_child(level)
 	add_child(player)
+	add_child(level)
+	if PRACTICE:
+		if PRACTICE_SAVED_PLAYER_VECTORS.back() != null:
+			player.position = PRACTICE_SAVED_PLAYER_VECTORS.back()
 	add_child(hud)
+
 	player.is_color("cyan")
 	player.display_background(levelName)
 	player.play_music(levelName)
@@ -89,11 +102,30 @@ func handle_pause(auto: bool):
 		CAN_PAUSE = true
 
 
+func handle_practice_save():
+	if Input.is_action_just_pressed("practice_save"):
+		var player_position = player.position
+		PRACTICE_SAVED_PLAYER_VECTORS.append(player_position)
+		level.spawn_flag(player_position)
+
+
+func handle_practice_delete_save():
+	if Input.is_action_just_pressed("practice_delete_save"):
+		PRACTICE_SAVED_PLAYER_VECTORS.pop_back()
+
+
+func self_kill():
+	if Input.is_action_just_pressed("kill"):
+		if !player.DEAD:
+			player.player_dead()
+
+
 func player_cleared_level():
 	save_deaths()
 	if not LEVELS_CLEARED.has(CURRENT_LEVEL):
 		LEVELS_CLEARED.append(CURRENT_LEVEL)
 	save_game()
+	PRACTICE_SAVED_PLAYER_VECTORS = []
 	mainmenu.show_level_menu()
 	if SETTINGS[1]:
 		mainmenu.start_music()
@@ -140,7 +172,7 @@ func restart_level(_levelName: String):
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	remove_player_and_level()
-	play_level(CURRENT_LEVEL)
+	play_level(CURRENT_LEVEL, PRACTICE)
 
 
 func show_main_menu():
