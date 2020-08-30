@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hud_space.png-a17d11b99f16ce6d41dfcdaa7fd981f1.stex"
+path="res://.import/start_button_hover.png-84af64791a2b37fc49aaf7ca4ebb432f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Menues/hud_space.png"
-dest_files=[ "res://.import/hud_space.png-a17d11b99f16ce6d41dfcdaa7fd981f1.stex" ]
+source_file="res://Character models/Menues/start_button_hover.png"
+dest_files=[ "res://.import/start_button_hover.png-84af64791a2b37fc49aaf7ca4ebb432f.stex" ]
 
 [params]
 

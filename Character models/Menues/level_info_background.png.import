@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hud_space.png-a17d11b99f16ce6d41dfcdaa7fd981f1.stex"
+path="res://.import/level_info_background.png-5a975a5881f2769548e06edec747f7f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character models/Menues/hud_space.png"
-dest_files=[ "res://.import/hud_space.png-a17d11b99f16ce6d41dfcdaa7fd981f1.stex" ]
+source_file="res://Character models/Menues/level_info_background.png"
+dest_files=[ "res://.import/level_info_background.png-5a975a5881f2769548e06edec747f7f4.stex" ]
 
 [params]
 
