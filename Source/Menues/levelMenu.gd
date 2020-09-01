@@ -2,6 +2,9 @@ extends Control
 signal levelselected
 
 
+var SHOWN_LEVEL: String = "" # the levelname which is currently shown
+
+
 func _ready() -> void:
 	var level_node = get_node("ScrollContainer/levels")
 	for n in level_node.get_children():
@@ -34,8 +37,22 @@ func show_level_menu():
 func _on_level_dropdown_pressed(level: String):
 	if get_parent().get_parent().SETTINGS[2]:
 		$click.play()
+	if SHOWN_LEVEL == "":
+		SHOWN_LEVEL = level
+	elif SHOWN_LEVEL == level:
+		SHOWN_LEVEL = ""
+	else:
+		var shown_node = get_node("ScrollContainer/levels/" + SHOWN_LEVEL + "/TextureRect")
+		var shown_button_node = get_node("ScrollContainer/levels/" + SHOWN_LEVEL + "/TextureButton")
+		toggle_button_node(shown_node, shown_button_node)
+		SHOWN_LEVEL = level
+
 	var node = get_node("ScrollContainer/levels/" + level + "/TextureRect")
 	var button_node = get_node("ScrollContainer/levels/" + level + "/TextureButton")
+	toggle_button_node(node, button_node)
+
+
+func toggle_button_node(node: Node, button_node: Node):
 	if node.visible:
 		button_node.set_normal_texture(load("res://Character models/Menues/level_button_normal.png"))
 		button_node.set_hover_texture(load("res://Character models/Menues/level_button_hover.png"))

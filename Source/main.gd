@@ -11,13 +11,13 @@ var gameover # game over menu node
 var START_TIME # the unix.time the game booted up
 var LEVEL_START_TIME # the unix.time current level started playing
 var TIME_PLAYED # the total time the game has been played in seconds (since last save)
-var CURRENT_DEATHS: = 0 # amount of deaths on current run of current level
-var DEATHS # amount of deaths in each stage
+var CURRENT_DEATHS: int = 0 # amount of deaths on current run of current level
+var DEATHS: Array # amount of deaths in each stage
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
-var LEVEL_ORDER: = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
-var LEVELS_CLEARED # the amount of unique levels cleared in an array
+var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
+var LEVELS_CLEARED: Array # the amount of unique levels cleared
 var CAN_PAUSE: = true
 var SETTINGS: = [true, true, true] #settings in a "map" HUD, Music, Sound
 

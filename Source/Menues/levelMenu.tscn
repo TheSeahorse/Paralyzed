@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Character models/Menues/practice_button_normal.png" type="Texture" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/start_practice.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/Menues/skull.png" type="Texture" id=21]
+[ext_resource path="res://Character models/Menues/grey_box.png" type="Texture" id=22]
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -46,7 +47,7 @@ __meta__ = {
 
 [node name="levels" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 320.0
-margin_bottom = 1088.0
+margin_bottom = 738.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,11 +160,12 @@ custom_fonts/font = ExtResource( 20 )
 [node name="level1" type="VBoxContainer" parent="ScrollContainer/levels"]
 margin_top = 84.0
 margin_right = 320.0
-margin_bottom = 164.0
+margin_bottom = 318.0
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level1"]
 margin_right = 320.0
 margin_bottom = 80.0
+disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
@@ -181,7 +183,6 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level1"]
-visible = false
 margin_top = 84.0
 margin_right = 320.0
 margin_bottom = 234.0
@@ -244,6 +245,126 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level1/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
+margin_left = 6.0
+margin_top = -70.0
+margin_right = 64.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level1/TextureRect"]
+margin_left = 88.0
+margin_top = 38.0
+margin_right = 126.0
+margin_bottom = 74.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level1/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 70.0
+margin_top = -69.0
+margin_right = 120.0
+margin_bottom = -41.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 111"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level2" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 322.0
+margin_right = 320.0
+margin_bottom = 402.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level2"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level2/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "cube-2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level2"]
+visible = false
+margin_top = 84.0
+margin_right = 320.0
+margin_bottom = 234.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level2/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level2/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level2/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level2/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level2/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level2/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
 margin_left = 11.0
 margin_top = -68.0
 margin_right = 69.0
@@ -253,7 +374,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="deaths" type="Label" parent="ScrollContainer/levels/level1/TextureRect"]
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level2/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 75.0
@@ -262,219 +383,433 @@ margin_right = 84.0
 margin_bottom = -18.0
 custom_fonts/font = ExtResource( 20 )
 
-[node name="level12" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 168.0
+[node name="level3" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 406.0
 margin_right = 320.0
-margin_bottom = 248.0
+margin_bottom = 486.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level3"]
+margin_right = 320.0
+margin_bottom = 80.0
 disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="ScrollContainer/levels/level12"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "cube-1"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level2" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 252.0
-margin_right = 320.0
-margin_bottom = 332.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "cube-2"
-align = 1
-valign = 1
-
-[node name="level3" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 336.0
-margin_right = 320.0
-margin_bottom = 416.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level3"]
+[node name="Label" type="Label" parent="ScrollContainer/levels/level3/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
 text = "cube-3"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="level4" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 420.0
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level3"]
+visible = false
+margin_top = 84.0
 margin_right = 320.0
-margin_bottom = 500.0
+margin_bottom = 234.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level3/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level3/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level3/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level3/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level3/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level3/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level3/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+
+[node name="level4" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 490.0
+margin_right = 320.0
+margin_bottom = 570.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level4"]
+margin_right = 320.0
+margin_bottom = 80.0
 disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="ScrollContainer/levels/level4"]
+[node name="Label" type="Label" parent="ScrollContainer/levels/level4/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "laser-1"
+text = "beam-1"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="level5" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 504.0
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level4"]
+visible = false
+margin_top = 84.0
 margin_right = 320.0
-margin_bottom = 584.0
+margin_bottom = 234.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level4/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level4/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level4/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+
+[node name="level5" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 574.0
+margin_right = 320.0
+margin_bottom = 654.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level5"]
+margin_right = 320.0
+margin_bottom = 80.0
 disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="ScrollContainer/levels/level5"]
+[node name="Label" type="Label" parent="ScrollContainer/levels/level5/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "laser-2"
+text = "beam-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="level6" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 588.0
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level5"]
+visible = false
+margin_top = 84.0
 margin_right = 320.0
-margin_bottom = 668.0
+margin_bottom = 234.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level5/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level5/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level5/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+
+[node name="level6" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 658.0
+margin_right = 320.0
+margin_bottom = 738.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level6"]
+margin_right = 320.0
+margin_bottom = 80.0
 disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="ScrollContainer/levels/level6"]
+[node name="Label" type="Label" parent="ScrollContainer/levels/level6/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
 text = "lava-1"
 align = 1
 valign = 1
-
-[node name="level7" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 672.0
-margin_right = 320.0
-margin_bottom = 752.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level7"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "lava-2"
-align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level8" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 756.0
-margin_right = 320.0
-margin_bottom = 836.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level8"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "car-1"
-align = 1
-valign = 1
-
-[node name="level9" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 840.0
-margin_right = 320.0
-margin_bottom = 920.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level9"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "car-2"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level10" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 924.0
-margin_right = 320.0
-margin_bottom = 1004.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level10"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "all-1"
-align = 1
-valign = 1
-
-[node name="level11" type="TextureButton" parent="ScrollContainer/levels"]
-margin_top = 1008.0
-margin_right = 320.0
-margin_bottom = 1088.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="ScrollContainer/levels/level11"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "all-2"
-align = 1
-valign = 1
-
-[node name="leveltemplate" type="Button" parent="ScrollContainer/levels"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level6"]
 visible = false
-margin_top = 600.0
-margin_right = 420.0
-margin_bottom = 620.0
-text = "Level template"
+margin_top = 84.0
+margin_right = 320.0
+margin_bottom = 234.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
 
 [node name="go_back" type="TextureButton" parent="."]
 margin_left = 96.0
@@ -508,16 +843,19 @@ volume_db = -10.0
 [connection signal="pressed" from="ScrollContainer/levels/level1/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="ScrollContainer/levels/level1/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level1", false ]]
 [connection signal="pressed" from="ScrollContainer/levels/level1/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level1", true ]]
-[connection signal="pressed" from="ScrollContainer/levels/level12" to="." method="_on_level_pressed" binds= [ "level1", true ]]
-[connection signal="pressed" from="ScrollContainer/levels/level2" to="." method="_on_level_pressed" binds= [ "level2" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level3" to="." method="_on_level_pressed" binds= [ "level3" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level4" to="." method="_on_level_pressed" binds= [ "level4" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level5" to="." method="_on_level_pressed" binds= [ "level5" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level6" to="." method="_on_level_pressed" binds= [ "level6" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level7" to="." method="_on_level_pressed" binds= [ "level7" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level8" to="." method="_on_level_pressed" binds= [ "level8" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level9" to="." method="_on_level_pressed" binds= [ "level9" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level10" to="." method="_on_level_pressed" binds= [ "level10" ]]
-[connection signal="pressed" from="ScrollContainer/levels/level11" to="." method="_on_level_pressed" binds= [ "level11" ]]
-[connection signal="pressed" from="ScrollContainer/levels/leveltemplate" to="." method="_on_level_pressed" binds= [ "LevelTemplate" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level2/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level2" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level2/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level2", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level2/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level2", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level3/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level3" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level3/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level3", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level3/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level3", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level4/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level4" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level4", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level4", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level5/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level5" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level5", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level5", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level6/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level6" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level6", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level6", true ]]
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]

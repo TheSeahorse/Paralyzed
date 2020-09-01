@@ -7,7 +7,7 @@
 [ext_resource path="res://Source/Actors/laserbeam.tscn" type="PackedScene" id=5]
 
 [node name="level4" type="Node2D"]
-position = Vector2( 852, -5 )
+position = Vector2( 856, 21 )
 script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
