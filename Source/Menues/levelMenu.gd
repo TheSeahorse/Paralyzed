@@ -16,8 +16,12 @@ func update_death_counts():
 	var counter = 0
 	for n in level_node.get_children():
 		var death_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureRect/deaths")
+		var death_practice_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureRect/deaths_practice")
+		var deaths_array = get_parent().get_parent().DEATHS[counter]
 		if death_node != null:
-			death_node.set_text(": " + str(get_parent().get_parent().DEATHS[counter]))
+			death_node.set_text(": " + str(deaths_array[0]))
+		if death_practice_node != null:
+			death_practice_node.set_text(": " + str(deaths_array[1]))
 		counter += 1
 
 
@@ -76,11 +80,22 @@ func _on_level_pressed(level: String, practice: bool) -> void:
 	hide_level_menu()
 
 
+# called in mainMenu
 func enable_level(level: String):
 	var node = get_node("ScrollContainer/levels/" + level + "/TextureButton")
 	if node != null:
 		node.set_disabled(false)
 
+
+# called in mainMenu
+func show_checkmarks(level_number: int, cleared_normal: bool, cleared_practice: bool):
+	var container = get_node("ScrollContainer/levels")
+	var levels = container.get_children()
+	var level = levels[level_number]
+	if cleared_normal:
+		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton2/checkmark").show()
+	if cleared_practice:
+		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton/checkmark").show()
 
 func _on_goBack_pressed() -> void:
 	if get_parent().get_parent().SETTINGS[2]:

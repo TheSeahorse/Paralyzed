@@ -104,16 +104,19 @@ func show_level_menu():
 	display_cleared_levels()
 	levelmenu.show_level_menu()
 
-
+# just nu visar den bara alla nivåer som är efter en nivå klarad i normal mode
 func display_cleared_levels():
 	var levels_cleared = get_parent().LEVELS_CLEARED
 	var level_order = get_parent().LEVEL_ORDER
-	for level in levels_cleared:
-		if level_order.size() - 1 == levels_cleared.find(level):
-			return
-		else:
-			var next_level = level_order[level_order.find(level) + 1]
-			levelmenu.enable_level(next_level)
+	var count = 0
+	for levels in levels_cleared:
+		var cleared_normal = levels[0]
+		var cleared_practice = levels[1]
+		if cleared_normal:
+			if count < level_order.size():
+				levelmenu.enable_level(level_order[count + 1])
+		levelmenu.show_checkmarks(count, cleared_normal, cleared_practice)
+		count += 1
 
 
 func _on_Start_pressed() -> void:

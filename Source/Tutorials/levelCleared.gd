@@ -15,8 +15,9 @@ func _input(_event: InputEvent) -> void:
 
 func calculate_deaths():
 	var total_deaths = 0
-	for death in get_parent().DEATHS:
-		total_deaths += death
+	for deaths in get_parent().DEATHS:
+		total_deaths += deaths[0]
+		total_deaths += deaths[1]
 	$Sprite/totaldeaths.text = "Total deaths: " + str(total_deaths + get_parent().CURRENT_DEATHS)
 	$Sprite/deaths.text = "Deaths: " + str(get_parent().CURRENT_DEATHS)
 

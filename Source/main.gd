@@ -12,12 +12,12 @@ var START_TIME # the unix.time the game booted up
 var LEVEL_START_TIME # the unix.time current level started playing
 var TIME_PLAYED # the total time the game has been played in seconds (since last save)
 var CURRENT_DEATHS: int = 0 # amount of deaths on current run of current level
-var DEATHS: Array # amount of deaths in each stage
+var DEATHS: Array # array of arrays with [normal,practice] structure, in order of the levels
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4"] # order in which the levels should appear, used in mainMenu
-var LEVELS_CLEARED: Array # the amount of unique levels cleared
+var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true
 var SETTINGS: = [true, true, true] #settings in a "map" HUD, Music, Sound
 
@@ -56,7 +56,7 @@ func play_level(levelName: String, practice: bool):
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
 	player.connect("levelcleared", self, "display_popup", ["levelCleared"])
-	player.connect("playerdead", self, "restart_level", [levelName])
+	player.connect("playerdead", self, "player_died")
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
 	if SETTINGS[0]:
 		hud = load("res://Source/Tutorials/playerHud.tscn").instance()
@@ -122,18 +122,33 @@ func self_kill():
 
 func player_cleared_level():
 	save_deaths()
-	if not LEVELS_CLEARED.has(CURRENT_LEVEL):
-		LEVELS_CLEARED.append(CURRENT_LEVEL)
-	save_game()
+	calculate_cleared_level()
 	PRACTICE_SAVED_PLAYER_VECTORS = []
+	save_game()
 	mainmenu.show_level_menu()
 	if SETTINGS[1]:
 		mainmenu.start_music()
 	remove_player_and_level()
 
 
+func calculate_cleared_level():
+	var index = LEVEL_ORDER.find(CURRENT_LEVEL)
+	var current_clear_array = LEVELS_CLEARED[index]
+	if PRACTICE:
+		current_clear_array[1] = true
+	else:
+		current_clear_array[0] = true
+	LEVELS_CLEARED[index] = current_clear_array
+
+
+# I DEATHS arrayen ska det vara [normal_deaths: int, practice_deaths: int]
 func save_deaths():
-	DEATHS[LEVEL_ORDER.find(CURRENT_LEVEL)] += CURRENT_DEATHS
+	var current_level_deaths = DEATHS[LEVEL_ORDER.find(CURRENT_LEVEL)]
+	if PRACTICE:
+		current_level_deaths[1] += CURRENT_DEATHS
+	else:
+		current_level_deaths[0] += CURRENT_DEATHS
+	DEATHS[LEVEL_ORDER.find(CURRENT_LEVEL)] = current_level_deaths
 	save_game()
 	CURRENT_DEATHS = 0
 
@@ -154,8 +169,8 @@ func save_game():
 func load_savestate():
 	var load_game = File.new()
 	if not load_game.file_exists("user://savegame.save"):
-		DEATHS = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-		LEVELS_CLEARED = []
+		DEATHS = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
 		TIME_PLAYED = 0
 	else:
 		load_game.open("user://savegame.save", File.READ)
@@ -166,7 +181,7 @@ func load_savestate():
 		TIME_PLAYED = savestate.time_played
 
 
-func restart_level(_levelName: String):
+func player_died():
 	# ADD save here if you don't want stats to disappear if the user would rage quit
 	CURRENT_DEATHS += 1
 	player.play_death_animation()
