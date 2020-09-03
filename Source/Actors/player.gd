@@ -55,7 +55,10 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		ON_BEAM = true
 		BEAM_COLOR = area.get_color()
 	elif area is Spikes:
-		call_deferred("player_dead")
+		if area.get_parent() is Square:
+			call_deferred("player_dead", "square")
+		else:
+			call_deferred("player_dead", "spikes")
 	elif area is Goal:
 		emit_signal("levelcleared")
 	elif area.get_parent() is Lava:
@@ -65,7 +68,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		else:
 			LAVA2 = area
 	elif area.get_parent() is Car:
-		call_deferred("player_dead")
+		call_deferred("player_dead", "car")
 
 
 func _on_Deathcollision_area_exited(area: Area2D) -> void:
@@ -89,12 +92,12 @@ func play_music(level: String):
 			$level_music.play(0.0)
 
 
-func player_dead():
+func player_dead(cause: String):
 	get_node("Hitbox").disabled = true
 	DEAD = true
 	if get_parent().SETTINGS[2]:
 		$death.play()
-	emit_signal("playerdead")
+	emit_signal("playerdead", cause)
 
 
 func play_death_animation():
@@ -103,13 +106,13 @@ func play_death_animation():
 
 func check_if_dead():
 	if ON_BEAM and PLAYER_COLOR != BEAM_COLOR:
-		call_deferred("player_dead")
+		call_deferred("player_dead", "beam")
 	if ON_LAVA == 1:
 		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead")
+			call_deferred("player_dead", "lava")
 	if ON_LAVA == 2:
 		if LAVA1.get_parent().COLOR == PLAYER_COLOR or LAVA2.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead")
+			call_deferred("player_dead", "lava")
 
 
 func calculate_y(velocity: Vector2, delta: float) -> Vector2:

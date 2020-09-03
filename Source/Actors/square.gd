@@ -14,7 +14,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
-	if !ENABLED: #tror det här förhindrar tidigare actions att påverka cuben, påverkas bara i bild
+	if !ENABLED:
 		TOGGLE_ACTION = false
 		ENABLED = true
 	if TOGGLE_ACTION:
@@ -46,6 +46,7 @@ func calculate_jump():
 				SPRING_JUMP = 24
 			GRACE_FRAMES = 0
 			TOGGLE_ACTION = false
+			self.get_parent().get_parent().add_stat("cube-jump")
 		else:
 			GRACE_FRAMES -= 1
 	elif GRACE_FRAMES == 0:
@@ -56,6 +57,7 @@ func calculate_jump():
 				SPRING_JUMP = 26
 			else:
 				SPRING_JUMP = 24
+			self.get_parent().get_parent().add_stat("cube-jump")
 
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:

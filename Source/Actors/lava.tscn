@@ -27,45 +27,45 @@ extents = Vector2( 32, 8 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "cyan on",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": false,
-"name": "yellow off",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "red off",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "purple off",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "cyan on",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "purple on",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "cyan off",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "red on",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "red off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "yellow off",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "yellow on",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "cyan off",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
