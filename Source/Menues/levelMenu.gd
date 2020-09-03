@@ -26,17 +26,87 @@ func update_death_counts():
 
 
 func hide_level_menu():
-	$background.hide()
-	$ScrollContainer.hide()
-	$go_back.hide()
+	self.hide()
 
 
 func show_level_menu():
-	$background.show()
-	$ScrollContainer.show()
-	$go_back.show()
+	self.show()
+	update_stats()
 	update_death_counts()
+	hide_current_level_and_stat()
 
+
+# DEATHS: [[tutorial, tutorial_practice], [level1, level1_practice] .... ]
+# DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
+# DEADLIEST_COLOR: [cyan, red, purple, yellow, none]
+# STATS: [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
+func update_stats():
+	var deaths = self.get_parent().get_parent().DEATHS
+	var death_by = self.get_parent().get_parent().DEATH_BY
+	var deadliest_color = self.get_parent().get_parent().DEADLIEST_COLOR
+	var stats = self.get_parent().get_parent().STATS
+	var total_deaths = count_deaths(deaths)
+	$stats/VBoxContainer/total_deaths.set_text("total deaths: " + str(total_deaths))
+	$stats/VBoxContainer/deadliest_colors/cyan.set_text("cyan: " + str(deadliest_color[0]))
+	$stats/VBoxContainer/deadliest_colors/red.set_text("red: " + str(deadliest_color[1]))
+	$stats/VBoxContainer/deadliest_colors/purple.set_text("purple: " + str(deadliest_color[2]))
+	$stats/VBoxContainer/deadliest_colors/yellow.set_text("yellow: " + str(deadliest_color[3]))
+	$stats/VBoxContainer/deadliest_colors/none.set_text("no color: " + str(deadliest_color[4]))
+	var best_color = calculate_deadliest_color(deadliest_color)
+	$stats/VBoxContainer/deadliest_color.set_text("deadliest color: " + str(best_color))
+	$stats/VBoxContainer/deadliest_enemies/spikes.set_text("spikes: " + str(death_by[0]))
+	$stats/VBoxContainer/deadliest_enemies/square.set_text("square: " + str(death_by[1]))
+	$stats/VBoxContainer/deadliest_enemies/beam.set_text("laser: " + str(death_by[2]))
+	$stats/VBoxContainer/deadliest_enemies/lava.set_text("fire: " + str(death_by[3]))
+	$stats/VBoxContainer/deadliest_enemies/car.set_text("car: " + str(death_by[4]))
+	$stats/VBoxContainer/self_destructs.set_text("self destructs: " + str(death_by[5]))
+	$stats/VBoxContainer/changed_color.set_text("changed color " + str(stats[0]) + " times")
+	$stats/VBoxContainer/square_jumps.set_text("square jumps: " + str(stats[1]))
+	$stats/VBoxContainer/car_jumps.set_text("car jumps: " + str(stats[2]))
+	$stats/VBoxContainer/phazed_laser.set_text("phazed through laser: " + str(stats[3]))
+	$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(stats[4]))
+	$stats/VBoxContainer/placed_flags.set_text("practice flags placed: " + str(stats[5]))
+	$stats/VBoxContainer/paused.set_text("times paused: " + str(stats[6]))
+
+func count_deaths(deaths: Array) -> int:
+	var amount = 0
+	for d in deaths:
+		amount += d[0]
+		amount += d[1]
+	return amount
+
+# no color gills inte, därför så komplicerad funktion
+func calculate_deadliest_color(stats: Array) -> String:
+	var deadliest: String
+	var highest_count = 0
+	for s in stats:
+		if s > highest_count:
+			if (s == stats[4]) and (stats.count(s) == 1):
+				s #ok
+			else:
+				highest_count = s
+	if highest_count == 0:
+		return "none"
+	var index = stats.find(highest_count)
+	match index:
+		0:
+			deadliest = "cyan"
+		1:
+			deadliest = "red"
+		2:
+			deadliest = "purple"
+		3:
+			deadliest = "yellow"
+		_:
+			deadliest = "none"
+	return deadliest
+
+func hide_current_level_and_stat():
+	if SHOWN_LEVEL != "":
+		toggle_button_node(SHOWN_LEVEL)
+		SHOWN_LEVEL = ""
+	$stats/VBoxContainer/deadliest_colors.hide()
+	$stats/VBoxContainer/deadliest_enemies.hide()
 
 func _on_level_dropdown_pressed(level: String):
 	if get_parent().get_parent().SETTINGS[2]:
@@ -46,17 +116,14 @@ func _on_level_dropdown_pressed(level: String):
 	elif SHOWN_LEVEL == level:
 		SHOWN_LEVEL = ""
 	else:
-		var shown_node = get_node("ScrollContainer/levels/" + SHOWN_LEVEL + "/TextureRect")
-		var shown_button_node = get_node("ScrollContainer/levels/" + SHOWN_LEVEL + "/TextureButton")
-		toggle_button_node(shown_node, shown_button_node)
+		toggle_button_node(SHOWN_LEVEL)
 		SHOWN_LEVEL = level
-
-	var node = get_node("ScrollContainer/levels/" + level + "/TextureRect")
-	var button_node = get_node("ScrollContainer/levels/" + level + "/TextureButton")
-	toggle_button_node(node, button_node)
+	toggle_button_node(level)
 
 
-func toggle_button_node(node: Node, button_node: Node):
+func toggle_button_node(level_name: String):
+	var node = get_node("ScrollContainer/levels/" + level_name + "/TextureRect")
+	var button_node = get_node("ScrollContainer/levels/" + level_name + "/TextureButton")
 	if node.visible:
 		button_node.set_normal_texture(load("res://Character models/Menues/level_button_normal.png"))
 		button_node.set_hover_texture(load("res://Character models/Menues/level_button_hover.png"))
@@ -102,3 +169,19 @@ func _on_goBack_pressed() -> void:
 		$click.play()
 	hide_level_menu()
 	self.get_parent().show_menu()
+
+
+func _on_stats_button_pressed(type: String) -> void:
+	match type:
+		"color":
+			if $stats/VBoxContainer/deadliest_colors.visible:
+				$stats/VBoxContainer/deadliest_colors.hide()
+			else:
+				$stats/VBoxContainer/deadliest_colors.show()
+				$stats/VBoxContainer/deadliest_enemies.hide()
+		"enemy":
+			if $stats/VBoxContainer/deadliest_enemies.visible:
+				$stats/VBoxContainer/deadliest_enemies.hide()
+			else:
+				$stats/VBoxContainer/deadliest_colors.hide()
+				$stats/VBoxContainer/deadliest_enemies.show()

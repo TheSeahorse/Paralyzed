@@ -56,9 +56,9 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		BEAM_COLOR = area.get_color()
 	elif area is Spikes:
 		if area.get_parent() is Square:
-			call_deferred("player_dead", "square")
+			call_deferred("player_dead", "square", area.get_parent().COLOR)
 		else:
-			call_deferred("player_dead", "spikes")
+			call_deferred("player_dead", "spikes", "none")
 	elif area is Goal:
 		emit_signal("levelcleared")
 	elif area.get_parent() is Lava:
@@ -68,7 +68,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		else:
 			LAVA2 = area
 	elif area.get_parent() is Car:
-		call_deferred("player_dead", "car")
+		call_deferred("player_dead", "car", area.COLOR)
 
 
 func _on_Deathcollision_area_exited(area: Area2D) -> void:
@@ -92,12 +92,12 @@ func play_music(level: String):
 			$level_music.play(0.0)
 
 
-func player_dead(cause: String):
+func player_dead(cause: String, color: String):
 	get_node("Hitbox").disabled = true
 	DEAD = true
 	if get_parent().SETTINGS[2]:
 		$death.play()
-	emit_signal("playerdead", cause)
+	emit_signal("playerdead", cause, color)
 
 
 func play_death_animation():
@@ -106,13 +106,15 @@ func play_death_animation():
 
 func check_if_dead():
 	if ON_BEAM and PLAYER_COLOR != BEAM_COLOR:
-		call_deferred("player_dead", "beam")
+		call_deferred("player_dead", "beam", BEAM_COLOR)
 	if ON_LAVA == 1:
 		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead", "lava")
+			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
 	if ON_LAVA == 2:
-		if LAVA1.get_parent().COLOR == PLAYER_COLOR or LAVA2.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead", "lava")
+		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
+			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
+		elif LAVA2.get_parent().COLOR == PLAYER_COLOR:
+			call_deferred("player_dead", "lava", LAVA2.get_parent().COLOR)
 
 
 func calculate_y(velocity: Vector2, delta: float) -> Vector2:
@@ -144,3 +146,4 @@ func is_color(color: String):
 		if get_parent().SETTINGS[2]:
 			$change_color.play()
 		PLAYER_COLOR = color
+		get_parent().add_stat("switch-color")

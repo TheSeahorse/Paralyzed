@@ -57,6 +57,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="menu" type="VBoxContainer" parent="."]
+visible = false
 margin_left = 560.0
 margin_top = 350.0
 margin_bottom = 800.0

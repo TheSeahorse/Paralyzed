@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -22,6 +22,21 @@
 [ext_resource path="res://Character models/Menues/Fonts/start_practice.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/Menues/skull.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Menues/blue_checkmark.png" type="Texture" id=22]
+[ext_resource path="res://Character models/Menues/stats_background.png" type="Texture" id=23]
+[ext_resource path="res://Character models/Menues/Fonts/Tourmaline-Bold.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Character models/Menues/stats_line.png" type="Texture" id=25]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 24 )
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -714,6 +729,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -745,12 +771,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level4/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level4/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 11.0
 margin_top = -68.0
 margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level4/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
 margin_bottom = 2.0
 texture = ExtResource( 21 )
 __meta__ = {
@@ -765,6 +814,17 @@ margin_top = -46.0
 margin_right = 84.0
 margin_bottom = -18.0
 custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level4/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
 
 [node name="level5" type="VBoxContainer" parent="ScrollContainer/levels"]
 margin_top = 420.0
@@ -793,9 +853,8 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level5"]
 visible = false
-margin_top = 84.0
 margin_right = 320.0
-margin_bottom = 234.0
+margin_bottom = 150.0
 texture = ExtResource( 13 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level5/TextureRect"]
@@ -817,6 +876,17 @@ texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 14 )
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -852,12 +922,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level5/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level5/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 11.0
 margin_top = -68.0
 margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level5/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
 margin_bottom = 2.0
 texture = ExtResource( 21 )
 __meta__ = {
@@ -872,6 +965,17 @@ margin_top = -46.0
 margin_right = 84.0
 margin_bottom = -18.0
 custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level5/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
 
 [node name="level6" type="VBoxContainer" parent="ScrollContainer/levels"]
 margin_top = 504.0
@@ -900,9 +1004,9 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level6"]
 visible = false
-margin_top = 84.0
+margin_top = -84.0
 margin_right = 320.0
-margin_bottom = 234.0
+margin_bottom = 66.0
 texture = ExtResource( 13 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level6/TextureRect"]
@@ -924,6 +1028,17 @@ texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 14 )
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -959,12 +1074,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level6/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 11.0
 margin_top = -68.0
 margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
 margin_bottom = 2.0
 texture = ExtResource( 21 )
 __meta__ = {
@@ -979,6 +1117,17 @@ margin_top = -46.0
 margin_right = 84.0
 margin_bottom = -18.0
 custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
 
 [node name="go_back" type="TextureButton" parent="."]
 margin_left = 96.0
@@ -1006,6 +1155,256 @@ __meta__ = {
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -10.0
+
+[node name="stats" type="TextureRect" parent="."]
+margin_left = 1070.0
+margin_top = 95.0
+margin_right = 1490.0
+margin_bottom = 795.0
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="stats"]
+margin_left = 30.0
+margin_top = 20.0
+margin_right = 390.0
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="stats/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 1 )
+text = "STATS"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 108.0
+margin_right = 360.0
+margin_bottom = 110.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="total_deaths" type="Label" parent="stats/VBoxContainer"]
+margin_top = 114.0
+margin_right = 360.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "total deaths: 2222"
+
+[node name="deadliest_color" type="Label" parent="stats/VBoxContainer"]
+margin_top = 144.0
+margin_right = 360.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "deadliest color: yellow"
+
+[node name="Button" type="Button" parent="stats/VBoxContainer/deadliest_color"]
+margin_left = 334.0
+margin_top = 3.0
+margin_right = 346.0
+margin_bottom = 23.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deadliest_colors" type="VBoxContainer" parent="stats/VBoxContainer"]
+visible = false
+margin_top = 174.0
+margin_right = 360.0
+margin_bottom = 300.0
+
+[node name="cyan" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
+margin_right = 360.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.388235, 0.67451, 0.745098, 1 )
+text = "cyan: 44"
+
+[node name="red" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 26.0
+margin_right = 360.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.933333, 0.266667, 0.184314, 1 )
+text = "red: 33"
+
+[node name="purple" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 52.0
+margin_right = 360.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.376471, 0.101961, 0.290196, 1 )
+text = "purple: 11"
+
+[node name="yellow" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 78.0
+margin_right = 360.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.909804, 0.160784, 1 )
+text = "yellow: 88"
+
+[node name="none" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 104.0
+margin_right = 360.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "no color: 22"
+
+[node name="deadliest_enemy" type="Label" parent="stats/VBoxContainer"]
+margin_top = 174.0
+margin_right = 360.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 2 )
+text = "deadliest enemy: square"
+
+[node name="Button" type="Button" parent="stats/VBoxContainer/deadliest_enemy"]
+margin_left = 334.0
+margin_top = 3.0
+margin_right = 346.0
+margin_bottom = 23.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deadliest_enemies" type="VBoxContainer" parent="stats/VBoxContainer"]
+visible = false
+margin_top = 204.0
+margin_right = 360.0
+margin_bottom = 330.0
+
+[node name="square" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_right = 360.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+text = "square: 444"
+
+[node name="spikes" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 26.0
+margin_right = 360.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
+text = "spikes: 232"
+
+[node name="beam" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 52.0
+margin_right = 360.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 3 )
+text = "laserbeam: 323"
+
+[node name="lava" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 78.0
+margin_right = 360.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 3 )
+text = "lava: 2354"
+
+[node name="car" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 104.0
+margin_right = 360.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 3 )
+text = "car: 41"
+
+[node name="TextureRect2" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 204.0
+margin_right = 360.0
+margin_bottom = 206.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square_jumps" type="Label" parent="stats/VBoxContainer"]
+margin_top = 210.0
+margin_right = 360.0
+margin_bottom = 236.0
+custom_fonts/font = SubResource( 2 )
+text = "square jumps: 332"
+
+[node name="car_jumps" type="Label" parent="stats/VBoxContainer"]
+margin_top = 240.0
+margin_right = 360.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 2 )
+text = "car jumps: 222"
+
+[node name="phazed_laser" type="Label" parent="stats/VBoxContainer"]
+margin_top = 270.0
+margin_right = 360.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 2 )
+text = "Phazed through laser: 44"
+
+[node name="survived_lava" type="Label" parent="stats/VBoxContainer"]
+margin_top = 300.0
+margin_right = 360.0
+margin_bottom = 326.0
+custom_fonts/font = SubResource( 2 )
+text = "survived lava: 331"
+
+[node name="TextureRect3" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 330.0
+margin_right = 360.0
+margin_bottom = 332.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="changed_color" type="Label" parent="stats/VBoxContainer"]
+margin_top = 336.0
+margin_right = 360.0
+margin_bottom = 362.0
+custom_fonts/font = SubResource( 2 )
+text = "changed color: 4300 times"
+
+[node name="paused" type="Label" parent="stats/VBoxContainer"]
+margin_top = 366.0
+margin_right = 360.0
+margin_bottom = 392.0
+custom_fonts/font = SubResource( 2 )
+text = "paused game: 5"
+
+[node name="placed_flags" type="Label" parent="stats/VBoxContainer"]
+margin_top = 396.0
+margin_right = 360.0
+margin_bottom = 422.0
+custom_fonts/font = SubResource( 2 )
+text = "practice flags placed: 55"
+
+[node name="self_destructs" type="Label" parent="stats/VBoxContainer"]
+margin_top = 426.0
+margin_right = 360.0
+margin_bottom = 452.0
+custom_fonts/font = SubResource( 2 )
+text = "self destructs: 7"
+
+[node name="goals_reached" type="Label" parent="stats/VBoxContainer"]
+margin_top = 456.0
+margin_right = 360.0
+margin_bottom = 482.0
+custom_fonts/font = SubResource( 2 )
+text = "goals reached: Nan"
+
+[node name="TextureRect4" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 486.0
+margin_right = 360.0
+margin_bottom = 488.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ScrollContainer/levels/tutorial/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "tutorial" ]]
 [connection signal="pressed" from="ScrollContainer/levels/tutorial/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "tutorial", false ]]
 [connection signal="pressed" from="ScrollContainer/levels/tutorial/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "tutorial", true ]]
@@ -1028,3 +1427,5 @@ volume_db = -10.0
 [connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level6", false ]]
 [connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level6", true ]]
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
+[connection signal="pressed" from="stats/VBoxContainer/deadliest_color/Button" to="." method="_on_stats_button_pressed" binds= [ "color" ]]
+[connection signal="pressed" from="stats/VBoxContainer/deadliest_enemy/Button" to="." method="_on_stats_button_pressed" binds= [ "enemy" ]]

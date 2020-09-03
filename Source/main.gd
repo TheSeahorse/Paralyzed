@@ -13,8 +13,9 @@ var LEVEL_START_TIME # the unix.time current level started playing
 var TIME_PLAYED # the total time the game has been played in seconds (since last save)
 var CURRENT_DEATHS: int = 0 # amount of deaths on current run of current level
 var DEATHS: Array # array of arrays with [normal,practice] structure, in order of the levels
-var DEATH_BY: Array # [spikes, cube, beam, lava, car, self-destruct]
-var STATS: Array # [switched-color, cube-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
+var DEATH_BY: Array # [spikes, square, beam, lava, car, self-destruct]
+var DEADLIEST_COLOR: Array # how many times you've died to each color [cyan, red, purple, yellow, none]
+var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
@@ -77,19 +78,15 @@ func toggle_color():
 	if Input.is_action_just_pressed("cyan"):
 		player.is_color("cyan")
 		level.play_animation("cyan")
-		add_stat("switch-color")
 	elif Input.is_action_just_pressed("red"):
 		player.is_color("red")
 		level.play_animation("red")
-		add_stat("switch-color")
 	elif Input.is_action_just_pressed("purple"):
 		player.is_color("purple")
 		level.play_animation("purple")
-		add_stat("switch-color")
 	elif Input.is_action_just_pressed("yellow"):
 		player.is_color("yellow")
 		level.play_animation("yellow")
-		add_stat("switch-color")
 
 
 func handle_action():
@@ -124,7 +121,7 @@ func handle_practice_delete_save():
 func self_kill():
 	if Input.is_action_just_pressed("kill"):
 		if !player.DEAD:
-			player.player_dead("sd")
+			player.player_dead("sd", "none")
 
 
 func player_cleared_level():
@@ -167,7 +164,8 @@ func save_game():
 		"levels_cleared" : LEVELS_CLEARED,
 		"time_played" : TIME_PLAYED,
 		"death_by" : DEATH_BY,
-		"stats" : STATS
+		"stats" : STATS,
+		"deadliest_color" : DEADLIEST_COLOR
 	}
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
@@ -183,6 +181,7 @@ func load_savestate():
 		TIME_PLAYED = 0
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
 		STATS = [0, 0, 0, 0, 0, 0, 0]
+		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
 	else:
 		load_game.open("user://savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
@@ -192,10 +191,12 @@ func load_savestate():
 		TIME_PLAYED = savestate.time_played
 		DEATH_BY = savestate.death_by
 		STATS = savestate.stats
+		DEADLIEST_COLOR = savestate.deadliest_color
 
 
-func player_died(cause: String):
+func player_died(cause: String, color: String):
 	# ADD save here if you don't want stats to disappear if the user would rage quit
+	add_deadliest_color(color)
 	add_death_by(cause)
 	CURRENT_DEATHS += 1
 	player.play_death_animation()
@@ -204,27 +205,44 @@ func player_died(cause: String):
 	play_level(CURRENT_LEVEL, PRACTICE)
 
 
-# DEATH_BY: [spikes, cube, beam, lava, car, self-destruct]
+# DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
 func add_death_by(cause: String):
-	if cause == "spikes":
-		DEATH_BY[0] += 1
-	elif cause == "square":
-		DEATH_BY[1] += 1
-	elif cause == "beam":
-		DEATH_BY[2] += 1
-	elif cause == "lava":
-		DEATH_BY[3] += 1
-	elif cause == "car":
-		DEATH_BY[4] += 1
-	elif cause == "sd":
-		DEATH_BY[5] += 1
+	match cause:
+		"spikes":
+			DEATH_BY[0] += 1
+		"square":
+			DEATH_BY[1] += 1
+		"beam":
+			DEATH_BY[2] += 1
+		"lava":
+			DEATH_BY[3] += 1
+		"car":
+			DEATH_BY[4] += 1
+		"sd":
+			DEATH_BY[5] += 1
 
 
-# STATS: [switched-color, cube-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
+# Dangerous_color [cyan, red, purple, yellow, none]
+func add_deadliest_color(color: String):
+	match color:
+		"cyan":
+			DEADLIEST_COLOR[0] += 1
+		"red":
+			DEADLIEST_COLOR[1] += 1
+		"purple":
+			DEADLIEST_COLOR[2] += 1
+		"yellow":
+			DEADLIEST_COLOR[3] += 1
+		"none":
+			DEADLIEST_COLOR[4] += 1
+
+
+
+# STATS: [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
 func add_stat(stat: String):
 	if stat == "switch-color":
 		STATS[0] += 1
-	elif stat == "cube-jump":
+	elif stat == "square-jump":
 		STATS[1] += 1
 	elif stat == "car-jump":
 		STATS[2] += 1
@@ -236,7 +254,6 @@ func add_stat(stat: String):
 		STATS[5] += 1
 	elif stat == "paused":
 		STATS[6] += 1
-	print(STATS)
 
 
 func show_main_menu():

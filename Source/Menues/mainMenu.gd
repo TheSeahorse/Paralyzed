@@ -113,7 +113,7 @@ func display_cleared_levels():
 		var cleared_normal = levels[0]
 		var cleared_practice = levels[1]
 		if cleared_normal:
-			if count < level_order.size():
+			if (count + 1) < level_order.size():
 				levelmenu.enable_level(level_order[count + 1])
 		levelmenu.show_checkmarks(count, cleared_normal, cleared_practice)
 		count += 1
