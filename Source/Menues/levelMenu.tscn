@@ -64,7 +64,7 @@ __meta__ = {
 
 [node name="levels" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 320.0
-margin_bottom = 584.0
+margin_bottom = 1760.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -692,7 +692,7 @@ texture_disabled = ExtResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "beam-1"
+text = "cube-4"
 align = 1
 valign = 1
 __meta__ = {
@@ -844,7 +844,7 @@ texture_disabled = ExtResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "beam-2"
+text = "laser-1"
 align = 1
 valign = 1
 __meta__ = {
@@ -995,7 +995,7 @@ texture_disabled = ExtResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "lava-1"
+text = "laser-2"
 align = 1
 valign = 1
 __meta__ = {
@@ -1120,6 +1120,2134 @@ custom_fonts/font = ExtResource( 20 )
 text = ": 102"
 
 [node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level6/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level7" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 588.0
+margin_right = 320.0
+margin_bottom = 668.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level7"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level7/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "laser-3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level7"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level7/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level7/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level7/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level7/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level7/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level8" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 672.0
+margin_right = 320.0
+margin_bottom = 752.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level8"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level8/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "laser-4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level8"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level8/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level8/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level8/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level8/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level8/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level9" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 756.0
+margin_right = 320.0
+margin_bottom = 836.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level9"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level9/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "fire-1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level9"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level9/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level9/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level9/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level9/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level9/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level10" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 840.0
+margin_right = 320.0
+margin_bottom = 920.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level10"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level10/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "fire-2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level10"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level10/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level10/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level10/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level10/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level10/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level11" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 924.0
+margin_right = 320.0
+margin_bottom = 1004.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level11"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level11/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "fire-3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level11"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level11/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level11/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level11/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level11/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level11/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level12" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1008.0
+margin_right = 320.0
+margin_bottom = 1088.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level12"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level12/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "fire-4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level12"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level12/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level12/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level12/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level12/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level12/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level13" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1092.0
+margin_right = 320.0
+margin_bottom = 1172.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level13"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level13/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "car-1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level13"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level13/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level13/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level13/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level13/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level13/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level14" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1176.0
+margin_right = 320.0
+margin_bottom = 1256.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level14"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level14/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "car-2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level14"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level14/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level14/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level14/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level14/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level14/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level15" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1260.0
+margin_right = 320.0
+margin_bottom = 1340.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level15"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level15/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "car-3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level15"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level15/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level15/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level15/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level15/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level15/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level16" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1344.0
+margin_right = 320.0
+margin_bottom = 1424.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level16"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level16/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "car-4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level16"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level16/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level16/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level16/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level16/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level16/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level17" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1428.0
+margin_right = 320.0
+margin_bottom = 1508.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level17"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level17/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "all-1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level17"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level17/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level17/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level17/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level17/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level17/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level18" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1512.0
+margin_right = 320.0
+margin_bottom = 1592.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level18"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level18/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "all-2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level18"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level18/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level18/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level18/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level18/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level18/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level19" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1596.0
+margin_right = 320.0
+margin_bottom = 1676.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level19"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level19/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "all-3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level19"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level19/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level19/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level19/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level19/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level19/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 230.0
+margin_top = -46.0
+margin_right = 239.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 221"
+
+[node name="level20" type="VBoxContainer" parent="ScrollContainer/levels"]
+margin_top = 1680.0
+margin_right = 320.0
+margin_bottom = 1760.0
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level20"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level20/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "finale"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level20"]
+visible = false
+margin_top = -84.0
+margin_right = 320.0
+margin_bottom = 66.0
+texture = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/levels/level20/TextureRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_bottom = -6.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer"]
+margin_left = 6.0
+margin_right = 158.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
+margin_left = 127.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer"]
+margin_left = 162.0
+margin_right = 314.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 20 )
+text = "practice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton"]
+visible = false
+margin_left = 128.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 55.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level20/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = -68.0
+margin_right = 69.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/levels/level20/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = -68.0
+margin_right = 224.0
+margin_bottom = 2.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="ScrollContainer/levels/level20/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 75.0
+margin_top = -46.0
+margin_right = 84.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 20 )
+text = ": 102"
+
+[node name="deaths_practice" type="Label" parent="ScrollContainer/levels/level20/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 230.0
@@ -1426,6 +3554,48 @@ __meta__ = {
 [connection signal="pressed" from="ScrollContainer/levels/level6/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level6" ]]
 [connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level6", false ]]
 [connection signal="pressed" from="ScrollContainer/levels/level6/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level6", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level7/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level7" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level7", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level7/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level7", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level8/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level8" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level8", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level8/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level8", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level9/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level9" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level9", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level9/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level9", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level10/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level10" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level10", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level10/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level10", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level11/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level11" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level11", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level11/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level11", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level12/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level12" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level12", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level12/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level12", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level13/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level13" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level13", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level13/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level13", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level14/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level14" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level14", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level14/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level14", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level15/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level15" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level15", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level15/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level15", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level16/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level16" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level16", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level16/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level16", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level17/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level17" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level17", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level17/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level17", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level18/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level18" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level18", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level18/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level18", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level19/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level19" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level19", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level19/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level19", true ]]
+[connection signal="pressed" from="ScrollContainer/levels/level20/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level20" ]]
+[connection signal="pressed" from="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level20", false ]]
+[connection signal="pressed" from="ScrollContainer/levels/level20/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level20", true ]]
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="stats/VBoxContainer/deadliest_color/Button" to="." method="_on_stats_button_pressed" binds= [ "color" ]]
 [connection signal="pressed" from="stats/VBoxContainer/deadliest_enemy/Button" to="." method="_on_stats_button_pressed" binds= [ "enemy" ]]

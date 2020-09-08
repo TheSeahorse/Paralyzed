@@ -28,6 +28,7 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 func jump() -> void:
 	TOGGLE_ACTION = false
 	if ON_FLOOR:
+		get_parent().get_parent().add_stat("car-jump", 1)
 		VELOCITY.y =- MAX_SPEED.y
 		ON_FLOOR = false
 

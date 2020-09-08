@@ -54,6 +54,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 	if area is LaserBeam:
 		ON_BEAM = true
 		BEAM_COLOR = area.get_color()
+		get_parent().add_stat("phazed-beam", 1)
 	elif area is Spikes:
 		if area.get_parent() is Square:
 			call_deferred("player_dead", "square", area.get_parent().COLOR)
@@ -62,6 +63,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 	elif area is Goal:
 		emit_signal("levelcleared")
 	elif area.get_parent() is Lava:
+		get_parent().add_stat("phazed-lava", 1)
 		ON_LAVA += 1
 		if ON_LAVA == 1:
 			LAVA1 = area
@@ -107,14 +109,18 @@ func play_death_animation():
 func check_if_dead():
 	if ON_BEAM and PLAYER_COLOR != BEAM_COLOR:
 		call_deferred("player_dead", "beam", BEAM_COLOR)
+		get_parent().add_stat("phazed-beam", -1)
 	if ON_LAVA == 1:
 		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
 			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
+			get_parent().add_stat("phazed-lava", -1)
 	if ON_LAVA == 2:
 		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
 			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
+			get_parent().add_stat("phazed-lava", 1)
 		elif LAVA2.get_parent().COLOR == PLAYER_COLOR:
 			call_deferred("player_dead", "lava", LAVA2.get_parent().COLOR)
+			get_parent().add_stat("phazed-lava", 1)
 
 
 func calculate_y(velocity: Vector2, delta: float) -> Vector2:
@@ -146,4 +152,4 @@ func is_color(color: String):
 		if get_parent().SETTINGS[2]:
 			$change_color.play()
 		PLAYER_COLOR = color
-		get_parent().add_stat("switch-color")
+		get_parent().add_stat("switch-color", 1)

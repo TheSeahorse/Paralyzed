@@ -19,7 +19,7 @@ var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phaz
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
-var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7"] # order in which the levels should appear, used in mainMenu
+var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true
 var SETTINGS: = [true, true, true] #settings in a "map" HUD, Music, Sound
@@ -97,7 +97,7 @@ func handle_action():
 # auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
 	if ((Input.is_action_just_pressed("escape") or auto) and !player.DEAD) and CAN_PAUSE:
-		add_stat("paused")
+		add_stat("paused", 1)
 		$pauseMenu.show_menu()
 		get_tree().paused = true
 		CAN_PAUSE = false
@@ -110,7 +110,7 @@ func handle_practice_save():
 		var player_position = player.position
 		PRACTICE_SAVED_PLAYER_VECTORS.append(player_position)
 		level.spawn_flag(player_position)
-		add_stat("place-flag")
+		add_stat("placed-flag", 1)
 
 
 func handle_practice_delete_save():
@@ -176,8 +176,8 @@ func save_game():
 func load_savestate():
 	var load_game = File.new()
 	if not load_game.file_exists("user://savegame.save"):
-		DEATHS = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
-		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
+		DEATHS = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
 		TIME_PLAYED = 0
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
 		STATS = [0, 0, 0, 0, 0, 0, 0]
@@ -239,21 +239,21 @@ func add_deadliest_color(color: String):
 
 
 # STATS: [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
-func add_stat(stat: String):
+func add_stat(stat: String, amount: int):
 	if stat == "switch-color":
-		STATS[0] += 1
+		STATS[0] += amount
 	elif stat == "square-jump":
-		STATS[1] += 1
+		STATS[1] += amount
 	elif stat == "car-jump":
-		STATS[2] += 1
-	elif stat == "phaze-beam":
-		STATS[3] += 1
-	elif stat == "phaze-lava":
-		STATS[4] += 1
-	elif stat == "place-flag":
-		STATS[5] += 1
+		STATS[2] += amount
+	elif stat == "phazed-beam":
+		STATS[3] += amount
+	elif stat == "phazed-lava":
+		STATS[4] += amount
+	elif stat == "placed-flag":
+		STATS[5] += amount
 	elif stat == "paused":
-		STATS[6] += 1
+		STATS[6] += amount
 
 
 func show_main_menu():

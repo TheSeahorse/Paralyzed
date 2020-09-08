@@ -53,7 +53,9 @@ func update_stats():
 	$stats/VBoxContainer/deadliest_colors/yellow.set_text("yellow: " + str(deadliest_color[3]))
 	$stats/VBoxContainer/deadliest_colors/none.set_text("no color: " + str(deadliest_color[4]))
 	var best_color = calculate_deadliest_color(deadliest_color)
+	var best_enemy = calculate_deadliest_enemy(death_by)
 	$stats/VBoxContainer/deadliest_color.set_text("deadliest color: " + str(best_color))
+	$stats/VBoxContainer/deadliest_enemy.set_text("deadliest enemy: " + str(best_enemy))
 	$stats/VBoxContainer/deadliest_enemies/spikes.set_text("spikes: " + str(death_by[0]))
 	$stats/VBoxContainer/deadliest_enemies/square.set_text("square: " + str(death_by[1]))
 	$stats/VBoxContainer/deadliest_enemies/beam.set_text("laser: " + str(death_by[2]))
@@ -63,7 +65,7 @@ func update_stats():
 	$stats/VBoxContainer/changed_color.set_text("changed color " + str(stats[0]) + " times")
 	$stats/VBoxContainer/square_jumps.set_text("square jumps: " + str(stats[1]))
 	$stats/VBoxContainer/car_jumps.set_text("car jumps: " + str(stats[2]))
-	$stats/VBoxContainer/phazed_laser.set_text("phazed through laser: " + str(stats[3]))
+	$stats/VBoxContainer/phazed_laser.set_text("lasers phazed: " + str(stats[3]))
 	$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(stats[4]))
 	$stats/VBoxContainer/placed_flags.set_text("practice flags placed: " + str(stats[5]))
 	$stats/VBoxContainer/paused.set_text("times paused: " + str(stats[6]))
@@ -81,9 +83,7 @@ func calculate_deadliest_color(stats: Array) -> String:
 	var highest_count = 0
 	for s in stats:
 		if s > highest_count:
-			if (s == stats[4]) and (stats.count(s) == 1):
-				s #ok
-			else:
+			if (s != stats[4]) or (stats.count(s) != 1):
 				highest_count = s
 	if highest_count == 0:
 		return "none"
@@ -101,12 +101,41 @@ func calculate_deadliest_color(stats: Array) -> String:
 			deadliest = "none"
 	return deadliest
 
+# [spikes, square, beam, lava, car, self-destruct]
+# self destruct räknas inte, därför complex
+func calculate_deadliest_enemy(stats: Array) -> String:
+	var deadliest: String
+	var highest_count = 0
+	for s in stats:
+		if s > highest_count:
+			if (s != stats[5]) or (stats.count(s) != 1):
+				highest_count = s
+	if highest_count == 0:
+		return "none"
+	var index = stats.find(highest_count)
+	match index:
+		0:
+			deadliest = "spikes"
+		1:
+			deadliest = "square"
+		2:
+			deadliest = "laser"
+		3:
+			deadliest = "fire"
+		4:
+			deadliest = "car"
+		_:
+			deadliest = "none"
+	return deadliest
+
+
 func hide_current_level_and_stat():
 	if SHOWN_LEVEL != "":
 		toggle_button_node(SHOWN_LEVEL)
 		SHOWN_LEVEL = ""
 	$stats/VBoxContainer/deadliest_colors.hide()
 	$stats/VBoxContainer/deadliest_enemies.hide()
+
 
 func _on_level_dropdown_pressed(level: String):
 	if get_parent().get_parent().SETTINGS[2]:
