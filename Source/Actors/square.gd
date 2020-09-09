@@ -32,7 +32,7 @@ func _on_tileMap_body_exited(_body: Node) -> void: #Area2D, not tilemap
 
 
 func action():
-	GRACE_FRAMES = 7
+	GRACE_FRAMES = 5
 	TOGGLE_ACTION = true
 
 

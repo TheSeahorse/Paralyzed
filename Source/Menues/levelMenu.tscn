@@ -3361,7 +3361,7 @@ margin_top = 26.0
 margin_right = 360.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.933333, 0.266667, 0.184314, 1 )
+custom_colors/font_color = Color( 0.603922, 0.101961, 0.0392157, 1 )
 text = "red: 33"
 
 [node name="purple" type="Label" parent="stats/VBoxContainer/deadliest_colors"]

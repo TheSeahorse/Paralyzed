@@ -201,6 +201,8 @@ func _on_goBack_pressed() -> void:
 
 
 func _on_stats_button_pressed(type: String) -> void:
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
 	match type:
 		"color":
 			if $stats/VBoxContainer/deadliest_colors.visible:
