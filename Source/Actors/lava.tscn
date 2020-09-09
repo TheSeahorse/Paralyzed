@@ -69,7 +69,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 29, 2 )
+extents = Vector2( 29, 14 )
 
 [node name="lava" type="KinematicBody2D"]
 collision_layer = 2
@@ -89,5 +89,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 0.054902, 0.709804, 0, 1 )
-position = Vector2( 0, -17 )
+position = Vector2( 0, -29 )
 shape = SubResource( 3 )
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

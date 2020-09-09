@@ -6,13 +6,10 @@ signal playerdead
 var PLAYER_COLOR: = "cyan"
 var DEAD: = false
 var ON_HEADS: = 0 # the amount of enemy heads the player is currently on
-var ON_LAVA: = 0 # the amount of lava tiles the player is currently on
 var ON_BEAM: = false # true if player is currently on a beam
 var BEAM_COLOR # color of the beam the player is on
 var SQUARE1 # left most square the player is on (if on only one square this var is used)
 var SQUARE2 # right most square the player is on (only if player is on two squares)
-var LAVA1 # left most lava tile the player is on (if on only one tile this var is used)
-var LAVA2 # right most lava tile the player is on (only if player is on two tiles)
 var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 0
 
 
@@ -62,13 +59,6 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 			call_deferred("player_dead", "spikes", "none")
 	elif area is Goal:
 		emit_signal("levelcleared")
-	elif area.get_parent() is Lava:
-		get_parent().add_stat("phazed-lava", 1)
-		ON_LAVA += 1
-		if ON_LAVA == 1:
-			LAVA1 = area
-		else:
-			LAVA2 = area
 	elif area.get_parent() is Car:
 		call_deferred("player_dead", "car", area.COLOR)
 
@@ -77,13 +67,6 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 	if area is LaserBeam:
 		ON_BEAM = false
 		BEAM_COLOR = null
-	if area.get_parent() is Lava:
-		ON_LAVA -= 1
-		if ON_LAVA == 0:
-			LAVA1 = null
-		elif ON_LAVA == 1:
-			LAVA1 = LAVA2
-			LAVA2 = null
 
 
 func play_music(level: String):
@@ -110,17 +93,6 @@ func check_if_dead():
 	if ON_BEAM and PLAYER_COLOR != BEAM_COLOR:
 		call_deferred("player_dead", "beam", BEAM_COLOR)
 		get_parent().add_stat("phazed-beam", -1)
-	if ON_LAVA == 1:
-		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
-			get_parent().add_stat("phazed-lava", -1)
-	if ON_LAVA == 2:
-		if LAVA1.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead", "lava", LAVA1.get_parent().COLOR)
-			get_parent().add_stat("phazed-lava", 1)
-		elif LAVA2.get_parent().COLOR == PLAYER_COLOR:
-			call_deferred("player_dead", "lava", LAVA2.get_parent().COLOR)
-			get_parent().add_stat("phazed-lava", 1)
 
 
 func calculate_y(velocity: Vector2, delta: float) -> Vector2:

@@ -98,44 +98,14 @@ animations = [ {
 "name": "yellow",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 1 ) ],
-"loop": false,
-"name": "cyan to purple",
-"speed": 30.0
-}, {
 "frames": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 1 ) ],
 "loop": false,
 "name": "red to purple",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "purple to yellow",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "red dead",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "purple to red",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "purple dead",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 1 ) ],
-"loop": false,
-"name": "yellow to purple",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 6 ) ],
-"loop": false,
-"name": "red to cyan",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 9 ) ],
@@ -143,10 +113,45 @@ animations = [ {
 "name": "yellow dead",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 42 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 38 ), ExtResource( 1 ) ],
 "loop": false,
-"name": "purple to cyan",
+"name": "cyan to purple",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "yellow to purple",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "yellow to red",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "cyan to yellow",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "red to cyan",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "purple dead",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "red dead",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "cyan dead",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 4 ) ],
 "loop": false,
@@ -158,24 +163,19 @@ animations = [ {
 "name": "cyan to red",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 66 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "yellow to red",
+"name": "purple to yellow",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 47 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "purple to cyan",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 60 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "yellow to cyan",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "cyan dead",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "cyan to yellow",
 "speed": 30.0
 } ]
 
@@ -196,11 +196,6 @@ animations = [ {
 "name": "level2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
-"name": "level3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "level4",
@@ -209,6 +204,11 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "level5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "level3",
 "speed": 5.0
 } ]
 

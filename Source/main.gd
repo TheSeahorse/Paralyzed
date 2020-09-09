@@ -43,7 +43,8 @@ func _input(_event: InputEvent) -> void:
 			if !player.DEAD:
 				handle_practice_save()
 			handle_practice_delete_save()
-			self_kill()
+			if Input.is_action_just_pressed("kill"):
+				kill_player("sd", "none")
 
 
 func _on_backMainMenu() -> void:
@@ -118,10 +119,9 @@ func handle_practice_delete_save():
 		PRACTICE_SAVED_PLAYER_VECTORS.pop_back()
 
 
-func self_kill():
-	if Input.is_action_just_pressed("kill"):
+func kill_player(cause: String, color: String):
 		if !player.DEAD:
-			player.player_dead("sd", "none")
+			player.player_dead(cause, color)
 
 
 func player_cleared_level():
