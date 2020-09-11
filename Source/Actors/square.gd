@@ -27,11 +27,11 @@ func _physics_process(delta: float) -> void:
 func _on_tileMap_body_entered(_body: Node) -> void: #Area2D, not tilemap
 	if not ON_FLOOR:
 		ON_FLOOR = true
-		set_particle_color()
-		$Dust1.set_visible(true)
-		$Dust2.set_visible(true)
-		$Dust1.set_emitting(true)
-		$Dust2.set_emitting(true)
+		#set_particle_color()
+		#$Dust1.set_visible(true)
+		#$Dust2.set_visible(true)
+		#$Dust1.set_emitting(true)
+		#$Dust2.set_emitting(true)
 
 
 
