@@ -1,51 +1,98 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Source/Actors/lava.gd" type="Script" id=1]
-[ext_resource path="res://Character models/World/Lava floor/cyan lava 0.png" type="Texture" id=2]
-[ext_resource path="res://Character models/World/Lava floor/cyan lava 1.png" type="Texture" id=3]
-[ext_resource path="res://Character models/World/Lava floor/cyan lava 3.png" type="Texture" id=4]
+[ext_resource path="res://Character models/World/Lava floor/fireanimationcyan.png" type="Texture" id=2]
+[ext_resource path="res://Character models/World/Lava floor/fireanimationred.png" type="Texture" id=3]
+[ext_resource path="res://Character models/World/Lava floor/fireanimationyellow.png" type="Texture" id=4]
 [ext_resource path="res://Character models/World/Lava floor/cyan lava off.png" type="Texture" id=5]
-[ext_resource path="res://Character models/World/Lava floor/cyan lava 2.png" type="Texture" id=6]
+[ext_resource path="res://Character models/World/Lava floor/fireanimationpurple.png" type="Texture" id=6]
 [ext_resource path="res://Character models/World/Lava floor/yellow lava off.png" type="Texture" id=7]
-[ext_resource path="res://Character models/World/Lava floor/yellow lava 0.png" type="Texture" id=8]
-[ext_resource path="res://Character models/World/Lava floor/yellow lava 3.png" type="Texture" id=9]
-[ext_resource path="res://Character models/World/Lava floor/purple lava 1.png" type="Texture" id=10]
-[ext_resource path="res://Character models/World/Lava floor/red lava 1.png" type="Texture" id=11]
 [ext_resource path="res://Character models/World/Lava floor/red lava off.png" type="Texture" id=12]
-[ext_resource path="res://Character models/World/Lava floor/yellow lava 2.png" type="Texture" id=13]
 [ext_resource path="res://Character models/World/Lava floor/purple lava off.png" type="Texture" id=14]
-[ext_resource path="res://Character models/World/Lava floor/red lava 3.png" type="Texture" id=15]
-[ext_resource path="res://Character models/World/Lava floor/yellow lava 1.png" type="Texture" id=16]
-[ext_resource path="res://Character models/World/Lava floor/purple lava 2.png" type="Texture" id=17]
-[ext_resource path="res://Character models/World/Lava floor/purple lava 0.png" type="Texture" id=18]
-[ext_resource path="res://Character models/World/Lava floor/purple lava 3.png" type="Texture" id=19]
-[ext_resource path="res://Character models/World/Lava floor/red lava 0.png" type="Texture" id=20]
-[ext_resource path="res://Character models/World/Lava floor/red lava 2.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 8 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 192, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 48 )
+
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "purple off",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "cyan on",
-"speed": 15.0
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "purple on",
-"speed": 15.0
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 15 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "red on",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -57,10 +104,15 @@ animations = [ {
 "name": "yellow off",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 9 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "yellow on",
-"speed": 15.0
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "purple off",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": false,
@@ -68,7 +120,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 29, 14 )
 
 [node name="lava" type="KinematicBody2D"]
@@ -80,9 +132,10 @@ position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -12 )
-frames = SubResource( 2 )
+position = Vector2( 0, -24 )
+frames = SubResource( 6 )
 animation = "cyan off"
+playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -90,6 +143,6 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 0.054902, 0.709804, 0, 1 )
 position = Vector2( 0, -29 )
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

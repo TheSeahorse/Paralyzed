@@ -24,6 +24,12 @@ position = Vector2( 11240, 0 )
 [node name="lava" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1282, 16 )
 
+[node name="lava31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1218, 16 )
+
+[node name="lava32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1346, 16 )
+
 [node name="lava2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2096, 16 )
 COLOR = "purple"
