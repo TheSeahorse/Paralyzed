@@ -32,7 +32,7 @@ font_data = ExtResource( 19 )
 size = 90
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 128
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -51,7 +51,7 @@ stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 1, 0 )
+position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -201,8 +201,8 @@ margin_bottom = 320.0
 alignment = 1
 
 [node name="Label" type="Label" parent="settings/soundfx"]
-margin_left = 132.0
-margin_right = 268.0
+margin_left = 105.0
+margin_right = 295.0
 margin_bottom = 104.0
 custom_fonts/font = ExtResource( 14 )
 text = "sfx"
@@ -211,8 +211,8 @@ __meta__ = {
 }
 
 [node name="CheckBox" type="CheckButton" parent="settings/soundfx"]
-margin_left = 272.0
-margin_right = 348.0
+margin_left = 299.0
+margin_right = 375.0
 margin_bottom = 104.0
 focus_mode = 0
 pressed = true
@@ -369,7 +369,6 @@ text = "q"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -395,7 +394,6 @@ text = "W"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -421,7 +419,6 @@ text = "E"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -447,7 +444,6 @@ text = "r"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -473,7 +469,6 @@ text = "space"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -0.2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -499,12 +494,11 @@ text = "escape"
 align = 1
 valign = 1
 clip_text = true
-percent_visible = -0.166667
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="reset" type="TextureButton" parent="keybinds"]
+[node name="reset_default" type="TextureButton" parent="keybinds"]
 margin_top = 600.0
 margin_right = 480.0
 margin_bottom = 728.0
@@ -512,7 +506,7 @@ texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="keybinds/reset"]
+[node name="Label" type="Label" parent="keybinds/reset_default"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
@@ -527,7 +521,7 @@ __meta__ = {
 visible = false
 margin_left = 240.0
 margin_top = 375.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Press any key..."
 align = 1
 valign = 1
@@ -595,6 +589,6 @@ __meta__ = {
 [connection signal="pressed" from="keybinds/separator/buttons/yellow" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
 [connection signal="pressed" from="keybinds/separator/buttons/action" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
 [connection signal="pressed" from="keybinds/separator/buttons/escape" to="." method="_on_change_keybind_pressed" binds= [ "escape" ]]
-[connection signal="pressed" from="keybinds/reset" to="." method="_on_Keybindings_pressed"]
+[connection signal="pressed" from="keybinds/reset_default" to="." method="_on_reset_default_pressed"]
 [connection signal="pressed" from="back_settings" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="back_keybinds" to="." method="_on_Back_keybinds_pressed"]

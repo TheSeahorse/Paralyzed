@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=1]
 
-
 [resource]
 size = 50
 font_data = ExtResource( 1 )

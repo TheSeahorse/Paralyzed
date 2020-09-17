@@ -5,6 +5,8 @@ const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
 var levelmenu
 var can_change_key = false
 var keybind_string #keybind being changed
+var default_keybind_strings = ["cyan", "red", "purple", "yellow", "action", "escape"]
+var default_keybinds = [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_SPACE, KEY_ESCAPE]
 enum keybinds {cyan, red, purple, yellow, action, escape}
 
 
@@ -18,11 +20,28 @@ func _input(event):
 	if event is InputEventKey:
 		if can_change_key:
 			$press_key.hide()
-			change_key(event)
+			change_key(event, false)
 			can_change_key = false
 
 
-func change_key(new_key):
+func _on_change_keybind_pressed(keybind: String) -> void:
+	click_fx()
+	mark_button(keybind)
+	$press_key.show()
+
+
+func _on_reset_default_pressed() -> void:
+	var counter = 0
+	for key in default_keybinds:
+		keybind_string = default_keybind_strings[counter]
+		var event = InputEventKey.new()
+		event.set_scancode(key)
+		change_key(event, true)
+		counter += 1
+	set_keys()
+
+
+func change_key(new_key: InputEvent, skip_set_keys: bool):
 	#Delete key of pressed button
 	if !InputMap.get_action_list(keybind_string).empty():
 		InputMap.action_erase_event(keybind_string, InputMap.get_action_list(keybind_string)[0])
@@ -34,7 +53,8 @@ func change_key(new_key):
 
 	#Add new Key
 	InputMap.action_add_event(keybind_string, new_key)
-	set_keys()
+	if !skip_set_keys:
+		set_keys()
 
 
 func set_keys():
@@ -163,12 +183,6 @@ func _on_Back_keybinds_pressed() -> void:
 	show_settings()
 
 
-func _on_change_keybind_pressed(keybind: String) -> void:
-	click_fx()
-	mark_button(keybind)
-	$press_key.show()
-
-
 func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 	click_fx()
 	get_parent().SETTINGS[setting_nr] = button_pressed
@@ -177,3 +191,6 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 			start_music()
 		else:
 			stop_music()
+
+
+
