@@ -34,11 +34,8 @@ func _on_tileMap_body_entered(_body: Node) -> void: #Area2D, not tilemap
 		#$Dust2.set_emitting(true)
 
 
-
 func _on_tileMap_body_exited(_body: Node) -> void: #Area2D, not tilemap
 	ON_FLOOR = false #this gets changed faster in the jump functions
-	print("hey")
-
 
 
 func set_particle_color():

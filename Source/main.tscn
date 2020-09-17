@@ -8,3 +8,4 @@ script = ExtResource( 1 )
 
 [node name="pauseMenu" parent="." instance=ExtResource( 2 )]
 [connection signal="backMenu" from="pauseMenu" to="." method="_on_backMainMenu"]
+[connection signal="restart" from="pauseMenu" to="." method="_on_resart"]

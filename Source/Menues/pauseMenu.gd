@@ -1,5 +1,6 @@
 extends CanvasLayer
 signal backMenu
+signal restart
 
 var can_press_escape = false
 
@@ -25,8 +26,8 @@ func _on_continue_pressed() -> void:
 func continue_game():
 	if get_parent().SETTINGS[2]:
 		$unpause.play()
-	get_tree().paused = false
 	$VBoxContainer.hide()
+	get_tree().paused = false
 	can_press_escape = false
 
 
@@ -35,5 +36,14 @@ func _on_mainMenu_pressed() -> void:
 		$click.play()
 	$VBoxContainer.hide()
 	emit_signal("backMenu")
+	get_tree().paused = false
+	can_press_escape = false
+
+
+func _on_restart_pressed() -> void:
+	if get_parent().SETTINGS[2]:
+		$click.play()
+	$VBoxContainer.hide()
+	emit_signal("restart")
 	get_tree().paused = false
 	can_press_escape = false

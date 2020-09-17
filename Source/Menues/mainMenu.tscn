@@ -1,9 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Character models/World/Backgrounds/menu_background.png" type="Texture" id=3]
-[ext_resource path="res://Character models/Menues/Fonts/Tourmaline-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/World/8bit_style.wav" type="AudioStream" id=6]
 [ext_resource path="res://Character models/Menues/main_button_normal.png" type="Texture" id=7]
@@ -18,20 +18,18 @@
 [ext_resource path="res://Character models/Menues/back_button_pressed.png" type="Texture" id=16]
 [ext_resource path="res://Character models/Menues/back_button_hover.png" type="Texture" id=17]
 [ext_resource path="res://Character models/Menues/Fonts/back.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Glitch.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://Character models/Menues/Fonts/keybinds_buttons.tres" type="DynamicFont" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 160
-outline_size = 5
-outline_color = Color( 0.792157, 0.215686, 0.152941, 1 )
-font_data = ExtResource( 4 )
+outline_size = 1
+outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
+extra_spacing_char = -5
+font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 90
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 45
-outline_size = 1
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -53,6 +51,7 @@ stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="background" type="Sprite" parent="."]
+position = Vector2( 1, 0 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -206,7 +205,7 @@ margin_left = 132.0
 margin_right = 268.0
 margin_bottom = 104.0
 custom_fonts/font = ExtResource( 14 )
-text = "fx"
+text = "sfx"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -245,222 +244,279 @@ __meta__ = {
 [node name="keybinds" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 560.0
-margin_top = 130.0
+margin_top = 80.0
 margin_right = 1040.0
-margin_bottom = 726.0
+margin_bottom = 808.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cyan" type="HBoxContainer" parent="keybinds"]
+[node name="separator" type="HBoxContainer" parent="keybinds"]
 margin_right = 480.0
-margin_bottom = 96.0
+margin_bottom = 596.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="words" type="VBoxContainer" parent="keybinds/separator"]
+margin_right = 256.0
+margin_bottom = 596.0
 alignment = 1
 
-[node name="Label" type="Label" parent="keybinds/cyan"]
-margin_left = 49.0
-margin_top = 16.0
-margin_right = 226.0
-margin_bottom = 79.0
+[node name="cyan" type="Label" parent="keybinds/separator/words"]
+margin_top = 67.0
+margin_right = 256.0
+margin_bottom = 134.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.517647, 1, 0.964706, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "cyan"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/cyan"]
-margin_left = 230.0
-margin_right = 430.0
-margin_bottom = 96.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 11 )
+[node name="HSeparator" type="HSeparator" parent="keybinds/separator/words"]
+margin_top = 138.0
+margin_right = 256.0
+margin_bottom = 142.0
 
-[node name="Label" type="Label" parent="keybinds/cyan/TextureButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "q"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="red" type="HBoxContainer" parent="keybinds"]
-margin_top = 100.0
-margin_right = 480.0
-margin_bottom = 196.0
-alignment = 1
-
-[node name="Label" type="Label" parent="keybinds/red"]
-margin_left = 81.0
-margin_top = 16.0
-margin_right = 194.0
-margin_bottom = 79.0
+[node name="red" type="Label" parent="keybinds/separator/words"]
+margin_top = 146.0
+margin_right = 256.0
+margin_bottom = 213.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 0.364706, 0.364706, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "red"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/red"]
-margin_left = 198.0
-margin_right = 398.0
-margin_bottom = 96.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 11 )
-
-[node name="Label" type="Label" parent="keybinds/red/TextureButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "W"
-align = 1
-valign = 1
+[node name="HSeparator2" type="HSeparator" parent="keybinds/separator/words"]
+margin_top = 217.0
+margin_right = 256.0
+margin_bottom = 221.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="purple" type="HBoxContainer" parent="keybinds"]
-margin_top = 200.0
-margin_right = 480.0
-margin_bottom = 296.0
-alignment = 1
-
-[node name="Label" type="Label" parent="keybinds/purple"]
-margin_left = 31.0
-margin_top = 16.0
-margin_right = 245.0
-margin_bottom = 79.0
+[node name="purple" type="Label" parent="keybinds/separator/words"]
+margin_top = 225.0
+margin_right = 256.0
+margin_bottom = 292.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.803922, 0.262745, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "purple"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/purple"]
-margin_left = 249.0
-margin_right = 449.0
-margin_bottom = 96.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 11 )
+[node name="HSeparator3" type="HSeparator" parent="keybinds/separator/words"]
+margin_top = 296.0
+margin_right = 256.0
+margin_bottom = 300.0
 
-[node name="Label" type="Label" parent="keybinds/purple/TextureButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_right = 1.0
-custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "E"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="yellow" type="HBoxContainer" parent="keybinds"]
-margin_top = 300.0
-margin_right = 480.0
-margin_bottom = 396.0
-alignment = 1
-
-[node name="Label" type="Label" parent="keybinds/yellow"]
-margin_left = 17.0
-margin_top = 16.0
-margin_right = 258.0
-margin_bottom = 79.0
+[node name="yellow" type="Label" parent="keybinds/separator/words"]
+margin_top = 304.0
+margin_right = 256.0
+margin_bottom = 371.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 0.921569, 0.458824, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "yellow"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/yellow"]
-margin_left = 262.0
-margin_right = 462.0
-margin_bottom = 96.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 11 )
+[node name="HSeparator4" type="HSeparator" parent="keybinds/separator/words"]
+margin_top = 375.0
+margin_right = 256.0
+margin_bottom = 379.0
 
-[node name="Label" type="Label" parent="keybinds/yellow/TextureButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "r"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="action" type="HBoxContainer" parent="keybinds"]
-margin_top = 400.0
-margin_right = 480.0
-margin_bottom = 496.0
-alignment = 1
-
-[node name="Label" type="Label" parent="keybinds/action"]
-margin_left = 23.0
-margin_top = 16.0
-margin_right = 253.0
-margin_bottom = 79.0
+[node name="action" type="Label" parent="keybinds/separator/words"]
+margin_top = 383.0
+margin_right = 256.0
+margin_bottom = 450.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "action"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/action"]
-margin_left = 257.0
-margin_right = 457.0
-margin_bottom = 96.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 11 )
+[node name="HSeparator5" type="HSeparator" parent="keybinds/separator/words"]
+margin_top = 454.0
+margin_right = 256.0
+margin_bottom = 458.0
 
-[node name="Label" type="Label" parent="keybinds/action/TextureButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "space"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="escape" type="HBoxContainer" parent="keybinds"]
-margin_top = 500.0
-margin_right = 480.0
-margin_bottom = 596.0
-alignment = 1
-
-[node name="Label" type="Label" parent="keybinds/escape"]
-margin_left = 44.0
-margin_top = 16.0
-margin_right = 232.0
-margin_bottom = 79.0
+[node name="escape" type="Label" parent="keybinds/separator/words"]
+margin_top = 462.0
+margin_right = 256.0
+margin_bottom = 529.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "pause"
 
-[node name="TextureButton" type="TextureButton" parent="keybinds/escape"]
-margin_left = 236.0
-margin_right = 436.0
+[node name="buttons" type="VBoxContainer" parent="keybinds/separator"]
+margin_left = 260.0
+margin_right = 460.0
+margin_bottom = 596.0
+alignment = 2
+
+[node name="cyan" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_right = 200.0
 margin_bottom = 96.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="keybinds/escape/TextureButton"]
+[node name="Label" type="Label" parent="keybinds/separator/buttons/cyan"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "q"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_top = 100.0
+margin_right = 200.0
+margin_bottom = 196.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/separator/buttons/red"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "W"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="purple" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_top = 200.0
+margin_right = 200.0
+margin_bottom = 296.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/separator/buttons/purple"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "E"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yellow" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_top = 300.0
+margin_right = 200.0
+margin_bottom = 396.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/separator/buttons/yellow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "r"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="action" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_top = 400.0
+margin_right = 200.0
+margin_bottom = 496.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/separator/buttons/action"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "space"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -0.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="escape" type="TextureButton" parent="keybinds/separator/buttons"]
+margin_top = 500.0
+margin_right = 200.0
+margin_bottom = 596.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="keybinds/separator/buttons/escape"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 20 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "escape"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = -0.166667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="TextureButton" parent="keybinds"]
+margin_top = 600.0
+margin_right = 480.0
+margin_bottom = 728.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="keybinds/reset"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "default"
 align = 1
 valign = 1
 __meta__ = {
@@ -533,11 +589,12 @@ __meta__ = {
 [connection signal="toggled" from="settings/music/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]
 [connection signal="toggled" from="settings/soundfx/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 2 ]]
 [connection signal="pressed" from="settings/Keybindings" to="." method="_on_Keybindings_pressed"]
-[connection signal="pressed" from="keybinds/cyan/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
-[connection signal="pressed" from="keybinds/red/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
-[connection signal="pressed" from="keybinds/purple/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]
-[connection signal="pressed" from="keybinds/yellow/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
-[connection signal="pressed" from="keybinds/action/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
-[connection signal="pressed" from="keybinds/escape/TextureButton" to="." method="_on_change_keybind_pressed" binds= [ "escape" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/cyan" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/red" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/purple" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/yellow" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/action" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/escape" to="." method="_on_change_keybind_pressed" binds= [ "escape" ]]
+[connection signal="pressed" from="keybinds/reset" to="." method="_on_Keybindings_pressed"]
 [connection signal="pressed" from="back_settings" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="back_keybinds" to="." method="_on_Back_keybinds_pressed"]

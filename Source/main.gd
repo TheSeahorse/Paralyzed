@@ -47,12 +47,21 @@ func _input(_event: InputEvent) -> void:
 				kill_player("sd", "none")
 
 
+#signal from PauseMenu
 func _on_backMainMenu() -> void:
 	CAN_PAUSE = true
 	PRACTICE_SAVED_PLAYER_VECTORS = []
 	remove_player_and_level()
 	save_deaths()
 	show_main_menu()
+
+
+#signal from PauseMenu
+func _on_resart() -> void:
+	CAN_PAUSE = true
+	PRACTICE_SAVED_PLAYER_VECTORS = []
+	remove_player_and_level()
+	play_level(CURRENT_LEVEL, PRACTICE)
 
 
 func play_level(levelName: String, practice: bool):
@@ -283,4 +292,7 @@ func display_popup(tutorial_name: String):
 # called from levelMenu
 func set_level_start_time():
 	LEVEL_START_TIME = OS.get_unix_time()
+
+
+
 

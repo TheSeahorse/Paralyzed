@@ -9,6 +9,8 @@ enum keybinds {cyan, red, purple, yellow, action, escape}
 
 
 func _ready():
+	$keybinds/separator/words.add_constant_override("separation", 15)
+	$keybinds/separator.add_constant_override("separation", 24)
 	set_keys()
 
 
@@ -37,11 +39,11 @@ func change_key(new_key):
 
 func set_keys():
 	for j in keybinds:
-		get_node("keybinds/" + str(j) + "/TextureButton").set_pressed(false)
+		get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)
 		if !InputMap.get_action_list(j).empty():
-			get_node("keybinds/" + str(j) + "/TextureButton/Label").set_text(InputMap.get_action_list(j)[0].as_text())
+			get_node("keybinds/separator/buttons/" + str(j) + "/Label").set_text(InputMap.get_action_list(j)[0].as_text())
 		else:
-			get_node("keybinds/" + str(j) + "/TextureButton/Label").set_text("NaN!")
+			get_node("keybinds/separator/buttons/" + str(j) + "/Label").set_text("NaN!")
 
 
 func mark_button(string: String):
@@ -50,7 +52,7 @@ func mark_button(string: String):
 
 	for j in keybinds:
 		if j != string:
-			get_node("keybinds/" + str(j) + "/TextureButton").set_pressed(false)
+			get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)
 
 
 func click_fx():
@@ -103,6 +105,7 @@ func hide_keybinds():
 func show_level_menu():
 	display_cleared_levels()
 	levelmenu.show_level_menu()
+
 
 # just nu visar den bara alla nivåer som är efter en nivå klarad i normal mode
 func display_cleared_levels():
