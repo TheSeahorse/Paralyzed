@@ -70,12 +70,14 @@ func update_stats():
 	$stats/VBoxContainer/placed_flags.set_text("practice flags placed: " + str(stats[5]))
 	$stats/VBoxContainer/paused.set_text("times paused: " + str(stats[6]))
 
+
 func count_deaths(deaths: Array) -> int:
 	var amount = 0
 	for d in deaths:
 		amount += d[0]
 		amount += d[1]
 	return amount
+
 
 # no color gills inte, därför så komplicerad funktion
 func calculate_deadliest_color(stats: Array) -> String:
@@ -100,6 +102,7 @@ func calculate_deadliest_color(stats: Array) -> String:
 		_:
 			deadliest = "none"
 	return deadliest
+
 
 # [spikes, square, beam, lava, car, self-destruct]
 # self destruct räknas inte, därför complex
@@ -137,19 +140,6 @@ func hide_current_level_and_stat():
 	$stats/VBoxContainer/deadliest_enemies.hide()
 
 
-func _on_level_dropdown_pressed(level: String):
-	if get_parent().get_parent().SETTINGS[2]:
-		$click.play()
-	if SHOWN_LEVEL == "":
-		SHOWN_LEVEL = level
-	elif SHOWN_LEVEL == level:
-		SHOWN_LEVEL = ""
-	else:
-		toggle_button_node(SHOWN_LEVEL)
-		SHOWN_LEVEL = level
-	toggle_button_node(level)
-
-
 func toggle_button_node(level_name: String):
 	var node = get_node("ScrollContainer/levels/" + level_name + "/TextureRect")
 	var button_node = get_node("ScrollContainer/levels/" + level_name + "/TextureButton")
@@ -167,18 +157,9 @@ func toggle_button_node(level_name: String):
 		node.show()
 
 
-func _on_level_pressed(level: String, practice: bool) -> void:
-	if get_parent().get_parent().SETTINGS[2]:
-		$click.play()
-	emit_signal("levelselected", level, practice)
-	get_parent().get_parent().set_level_start_time()
-	get_parent().stop_music()
-	hide_level_menu()
-
-
 # called in mainMenu
-func enable_level(level: String):
-	var node = get_node("ScrollContainer/levels/" + level + "/TextureButton")
+func enable_level(level: int):
+	var node = get_node("ScrollContainer/levels/level" + str(level) + "/TextureButton")
 	if node != null:
 		node.set_disabled(false)
 
@@ -190,8 +171,32 @@ func show_checkmarks(level_number: int, cleared_normal: bool, cleared_practice: 
 	var level = levels[level_number]
 	if cleared_normal:
 		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton2/checkmark").show()
+		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureButton/checkmark").show()
 	if cleared_practice:
 		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton/checkmark").show()
+
+
+func _on_level_dropdown_pressed(level: String):
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
+	if SHOWN_LEVEL == "":
+		SHOWN_LEVEL = level
+	elif SHOWN_LEVEL == level:
+		SHOWN_LEVEL = ""
+	else:
+		toggle_button_node(SHOWN_LEVEL)
+		SHOWN_LEVEL = level
+	toggle_button_node(level)
+
+
+func _on_level_pressed(level: String, practice: bool) -> void:
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
+	emit_signal("levelselected", level, practice)
+	get_parent().get_parent().set_level_start_time()
+	get_parent().stop_music()
+	hide_level_menu()
+
 
 func _on_goBack_pressed() -> void:
 	if get_parent().get_parent().SETTINGS[2]:

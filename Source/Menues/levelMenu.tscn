@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -25,6 +25,9 @@
 [ext_resource path="res://Character models/Menues/stats_background.png" type="Texture" id=23]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=24]
 [ext_resource path="res://Character models/Menues/stats_line.png" type="Texture" id=25]
+[ext_resource path="res://Character models/Menues/stats_button_normal.png" type="Texture" id=26]
+[ext_resource path="res://Character models/Menues/stats_button_hover.png" type="Texture" id=27]
+[ext_resource path="res://Character models/Menues/stats_button_pressed.png" type="Texture" id=28]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -80,6 +83,22 @@ texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 10 )
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/tutorial/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="ScrollContainer/levels/tutorial/TextureButton"]
 anchor_right = 1.0
@@ -244,6 +263,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level1/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level1"]
 visible = false
 margin_top = 84.0
@@ -392,6 +427,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "cube-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level2/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -548,6 +599,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level3/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level3"]
 visible = false
 margin_right = 320.0
@@ -695,6 +762,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "cube-4"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level4/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -851,6 +934,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level5/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level5"]
 visible = false
 margin_right = 320.0
@@ -998,6 +1097,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "laser-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level6/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1154,6 +1269,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level7/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level7"]
 visible = false
 margin_top = -84.0
@@ -1302,6 +1433,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "laser-4"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level8/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1458,6 +1605,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level9/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level9"]
 visible = false
 margin_top = -84.0
@@ -1606,6 +1769,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "fire-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level10/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1762,6 +1941,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level11/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level11"]
 visible = false
 margin_top = -84.0
@@ -1910,6 +2105,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "fire-4"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level12/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2066,6 +2277,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level13/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level13"]
 visible = false
 margin_top = -84.0
@@ -2214,6 +2441,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "car-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level14/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2370,6 +2613,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level15/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level15"]
 visible = false
 margin_top = -84.0
@@ -2518,6 +2777,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "car-4"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level16/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2674,6 +2949,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level17/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level17"]
 visible = false
 margin_top = -84.0
@@ -2822,6 +3113,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "all-2"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level18/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2978,6 +3285,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level19/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/levels/level19"]
 visible = false
 margin_top = -84.0
@@ -3126,6 +3449,22 @@ custom_fonts/font = ExtResource( 4 )
 text = "finale"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="ScrollContainer/levels/level20/TextureButton"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -3285,9 +3624,9 @@ stream = ExtResource( 6 )
 volume_db = -10.0
 
 [node name="stats" type="TextureRect" parent="."]
-margin_left = 1070.0
+margin_left = 1069.0
 margin_top = 95.0
-margin_right = 1490.0
+margin_right = 1489.0
 margin_bottom = 795.0
 texture = ExtResource( 23 )
 __meta__ = {
@@ -3334,11 +3673,14 @@ margin_bottom = 170.0
 custom_fonts/font = SubResource( 2 )
 text = "deadliest color: yellow"
 
-[node name="Button" type="Button" parent="stats/VBoxContainer/deadliest_color"]
-margin_left = 334.0
-margin_top = 3.0
-margin_right = 346.0
-margin_bottom = 23.0
+[node name="Button" type="TextureButton" parent="stats/VBoxContainer/deadliest_color"]
+margin_left = 336.0
+margin_top = 1.0
+margin_right = 360.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -3348,6 +3690,15 @@ visible = false
 margin_top = 174.0
 margin_right = 360.0
 margin_bottom = 300.0
+
+[node name="TextureRect6" type="TextureRect" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 36.0
+margin_right = 360.0
+margin_bottom = 38.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="cyan" type="Label" parent="stats/VBoxContainer/deadliest_colors"]
 margin_right = 360.0
@@ -3388,6 +3739,15 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "no color: 22"
 
+[node name="TextureRect5" type="TextureRect" parent="stats/VBoxContainer/deadliest_colors"]
+margin_top = 36.0
+margin_right = 360.0
+margin_bottom = 38.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="deadliest_enemy" type="Label" parent="stats/VBoxContainer"]
 margin_top = 174.0
 margin_right = 360.0
@@ -3395,11 +3755,14 @@ margin_bottom = 200.0
 custom_fonts/font = SubResource( 2 )
 text = "deadliest enemy: square"
 
-[node name="Button" type="Button" parent="stats/VBoxContainer/deadliest_enemy"]
-margin_left = 334.0
-margin_top = 3.0
-margin_right = 346.0
-margin_bottom = 23.0
+[node name="Button" type="TextureButton" parent="stats/VBoxContainer/deadliest_enemy"]
+margin_left = 336.0
+margin_top = 1.0
+margin_right = 360.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -3409,6 +3772,15 @@ visible = false
 margin_top = 204.0
 margin_right = 360.0
 margin_bottom = 330.0
+
+[node name="TextureRect5" type="TextureRect" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 6.0
+margin_right = 360.0
+margin_bottom = 8.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="square" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
 margin_right = 360.0

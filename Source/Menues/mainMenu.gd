@@ -5,14 +5,15 @@ const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
 var levelmenu
 var can_change_key = false
 var keybind_string #keybind being changed
-var default_keybind_strings = ["cyan", "red", "purple", "yellow", "action", "escape"]
-var default_keybinds = [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_SPACE, KEY_ESCAPE]
-enum keybinds {cyan, red, purple, yellow, action, escape}
+var default_keybind_strings = ["cyan", "red", "purple", "yellow", "action", "escape", "flag", "remove", "sd"]
+var default_keybinds = [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_SPACE, KEY_ESCAPE, KEY_F, KEY_B, KEY_K]
+enum keybinds {cyan, red, purple, yellow, action, escape, flag, remove, sd}
 
 
 func _ready():
-	$keybinds/separator/words.add_constant_override("separation", 15)
-	$keybinds/separator.add_constant_override("separation", 24)
+	$keybinds/separator/words.add_constant_override("separation", 11)
+	$keybinds/separator.add_constant_override("separation", 6)
+	$keybinds.add_constant_override("separation", 10)
 	set_keys()
 
 
@@ -31,6 +32,7 @@ func _on_change_keybind_pressed(keybind: String) -> void:
 
 
 func _on_reset_default_pressed() -> void:
+	click_fx()
 	var counter = 0
 	for key in default_keybinds:
 		keybind_string = default_keybind_strings[counter]
@@ -122,22 +124,47 @@ func hide_keybinds():
 	$keybinds.hide()
 
 
+func show_game_settings():
+	$back_game.show()
+	$game.show()
+
+
+func hide_game_settings():
+	$back_game.hide()
+	$game.hide()
+
+
+func show_sound():
+	$back_sound.show()
+	$sound.show()
+
+
+func hide_sound():
+	$back_sound.hide()
+	$sound.hide()
+
+
+
 func show_level_menu():
 	display_cleared_levels()
 	levelmenu.show_level_menu()
 
 
-# just nu visar den bara alla nivåer som är efter en nivå klarad i normal mode
+# 0->1 | 1->2,5 | 2->3->4 | 5->6,9 | 6->7->8 | 9->10,13 | 10->11->12 | 13->14,17 | 14->15->16 | 17->18->19->20
 func display_cleared_levels():
 	var levels_cleared = get_parent().LEVELS_CLEARED
-	var level_order = get_parent().LEVEL_ORDER
 	var count = 0
 	for levels in levels_cleared:
 		var cleared_normal = levels[0]
 		var cleared_practice = levels[1]
 		if cleared_normal:
-			if (count + 1) < level_order.size():
-				levelmenu.enable_level(level_order[count + 1])
+			if count == 0:
+				levelmenu.enable_level(1)
+			elif (count % 4 == 1) and (count < 17):
+				levelmenu.enable_level(count + 1)
+				levelmenu.enable_level(count + 4)
+			elif (count % 4 != 0) and (count < 20):
+				levelmenu.enable_level(count + 1)
 		levelmenu.show_checkmarks(count, cleared_normal, cleared_practice)
 		count += 1
 
@@ -165,10 +192,21 @@ func _on_Settings_pressed() -> void:
 	show_settings()
 
 
-func _on_Back_pressed() -> void:
+func _on_Back_pressed(current: String) -> void:
 	click_fx()
-	hide_settings()
-	show_menu()
+	match current:
+		"settings":
+			hide_settings()
+			show_menu()
+		"keybinds":
+			hide_keybinds()
+			show_settings()
+		"game":
+			hide_game_settings()
+			show_settings()
+		"sound":
+			hide_sound()
+			show_settings()
 
 
 func _on_Keybindings_pressed() -> void:
@@ -177,10 +215,16 @@ func _on_Keybindings_pressed() -> void:
 	show_keybinds()
 
 
-func _on_Back_keybinds_pressed() -> void:
+func _on_Sound_pressed() -> void:
 	click_fx()
-	hide_keybinds()
-	show_settings()
+	hide_settings()
+	show_sound()
+
+
+func _on_Game_pressed() -> void:
+	click_fx()
+	hide_settings()
+	show_game_settings()
 
 
 func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
@@ -191,6 +235,4 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 			start_music()
 		else:
 			stop_music()
-
-
 
