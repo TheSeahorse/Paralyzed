@@ -14,6 +14,7 @@ func _ready():
 	$keybinds/separator/words.add_constant_override("separation", 11)
 	$keybinds/separator.add_constant_override("separation", 6)
 	$keybinds.add_constant_override("separation", 10)
+	set_settings()
 	set_keys()
 
 
@@ -66,6 +67,15 @@ func set_keys():
 			get_node("keybinds/separator/buttons/" + str(j) + "/Label").set_text(InputMap.get_action_list(j)[0].as_text())
 		else:
 			get_node("keybinds/separator/buttons/" + str(j) + "/Label").set_text("NaN!")
+
+
+func set_settings():
+	var settings = get_parent().SETTINGS
+	$game/separator/buttons/hud.pressed = settings[0]
+	$sound/separator/buttons/music.pressed = settings[1]
+	$sound/separator/buttons/sfx.pressed = settings[2]
+	$game/separator/buttons/fullscreen.pressed = settings[3]
+	$game/separator/buttons/borderless.pressed = settings[4]
 
 
 func mark_button(string: String):
@@ -181,6 +191,7 @@ func _on_Start_pressed() -> void:
 
 
 func _on_Quit_pressed() -> void:
+	get_parent().save_game()
 	get_tree().quit()
 
 
@@ -230,9 +241,16 @@ func _on_Game_pressed() -> void:
 func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 	click_fx()
 	get_parent().SETTINGS[setting_nr] = button_pressed
-	if setting_nr == 1:
-		if button_pressed:
-			start_music()
-		else:
-			stop_music()
+	match setting_nr:
+		1:
+			if button_pressed:
+				start_music()
+			else:
+				stop_music()
+		3:
+			OS.window_fullscreen = button_pressed
+			ProjectSettings.set_setting("display/window/size/fullscreen", button_pressed)
+		4:
+			OS.window_borderless = button_pressed
+			ProjectSettings.set_setting("display/window/size/borderless", button_pressed)
 

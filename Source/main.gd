@@ -15,14 +15,15 @@ var CURRENT_DEATHS: int = 0 # amount of deaths on current run of current level
 var DEATHS: Array # array of arrays with [normal,practice] structure, in order of the levels
 var DEATH_BY: Array # [spikes, square, beam, lava, car, self-destruct]
 var DEADLIEST_COLOR: Array # how many times you've died to each color [cyan, red, purple, yellow, none]
-var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
+var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused, goals-reached]
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true
-var SETTINGS: = [true, true, true] #settings in a "map" HUD, Music, Sound
+var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless
+
 
 func _ready():
 	START_TIME = OS.get_unix_time()
@@ -30,8 +31,7 @@ func _ready():
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
 	mainmenu.show_menu()
-	if SETTINGS[1]:
-		mainmenu.start_music()
+	apply_settings()
 
 
 func _input(_event: InputEvent) -> void:
@@ -141,6 +141,7 @@ func player_cleared_level():
 	mainmenu.show_level_menu()
 	if SETTINGS[1]:
 		mainmenu.start_music()
+	add_stat("goals-reached", 1)
 	remove_player_and_level()
 
 
@@ -174,7 +175,8 @@ func save_game():
 		"time_played" : TIME_PLAYED,
 		"death_by" : DEATH_BY,
 		"stats" : STATS,
-		"deadliest_color" : DEADLIEST_COLOR
+		"deadliest_color" : DEADLIEST_COLOR,
+		"settings" : SETTINGS
 	}
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
@@ -189,8 +191,9 @@ func load_savestate():
 		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
 		TIME_PLAYED = 0
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
-		STATS = [0, 0, 0, 0, 0, 0, 0]
+		STATS = [0, 0, 0, 0, 0, 0, 0, 0]
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
+		SETTINGS = [true, true, true, false, false]
 	else:
 		load_game.open("user://savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
@@ -201,6 +204,12 @@ func load_savestate():
 		DEATH_BY = savestate.death_by
 		STATS = savestate.stats
 		DEADLIEST_COLOR = savestate.deadliest_color
+		SETTINGS = savestate.settings
+
+
+func apply_settings():
+	if SETTINGS[1]:
+		mainmenu.start_music()
 
 
 func player_died(cause: String, color: String):
@@ -263,6 +272,8 @@ func add_stat(stat: String, amount: int):
 		STATS[5] += amount
 	elif stat == "paused":
 		STATS[6] += amount
+	elif stat == "goals-reached":
+		STATS[7] += amount
 
 
 func show_main_menu():
@@ -292,7 +303,3 @@ func display_popup(tutorial_name: String):
 # called from levelMenu
 func set_level_start_time():
 	LEVEL_START_TIME = OS.get_unix_time()
-
-
-
-

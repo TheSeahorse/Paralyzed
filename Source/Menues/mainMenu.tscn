@@ -137,94 +137,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="game" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 624.0
-margin_top = 306.0
-margin_right = 907.0
-margin_bottom = 410.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hud" type="HBoxContainer" parent="game"]
-margin_right = 283.0
-margin_bottom = 104.0
-alignment = 1
-
-[node name="Label" type="Label" parent="game/hud"]
-margin_right = 203.0
-margin_bottom = 104.0
-custom_fonts/font = ExtResource( 14 )
-text = "hud"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBox" type="CheckButton" parent="game/hud"]
-margin_left = 207.0
-margin_right = 283.0
-margin_bottom = 104.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="sound" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 624.0
-margin_top = 306.0
-margin_right = 1001.0
-margin_bottom = 518.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="music" type="HBoxContainer" parent="sound"]
-margin_right = 377.0
-margin_bottom = 104.0
-alignment = 1
-
-[node name="Label" type="Label" parent="sound/music"]
-margin_right = 297.0
-margin_bottom = 104.0
-custom_fonts/font = ExtResource( 14 )
-text = "music"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBox" type="CheckButton" parent="sound/music"]
-margin_left = 301.0
-margin_right = 377.0
-margin_bottom = 104.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="soundfx" type="HBoxContainer" parent="sound"]
-margin_top = 108.0
-margin_right = 377.0
-margin_bottom = 212.0
-alignment = 1
-
-[node name="Label" type="Label" parent="sound/soundfx"]
-margin_left = 53.0
-margin_right = 243.0
-margin_bottom = 104.0
-custom_fonts/font = ExtResource( 14 )
-text = "sfx"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBox" type="CheckButton" parent="sound/soundfx"]
-margin_left = 247.0
-margin_right = 323.0
-margin_bottom = 104.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
 [node name="settings" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 560.0
@@ -302,6 +214,136 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="game" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 624.0
+margin_top = 306.0
+margin_right = 1087.0
+margin_bottom = 515.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator" type="HBoxContainer" parent="game"]
+margin_right = 463.0
+margin_bottom = 209.0
+
+[node name="labels" type="VBoxContainer" parent="game/separator"]
+margin_right = 383.0
+margin_bottom = 209.0
+
+[node name="hud" type="Label" parent="game/separator/labels"]
+margin_right = 383.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 14 )
+text = "hud"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fullscreen" type="Label" parent="game/separator/labels"]
+margin_top = 71.0
+margin_right = 383.0
+margin_bottom = 138.0
+custom_fonts/font = ExtResource( 14 )
+text = "fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="borderless" type="Label" parent="game/separator/labels"]
+margin_top = 142.0
+margin_right = 383.0
+margin_bottom = 209.0
+custom_fonts/font = ExtResource( 14 )
+text = "borderless"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="game/separator"]
+margin_left = 387.0
+margin_right = 463.0
+margin_bottom = 209.0
+
+[node name="hud" type="CheckButton" parent="game/separator/buttons"]
+margin_right = 76.0
+margin_bottom = 40.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 44.0
+margin_right = 76.0
+margin_bottom = 84.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 88.0
+margin_right = 76.0
+margin_bottom = 128.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[node name="sound" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 624.0
+margin_top = 306.0
+margin_right = 893.0
+margin_bottom = 444.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator" type="HBoxContainer" parent="sound"]
+margin_right = 269.0
+margin_bottom = 138.0
+
+[node name="labels" type="VBoxContainer" parent="sound/separator"]
+margin_right = 189.0
+margin_bottom = 138.0
+
+[node name="music" type="Label" parent="sound/separator/labels"]
+margin_right = 189.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 14 )
+text = "music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx" type="Label" parent="sound/separator/labels"]
+margin_top = 71.0
+margin_right = 189.0
+margin_bottom = 138.0
+custom_fonts/font = ExtResource( 14 )
+text = "sfx"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="sound/separator"]
+margin_left = 193.0
+margin_right = 269.0
+margin_bottom = 138.0
+
+[node name="music" type="CheckButton" parent="sound/separator/buttons"]
+margin_right = 76.0
+margin_bottom = 40.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="sfx" type="CheckButton" parent="sound/separator/buttons"]
+margin_top = 44.0
+margin_right = 76.0
+margin_bottom = 84.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
 
 [node name="keybinds" type="VBoxContainer" parent="."]
 visible = false
@@ -803,12 +845,14 @@ __meta__ = {
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="menu/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="toggled" from="game/hud/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 0 ]]
-[connection signal="toggled" from="sound/music/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]
-[connection signal="toggled" from="sound/soundfx/CheckBox" to="." method="_on_CheckBox_toggled" binds= [ 2 ]]
 [connection signal="pressed" from="settings/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="settings/Sound" to="." method="_on_Sound_pressed"]
 [connection signal="pressed" from="settings/Keybindings" to="." method="_on_Keybindings_pressed"]
+[connection signal="toggled" from="game/separator/buttons/hud" to="." method="_on_CheckBox_toggled" binds= [ 0 ]]
+[connection signal="toggled" from="game/separator/buttons/fullscreen" to="." method="_on_CheckBox_toggled" binds= [ 3 ]]
+[connection signal="toggled" from="game/separator/buttons/borderless" to="." method="_on_CheckBox_toggled" binds= [ 4 ]]
+[connection signal="toggled" from="sound/separator/buttons/music" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]
+[connection signal="toggled" from="sound/separator/buttons/sfx" to="." method="_on_CheckBox_toggled" binds= [ 2 ]]
 [connection signal="pressed" from="keybinds/separator/buttons/cyan" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
 [connection signal="pressed" from="keybinds/separator/buttons/red" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
 [connection signal="pressed" from="keybinds/separator/buttons/purple" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]

@@ -69,6 +69,7 @@ func update_stats():
 	$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(stats[4]))
 	$stats/VBoxContainer/placed_flags.set_text("practice flags placed: " + str(stats[5]))
 	$stats/VBoxContainer/paused.set_text("times paused: " + str(stats[6]))
+	$stats/VBoxContainer/goals_reached.set_text("goals reached: " + str(stats[7]))
 
 
 func count_deaths(deaths: Array) -> int:
