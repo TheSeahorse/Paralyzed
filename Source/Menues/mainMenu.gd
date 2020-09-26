@@ -124,12 +124,16 @@ func hide_settings():
 
 func show_credits():
 	$back_credits.show()
+	$gimp_logo.show()
+	$godot_logo.show()
 	$credits_background.show()
 	$credits.show()
 
 
 func hide_credits():
 	$back_credits.hide()
+	$gimp_logo.hide()
+	$godot_logo.hide()
 	$credits_background.hide()
 	$credits.hide()
 
@@ -276,3 +280,22 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 
 
 
+
+
+func _on_link_pressed(link_name: String) -> void:
+	click_fx()
+	match link_name:
+		"twitter":
+			OS.shell_open("https://www.twitter.com/alexanderlahti")
+		"youtube":
+			OS.shell_open("https://www.youtube.com/kaatanglove")
+		"linkedin":
+			OS.shell_open("https://www.linkedin.com/in/alexander-lahti-1103801ab/")
+		"spillana":
+			OS.shell_open("https://www.fiverr.com/spillana")
+		"teksoda":
+			OS.shell_open("https://www.fiverr.com/teksoda")
+		"godot":
+			OS.shell_open("https://www.godotengine.org/")
+		"gimp":
+			OS.shell_open("https://www.gimp.org/")

@@ -28,14 +28,25 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 func jump() -> void:
 	TOGGLE_ACTION = false
 	if ON_FLOOR:
+		$jump.play()
 		get_parent().get_parent().add_stat("car-jump", 1)
-		VELOCITY.y =- MAX_SPEED.y
+		VELOCITY.y =- MAX_SPEED.y * 1.1
 		ON_FLOOR = false
 
 
-func _on_Area2D_body_exited(_body: Node) -> void:
-	ON_FLOOR = false
+func _on_Area2D_body_exited(body: Node) -> void:
+	if body is TileMap:
+		ON_FLOOR = false
 
 
-func _on_Area2D_body_entered(_body: Node) -> void:
-	ON_FLOOR = true
+func _on_Area2D_body_entered(body: Node) -> void:
+	if body is LaserBeam and (body.get_parent().COLOR != COLOR):
+		self.queue_free()
+	if body is Lava and (body.get_parent().COLOR != COLOR):
+		self.queue_free()
+	if body is TileMap:
+		ON_FLOOR = true
+
+
+func _on_screen_entered() -> void:
+	$honk.play()

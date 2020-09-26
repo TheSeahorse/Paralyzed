@@ -60,7 +60,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 	elif area is Goal:
 		emit_signal("levelcleared")
 	elif area.get_parent() is Car:
-		call_deferred("player_dead", "car", area.COLOR)
+		call_deferred("player_dead", "car", area.get_parent().COLOR)
 
 
 func _on_Deathcollision_area_exited(area: Area2D) -> void:

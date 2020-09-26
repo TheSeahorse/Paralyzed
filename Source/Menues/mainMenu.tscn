@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -21,33 +21,30 @@
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Glitch.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/keybinds_buttons.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/World/Backgrounds/credits_background.png" type="Texture" id=21]
+[ext_resource path="res://Character models/Menues/big_link_button.png" type="Texture" id=22]
+[ext_resource path="res://Character models/Menues/Godot_icon.svg" type="Texture" id=23]
+[ext_resource path="res://Character models/Menues/gimp_logo.png" type="Texture" id=24]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 90
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 160
 outline_size = 1
 outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
 extra_spacing_char = -5
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=3]
 size = 128
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -188,7 +185,7 @@ margin_left = 2.0
 margin_top = -1.0
 margin_right = 2.0
 margin_bottom = -1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "game"
 align = 1
 valign = 1
@@ -211,7 +208,7 @@ margin_left = 2.0
 margin_top = -1.0
 margin_right = 2.0
 margin_bottom = -1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "sound"
 align = 1
 valign = 1
@@ -234,7 +231,7 @@ margin_left = 2.0
 margin_top = -1.0
 margin_right = 2.0
 margin_bottom = -1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "keybinds"
 align = 1
 valign = 1
@@ -248,7 +245,7 @@ margin_left = 320.0
 margin_top = 100.0
 margin_right = 1301.0
 margin_bottom = 266.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "PARALYZED"
 align = 1
 __meta__ = {
@@ -767,7 +764,7 @@ texture_hover = ExtResource( 9 )
 [node name="Label" type="Label" parent="keybinds/reset_default"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "default"
 align = 1
 valign = 1
@@ -787,27 +784,91 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dev_by" type="Label" parent="credits"]
+[node name="alexander" type="Label" parent="credits"]
 margin_right = 690.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Alexander Lahti"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="links" type="RichTextLabel" parent="credits"]
+[node name="twitter" type="TextureButton" parent="credits"]
 margin_top = 71.0
 margin_right = 690.0
-margin_bottom = 71.0
-custom_fonts/normal_font = SubResource( 7 )
+margin_bottom = 105.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
+[node name="twitter" type="Label" parent="credits/twitter"]
+margin_top = 4.0
+margin_right = 690.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "twitter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="youtube" type="TextureButton" parent="credits"]
+margin_top = 109.0
+margin_right = 690.0
+margin_bottom = 143.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
+[node name="youtube" type="Label" parent="credits/youtube"]
+margin_top = 4.0
+margin_right = 690.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+text = "Youtube"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="linkedin" type="TextureButton" parent="credits"]
+margin_top = 147.0
+margin_right = 690.0
+margin_bottom = 181.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
+[node name="linkedin" type="Label" parent="credits/linkedin"]
+margin_top = 4.0
+margin_right = 690.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+text = "linkedin"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="credits"]
+margin_top = 185.0
+margin_right = 690.0
+margin_bottom = 205.0
+custom_constants/separation = 20
 
 [node name="art" type="Label" parent="credits"]
-margin_top = 75.0
+margin_top = 209.0
 margin_right = 690.0
-margin_bottom = 142.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 3 )
 text = "art"
 align = 1
 __meta__ = {
@@ -815,80 +876,114 @@ __meta__ = {
 }
 
 [node name="alexander2" type="Label" parent="credits"]
-margin_top = 146.0
+margin_top = 280.0
 margin_right = 690.0
-margin_bottom = 180.0
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 314.0
+custom_fonts/font = SubResource( 4 )
 text = "alexander lahti"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="spillana" type="Label" parent="credits"]
-margin_top = 184.0
+[node name="spillana" type="TextureButton" parent="credits"]
+margin_top = 318.0
 margin_right = 690.0
-margin_bottom = 218.0
-custom_fonts/font = SubResource( 5 )
-text = "fire - spillana"
+margin_bottom = 352.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
+[node name="fire" type="Label" parent="credits/spillana"]
+margin_left = -81.0
+margin_top = 4.0
+margin_right = 609.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+text = "fire -"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="links2" type="Label" parent="credits"]
-margin_top = 222.0
-margin_right = 690.0
-margin_bottom = 279.0
-custom_fonts/font = SubResource( 6 )
-text = "fiverr.com/spillana
-
-"
+[node name="spillana" type="Label" parent="credits/spillana"]
+margin_left = 52.0
+margin_top = 4.0
+margin_right = 742.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+text = "spillana"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HSeparator2" type="HSeparator" parent="credits"]
+margin_top = 356.0
+margin_right = 690.0
+margin_bottom = 376.0
+custom_constants/separation = 20
 
 [node name="sound" type="Label" parent="credits"]
-margin_top = 283.0
+margin_top = 380.0
 margin_right = 690.0
-margin_bottom = 350.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 447.0
+custom_fonts/font = SubResource( 3 )
 text = "sound"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="teksoda" type="Label" parent="credits"]
-margin_top = 354.0
+[node name="teksoda" type="TextureButton" parent="credits"]
+margin_top = 451.0
 margin_right = 690.0
-margin_bottom = 388.0
-custom_fonts/font = SubResource( 5 )
-text = "music - teksoda"
+margin_bottom = 485.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
+[node name="music" type="Label" parent="credits/teksoda"]
+margin_left = -85.0
+margin_top = 4.0
+margin_right = 605.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+text = "music -"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="links3" type="Label" parent="credits"]
-margin_top = 392.0
-margin_right = 690.0
-margin_bottom = 449.0
-custom_fonts/font = SubResource( 6 )
-text = "fiverr.com/teksoda
-
-"
+[node name="spillana" type="Label" parent="credits/teksoda"]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 750.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+text = "teksoda"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HSeparator3" type="HSeparator" parent="credits"]
+margin_top = 489.0
+margin_right = 690.0
+margin_bottom = 509.0
+custom_constants/separation = 20
 
 [node name="special_thx" type="Label" parent="credits"]
-margin_top = 453.0
+margin_top = 513.0
 margin_right = 690.0
-margin_bottom = 520.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 3 )
 text = "special thanks to"
 align = 1
 __meta__ = {
@@ -896,18 +991,26 @@ __meta__ = {
 }
 
 [node name="mikael" type="Label" parent="credits"]
-margin_top = 524.0
+margin_top = 584.0
 margin_right = 690.0
-margin_bottom = 558.0
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 618.0
+custom_fonts/font = SubResource( 4 )
 text = "mikael mollberg"
 align = 1
 
-[node name="judith" type="Label" parent="credits"]
-margin_top = 562.0
+[node name="trio" type="Label" parent="credits"]
+margin_top = 584.0
 margin_right = 690.0
-margin_bottom = 596.0
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 618.0
+custom_fonts/font = SubResource( 4 )
+text = "\"the trio\""
+align = 1
+
+[node name="familj" type="Label" parent="credits"]
+margin_top = 622.0
+margin_right = 690.0
+margin_bottom = 656.0
+custom_fonts/font = SubResource( 4 )
 text = "my family"
 align = 1
 __meta__ = {
@@ -918,7 +1021,7 @@ __meta__ = {
 visible = false
 margin_left = 240.0
 margin_top = 375.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Press any key..."
 align = 1
 valign = 1
@@ -1045,6 +1148,34 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="godot_logo" type="TextureButton" parent="."]
+visible = false
+margin_left = 1260.0
+margin_top = 315.0
+margin_right = 2284.0
+margin_bottom = 1339.0
+rect_scale = Vector2( 0.253, 0.253 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gimp_logo" type="TextureButton" parent="."]
+visible = false
+margin_left = 80.0
+margin_top = 315.0
+margin_right = 1280.0
+margin_bottom = 1515.0
+rect_scale = Vector2( 0.22, 0.22 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 24 )
+texture_hover = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="menu/Credits" to="." method="_on_Credits_pressed"]
@@ -1067,8 +1198,15 @@ __meta__ = {
 [connection signal="pressed" from="keybinds/separator/buttons/remove" to="." method="_on_change_keybind_pressed" binds= [ "remove" ]]
 [connection signal="pressed" from="keybinds/separator/buttons/sd" to="." method="_on_change_keybind_pressed" binds= [ "sd" ]]
 [connection signal="pressed" from="keybinds/reset_default" to="." method="_on_reset_default_pressed"]
+[connection signal="pressed" from="credits/twitter" to="." method="_on_link_pressed" binds= [ "twitter" ]]
+[connection signal="pressed" from="credits/youtube" to="." method="_on_link_pressed" binds= [ "youtube" ]]
+[connection signal="pressed" from="credits/linkedin" to="." method="_on_link_pressed" binds= [ "linkedin" ]]
+[connection signal="pressed" from="credits/spillana" to="." method="_on_link_pressed" binds= [ "spillana" ]]
+[connection signal="pressed" from="credits/teksoda" to="." method="_on_link_pressed" binds= [ "teksoda" ]]
 [connection signal="pressed" from="back_settings" to="." method="_on_Back_pressed" binds= [ "settings" ]]
 [connection signal="pressed" from="back_keybinds" to="." method="_on_Back_pressed" binds= [ "keybinds" ]]
 [connection signal="pressed" from="back_game" to="." method="_on_Back_pressed" binds= [ "game" ]]
 [connection signal="pressed" from="back_sound" to="." method="_on_Back_pressed" binds= [ "sound" ]]
 [connection signal="pressed" from="back_credits" to="." method="_on_Back_pressed" binds= [ "credits" ]]
+[connection signal="pressed" from="godot_logo" to="." method="_on_link_pressed" binds= [ "godot" ]]
+[connection signal="pressed" from="gimp_logo" to="." method="_on_link_pressed" binds= [ "gimp" ]]
