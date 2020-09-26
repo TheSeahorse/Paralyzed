@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -20,6 +20,11 @@
 [ext_resource path="res://Character models/Menues/Fonts/back.tres" type="DynamicFont" id=18]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Glitch.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/keybinds_buttons.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Character models/World/Backgrounds/credits_background.png" type="Texture" id=21]
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 160
@@ -28,8 +33,18 @@ outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
 extra_spacing_char = -5
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 90
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -55,10 +70,16 @@ position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
 centered = false
 
+[node name="credits_background" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -1 )
+texture = ExtResource( 21 )
+centered = false
+
 [node name="menu" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 560.0
-margin_top = 350.0
+margin_top = 300.0
 margin_bottom = 800.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,10 +122,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="TextureButton" parent="menu"]
+[node name="Credits" type="TextureButton" parent="menu"]
 margin_top = 264.0
 margin_right = 480.0
 margin_bottom = 392.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="menu/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="menu"]
+margin_top = 396.0
+margin_right = 480.0
+margin_bottom = 524.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
@@ -123,19 +163,6 @@ __meta__ = {
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -25.0
-
-[node name="logo" type="Label" parent="."]
-visible = false
-margin_left = 320.0
-margin_top = 125.0
-margin_right = 1301.0
-margin_bottom = 291.0
-custom_fonts/font = SubResource( 1 )
-text = "PARALYZED"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="settings" type="VBoxContainer" parent="."]
 visible = false
@@ -215,6 +242,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="logo" type="Label" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 100.0
+margin_right = 1301.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 1 )
+text = "PARALYZED"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="game" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 624.0
@@ -227,15 +267,15 @@ __meta__ = {
 
 [node name="separator" type="HBoxContainer" parent="game"]
 margin_right = 463.0
-margin_bottom = 209.0
+margin_bottom = 128.0
 
 [node name="labels" type="VBoxContainer" parent="game/separator"]
-margin_right = 383.0
-margin_bottom = 209.0
+margin_right = 227.0
+margin_bottom = 128.0
 
 [node name="hud" type="Label" parent="game/separator/labels"]
-margin_right = 383.0
-margin_bottom = 67.0
+margin_right = 227.0
+margin_bottom = 40.0
 custom_fonts/font = ExtResource( 14 )
 text = "hud"
 __meta__ = {
@@ -243,9 +283,9 @@ __meta__ = {
 }
 
 [node name="fullscreen" type="Label" parent="game/separator/labels"]
-margin_top = 71.0
-margin_right = 383.0
-margin_bottom = 138.0
+margin_top = 44.0
+margin_right = 227.0
+margin_bottom = 84.0
 custom_fonts/font = ExtResource( 14 )
 text = "fullscreen"
 __meta__ = {
@@ -253,9 +293,9 @@ __meta__ = {
 }
 
 [node name="borderless" type="Label" parent="game/separator/labels"]
-margin_top = 142.0
-margin_right = 383.0
-margin_bottom = 209.0
+margin_top = 88.0
+margin_right = 227.0
+margin_bottom = 128.0
 custom_fonts/font = ExtResource( 14 )
 text = "borderless"
 __meta__ = {
@@ -263,9 +303,9 @@ __meta__ = {
 }
 
 [node name="buttons" type="VBoxContainer" parent="game/separator"]
-margin_left = 387.0
-margin_right = 463.0
-margin_bottom = 209.0
+margin_left = 231.0
+margin_right = 307.0
+margin_bottom = 128.0
 
 [node name="hud" type="CheckButton" parent="game/separator/buttons"]
 margin_right = 76.0
@@ -735,6 +775,145 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="credits" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 455.0
+margin_top = 75.0
+margin_right = -455.0
+margin_bottom = -47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev_by" type="Label" parent="credits"]
+margin_right = 690.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 4 )
+text = "Alexander Lahti"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="links" type="RichTextLabel" parent="credits"]
+margin_top = 71.0
+margin_right = 690.0
+margin_bottom = 71.0
+custom_fonts/normal_font = SubResource( 7 )
+
+[node name="art" type="Label" parent="credits"]
+margin_top = 75.0
+margin_right = 690.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 4 )
+text = "art"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="alexander2" type="Label" parent="credits"]
+margin_top = 146.0
+margin_right = 690.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 5 )
+text = "alexander lahti"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spillana" type="Label" parent="credits"]
+margin_top = 184.0
+margin_right = 690.0
+margin_bottom = 218.0
+custom_fonts/font = SubResource( 5 )
+text = "fire - spillana"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="links2" type="Label" parent="credits"]
+margin_top = 222.0
+margin_right = 690.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 6 )
+text = "fiverr.com/spillana
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound" type="Label" parent="credits"]
+margin_top = 283.0
+margin_right = 690.0
+margin_bottom = 350.0
+custom_fonts/font = SubResource( 4 )
+text = "sound"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="teksoda" type="Label" parent="credits"]
+margin_top = 354.0
+margin_right = 690.0
+margin_bottom = 388.0
+custom_fonts/font = SubResource( 5 )
+text = "music - teksoda"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="links3" type="Label" parent="credits"]
+margin_top = 392.0
+margin_right = 690.0
+margin_bottom = 449.0
+custom_fonts/font = SubResource( 6 )
+text = "fiverr.com/teksoda
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="special_thx" type="Label" parent="credits"]
+margin_top = 453.0
+margin_right = 690.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 4 )
+text = "special thanks to"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mikael" type="Label" parent="credits"]
+margin_top = 524.0
+margin_right = 690.0
+margin_bottom = 558.0
+custom_fonts/font = SubResource( 5 )
+text = "mikael mollberg"
+align = 1
+
+[node name="judith" type="Label" parent="credits"]
+margin_top = 562.0
+margin_right = 690.0
+margin_bottom = 596.0
+custom_fonts/font = SubResource( 5 )
+text = "my family"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="press_key" type="Label" parent="."]
 visible = false
 margin_left = 240.0
@@ -842,8 +1021,33 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="back_credits" type="TextureButton" parent="."]
+visible = false
+margin_left = 96.0
+margin_top = 64.0
+margin_right = 224.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="back_credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 18 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="menu/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="menu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="settings/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="settings/Sound" to="." method="_on_Sound_pressed"]
@@ -867,3 +1071,4 @@ __meta__ = {
 [connection signal="pressed" from="back_keybinds" to="." method="_on_Back_pressed" binds= [ "keybinds" ]]
 [connection signal="pressed" from="back_game" to="." method="_on_Back_pressed" binds= [ "game" ]]
 [connection signal="pressed" from="back_sound" to="." method="_on_Back_pressed" binds= [ "sound" ]]
+[connection signal="pressed" from="back_credits" to="." method="_on_Back_pressed" binds= [ "credits" ]]

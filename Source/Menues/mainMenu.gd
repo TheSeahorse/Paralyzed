@@ -122,6 +122,18 @@ func hide_settings():
 	$settings.hide()
 
 
+func show_credits():
+	$back_credits.show()
+	$credits_background.show()
+	$credits.show()
+
+
+func hide_credits():
+	$back_credits.hide()
+	$credits_background.hide()
+	$credits.hide()
+
+
 func show_keybinds():
 	$back_keybinds.show()
 	$keybinds.show()
@@ -203,6 +215,11 @@ func _on_Settings_pressed() -> void:
 	show_settings()
 
 
+func _on_Credits_pressed() -> void:
+	click_fx()
+	hide_menu()
+	show_credits()
+
 func _on_Back_pressed(current: String) -> void:
 	click_fx()
 	match current:
@@ -218,6 +235,9 @@ func _on_Back_pressed(current: String) -> void:
 		"sound":
 			hide_sound()
 			show_settings()
+		"credits":
+			hide_credits()
+			show_menu()
 
 
 func _on_Keybindings_pressed() -> void:
@@ -253,4 +273,6 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 		4:
 			OS.window_borderless = button_pressed
 			ProjectSettings.set_setting("display/window/size/borderless", button_pressed)
+
+
 
