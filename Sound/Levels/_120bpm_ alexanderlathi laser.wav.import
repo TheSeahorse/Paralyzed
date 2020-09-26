@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/_120bpm_ alexanderlathi laser.wav-3a2ce270bde34424a88dc18c915b33b6.sample"
+
+[deps]
+
+source_file="res://Sound/Levels/_120bpm_ alexanderlathi laser.wav"
+dest_files=[ "res://.import/_120bpm_ alexanderlathi laser.wav-3a2ce270bde34424a88dc18c915b33b6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

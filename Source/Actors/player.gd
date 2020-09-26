@@ -69,14 +69,6 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 		BEAM_COLOR = null
 
 
-func play_music(level: String):
-	if level == "tutorial":
-		return
-	else:
-		if get_parent().SETTINGS[1]:
-			$level_music.play(0.0)
-
-
 func player_dead(cause: String, color: String):
 	get_node("Hitbox").disabled = true
 	DEAD = true

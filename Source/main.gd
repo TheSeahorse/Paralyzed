@@ -49,6 +49,7 @@ func _input(_event: InputEvent) -> void:
 
 #signal from PauseMenu
 func _on_backMainMenu() -> void:
+	stop_music()
 	CAN_PAUSE = true
 	PRACTICE_SAVED_PLAYER_VECTORS = []
 	remove_player_and_level()
@@ -81,7 +82,31 @@ func play_level(levelName: String, practice: bool):
 	add_child(hud)
 	player.is_color("cyan")
 	player.display_background(levelName)
-	player.play_music(levelName)
+	if SETTINGS[1]:
+		play_music()
+
+
+func play_music():
+	if CURRENT_LEVEL.length() < 8:
+		var nr = (CURRENT_LEVEL.substr(5)).to_int()
+		if (nr < 5):
+			$cube.play(0.0)
+		elif (nr > 4) and (nr < 9):
+			$laser.play(0.0)
+		elif (nr > 8) and (nr < 13):
+			$lava.play(0.0)
+		elif (nr > 12) and (nr < 17):
+			$car.play(0.0)
+		elif (nr > 16):
+			$all.play(0.0)
+
+
+func stop_music():
+	$cube.stop()
+	$laser.stop()
+	$lava.stop()
+	$car.stop()
+	$all.stop()
 
 
 func toggle_color():
@@ -103,6 +128,7 @@ func handle_action():
 	if Input.is_action_just_pressed("action"):
 		player.SPRING_JUMP = 10
 		level.action(player.PLAYER_COLOR)
+
 
 # auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
@@ -134,6 +160,7 @@ func kill_player(cause: String, color: String):
 
 
 func player_cleared_level():
+	stop_music()
 	save_deaths()
 	calculate_cleared_level()
 	PRACTICE_SAVED_PLAYER_VECTORS = []
