@@ -2,16 +2,19 @@ extends Actor
 class_name Lava
 
 export var COLOR: = "cyan"
-var PLAYER_ON = false
+var PLAYER_ON: = false
 var PLAYER
+var BURNING: bool #used by car to see if burning or not
 
 func _init():
 	GRAVITY = 0
 
 func _ready():
 	if COLOR == "cyan":
+		BURNING = true
 		$sprite.play("cyan on")
 	else:
+		BURNING = false
 		$sprite.play(COLOR + " off")
 
 
@@ -22,10 +25,12 @@ func _process(_delta: float) -> void:
 		PLAYER_ON = false
 
 func turn_on():
+	BURNING = true
 	$sprite.play(COLOR + " on")
 
 
 func turn_off():
+	BURNING = false
 	$sprite.play(COLOR + " off")
 
 

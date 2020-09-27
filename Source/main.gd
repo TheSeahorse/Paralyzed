@@ -43,7 +43,7 @@ func _input(_event: InputEvent) -> void:
 			if !player.DEAD:
 				handle_practice_save()
 			handle_practice_delete_save()
-			if Input.is_action_just_pressed("kill"):
+			if Input.is_action_just_pressed("sd"):
 				kill_player("sd", "none")
 
 
@@ -66,6 +66,7 @@ func _on_resart() -> void:
 
 
 func play_level(levelName: String, practice: bool):
+	print(practice)
 	PRACTICE = practice
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
@@ -87,7 +88,9 @@ func play_level(levelName: String, practice: bool):
 
 
 func play_music():
-	if CURRENT_LEVEL.length() < 8:
+	if PRACTICE:
+		$practice.play()
+	elif CURRENT_LEVEL.length() < 8:
 		var nr = (CURRENT_LEVEL.substr(5)).to_int()
 		if (nr < 5):
 			$cube.play(0.0)
@@ -107,6 +110,7 @@ func stop_music():
 	$lava.stop()
 	$car.stop()
 	$all.stop()
+	$practice.stop()
 
 
 func toggle_color():
@@ -142,7 +146,7 @@ func handle_pause(auto: bool):
 
 
 func handle_practice_save():
-	if Input.is_action_just_pressed("practice_save"):
+	if Input.is_action_just_pressed("flag"):
 		var player_position = player.position
 		PRACTICE_SAVED_PLAYER_VECTORS.append(player_position)
 		level.spawn_flag(player_position)
@@ -150,7 +154,7 @@ func handle_practice_save():
 
 
 func handle_practice_delete_save():
-	if Input.is_action_just_pressed("practice_delete_save"):
+	if Input.is_action_just_pressed("remove"):
 		PRACTICE_SAVED_PLAYER_VECTORS.pop_back()
 
 

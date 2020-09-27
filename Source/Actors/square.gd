@@ -49,7 +49,8 @@ func calculate_jump():
 			GRACE_FRAMES = 0
 			TOGGLE_ACTION = false
 			get_parent().get_parent().add_stat("square-jump", 1)
-			$jump.play()
+			if get_parent().get_parent().SETTINGS[2]:
+				$jump.play()
 		else:
 			GRACE_FRAMES -= 1
 	elif GRACE_FRAMES == 0:
@@ -61,7 +62,8 @@ func calculate_jump():
 			else:
 				SPRING_JUMP = 24
 			get_parent().get_parent().add_stat("square-jump", 1)
-			$jump.play()
+			if get_parent().get_parent().SETTINGS[2]:
+				$jump.play()
 
 
 func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:

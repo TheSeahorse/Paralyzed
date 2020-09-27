@@ -44,7 +44,7 @@ font_data = ExtResource( 4 )
 size = 32
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 128
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -1021,7 +1021,7 @@ __meta__ = {
 visible = false
 margin_left = 240.0
 margin_top = 375.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Press any key..."
 align = 1
 valign = 1
