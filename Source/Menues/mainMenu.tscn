@@ -894,24 +894,9 @@ texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 22 )
 texture_hover = ExtResource( 22 )
 
-[node name="fire" type="Label" parent="credits/spillana"]
-margin_left = -81.0
-margin_top = 4.0
-margin_right = 609.0
-margin_bottom = 38.0
-custom_fonts/font = SubResource( 4 )
-text = "fire -"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="spillana" type="Label" parent="credits/spillana"]
-margin_left = 52.0
-margin_top = 4.0
-margin_right = 742.0
-margin_bottom = 38.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "spillana"
@@ -999,17 +984,17 @@ text = "mikael mollberg"
 align = 1
 
 [node name="trio" type="Label" parent="credits"]
-margin_top = 584.0
+margin_top = 622.0
 margin_right = 690.0
-margin_bottom = 618.0
+margin_bottom = 656.0
 custom_fonts/font = SubResource( 4 )
 text = "\"the trio\""
 align = 1
 
 [node name="familj" type="Label" parent="credits"]
-margin_top = 622.0
+margin_top = 660.0
 margin_right = 690.0
-margin_bottom = 656.0
+margin_bottom = 694.0
 custom_fonts/font = SubResource( 4 )
 text = "my family"
 align = 1

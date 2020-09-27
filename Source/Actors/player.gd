@@ -50,7 +50,7 @@ func _on_Deathcollision_area_entered(area: Area2D) -> void:
 		return
 	if area is LaserBeam:
 		ON_BEAM = true
-		BEAM_COLOR = area.get_color()
+		BEAM_COLOR = area.COLOR
 		get_parent().add_stat("phazed-beam", 1)
 	elif area is Spikes:
 		if area.get_parent() is Square:

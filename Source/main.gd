@@ -66,7 +66,6 @@ func _on_resart() -> void:
 
 
 func play_level(levelName: String, practice: bool):
-	print(practice)
 	PRACTICE = practice
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()

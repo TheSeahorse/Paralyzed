@@ -24,6 +24,7 @@ position = Vector2( 10060, 0 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1700, -32 )
+COLOR = "red"
 
 [node name="car2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2696, -32 )
@@ -44,7 +45,7 @@ position = Vector2( 5548, -32 )
 position = Vector2( 5639, -32 )
 
 [node name="car13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8226, -32 )
+position = Vector2( 8201, -32 )
 COLOR = "red"
 
 [node name="car14" parent="." instance=ExtResource( 2 )]
@@ -52,11 +53,7 @@ position = Vector2( 8292, -32 )
 COLOR = "red"
 
 [node name="car15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8358, -32 )
-
-[node name="car11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6379, -32 )
-COLOR = "red"
+position = Vector2( 8387, -32 )
 
 [node name="car12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 6465, -32 )
@@ -76,10 +73,6 @@ COLOR = "purple"
 [node name="car8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10233, -32 )
 COLOR = "yellow"
-
-[node name="laserbeam" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9143, 0 )
-COLOR = "purple"
 
 [node name="laserbeam2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3808, 0 )
