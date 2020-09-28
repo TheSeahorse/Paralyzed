@@ -3621,7 +3621,7 @@ __meta__ = {
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="stats" type="TextureRect" parent="."]
 margin_left = 1069.0

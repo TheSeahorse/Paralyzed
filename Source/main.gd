@@ -22,7 +22,7 @@ var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from fi
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true
-var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless
+var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background
 
 
 func _ready():
@@ -93,13 +93,13 @@ func play_music():
 		var nr = (CURRENT_LEVEL.substr(5)).to_int()
 		if (nr < 5):
 			$cube.play(0.0)
-		elif (nr > 4) and (nr < 9):
+		elif (nr < 9):
 			$laser.play(0.0)
-		elif (nr > 8) and (nr < 13):
+		elif (nr < 13):
 			$lava.play(0.0)
-		elif (nr > 12) and (nr < 17):
+		elif (nr < 17):
 			$car.play(0.0)
-		elif (nr > 16):
+		else:
 			$all.play(0.0)
 
 
@@ -223,7 +223,7 @@ func load_savestate():
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
 		STATS = [0, 0, 0, 0, 0, 0, 0, 0]
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
-		SETTINGS = [true, true, true, false, false]
+		SETTINGS = [true, true, true, false, false, false]
 	else:
 		load_game.open("user://savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())

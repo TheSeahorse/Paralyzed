@@ -76,6 +76,7 @@ func set_settings():
 	$sound/separator/buttons/sfx.pressed = settings[2]
 	$game/separator/buttons/fullscreen.pressed = settings[3]
 	$game/separator/buttons/borderless.pressed = settings[4]
+	$game/separator/buttons/white_background.pressed = settings[5]
 
 
 func mark_button(string: String):
@@ -277,9 +278,6 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 		4:
 			OS.window_borderless = button_pressed
 			ProjectSettings.set_setting("display/window/size/borderless", button_pressed)
-
-
-
 
 
 func _on_link_pressed(link_name: String) -> void:

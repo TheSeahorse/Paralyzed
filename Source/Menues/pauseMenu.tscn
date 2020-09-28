@@ -103,15 +103,15 @@ __meta__ = {
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="unpause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="pause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
+volume_db = -5.0
 [connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/mainMenu" to="." method="_on_mainMenu_pressed"]

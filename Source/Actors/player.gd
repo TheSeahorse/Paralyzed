@@ -13,9 +13,6 @@ var SQUARE2 # right most square the player is on (only if player is on two squar
 var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 0
 
 
-func _ready() -> void:
-	pass
-
 func _physics_process(delta: float) -> void:
 	if DEAD:
 		VELOCITY = move_and_slide(Vector2(0,0), FLOOR_NORMAL)
@@ -104,7 +101,22 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 
 
 func display_background(level: String):
-	$ParallaxBackground/background.play(level)
+	if get_parent().SETTINGS[5]:
+		$ParallaxBackground/background.play("white")
+	elif level.length() == 8:
+		$ParallaxBackground/background.play("tutorial")
+	else:
+		var nr = (level.substr(5)).to_int()
+		if (nr < 5):
+			$ParallaxBackground/background.play("cube")
+		elif (nr < 9):
+			$ParallaxBackground/background.play("laser")
+		elif (nr < 13):
+			$ParallaxBackground/background.play("lava")
+		elif (nr < 17):
+			$ParallaxBackground/background.play("car")
+		else:
+			$ParallaxBackground/background.play("all")
 
 func is_color(color: String):
 	if DEAD:

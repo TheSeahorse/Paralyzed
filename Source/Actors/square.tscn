@@ -89,7 +89,7 @@ shape = SubResource( 4 )
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -35.0
+volume_db = -25.0
 [connection signal="body_entered" from="floor_detector" to="." method="_on_tileMap_body_entered"]
 [connection signal="body_exited" from="floor_detector" to="." method="_on_tileMap_body_exited"]
 [connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]

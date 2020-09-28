@@ -52,24 +52,24 @@ animations = [ {
 "name": "yellow",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "yellow death",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "cyan death",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 23 ) ],
 "loop": false,
 "name": "red death",
 "speed": 20.0
 }, {
+"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "yellow death",
+"speed": 20.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 23 ) ],
 "loop": false,
 "name": "purple death",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "cyan death",
 "speed": 20.0
 } ]
 
@@ -119,15 +119,15 @@ physics_process_parent = true
 
 [node name="honk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -20.0
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -30.0
+volume_db = -20.0
 
 [node name="death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
-volume_db = -20.0
+volume_db = -10.0
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="hitbox" to="." method="_on_hitbox_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

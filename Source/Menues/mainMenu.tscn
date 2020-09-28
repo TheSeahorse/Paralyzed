@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 0, -1 )
@@ -159,7 +159,7 @@ __meta__ = {
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -25.0
+volume_db = -15.0
 
 [node name="settings" type="VBoxContainer" parent="."]
 visible = false
@@ -263,15 +263,15 @@ __meta__ = {
 }
 
 [node name="separator" type="HBoxContainer" parent="game"]
-margin_right = 463.0
-margin_bottom = 128.0
+margin_right = 470.0
+margin_bottom = 172.0
 
 [node name="labels" type="VBoxContainer" parent="game/separator"]
-margin_right = 227.0
-margin_bottom = 128.0
+margin_right = 390.0
+margin_bottom = 172.0
 
 [node name="hud" type="Label" parent="game/separator/labels"]
-margin_right = 227.0
+margin_right = 390.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 14 )
 text = "hud"
@@ -279,10 +279,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fullscreen" type="Label" parent="game/separator/labels"]
+[node name="white_background" type="Label" parent="game/separator/labels"]
 margin_top = 44.0
-margin_right = 227.0
+margin_right = 390.0
 margin_bottom = 84.0
+custom_fonts/font = ExtResource( 14 )
+text = "White background"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fullscreen" type="Label" parent="game/separator/labels"]
+margin_top = 88.0
+margin_right = 390.0
+margin_bottom = 128.0
 custom_fonts/font = ExtResource( 14 )
 text = "fullscreen"
 __meta__ = {
@@ -290,9 +300,9 @@ __meta__ = {
 }
 
 [node name="borderless" type="Label" parent="game/separator/labels"]
-margin_top = 88.0
-margin_right = 227.0
-margin_bottom = 128.0
+margin_top = 132.0
+margin_right = 390.0
+margin_bottom = 172.0
 custom_fonts/font = ExtResource( 14 )
 text = "borderless"
 __meta__ = {
@@ -300,9 +310,9 @@ __meta__ = {
 }
 
 [node name="buttons" type="VBoxContainer" parent="game/separator"]
-margin_left = 231.0
-margin_right = 307.0
-margin_bottom = 128.0
+margin_left = 394.0
+margin_right = 470.0
+margin_bottom = 172.0
 
 [node name="hud" type="CheckButton" parent="game/separator/buttons"]
 margin_right = 76.0
@@ -311,17 +321,25 @@ focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
-[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
+[node name="white_background" type="CheckButton" parent="game/separator/buttons"]
 margin_top = 44.0
 margin_right = 76.0
 margin_bottom = 84.0
 focus_mode = 0
+pressed = true
 enabled_focus_mode = 0
 
-[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
 margin_top = 88.0
 margin_right = 76.0
 margin_bottom = 128.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 132.0
+margin_right = 76.0
+margin_bottom = 172.0
 focus_mode = 0
 enabled_focus_mode = 0
 
@@ -1169,6 +1187,7 @@ __meta__ = {
 [connection signal="pressed" from="settings/Sound" to="." method="_on_Sound_pressed"]
 [connection signal="pressed" from="settings/Keybindings" to="." method="_on_Keybindings_pressed"]
 [connection signal="toggled" from="game/separator/buttons/hud" to="." method="_on_CheckBox_toggled" binds= [ 0 ]]
+[connection signal="toggled" from="game/separator/buttons/white_background" to="." method="_on_CheckBox_toggled" binds= [ 5 ]]
 [connection signal="toggled" from="game/separator/buttons/fullscreen" to="." method="_on_CheckBox_toggled" binds= [ 3 ]]
 [connection signal="toggled" from="game/separator/buttons/borderless" to="." method="_on_CheckBox_toggled" binds= [ 4 ]]
 [connection signal="toggled" from="sound/separator/buttons/music" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]

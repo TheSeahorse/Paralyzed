@@ -76,16 +76,16 @@ COLOR = "yellow"
 position = Vector2( 11532, 0 )
 
 [node name="square32" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11608, 0 )
+position = Vector2( 11607, 0 )
 
 [node name="square33" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11684, 0 )
+position = Vector2( 11682, 0 )
 
 [node name="square34" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11760, 0 )
+position = Vector2( 11757, 0 )
 
 [node name="square35" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11836, 0 )
+position = Vector2( 11832, 0 )
 
 [node name="square7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5532, 0 )
