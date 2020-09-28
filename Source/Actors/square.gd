@@ -24,15 +24,6 @@ func _physics_process(delta: float) -> void:
 	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 
-func _on_tileMap_body_entered(_body: Node) -> void: #Area2D, not tilemap
-	if not ON_FLOOR:
-		ON_FLOOR = true
-
-
-func _on_tileMap_body_exited(_body: Node) -> void: #Area2D, not tilemap
-	ON_FLOOR = false #this gets changed faster in the jump functions
-
-
 func action():
 	GRACE_FRAMES = 5
 	TOGGLE_ACTION = true
@@ -90,3 +81,13 @@ func _on_player_detector_area_entered(_area: Area2D) -> void:
 
 func _on_player_detector_area_exited(_area: Area2D) -> void:
 	PLAYER_OVER = false
+
+
+func _on_floor_detector_body_entered(body: Node) -> void:
+	if body is TileMap and !ON_FLOOR:
+		ON_FLOOR = true
+
+
+func _on_floor_detector_body_exited(body: Node) -> void:
+	if body is TileMap:
+		ON_FLOOR = false #this gets changed faster in the jump functions
