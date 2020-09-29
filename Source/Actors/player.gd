@@ -118,6 +118,7 @@ func display_background(level: String):
 		else:
 			$ParallaxBackground/background.play("all")
 
+
 func is_color(color: String):
 	if DEAD:
 		return
@@ -129,3 +130,7 @@ func is_color(color: String):
 			$change_color.play()
 		PLAYER_COLOR = color
 		get_parent().add_stat("switch-color", 1)
+
+
+func try_jump():
+	SPRING_JUMP = 10

@@ -254,25 +254,42 @@ __meta__ = {
 
 [node name="game" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 624.0
-margin_top = 306.0
-margin_right = 1087.0
-margin_bottom = 515.0
+margin_left = 573.0
+margin_top = 318.0
+margin_right = 1043.0
+margin_bottom = 534.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="separator" type="HBoxContainer" parent="game"]
 margin_right = 470.0
-margin_bottom = 172.0
+margin_bottom = 216.0
 
 [node name="labels" type="VBoxContainer" parent="game/separator"]
 margin_right = 390.0
-margin_bottom = 172.0
+margin_bottom = 216.0
 
-[node name="hud" type="Label" parent="game/separator/labels"]
+[node name="double_click_jump" type="Label" parent="game/separator/labels"]
 margin_right = 390.0
 margin_bottom = 40.0
+hint_tooltip = "Enabling double tap will allow you to perform \"action\"
+when you press the key for the color you already are"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "double tap"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hud" type="Label" parent="game/separator/labels"]
+margin_top = 44.0
+margin_right = 390.0
+margin_bottom = 84.0
+hint_tooltip = "Enabling hud will allow you to see
+which keys are bound to each color
+while playing"
+mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
 text = "hud"
 __meta__ = {
@@ -280,9 +297,13 @@ __meta__ = {
 }
 
 [node name="white_background" type="Label" parent="game/separator/labels"]
-margin_top = 44.0
+margin_top = 88.0
 margin_right = 390.0
-margin_bottom = 84.0
+margin_bottom = 128.0
+hint_tooltip = "Enabling white background will remove the
+colorful level backgrounds with a plain
+white one"
+mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
 text = "White background"
 __meta__ = {
@@ -290,9 +311,11 @@ __meta__ = {
 }
 
 [node name="fullscreen" type="Label" parent="game/separator/labels"]
-margin_top = 88.0
+margin_top = 132.0
 margin_right = 390.0
-margin_bottom = 128.0
+margin_bottom = 172.0
+hint_tooltip = "Will make the game fullscreen"
+mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
 text = "fullscreen"
 __meta__ = {
@@ -300,9 +323,14 @@ __meta__ = {
 }
 
 [node name="borderless" type="Label" parent="game/separator/labels"]
-margin_top = 132.0
+margin_top = 176.0
 margin_right = 390.0
-margin_bottom = 172.0
+margin_bottom = 216.0
+hint_tooltip = "Will make the game borderless
+If the game freezes up after enabling
+or disabling this, try tabing
+out and back in again"
+mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
 text = "borderless"
 __meta__ = {
@@ -312,16 +340,16 @@ __meta__ = {
 [node name="buttons" type="VBoxContainer" parent="game/separator"]
 margin_left = 394.0
 margin_right = 470.0
-margin_bottom = 172.0
+margin_bottom = 216.0
 
-[node name="hud" type="CheckButton" parent="game/separator/buttons"]
+[node name="double_click_jump" type="CheckButton" parent="game/separator/buttons"]
 margin_right = 76.0
 margin_bottom = 40.0
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
-[node name="white_background" type="CheckButton" parent="game/separator/buttons"]
+[node name="hud" type="CheckButton" parent="game/separator/buttons"]
 margin_top = 44.0
 margin_right = 76.0
 margin_bottom = 84.0
@@ -329,41 +357,49 @@ focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
-[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
+[node name="white_background" type="CheckButton" parent="game/separator/buttons"]
 margin_top = 88.0
 margin_right = 76.0
 margin_bottom = 128.0
 focus_mode = 0
+pressed = true
 enabled_focus_mode = 0
 
-[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
 margin_top = 132.0
 margin_right = 76.0
 margin_bottom = 172.0
 focus_mode = 0
 enabled_focus_mode = 0
 
+[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 176.0
+margin_right = 76.0
+margin_bottom = 216.0
+focus_mode = 0
+enabled_focus_mode = 0
+
 [node name="sound" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 624.0
-margin_top = 306.0
-margin_right = 893.0
-margin_bottom = 444.0
+margin_left = 674.0
+margin_top = 364.0
+margin_right = 867.0
+margin_bottom = 448.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="separator" type="HBoxContainer" parent="sound"]
-margin_right = 269.0
-margin_bottom = 138.0
+margin_right = 193.0
+margin_bottom = 84.0
 
 [node name="labels" type="VBoxContainer" parent="sound/separator"]
-margin_right = 189.0
-margin_bottom = 138.0
+margin_right = 113.0
+margin_bottom = 84.0
 
 [node name="music" type="Label" parent="sound/separator/labels"]
-margin_right = 189.0
-margin_bottom = 67.0
+margin_right = 113.0
+margin_bottom = 40.0
 custom_fonts/font = ExtResource( 14 )
 text = "music"
 __meta__ = {
@@ -371,9 +407,9 @@ __meta__ = {
 }
 
 [node name="sfx" type="Label" parent="sound/separator/labels"]
-margin_top = 71.0
-margin_right = 189.0
-margin_bottom = 138.0
+margin_top = 44.0
+margin_right = 113.0
+margin_bottom = 84.0
 custom_fonts/font = ExtResource( 14 )
 text = "sfx"
 __meta__ = {
@@ -381,9 +417,9 @@ __meta__ = {
 }
 
 [node name="buttons" type="VBoxContainer" parent="sound/separator"]
-margin_left = 193.0
-margin_right = 269.0
-margin_bottom = 138.0
+margin_left = 117.0
+margin_right = 193.0
+margin_bottom = 84.0
 
 [node name="music" type="CheckButton" parent="sound/separator/buttons"]
 margin_right = 76.0
@@ -1186,6 +1222,7 @@ __meta__ = {
 [connection signal="pressed" from="settings/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="settings/Sound" to="." method="_on_Sound_pressed"]
 [connection signal="pressed" from="settings/Keybindings" to="." method="_on_Keybindings_pressed"]
+[connection signal="toggled" from="game/separator/buttons/double_click_jump" to="." method="_on_CheckBox_toggled" binds= [ 6 ]]
 [connection signal="toggled" from="game/separator/buttons/hud" to="." method="_on_CheckBox_toggled" binds= [ 0 ]]
 [connection signal="toggled" from="game/separator/buttons/white_background" to="." method="_on_CheckBox_toggled" binds= [ 5 ]]
 [connection signal="toggled" from="game/separator/buttons/fullscreen" to="." method="_on_CheckBox_toggled" binds= [ 3 ]]

@@ -77,6 +77,7 @@ func set_settings():
 	$game/separator/buttons/fullscreen.pressed = settings[3]
 	$game/separator/buttons/borderless.pressed = settings[4]
 	$game/separator/buttons/white_background.pressed = settings[5]
+	$game/separator/buttons/double_click_jump.pressed = settings[6]
 
 
 func mark_button(string: String):

@@ -22,7 +22,7 @@ var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from fi
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true
-var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background
+var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background, Double_click_jump
 
 
 func _ready():
@@ -114,22 +114,27 @@ func stop_music():
 
 func toggle_color():
 	if Input.is_action_just_pressed("cyan"):
-		player.is_color("cyan")
-		level.play_animation("cyan")
+		handle_color_change("cyan")
 	elif Input.is_action_just_pressed("red"):
-		player.is_color("red")
-		level.play_animation("red")
+		handle_color_change("red")
 	elif Input.is_action_just_pressed("purple"):
-		player.is_color("purple")
-		level.play_animation("purple")
+		handle_color_change("purple")
 	elif Input.is_action_just_pressed("yellow"):
-		player.is_color("yellow")
-		level.play_animation("yellow")
+		handle_color_change("yellow")
+
+
+func handle_color_change(color: String):
+	if player.PLAYER_COLOR != color:
+		player.is_color(color)
+		level.play_animation(color)
+	elif SETTINGS[6]:
+		player.try_jump()
+		level.action(color)
 
 
 func handle_action():
 	if Input.is_action_just_pressed("action"):
-		player.SPRING_JUMP = 10
+		player.try_jump()
 		level.action(player.PLAYER_COLOR)
 
 
@@ -223,7 +228,7 @@ func load_savestate():
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
 		STATS = [0, 0, 0, 0, 0, 0, 0, 0]
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
-		SETTINGS = [true, true, true, false, false, false]
+		SETTINGS = [true, true, true, false, false, false, false]
 	else:
 		load_game.open("user://savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
@@ -283,7 +288,6 @@ func add_deadliest_color(color: String):
 			DEADLIEST_COLOR[3] += 1
 		"none":
 			DEADLIEST_COLOR[4] += 1
-
 
 
 # STATS: [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
