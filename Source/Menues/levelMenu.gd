@@ -11,6 +11,31 @@ func _ready() -> void:
 		n.add_constant_override("separation", 0)
 
 
+func hide_level_menu():
+	self.hide()
+
+
+func show_level_menu():
+	self.show()
+	update_stats()
+	update_death_counts()
+	update_tooltips()
+	hide_current_level_and_stat()
+
+
+func update_tooltips():
+	var level_node = get_node("ScrollContainer/levels")
+	var counter = 0
+	for n in level_node.get_children():
+		var button_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton")
+		var label_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton/Label")
+		if button_node.is_disabled():
+			label_node.set_mouse_filter(1)
+		else:
+			label_node.set_mouse_filter(2)
+
+
+
 func update_death_counts():
 	var level_node = get_node("ScrollContainer/levels")
 	var counter = 0
@@ -23,17 +48,6 @@ func update_death_counts():
 		if death_practice_node != null:
 			death_practice_node.set_text(": " + str(deaths_array[1]))
 		counter += 1
-
-
-func hide_level_menu():
-	self.hide()
-
-
-func show_level_menu():
-	self.show()
-	update_stats()
-	update_death_counts()
-	hide_current_level_and_stat()
 
 
 # DEATHS: [[tutorial, tutorial_practice], [level1, level1_practice] .... ]

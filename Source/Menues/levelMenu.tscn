@@ -423,6 +423,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level2/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Cube-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "cube-2"
 align = 1
@@ -591,6 +592,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level3/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Cube-2 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "cube-3"
 align = 1
@@ -758,6 +760,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level4/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Cube-3 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "cube-4"
 align = 1
@@ -926,6 +929,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level5/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Cube-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "laser-1"
 align = 1
@@ -1093,6 +1097,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level6/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Laser-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "laser-2"
 align = 1
@@ -1261,6 +1266,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level7/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Laser-2 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "laser-3"
 align = 1
@@ -1429,6 +1435,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level8/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Laser-3 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "laser-4"
 align = 1
@@ -1597,6 +1604,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level9/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Laser-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "fire-1"
 align = 1
@@ -1765,6 +1773,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level10/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Fire-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "fire-2"
 align = 1
@@ -1933,6 +1942,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level11/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Fire-2 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "fire-3"
 align = 1
@@ -2101,6 +2111,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level12/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Fire-3 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "fire-4"
 align = 1
@@ -2269,6 +2280,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level13/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Fire-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "car-1"
 align = 1
@@ -2437,6 +2449,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level14/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Car-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "car-2"
 align = 1
@@ -2605,6 +2618,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level15/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Car-2 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "car-3"
 align = 1
@@ -2773,6 +2787,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level16/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Car-3 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "car-4"
 align = 1
@@ -2941,6 +2956,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level17/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat Car-1 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "all-1"
 align = 1
@@ -3109,6 +3125,8 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level18/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat All-1, Cube-2, Laser-2,
+Fire-2 and Car-2 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "all-2"
 align = 1
@@ -3277,6 +3295,8 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level19/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat All-2, Cube-3, Laser-3,
+Fire-3 and Car-3 to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "all-3"
 align = 1
@@ -3445,6 +3465,7 @@ texture_disabled = ExtResource( 10 )
 [node name="Label" type="Label" parent="ScrollContainer/levels/level20/TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+hint_tooltip = "Beat all other levels to unlock"
 custom_fonts/font = ExtResource( 4 )
 text = "finale"
 align = 1
