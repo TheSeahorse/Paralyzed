@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Source/main.gd" type="Script" id=1]
 [ext_resource path="res://Source/Menues/pauseMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sound/Levels/_120bpm_ alexanderlathi laser.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sound/Levels/_140 bpm_ alexanderlathi car.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sound/Levels/_140 bpm_ alexanderlathi all.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sound/Levels/_120 bpm_ alexanderlathi flames.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sound/Levels/_120bpm_ alexanderlathi cube.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/Levels/all1.1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/Levels/car1.0.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/Levels/flames1.1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/Levels/laser1.1.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/Levels/cube1.1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sound/Levels/Ripple.wav" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]
@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 [node name="pauseMenu" parent="." instance=ExtResource( 2 )]
 
 [node name="lava" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 volume_db = -15.0
 
 [node name="cube" type="AudioStreamPlayer" parent="."]
@@ -23,11 +23,11 @@ stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="laser" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 6 )
 volume_db = -15.0
 
 [node name="all" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 3 )
 volume_db = -15.0
 
 [node name="car" type="AudioStreamPlayer" parent="."]

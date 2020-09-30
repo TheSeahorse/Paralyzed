@@ -283,18 +283,21 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 
 func _on_link_pressed(link_name: String) -> void:
 	click_fx()
+	var error
 	match link_name:
 		"twitter":
-			OS.shell_open("https://www.twitter.com/alexanderlahti")
+			error = OS.shell_open("https://www.twitter.com/alexanderlahti")
 		"youtube":
-			OS.shell_open("https://www.youtube.com/kaatanglove")
+			error = OS.shell_open("https://www.youtube.com/kaatanglove")
 		"linkedin":
-			OS.shell_open("https://www.linkedin.com/in/alexander-lahti-1103801ab/")
+			error = OS.shell_open("https://www.linkedin.com/in/alexander-lahti-1103801ab/")
 		"spillana":
-			OS.shell_open("https://www.fiverr.com/spillana")
+			error = OS.shell_open("https://www.fiverr.com/spillana")
 		"teksoda":
-			OS.shell_open("https://www.fiverr.com/teksoda")
+			error = OS.shell_open("https://www.fiverr.com/teksoda")
 		"godot":
-			OS.shell_open("https://www.godotengine.org/")
+			error = OS.shell_open("https://www.godotengine.org/")
 		"gimp":
-			OS.shell_open("https://www.gimp.org/")
+			error = OS.shell_open("https://www.gimp.org/")
+	if error != OK:
+		printerr("Couldn't open: \"%s\". Error code: %s." % [link_name, error])
