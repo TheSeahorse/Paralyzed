@@ -50,6 +50,7 @@ func square_dead():
 		$CollisionShape2D.disabled = true
 		$square_sprite.play(COLOR + " death")
 		DEATH_COUNTDOWN = 20
+		get_parent().get_parent().add_stat("square-killed", 1)
 	DEAD = true
 
 

@@ -49,6 +49,7 @@ func car_dead():
 		$CollisionShape2D.disabled = true
 		$car_sprite.play(COLOR + " death")
 		DEATH_COUNTDOWN = 20
+		get_parent().get_parent().add_stat("car-killed", 1)
 	DEAD = true
 
 

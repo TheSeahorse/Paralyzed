@@ -15,7 +15,7 @@ var CURRENT_DEATHS: int = 0 # amount of deaths on current run of current level
 var DEATHS: Array # array of arrays with [normal,practice] structure, in order of the levels
 var DEATH_BY: Array # [spikes, square, beam, lava, car, self-destruct]
 var DEADLIEST_COLOR: Array # how many times you've died to each color [cyan, red, purple, yellow, none]
-var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused, goals-reached]
+var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused, goals-reached, square-killed, car-killed]
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
@@ -226,7 +226,7 @@ func load_savestate():
 		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
 		TIME_PLAYED = 0
 		DEATH_BY = [0, 0, 0, 0, 0, 0]
-		STATS = [0, 0, 0, 0, 0, 0, 0, 0]
+		STATS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
 		SETTINGS = [true, true, true, false, false, false, false]
 	else:
@@ -308,6 +308,10 @@ func add_stat(stat: String, amount: int):
 		STATS[6] += amount
 	elif stat == "goals-reached":
 		STATS[7] += amount
+	elif stat == "square-killed":
+		STATS[8] += amount
+	elif stat == "car-killed":
+		STATS[9] += amount
 
 
 func show_main_menu():
