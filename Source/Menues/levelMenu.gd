@@ -25,7 +25,6 @@ func show_level_menu():
 
 func update_tooltips():
 	var level_node = get_node("ScrollContainer/levels")
-	var counter = 0
 	for n in level_node.get_children():
 		var button_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton")
 		var label_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton/Label")

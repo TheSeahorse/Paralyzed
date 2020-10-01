@@ -83,7 +83,6 @@ func set_settings():
 func mark_button(string: String):
 	can_change_key = true
 	keybind_string = string
-
 	for j in keybinds:
 		if j != string:
 			get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)

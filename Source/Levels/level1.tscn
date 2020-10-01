@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Source/Levels/globalLevel.gd" type="Script" id=4]
 [ext_resource path="res://Source/Actors/goal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Source/Actors/popup.tscn" type="PackedScene" id=11]
 
 [node name="level1" type="Node2D"]
 script = ExtResource( 4 )
@@ -12,10 +11,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-
-[node name="popup" parent="." instance=ExtResource( 11 )]
-position = Vector2( 12039, 8 )
-tutorial_name = "pauseEscape"
 
 [node name="goal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 12156, 0 )

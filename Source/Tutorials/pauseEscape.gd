@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	$Sprite/Label.set_text("i forgot to mention\nthat you can pause\nat any time with\n" + InputMap.get_action_list("escape")[0].as_text() + ", try it!")
+	$Sprite/Label.set_text("oh, and i forgot to\nmention that you can\npause at any time with\n" + InputMap.get_action_list("escape")[0].as_text() + ", try it!")
 
 
 func _input(_event: InputEvent) -> void:

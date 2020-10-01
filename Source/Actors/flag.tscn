@@ -23,7 +23,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 10.0
+"speed": 8.0
 } ]
 
 [node name="flag" type="Area2D"]
