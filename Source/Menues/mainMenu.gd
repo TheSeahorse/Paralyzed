@@ -299,5 +299,7 @@ func _on_link_pressed(link_name: String) -> void:
 			error = OS.shell_open("https://www.godotengine.org/")
 		"gimp":
 			error = OS.shell_open("https://www.gimp.org/")
+		"empyrean":
+			error = OS.shell_open("https://www.empyreanma.com/music-licensing")
 	if error != OK:
 		printerr("Couldn't open: \"%s\". Error code: %s." % [link_name, error])

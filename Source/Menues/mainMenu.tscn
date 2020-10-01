@@ -977,7 +977,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="teksoda" type="TextureButton" parent="credits"]
+[node name="empyrean_media_arts" type="TextureButton" parent="credits"]
 margin_top = 451.0
 margin_right = 690.0
 margin_bottom = 485.0
@@ -985,11 +985,43 @@ texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 22 )
 texture_hover = ExtResource( 22 )
 
+[node name="main_theme" type="Label" parent="credits/empyrean_media_arts"]
+margin_left = -200.0
+margin_right = 490.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 4 )
+text = "main theme -"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="empyeran" type="Label" parent="credits/empyrean_media_arts"]
+margin_left = 115.0
+margin_right = 805.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
+text = "Empyrean Media Arts"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="teksoda" type="TextureButton" parent="credits"]
+margin_top = 489.0
+margin_right = 690.0
+margin_bottom = 523.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+
 [node name="music" type="Label" parent="credits/teksoda"]
 margin_left = -85.0
-margin_top = 4.0
 margin_right = 605.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 custom_fonts/font = SubResource( 4 )
 text = "music -"
 align = 1
@@ -1000,9 +1032,8 @@ __meta__ = {
 
 [node name="spillana" type="Label" parent="credits/teksoda"]
 margin_left = 60.0
-margin_top = 4.0
 margin_right = 750.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "teksoda"
@@ -1013,15 +1044,15 @@ __meta__ = {
 }
 
 [node name="HSeparator3" type="HSeparator" parent="credits"]
-margin_top = 489.0
+margin_top = 527.0
 margin_right = 690.0
-margin_bottom = 509.0
+margin_bottom = 547.0
 custom_constants/separation = 20
 
 [node name="special_thx" type="Label" parent="credits"]
-margin_top = 513.0
+margin_top = 551.0
 margin_right = 690.0
-margin_bottom = 580.0
+margin_bottom = 618.0
 custom_fonts/font = SubResource( 3 )
 text = "special thanks to"
 align = 1
@@ -1030,25 +1061,25 @@ __meta__ = {
 }
 
 [node name="mikael" type="Label" parent="credits"]
-margin_top = 584.0
+margin_top = 622.0
 margin_right = 690.0
-margin_bottom = 618.0
+margin_bottom = 656.0
 custom_fonts/font = SubResource( 4 )
 text = "mikael mollberg"
 align = 1
 
 [node name="trio" type="Label" parent="credits"]
-margin_top = 622.0
+margin_top = 660.0
 margin_right = 690.0
-margin_bottom = 656.0
+margin_bottom = 694.0
 custom_fonts/font = SubResource( 4 )
 text = "\"the trio\""
 align = 1
 
 [node name="familj" type="Label" parent="credits"]
-margin_top = 660.0
+margin_top = 698.0
 margin_right = 690.0
-margin_bottom = 694.0
+margin_bottom = 732.0
 custom_fonts/font = SubResource( 4 )
 text = "my family"
 align = 1
@@ -1243,6 +1274,7 @@ __meta__ = {
 [connection signal="pressed" from="credits/youtube" to="." method="_on_link_pressed" binds= [ "youtube" ]]
 [connection signal="pressed" from="credits/linkedin" to="." method="_on_link_pressed" binds= [ "linkedin" ]]
 [connection signal="pressed" from="credits/spillana" to="." method="_on_link_pressed" binds= [ "spillana" ]]
+[connection signal="pressed" from="credits/empyrean_media_arts" to="." method="_on_link_pressed" binds= [ "empyrean" ]]
 [connection signal="pressed" from="credits/teksoda" to="." method="_on_link_pressed" binds= [ "teksoda" ]]
 [connection signal="pressed" from="back_settings" to="." method="_on_Back_pressed" binds= [ "settings" ]]
 [connection signal="pressed" from="back_keybinds" to="." method="_on_Back_pressed" binds= [ "keybinds" ]]
