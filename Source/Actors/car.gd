@@ -10,7 +10,7 @@ var LAVA
 var ON_LASER: = false
 var LASER
 var DEAD: = false
-var DEATH_COUNTDOWN = 0
+var DEATH_COUNTDOWN: = 0
 
 func _ready() -> void:
 	$car_sprite.play(COLOR)
@@ -18,11 +18,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if !ENABLED:
-		TOGGLE_ACTION = false
-		ENABLED = true
-	if TOGGLE_ACTION:
-		jump()
 	if DEATH_COUNTDOWN != 0:
 		if DEATH_COUNTDOWN == 1:
 			self.queue_free()
@@ -35,7 +30,12 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if DEATH_COUNTDOWN != 0:
+	if !ENABLED:
+		TOGGLE_ACTION = false
+		ENABLED = true
+	if TOGGLE_ACTION:
+		jump()
+	if !DEAD:
 		VELOCITY = Vector2(0, 0)
 	else:
 		VELOCITY.x =- MAX_SPEED.x

@@ -8,10 +8,26 @@ var GRACE_FRAMES: = 0 #how many frames the player can miss the jump on a square 
 var TOGGLE_ACTION: = false #if "action" has been input by the user
 var ON_FLOOR: = true #if the square is on any kind of KinematicBody2D
 var SPRING_JUMP: = 0 #variable to control the flingy jump of the square, if greater than 0 we're calculating the jump
+var ON_LAVA: = false
+var LAVA
+var DEAD: = false
+var DEATH_COUNTDOWN: = 0
+
 
 func _ready() -> void:
 	$square_sprite.play(COLOR)
 	set_physics_process(false)
+
+
+func _process(_delta: float) -> void:
+	if DEATH_COUNTDOWN != 0:
+		if DEATH_COUNTDOWN == 1:
+			self.queue_free()
+		else:
+			DEATH_COUNTDOWN -= 1
+	if ON_LAVA:
+		if (LAVA.COLOR != COLOR) and LAVA.BURNING:
+			square_dead()
 
 
 func _physics_process(delta: float) -> void:
@@ -20,8 +36,21 @@ func _physics_process(delta: float) -> void:
 		ENABLED = true
 	if TOGGLE_ACTION:
 		calculate_jump()
-	VELOCITY = calculate_move_velocity(VELOCITY, delta)
-	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
+	if !DEAD:
+		VELOCITY = calculate_move_velocity(VELOCITY, delta)
+		VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
+
+
+func square_dead():
+	if !DEAD:
+		$death.play()
+		$spikes.queue_free()
+		$spikes2.queue_free()
+		$spikes3.queue_free()
+		$CollisionShape2D.disabled = true
+		$square_sprite.play(COLOR + " death")
+		DEATH_COUNTDOWN = 20
+	DEAD = true
 
 
 func action():
@@ -91,3 +120,14 @@ func _on_floor_detector_body_entered(body: Node) -> void:
 func _on_floor_detector_body_exited(body: Node) -> void:
 	if body is TileMap:
 		ON_FLOOR = false #this gets changed faster in the jump functions
+
+
+func _on_floor_detector_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Lava:
+		ON_LAVA = true
+		LAVA = area.get_parent()
+
+
+func _on_floor_detector_area_exited(area: Area2D) -> void:
+	if area.get_parent() is Lava:
+		ON_LAVA = false

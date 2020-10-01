@@ -4,7 +4,7 @@ class_name Lava
 export var COLOR: = "cyan"
 var PLAYER_ON: = false
 var PLAYER
-var BURNING: bool #used by car to see if burning or not
+var BURNING: bool #used by car and square to see if burning or not
 
 func _init():
 	GRAVITY = 0
