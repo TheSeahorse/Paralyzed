@@ -35,7 +35,6 @@ func update_tooltips():
 			label_node.set_mouse_filter(2)
 
 
-
 func update_death_counts():
 	var level_node = get_node("ScrollContainer/levels")
 	var counter = 0
@@ -71,67 +70,67 @@ func update_stats():
 	$stats/VBoxContainer/deadliest_color.set_text("deadliest color: " + str(best_color))
 	$stats/VBoxContainer/deadliest_enemy.set_text("deadliest enemy: " + str(best_enemy))
 	if death_by[0] == 0:
-		$stats/VBoxContainer/deadliest_enemies/spikes.set_text("nan")
+		$stats/VBoxContainer/deadliest_enemies/spikes.set_text("????????")
 	else:
 		$stats/VBoxContainer/deadliest_enemies/spikes.set_text("spikes: " + str(death_by[0]))
 	if death_by[1] == 0:
-		$stats/VBoxContainer/deadliest_enemies/square.set_text("nan")
+		$stats/VBoxContainer/deadliest_enemies/square.set_text("????????")
 	else:
 		$stats/VBoxContainer/deadliest_enemies/square.set_text("square: " + str(death_by[1]))
 	if death_by[2] == 0:
-		$stats/VBoxContainer/deadliest_enemies/beam.set_text("nan")
+		$stats/VBoxContainer/deadliest_enemies/beam.set_text("????????")
 	else:
 		$stats/VBoxContainer/deadliest_enemies/beam.set_text("laser: " + str(death_by[2]))
 	if death_by[3] == 0:
-		$stats/VBoxContainer/deadliest_enemies/lava.set_text("nan")
+		$stats/VBoxContainer/deadliest_enemies/lava.set_text("????????")
 	else:
 		$stats/VBoxContainer/deadliest_enemies/lava.set_text("fire: " + str(death_by[3]))
 	if death_by[4] == 0:
-		$stats/VBoxContainer/deadliest_enemies/car.set_text("nan")
+		$stats/VBoxContainer/deadliest_enemies/car.set_text("????????")
 	else:
 		$stats/VBoxContainer/deadliest_enemies/car.set_text("car: " + str(death_by[4]))
 	if death_by[5] == 0:
-		$stats/VBoxContainer/self_destructs.set_text("nan")
+		$stats/VBoxContainer/self_destructs.set_text("????????")
 	else:
 		$stats/VBoxContainer/self_destructs.set_text("self destructs: " + str(death_by[5]))
 	if stats[0] == 0:
-		$stats/VBoxContainer/changed_color.set_text("nan")
+		$stats/VBoxContainer/changed_color.set_text("????????")
 	else:
 		$stats/VBoxContainer/changed_color.set_text("changed color " + str(stats[0]) + " times")
 	if stats[1] == 0:
-		$stats/VBoxContainer/square_jumps.set_text("nan")
+		$stats/VBoxContainer/square_jumps.set_text("????????")
 	else:
 		$stats/VBoxContainer/square_jumps.set_text("square jumps: " + str(stats[1]))
 	if stats[2] == 0:
-		$stats/VBoxContainer/car_jumps.set_text("nan")
+		$stats/VBoxContainer/car_jumps.set_text("????????")
 	else:
 		$stats/VBoxContainer/car_jumps.set_text("car jumps: " + str(stats[2]))
 	if stats[3] == 0:
-		$stats/VBoxContainer/phazed_laser.set_text("nan")
+		$stats/VBoxContainer/phazed_laser.set_text("????????")
 	else:
 		$stats/VBoxContainer/phazed_laser.set_text("lasers phazed: " + str(stats[3]))
 	if stats[4] == 0:
-		$stats/VBoxContainer/survived_lava.set_text("nan")
+		$stats/VBoxContainer/survived_lava.set_text("????????")
 	else:
 		$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(stats[4]))
 	if stats[5] == 0:
-		$stats/VBoxContainer/placed_flags.set_text("nan")
+		$stats/VBoxContainer/placed_flags.set_text("????????")
 	else:
 		$stats/VBoxContainer/placed_flags.set_text("practice flags placed: " + str(stats[5]))
 	if stats[6] == 0:
-		$stats/VBoxContainer/paused.set_text("nan")
+		$stats/VBoxContainer/paused.set_text("????????")
 	else:
 		$stats/VBoxContainer/paused.set_text("times paused: " + str(stats[6]))
 	if stats[7] == 0:
-		$stats/VBoxContainer/goals_reached.set_text("nan")
+		$stats/VBoxContainer/goals_reached.set_text("????????")
 	else:
 		$stats/VBoxContainer/goals_reached.set_text("goals reached: " + str(stats[7]))
 	if stats[8] == 0:
-		$stats/VBoxContainer/square_deaths.set_text("nan")
+		$stats/VBoxContainer/square_deaths.set_text("????????")
 	else:
 		$stats/VBoxContainer/square_deaths.set_text("squares killed: " + str(stats[8]))
 	if stats[9] == 0:
-		$stats/VBoxContainer/car_deaths.set_text("nan")
+		$stats/VBoxContainer/car_deaths.set_text("????????")
 	else:
 		$stats/VBoxContainer/car_deaths.set_text("cars killed: " + str(stats[9]))
 

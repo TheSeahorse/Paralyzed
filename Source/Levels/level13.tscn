@@ -23,7 +23,7 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 position = Vector2( 10060, 0 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1700, -32 )
+position = Vector2( 1765, -32 )
 COLOR = "red"
 
 [node name="car2" parent="." instance=ExtResource( 2 )]
@@ -42,18 +42,18 @@ COLOR = "yellow"
 position = Vector2( 5548, -32 )
 
 [node name="car10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5639, -32 )
+position = Vector2( 5614, -32 )
 
 [node name="car13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 8201, -32 )
 COLOR = "red"
 
 [node name="car14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8292, -32 )
+position = Vector2( 8268, -32 )
 COLOR = "red"
 
 [node name="car15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8387, -32 )
+position = Vector2( 8335, -32 )
 
 [node name="car12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 6465, -32 )

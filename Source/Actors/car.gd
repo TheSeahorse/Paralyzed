@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		ENABLED = true
 	if TOGGLE_ACTION:
 		jump()
-	if !DEAD:
+	if DEAD:
 		VELOCITY = Vector2(0, 0)
 	else:
 		VELOCITY.x =- MAX_SPEED.x

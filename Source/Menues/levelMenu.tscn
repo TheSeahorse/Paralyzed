@@ -38,7 +38,7 @@ size = 24
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 18
+size = 19
 font_data = ExtResource( 24 )
 
 [node name="menu" type="Control"]
