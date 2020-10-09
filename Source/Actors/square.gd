@@ -129,7 +129,7 @@ func _on_floor_detector_area_entered(area: Area2D) -> void:
 		LAVA = area.get_parent()
 	elif area.get_parent() is Car:
 		if area.get_parent().COLOR != COLOR:
-			square_dead()
+			call_deferred("square_dead")
 
 
 func _on_floor_detector_area_exited(area: Area2D) -> void:
