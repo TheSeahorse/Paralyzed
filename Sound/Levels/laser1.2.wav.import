@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/laser1.2.wav-0016dfbe07efe47e9cd374501617b13e.sample"
+
+[deps]
+
+source_file="res://Sound/Levels/laser1.2.wav"
+dest_files=[ "res://.import/laser1.2.wav-0016dfbe07efe47e9cd374501617b13e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
