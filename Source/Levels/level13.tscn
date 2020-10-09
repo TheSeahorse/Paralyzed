@@ -42,18 +42,18 @@ COLOR = "yellow"
 position = Vector2( 5548, -32 )
 
 [node name="car10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5614, -32 )
+position = Vector2( 5640, -32 )
 
 [node name="car13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 8201, -32 )
 COLOR = "red"
 
 [node name="car14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8268, -32 )
+position = Vector2( 8293, -32 )
 COLOR = "red"
 
 [node name="car15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8335, -32 )
+position = Vector2( 8385, -32 )
 
 [node name="car12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 6465, -32 )

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Source/Actors/car.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Source/Levels/globalLevel.gd" type="Script" id=4]
 [ext_resource path="res://Source/Actors/goal.tscn" type="PackedScene" id=10]
 
@@ -18,3 +20,10 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 
 [node name="goal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 18334, 0 )
+
+[node name="square" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1483, -12 )
+COLOR = "red"
+
+[node name="car" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1922, -31 )

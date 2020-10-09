@@ -89,12 +89,11 @@ frames = SubResource( 1 )
 animation = "cyan"
 
 [node name="hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
-polygon = PoolVector2Array( -40, 22, -21, 22, -21, 33, 35, 33, 35, 22, 44, 22, 44, -17 )
+polygon = PoolVector2Array( -43, 22, -21, 22, -21, 33, 35, 33, 35, 22, 45, 22, 45, -19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3, 24 )
