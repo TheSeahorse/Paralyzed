@@ -3,10 +3,10 @@
 [ext_resource path="res://Source/main.gd" type="Script" id=1]
 [ext_resource path="res://Source/Menues/pauseMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sound/Levels/all1.1.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sound/Levels/car1.0.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/Levels/car1.2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sound/Levels/flames1.1.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sound/Levels/laser1.1.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sound/Levels/cube1.1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/Levels/laser1.3.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/Levels/cube1.2.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sound/Levels/Ripple.wav" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]

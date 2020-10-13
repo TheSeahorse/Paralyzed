@@ -49,7 +49,8 @@ func change_key(new_key: InputEvent, skip_set_keys: bool):
 	if !InputMap.get_action_list(keybind_string).empty():
 		InputMap.action_erase_event(keybind_string, InputMap.get_action_list(keybind_string)[0])
 
-	#Check if new key was assigned somewhere
+
+#Check if new key was assigned somewhere
 	for i in keybinds:
 		if InputMap.action_has_event(i, new_key):
 			InputMap.action_erase_event(i, new_key)
@@ -177,21 +178,42 @@ func show_level_menu():
 	levelmenu.show_level_menu()
 
 
-# 0->1 | 1->2,5 | 2->3->4 | 5->6,9 | 6->7->8 | 9->10,13 | 10->11->12 | 13->14,17 | 14->15->16 | 17->18->19->20
+# 0->1 | 1->2,5 | 2->3->4 | 5->6,9 | 6->7->8 | 9->10,13 | 10->11->12 | 13->14,17
+# 14->15->16 | 2,6,10,14,17->18 | 3,7,11,15,18->19 | 4,8,12,16,19->20
 func display_cleared_levels():
 	var levels_cleared = get_parent().LEVELS_CLEARED
+	levelmenu.enable_level(0) # should always be visible
+	levelmenu.enable_level(1) # should always be visible
 	var count = 0
+	var all2 = 0 #takes five levels to unlock all 2 3 and 4 respectively
+	var all3 = 0
+	var all4 = 0
 	for levels in levels_cleared:
 		var cleared_normal = levels[0]
 		var cleared_practice = levels[1]
 		if cleared_normal:
 			if count == 0:
-				levelmenu.enable_level(1)
+				pass
 			elif (count % 4 == 1) and (count < 17):
 				levelmenu.enable_level(count + 1)
 				levelmenu.enable_level(count + 4)
-			elif (count % 4 != 0) and (count < 20):
+			elif (count % 4 != 0) and (count < 16):
 				levelmenu.enable_level(count + 1)
+			
+			if (count == 2) or (count == 6) or (count == 10) or (count == 14) or (count == 17):
+				all2 += 1
+			elif (count == 3) or (count == 7) or (count == 11) or (count == 15) or (count == 18):
+				all3 += 1
+			elif (count == 4) or (count == 8) or (count == 12) or (count == 16) or (count == 19):
+				all4 += 1
+			
+			if all2 == 5:
+				levelmenu.enable_level(18)
+			if all3 == 5:
+				levelmenu.enable_level(19)
+			if all4 == 5:
+				levelmenu.enable_level(20)
+			
 		levelmenu.show_checkmarks(count, cleared_normal, cleared_practice)
 		count += 1
 
