@@ -13,12 +13,6 @@ var SQUARE2 # right most square the player is on (only if player is on two squar
 var SPRING_JUMP: = 0 # if a spring jump is activated this value is greater than 0
 
 
-#func _ready():
-#	var level = get_parent().CURRENT_LEVEL
-#	if !get_parent().SETTINGS[5] and (level == "level17" or level == "level18" or level == "level19" or level == "level20"):
-#		$white_rim.show()
-
-
 func _physics_process(delta: float) -> void:
 	if DEAD:
 		VELOCITY = move_and_slide(Vector2(0,0), FLOOR_NORMAL)

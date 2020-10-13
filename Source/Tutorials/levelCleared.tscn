@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Source/Tutorials/levelCleared.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Character models/Tutorials/tutorial_background.png" type="Texture" id=3]
+[ext_resource path="res://Sound/Menu/level_cleared_loop.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/Menu/confetti_pop.wav" type="AudioStream" id=5]
+[ext_resource path="res://Character models/Tutorials/particle.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -19,6 +22,48 @@ font_data = ExtResource( 2 )
 size = 40
 outline_size = 2
 font_data = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.42963, 1 )
+colors = PoolColorArray( 0, 0.0196078, 1, 1, 0.00484789, 0.42487, 0.586397, 1, 0.0112839, 0.962891, 0.0373044, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 0.6
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 49, 0 )
+initial_velocity = 400.0
+initial_velocity_random = 0.7
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -150.0
+color_ramp = SubResource( 5 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.0222222, 1 )
+colors = PoolColorArray( 0.99707, 0.128529, 0.128529, 1, 0.936485, 1, 0.121094, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+lifetime_randomness = 0.6
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 49, 0 )
+initial_velocity = 400.0
+initial_velocity_random = 0.7
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -150.0
+color_ramp = SubResource( 8 )
 
 [node name="levelCleared" type="CanvasLayer"]
 pause_mode = 2
@@ -57,9 +102,9 @@ __meta__ = {
 }
 
 [node name="totaldeaths" type="Label" parent="Sprite"]
-margin_left = -418.0
+margin_left = -420.002
 margin_top = -3.0
-margin_right = -82.0
+margin_right = -84.0023
 margin_bottom = 81.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -96,3 +141,29 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="clear_loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 357.242, 349.216 )
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 6 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 1136.23, 212.276 )
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 9 )
+texture = ExtResource( 6 )
+
+[node name="confetti" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0

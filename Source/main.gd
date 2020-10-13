@@ -21,7 +21,7 @@ var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
-var CAN_PAUSE: = true
+var CAN_PAUSE: = true # whether or not the player can input pause by pressing esacape, cant if in menues
 var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background, Double_click_jump
 
 

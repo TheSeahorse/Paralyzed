@@ -1,9 +1,26 @@
 extends CanvasLayer
 
+var DELAY: int = 50
+
 func _ready() -> void:
 	calculate_deaths()
 	calculate_time()
 	$Sprite/continue_label.set_text("press " + InputMap.get_action_list("action")[0].as_text() + " to save & continue")
+	if get_parent().SETTINGS[1]:
+		$clear_loop.play()
+	if get_parent().SETTINGS[2]:
+		$confetti.play()
+
+
+func _process(delta):
+	if DELAY == 0:
+		$Particles2D2.restart()
+		DELAY -= 1
+	if DELAY == 43:
+		$Particles2D.restart()
+		DELAY -= 1
+	elif DELAY > 0:
+		DELAY -= 1
 
 
 func _input(_event: InputEvent) -> void:

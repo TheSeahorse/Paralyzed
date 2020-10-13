@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confetti_pop.wav-0214c19ab4df08f729370bb4d07e3e6b.sample"
+
+[deps]
+
+source_file="res://Sound/Menu/confetti_pop.wav"
+dest_files=[ "res://.import/confetti_pop.wav-0214c19ab4df08f729370bb4d07e3e6b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
