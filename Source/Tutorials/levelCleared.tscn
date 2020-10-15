@@ -147,7 +147,7 @@ stream = ExtResource( 4 )
 volume_db = -20.0
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 357.242, 349.216 )
+position = Vector2( 800, 350 )
 emitting = false
 amount = 300
 one_shot = true
@@ -156,7 +156,7 @@ process_material = SubResource( 6 )
 texture = ExtResource( 6 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
-position = Vector2( 1136.23, 212.276 )
+position = Vector2( 800, 350 )
 emitting = false
 amount = 300
 one_shot = true

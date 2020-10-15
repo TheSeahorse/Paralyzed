@@ -182,8 +182,6 @@ func show_level_menu():
 # 14->15->16 | 2,6,10,14,17->18 | 3,7,11,15,18->19 | 4,8,12,16,19->20
 func display_cleared_levels():
 	var levels_cleared = get_parent().LEVELS_CLEARED
-	levelmenu.enable_level(0) # should always be visible
-	levelmenu.enable_level(1) # should always be visible
 	var count = 0
 	var all2 = 0 #takes five levels to unlock all 2 3 and 4 respectively
 	var all3 = 0

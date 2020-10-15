@@ -246,7 +246,6 @@ margin_bottom = 164.0
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/levels/level1"]
 margin_right = 320.0
 margin_bottom = 80.0
-disabled = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )

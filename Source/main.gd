@@ -23,7 +23,7 @@ var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "l
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true # whether or not the player can input pause by pressing esacape, cant if in menues
 var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background, Double_click_jump
-
+var RNG = RandomNumberGenerator.new()
 
 func _ready():
 	START_TIME = OS.get_unix_time()

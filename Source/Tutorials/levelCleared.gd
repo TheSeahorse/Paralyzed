@@ -2,7 +2,9 @@ extends CanvasLayer
 
 var DELAY: int = 50
 
+
 func _ready() -> void:
+	randomize_firework_position()
 	calculate_deaths()
 	calculate_time()
 	$Sprite/continue_label.set_text("press " + InputMap.get_action_list("action")[0].as_text() + " to save & continue")
@@ -28,6 +30,15 @@ func _input(_event: InputEvent) -> void:
 		get_tree().paused = false
 		get_parent().player_cleared_level()
 		self.queue_free()
+
+
+func randomize_firework_position():
+	var width1 = get_parent().RNG.randi_range(400, 1200)
+	var height1 = get_parent().RNG.randi_range(150, 550)
+	var width2 = get_parent().RNG.randi_range(400, 1200)
+	var height2 = get_parent().RNG.randi_range(150, 550)
+	$Particles2D.set_position(Vector2(width1, height1))
+	$Particles2D2.set_position(Vector2(width2, height2))
 
 
 func calculate_deaths():
