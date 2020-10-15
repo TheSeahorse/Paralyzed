@@ -82,6 +82,7 @@ func play_level(levelName: String, practice: bool):
 	add_child(hud)
 	player.is_color("cyan")
 	player.display_background(levelName)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	if SETTINGS[1]:
 		play_music()
 
@@ -142,6 +143,7 @@ func handle_action():
 # auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
 	if ((Input.is_action_just_pressed("escape") or auto) and !player.DEAD) and CAN_PAUSE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		add_stat("paused", 1)
 		$pauseMenu.show_menu()
 		get_tree().paused = true
@@ -183,6 +185,7 @@ func player_cleared_level():
 		mainmenu.start_music()
 	add_stat("goals-reached", 1)
 	remove_player_and_level()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func calculate_cleared_level():
@@ -320,6 +323,7 @@ func add_stat(stat: String, amount: int):
 
 
 func show_main_menu():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	mainmenu.show_menu()
 	if SETTINGS[1]:
 		mainmenu.start_music()

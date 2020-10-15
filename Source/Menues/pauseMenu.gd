@@ -29,6 +29,7 @@ func continue_game():
 	$VBoxContainer.hide()
 	get_tree().paused = false
 	can_press_escape = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func _on_mainMenu_pressed() -> void:
