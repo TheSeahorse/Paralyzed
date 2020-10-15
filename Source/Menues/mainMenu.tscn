@@ -1019,20 +1019,20 @@ texture_pressed = ExtResource( 22 )
 texture_hover = ExtResource( 22 )
 
 [node name="music" type="Label" parent="credits/teksoda"]
-margin_left = -85.0
-margin_right = 605.0
+margin_left = -105.0
+margin_right = 585.0
 margin_bottom = 34.0
 custom_fonts/font = SubResource( 4 )
-text = "music -"
+text = "level music -"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="spillana" type="Label" parent="credits/teksoda"]
-margin_left = 60.0
-margin_right = 750.0
+[node name="teksoda" type="Label" parent="credits/teksoda"]
+margin_left = 90.0
+margin_right = 780.0
 margin_bottom = 34.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )

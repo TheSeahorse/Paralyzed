@@ -152,6 +152,8 @@ func handle_pause(auto: bool):
 
 func handle_practice_save():
 	if Input.is_action_just_pressed("flag"):
+		if SETTINGS[2]:
+			$flag_flap.play()
 		var player_position = player.position
 		PRACTICE_SAVED_PLAYER_VECTORS.append(player_position)
 		level.spawn_flag(player_position)
@@ -160,7 +162,9 @@ func handle_practice_save():
 
 func handle_practice_delete_save():
 	if Input.is_action_just_pressed("remove"):
-		PRACTICE_SAVED_PLAYER_VECTORS.pop_back()
+		if PRACTICE_SAVED_PLAYER_VECTORS.pop_back() != null:
+			if SETTINGS[2]:
+				$flag_remove.play()
 
 
 func kill_player(cause: String, color: String):
