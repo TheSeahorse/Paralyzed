@@ -7,7 +7,7 @@ var SHOWN_LEVEL: String = "" # the levelname which is currently shown
 
 func _ready() -> void:
 	var level_node = get_node("ScrollContainer/levels")
-	$stats/VBoxContainer.add_constant_override("separation", 3)
+	$stats/VBoxContainer.add_constant_override("separation", 2)
 	for n in level_node.get_children():
 		n.add_constant_override("separation", 0)
 
@@ -53,11 +53,13 @@ func update_death_counts():
 # DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
 # DEADLIEST_COLOR: [cyan, red, purple, yellow, none]
 # STATS: [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused]
+# LEVELS_CLEARED: [[true, false], [false, true]] where [normal_level, practice_level]
 func update_stats():
 	var deaths = self.get_parent().get_parent().DEATHS
 	var death_by = self.get_parent().get_parent().DEATH_BY
 	var deadliest_color = self.get_parent().get_parent().DEADLIEST_COLOR
 	var stats = self.get_parent().get_parent().STATS
+	var levels_cleared = self.get_parent().get_parent().LEVELS_CLEARED
 	var total_deaths = count_deaths(deaths)
 	$stats/VBoxContainer/total_deaths.set_text("total deaths: " + str(total_deaths))
 	$stats/VBoxContainer/deadliest_colors/cyan.set_text("cyan: " + str(deadliest_color[0]))
@@ -67,8 +69,10 @@ func update_stats():
 	$stats/VBoxContainer/deadliest_colors/none.set_text("no color: " + str(deadliest_color[4]))
 	var best_color = calculate_deadliest_color(deadliest_color)
 	var best_enemy = calculate_deadliest_enemy(death_by)
+	var completion_percent = calculate_completion_percent(levels_cleared)
 	$stats/VBoxContainer/deadliest_color.set_text("deadliest color: " + str(best_color))
 	$stats/VBoxContainer/deadliest_enemy.set_text("deadliest enemy: " + str(best_enemy))
+	$stats/VBoxContainer/completion.set_text("completion: " + str(completion_percent) + "%")
 	if death_by[0] == 0:
 		$stats/VBoxContainer/deadliest_enemies/spikes.set_text("????????")
 	else:
@@ -134,6 +138,7 @@ func update_stats():
 	else:
 		$stats/VBoxContainer/car_deaths.set_text("cars killed: " + str(stats[9]))
 
+
 func count_deaths(deaths: Array) -> int:
 	var amount = 0
 	for d in deaths:
@@ -141,6 +146,16 @@ func count_deaths(deaths: Array) -> int:
 		amount += d[1]
 	return amount
 
+
+func calculate_completion_percent(levels_cleared: Array) -> int:
+	var total = 0
+	var cleared = 0
+	for level in levels_cleared:
+		if level[0]:
+			cleared += 1
+		total += 1
+	var percent = float(cleared)/float(total)
+	return int(percent*100)
 
 # no color gills inte, därför så komplicerad funktion
 func calculate_deadliest_color(stats: Array) -> String:

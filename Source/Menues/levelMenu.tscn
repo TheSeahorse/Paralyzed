@@ -38,7 +38,7 @@ size = 24
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 19
+size = 18
 font_data = ExtResource( 24 )
 
 [node name="menu" type="Control"]
@@ -3931,10 +3931,17 @@ margin_bottom = 542.0
 custom_fonts/font = SubResource( 2 )
 text = "goals reached: Nan"
 
-[node name="TextureRect4" type="TextureRect" parent="stats/VBoxContainer"]
+[node name="completion" type="Label" parent="stats/VBoxContainer"]
 margin_top = 546.0
 margin_right = 360.0
-margin_bottom = 548.0
+margin_bottom = 572.0
+custom_fonts/font = SubResource( 2 )
+text = "Completion: 32%"
+
+[node name="TextureRect4" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 576.0
+margin_right = 360.0
+margin_bottom = 578.0
 texture = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
