@@ -19,6 +19,7 @@ var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phaz
 var CURRENT_LEVEL # name of most recent level as a string
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
+var PRACTICE_SAVED_PLAYER_VELOCITIES: = [] # all the saved player velocities from first to last in a practice round
 var LEVEL_ORDER: Array = ["tutorial", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15", "level16", "level17", "level18", "level19", "level20"] # order in which the levels should appear, used in mainMenu
 var LEVELS_CLEARED: Array # array of arrays in format [[true, false], [false, true]] where [normal_level, practice_level] and all levels are in order, tutorial first
 var CAN_PAUSE: = true # whether or not the player can input pause by pressing esacape, cant if in menues
@@ -52,6 +53,7 @@ func _on_backMainMenu() -> void:
 	stop_music()
 	CAN_PAUSE = true
 	PRACTICE_SAVED_PLAYER_VECTORS = []
+	PRACTICE_SAVED_PLAYER_VELOCITIES = []
 	remove_player_and_level()
 	save_deaths()
 	show_main_menu()
@@ -61,6 +63,7 @@ func _on_backMainMenu() -> void:
 func _on_resart() -> void:
 	CAN_PAUSE = true
 	PRACTICE_SAVED_PLAYER_VECTORS = []
+	PRACTICE_SAVED_PLAYER_VELOCITIES = []
 	remove_player_and_level()
 	play_level(CURRENT_LEVEL, PRACTICE)
 
@@ -79,6 +82,8 @@ func play_level(levelName: String, practice: bool):
 	if PRACTICE:
 		if PRACTICE_SAVED_PLAYER_VECTORS.back() != null:
 			player.position = PRACTICE_SAVED_PLAYER_VECTORS.back()
+			player.VELOCITY = PRACTICE_SAVED_PLAYER_VELOCITIES.back()
+			level.spawn_flag(player.position)
 	add_child(hud)
 	player.is_color("cyan")
 	player.display_background(levelName)
@@ -158,12 +163,14 @@ func handle_practice_save():
 			$flag_flap.play()
 		var player_position = player.position
 		PRACTICE_SAVED_PLAYER_VECTORS.append(player_position)
+		PRACTICE_SAVED_PLAYER_VELOCITIES.append(player.VELOCITY)
 		level.spawn_flag(player_position)
 		add_stat("placed-flag", 1)
 
 
 func handle_practice_delete_save():
 	if Input.is_action_just_pressed("remove"):
+		PRACTICE_SAVED_PLAYER_VELOCITIES.pop_back()
 		if PRACTICE_SAVED_PLAYER_VECTORS.pop_back() != null:
 			if SETTINGS[2]:
 				$flag_remove.play()
@@ -179,6 +186,7 @@ func player_cleared_level():
 	save_deaths()
 	calculate_cleared_level()
 	PRACTICE_SAVED_PLAYER_VECTORS = []
+	PRACTICE_SAVED_PLAYER_VELOCITIES = []
 	save_game()
 	mainmenu.show_level_menu()
 	if SETTINGS[1]:

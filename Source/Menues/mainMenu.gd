@@ -6,7 +6,7 @@ var levelmenu
 var can_change_key = false
 var keybind_string #keybind being changed
 var default_keybind_strings = ["cyan", "red", "purple", "yellow", "action", "escape", "flag", "remove", "sd"]
-var default_keybinds = [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_SPACE, KEY_ESCAPE, KEY_F, KEY_B, KEY_K]
+var default_keybindings = [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_SPACE, KEY_ESCAPE, KEY_F, KEY_B, KEY_K]
 enum keybinds {cyan, red, purple, yellow, action, escape, flag, remove, sd}
 
 
@@ -35,7 +35,7 @@ func _on_change_keybind_pressed(keybind: String) -> void:
 func _on_reset_default_pressed() -> void:
 	click_fx()
 	var counter = 0
-	for key in default_keybinds:
+	for key in default_keybindings:
 		keybind_string = default_keybind_strings[counter]
 		var event = InputEventKey.new()
 		event.set_scancode(key)
@@ -48,13 +48,10 @@ func change_key(new_key: InputEvent, skip_set_keys: bool):
 	#Delete key of pressed button
 	if !InputMap.get_action_list(keybind_string).empty():
 		InputMap.action_erase_event(keybind_string, InputMap.get_action_list(keybind_string)[0])
-
-
-#Check if new key was assigned somewhere
+	#Check if new key was assigned somewhere
 	for i in keybinds:
 		if InputMap.action_has_event(i, new_key):
 			InputMap.action_erase_event(i, new_key)
-
 	#Add new Key
 	InputMap.action_add_event(keybind_string, new_key)
 	if !skip_set_keys:
@@ -87,7 +84,7 @@ func mark_button(string: String):
 	for j in keybinds:
 		if j != string:
 			get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)
-
+			
 
 func click_fx():
 	if get_parent().SETTINGS[2]:
@@ -172,7 +169,6 @@ func hide_sound():
 	$sound.hide()
 
 
-
 func show_level_menu():
 	display_cleared_levels()
 	levelmenu.show_level_menu()
@@ -232,7 +228,6 @@ func _on_Quit_pressed() -> void:
 	get_tree().quit()
 
 
-
 func _on_Settings_pressed() -> void:
 	click_fx()
 	hide_menu()
@@ -249,6 +244,7 @@ func _on_Back_pressed(current: String) -> void:
 	click_fx()
 	match current:
 		"settings":
+			get_parent().save_game()
 			hide_settings()
 			show_menu()
 		"keybinds":
