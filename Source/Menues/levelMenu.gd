@@ -147,14 +147,42 @@ func count_deaths(deaths: Array) -> int:
 	return amount
 
 
+# if practice completed, half points, otherwise full points
+# tutorial is worth 0.4
+# cu-1, l-1, f-1, ca-1 is worth 1.0
+# cu-2, l-2, f-2, ca-2 is worth 1.2
+# cu-3, l-3, f-3, ca-3, all-1 is worth 1.6
+# cu-4, l-3, f-4, ca-4, all-2 is worth 2
+# all-3 is worth 2.4
+# final is worth 3
 func calculate_completion_percent(levels_cleared: Array) -> int:
-	var total = 0
-	var cleared = 0
+	var counter = 0
+	var total_points = 0
+	var cleared_points = 0
 	for level in levels_cleared:
+		var full_points
+		match counter:
+			0:
+				full_points = 0.3
+			1, 5, 9, 13:
+				full_points = 1.0
+			2, 6, 10, 14:
+				full_points = 1.3
+			3, 7, 11, 15, 17:
+				full_points = 1.6
+			4, 8, 12, 16, 18:
+				full_points = 2
+			19:
+				full_points = 2.5
+			20:
+				full_points = 3
 		if level[0]:
-			cleared += 1
-		total += 1
-	var percent = float(cleared)/float(total)
+			cleared_points += full_points
+		elif level[1]:
+			cleared_points += full_points/2
+		total_points += full_points
+		counter += 1
+	var percent = float(cleared_points)/float(total_points)
 	return int(percent*100)
 
 # no color gills inte, därför så komplicerad funktion
