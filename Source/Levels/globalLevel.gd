@@ -3,15 +3,21 @@ class_name GlobalLevel
 
 
 func _ready():
-	if $jump_input:
-		$jump_input.set_text(InputMap.get_action_list("action")[0].as_text())
-		$jump2_input.set_text(InputMap.get_action_list("action")[0].as_text())
-		$become_red.set_text("press " + InputMap.get_action_list("red")[0].as_text() + " to\nbecome red")
-		$cyan.set_text(InputMap.get_action_list("cyan")[0].as_text())
-		$red.set_text(InputMap.get_action_list("red")[0].as_text())
-		$purple.set_text(InputMap.get_action_list("purple")[0].as_text())
-		$yellow.set_text(InputMap.get_action_list("yellow")[0].as_text())
-		$pause_input.set_text(InputMap.get_action_list("escape")[0].as_text())
+	if get_parent().PRACTICE and $practice_tutorial:
+		$practice_tutorial.show()
+		$practice_tutorial/flag_input.set_text(InputMap.get_action_list("flag")[0].as_text())
+		$practice_tutorial/remove_input.set_text(InputMap.get_action_list("remove")[0].as_text())
+		$practice_tutorial/sd_input.set_text(InputMap.get_action_list("sd")[0].as_text())
+	elif !get_parent().PRACTICE and $normal_tutorial:
+		$normal_tutorial.show()
+		$normal_tutorial/jump_input.set_text(InputMap.get_action_list("action")[0].as_text())
+		$normal_tutorial/jump2_input.set_text(InputMap.get_action_list("action")[0].as_text())
+		$normal_tutorial/become_red.set_text("press " + InputMap.get_action_list("red")[0].as_text() + " to\nbecome red")
+		$normal_tutorial/cyan.set_text(InputMap.get_action_list("cyan")[0].as_text())
+		$normal_tutorial/red.set_text(InputMap.get_action_list("red")[0].as_text())
+		$normal_tutorial/purple.set_text(InputMap.get_action_list("purple")[0].as_text())
+		$normal_tutorial/yellow.set_text(InputMap.get_action_list("yellow")[0].as_text())
+		$normal_tutorial/pause_input.set_text(InputMap.get_action_list("escape")[0].as_text())
 
 
 func action(color: String):
