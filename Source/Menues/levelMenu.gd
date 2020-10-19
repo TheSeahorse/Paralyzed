@@ -182,8 +182,20 @@ func calculate_completion_percent(levels_cleared: Array) -> int:
 			cleared_points += full_points/2
 		total_points += full_points
 		counter += 1
-	var percent = float(cleared_points)/float(total_points)
-	return int(percent*100)
+	var percent = float(cleared_points)/float(total_points)*100
+	var dynamic_font = $stats/VBoxContainer/completion.get("custom_colors/font_outline_modulate")
+	if percent < 25.0:
+		dynamic_font = Color.red
+	elif percent < 50.0:
+		dynamic_font = Color.orange
+	elif percent < 75.0:
+		dynamic_font = Color.yellow
+	elif percent < 100.0:
+		dynamic_font = Color.lime
+	else:
+		dynamic_font = Color.green
+	$stats/VBoxContainer/completion.set("custom_colors/font_outline_modulate", dynamic_font)
+	return int(percent)
 
 # no color gills inte, därför så komplicerad funktion
 func calculate_deadliest_color(stats: Array) -> String:

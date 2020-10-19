@@ -70,6 +70,7 @@ _global_script_class_icons={
 
 config/name="Paralyzed"
 run/main_scene="res://Source/main.tscn"
+boot_splash/image="res://Character models/World/Backgrounds/splash.png"
 config/icon="res://icon.png"
 
 [display]

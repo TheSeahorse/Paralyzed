@@ -93,7 +93,7 @@ func play_level(levelName: String, practice: bool):
 
 
 func play_music():
-	if PRACTICE:
+	if PRACTICE or CURRENT_LEVEL == "tutorial":
 		if !$practice.is_playing():
 			$practice.play()
 	elif CURRENT_LEVEL.length() < 8:

@@ -69,13 +69,14 @@ func _on_Deathcollision_area_exited(area: Area2D) -> void:
 func player_dead(cause: String, color: String):
 	get_node("Hitbox").disabled = true
 	DEAD = true
+	if !get_parent().PRACTICE and !(get_parent().CURRENT_LEVEL == "tutorial"):
+		get_parent().stop_music()
 	if get_parent().SETTINGS[2]:
 		$death.play()
 	emit_signal("playerdead", cause, color)
 
 
 func play_death_animation():
-	$white_rim.hide()
 	$player_sprite.play(PLAYER_COLOR + " dead")
 
 

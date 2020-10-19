@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Character models/Menues/stats_button_normal.png" type="Texture" id=26]
 [ext_resource path="res://Character models/Menues/stats_button_hover.png" type="Texture" id=27]
 [ext_resource path="res://Character models/Menues/stats_button_pressed.png" type="Texture" id=28]
+[ext_resource path="res://Character models/Menues/Fonts/completion.tres" type="DynamicFont" id=29]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -3935,8 +3936,7 @@ text = "goals reached: Nan"
 margin_top = 546.0
 margin_right = 360.0
 margin_bottom = 572.0
-custom_fonts/font = SubResource( 2 )
-text = "Completion: 32%"
+custom_fonts/font = ExtResource( 29 )
 
 [node name="TextureRect4" type="TextureRect" parent="stats/VBoxContainer"]
 margin_top = 576.0

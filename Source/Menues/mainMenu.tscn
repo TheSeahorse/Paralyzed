@@ -5,7 +5,7 @@
 [ext_resource path="res://Character models/World/Backgrounds/menu_background.png" type="Texture" id=3]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sound/World/8bit_style.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/Menu/main_theme.wav" type="AudioStream" id=6]
 [ext_resource path="res://Character models/Menues/main_button_normal.png" type="Texture" id=7]
 [ext_resource path="res://Character models/Menues/main_button_pressed.png" type="Texture" id=8]
 [ext_resource path="res://Character models/Menues/main_button_hover.png" type="Texture" id=9]
