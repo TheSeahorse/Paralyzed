@@ -23,8 +23,7 @@ position = Vector2( 18334, 0 )
 
 [node name="laserbeam" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1253, 0 )
+COLOR = "red"
 
 [node name="car" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1750, 0 )
-scale = Vector2( 1.81454, 1.81454 )
-COLOR = "red"
+position = Vector2( 1749, 0 )
