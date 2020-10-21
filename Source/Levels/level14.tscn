@@ -26,4 +26,5 @@ position = Vector2( 1253, 0 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1750, 0 )
+scale = Vector2( 1.81454, 1.81454 )
 COLOR = "red"

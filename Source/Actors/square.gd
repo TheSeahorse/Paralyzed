@@ -43,7 +43,8 @@ func _physics_process(delta: float) -> void:
 
 func square_dead():
 	if !DEAD:
-		$death.play()
+		if get_parent().get_parent().SETTINGS[2]:
+			$death.play()
 		$spikes.queue_free()
 		$spikes2.queue_free()
 		$spikes3.queue_free()

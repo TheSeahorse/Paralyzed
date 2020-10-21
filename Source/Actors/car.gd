@@ -45,10 +45,13 @@ func _physics_process(delta: float) -> void:
 
 func car_dead():
 	if !DEAD:
-		$death.play()
-		$CollisionShape2D.disabled = true
+		if get_parent().get_parent().SETTINGS[2]:
+			$death.play()
+		$CollisionShape2D.queue_free()
+		$Area2D.queue_free()
+		$hitbox.queue_free()
 		$car_sprite.play(COLOR + " death")
-		DEATH_COUNTDOWN = 20
+		DEATH_COUNTDOWN = 80
 		get_parent().get_parent().add_stat("car-killed", 1)
 	DEAD = true
 
@@ -76,11 +79,6 @@ func _on_Area2D_body_entered(body: Node) -> void:
 func _on_Area2D_body_exited(body: Node) -> void:
 	if body is TileMap:
 		ON_FLOOR = false
-
-
-func _on_screen_entered() -> void:
-	if get_parent().get_parent().SETTINGS[2]:
-		$honk.play()
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
