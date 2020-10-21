@@ -23,55 +23,55 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 position = Vector2( 10060, 0 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1765, -32 )
+position = Vector2( 1765, 0 )
 COLOR = "red"
 
 [node name="car2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2696, -32 )
+position = Vector2( 2696, 0 )
 COLOR = "purple"
 
 [node name="car3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3548, -32 )
+position = Vector2( 3548, 0 )
 COLOR = "red"
 
 [node name="car4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3748, -32 )
+position = Vector2( 3748, 0 )
 COLOR = "yellow"
 
 [node name="car9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5548, -32 )
+position = Vector2( 5548, 0 )
 
 [node name="car10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5640, -32 )
+position = Vector2( 5640, 0 )
 
 [node name="car13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8201, -32 )
+position = Vector2( 8201, 0 )
 COLOR = "red"
 
 [node name="car14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8293, -32 )
+position = Vector2( 8293, 0 )
 COLOR = "red"
 
 [node name="car15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8385, -32 )
+position = Vector2( 8385, 0 )
 
 [node name="car12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6465, -32 )
+position = Vector2( 6465, 0 )
 COLOR = "yellow"
 
 [node name="car5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9633, -32 )
+position = Vector2( 9633, 0 )
 
 [node name="car6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9833, -32 )
+position = Vector2( 9833, 0 )
 COLOR = "red"
 
 [node name="car7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10033, -32 )
+position = Vector2( 10033, 0 )
 COLOR = "purple"
 
 [node name="car8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10233, -32 )
+position = Vector2( 10233, 0 )
 COLOR = "yellow"
 
 [node name="laserbeam2" parent="." instance=ExtResource( 3 )]

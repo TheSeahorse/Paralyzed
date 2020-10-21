@@ -84,7 +84,7 @@ func mark_button(string: String):
 	for j in keybinds:
 		if j != string:
 			get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)
-			
+
 
 func click_fx():
 	if get_parent().SETTINGS[2]:

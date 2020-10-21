@@ -6,10 +6,10 @@ var BEAMING: bool #used in car to tell if beam is on or not
 
 func _ready() -> void:
 	if COLOR == "cyan":
-		BEAMING = true
+		BEAMING = false
 		$beam_sprite.play(str(COLOR, " fade"))
 	else:
-		BEAMING = false
+		BEAMING = true
 		$beam_sprite.play(COLOR)
 
 
