@@ -27,6 +27,7 @@ var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderl
 var RNG = RandomNumberGenerator.new()
 
 func _ready():
+	RNG.randomize()
 	START_TIME = OS.get_unix_time()
 	load_savestate()
 	mainmenu = MainMenu.instance()

@@ -6,10 +6,11 @@ var SHOWN_LEVEL: String = "" # the levelname which is currently shown
 
 
 func _ready() -> void:
-	var level_node = get_node("ScrollContainer/levels")
+	var level_node = get_node("levels")
 	$stats/VBoxContainer.add_constant_override("separation", 2)
-	for n in level_node.get_children():
-		n.add_constant_override("separation", 0)
+	for group in level_node.get_children():
+		for levels in group.get_children():
+			levels.add_constant_override("separation", 0)
 
 
 func hide_level_menu():
@@ -25,28 +26,36 @@ func show_level_menu():
 
 
 func update_tooltips():
-	var level_node = get_node("ScrollContainer/levels")
-	for n in level_node.get_children():
-		var button_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton")
-		var label_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureButton/Label")
-		if button_node.is_disabled():
-			label_node.set_mouse_filter(1)
-		else:
-			label_node.set_mouse_filter(2)
+	var level_node = get_node("levels")
+	for level_group in level_node.get_children():
+		for level in level_group.get_children():
+			var button_node = get_node("levels/" + level_group.get_name() + "/" + level.get_name() + "/TextureButton")
+			var label_node = get_node("levels/" + level_group.get_name() + "/" + level.get_name() + "/TextureButton/Label")
+			if button_node.is_disabled():
+				label_node.set_mouse_filter(1)
+			else:
+				label_node.set_mouse_filter(2)
 
 
 func update_death_counts():
-	var level_node = get_node("ScrollContainer/levels")
-	var counter = 0
-	for n in level_node.get_children():
-		var death_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureRect/deaths")
-		var death_practice_node = get_node("ScrollContainer/levels/" + n.get_name() + "/TextureRect/deaths_practice")
-		var deaths_array = get_parent().get_parent().DEATHS[counter]
-		if death_node != null:
-			death_node.set_text(": " + str(deaths_array[0]))
-		if death_practice_node != null:
-			death_practice_node.set_text(": " + str(deaths_array[1]))
-		counter += 1
+	var level_node = get_node("levels")
+	var counter = 1
+	for level_group in level_node.get_children():
+		for level in level_group.get_children():
+			var death_node = get_node("levels/" + level_group.get_name() + "/" + level.get_name() + "/TextureRect/deaths")
+			var death_practice_node = get_node("levels/" + level_group.get_name() + "/" + level.get_name() + "/TextureRect/deaths_practice")
+			var deaths_array = get_parent().get_parent().DEATHS[counter]
+			if death_node != null:
+				if deaths_array[0] > 9999:
+					death_node.set_text(": 9999")
+				else:
+					death_node.set_text(": " + str(deaths_array[0]))
+			if death_practice_node != null:
+				if deaths_array[1] > 9999:
+					death_practice_node.set_text(": 9999")
+				else:
+					death_practice_node.set_text(": " + str(deaths_array[1]))
+			counter += 1
 
 
 # DEATHS: [[tutorial, tutorial_practice], [level1, level1_practice] .... ]
@@ -260,39 +269,98 @@ func hide_current_level_and_stat():
 
 
 func toggle_button_node(level_name: String):
-	var node = get_node("ScrollContainer/levels/" + level_name + "/TextureRect")
-	var button_node = get_node("ScrollContainer/levels/" + level_name + "/TextureButton")
+	var node
+	var button_node
+	match level_name:
+		"tutorial":
+			# TODO
+			pass
+		"level1", "level2", "level3", "level4":
+			node = get_node("levels/cube/" + level_name + "/TextureRect")
+			button_node = get_node("levels/cube/" + level_name + "/TextureButton")
+		"level5", "level6", "level7", "level8":
+			node = get_node("levels/laser/" + level_name + "/TextureRect")
+			button_node = get_node("levels/laser/" + level_name + "/TextureButton")
+		"level9", "level10", "level11", "level12":
+			node = get_node("levels/fire/" + level_name + "/TextureRect")
+			button_node = get_node("levels/fire/" + level_name + "/TextureButton")
+		"level13", "level14", "level15", "level16":
+			node = get_node("levels/car/" + level_name + "/TextureRect")
+			button_node = get_node("levels/car/" + level_name + "/TextureButton")
+		"level17", "level18", "level19", "level20":
+			node = get_node("levels/all/" + level_name + "/TextureRect")
+			button_node = get_node("levels/all/" + level_name + "/TextureButton")
 	if node.visible:
-		button_node.set_normal_texture(load("res://Character models/Menues/level_button_normal.png"))
-		button_node.set_hover_texture(load("res://Character models/Menues/level_button_hover.png"))
-		button_node.set_pressed_texture(load("res://Character models/Menues/level_button_pressed.png"))
-		button_node.set_disabled_texture(load("res://Character models/Menues/level_button_disabled.png"))
+		button_node.set_normal_texture(load("res://Character models/Menues/LevelMenu/level_button_normal.png"))
+		button_node.set_hover_texture(load("res://Character models/Menues/LevelMenu/level_button_hover.png"))
+		button_node.set_pressed_texture(load("res://Character models/Menues/LevelMenu/level_button_pressed.png"))
 		node.hide()
 	else:
-		button_node.set_normal_texture(load("res://Character models/Menues/level_button_normal_drop.png"))
-		button_node.set_hover_texture(load("res://Character models/Menues/level_button_hover_drop.png"))
-		button_node.set_pressed_texture(load("res://Character models/Menues/level_button_pressed_drop.png"))
-		button_node.set_disabled_texture(load("res://Character models/Menues/level_button_disabled_drop.png"))
+		button_node.set_normal_texture(load("res://Character models/Menues/LevelMenu/level_button_normal_drop.png"))
+		button_node.set_hover_texture(load("res://Character models/Menues/LevelMenu/level_button_hover_drop.png"))
+		button_node.set_pressed_texture(load("res://Character models/Menues/LevelMenu/level_button_pressed_drop.png"))
 		node.show()
 
 
 # called in mainMenu
 func enable_level(level: int):
-	var node = get_node("ScrollContainer/levels/level" + str(level) + "/TextureButton")
+	var node
+	match level:
+		0:
+			# TODO
+			pass
+		1,2,3,4:
+			node = get_node("levels/cube/level" + str(level) + "/TextureButton")
+		5,6,7,8:
+			node = get_node("levels/laser/level" + str(level) + "/TextureButton")
+		9,10,11,12:
+			node = get_node("levels/fire/level" + str(level) + "/TextureButton")
+		13,14,15,16:
+			node = get_node("levels/car/level" + str(level) + "/TextureButton")
+		17,18,19,20:
+			node = get_node("levels/all/level" + str(level) + "/TextureButton")
 	if node != null:
 		node.set_disabled(false)
 
 
 # called in mainMenu
 func show_checkmarks(level_number: int, cleared_normal: bool, cleared_practice: bool):
-	var container = get_node("ScrollContainer/levels")
-	var levels = container.get_children()
-	var level = levels[level_number]
+	var levels = get_node("levels")
+	var groups = levels.get_children()
+	var level_name = "level" + str(level_number)
+	var level_mark
+	var start_mark
+	var practice_mark
+	match level_number:
+		0:
+			level_mark = get_node("tutorials/normal/checkmark")
+			start_mark = get_node("tutorials/normal/checkmark") #there is none for tutorial
+			practice_mark = get_node("tutorials/practice/checkmark")
+		1,2,3,4:
+			level_mark = get_node("levels/cube/" + level_name + "/TextureButton/checkmark")
+			start_mark = get_node("levels/cube/" + level_name + "/TextureRect/HBoxContainer/TextureButton2/checkmark")
+			practice_mark = get_node("levels/cube/" + level_name + "/TextureRect/HBoxContainer/TextureButton/checkmark")
+		5,6,7,8:
+			level_mark = get_node("levels/laser/" + level_name + "/TextureButton/checkmark")
+			start_mark = get_node("levels/laser/" + level_name + "/TextureRect/HBoxContainer/TextureButton2/checkmark")
+			practice_mark = get_node("levels/laser/" + level_name + "/TextureRect/HBoxContainer/TextureButton/checkmark")
+		9,10,11,12:
+			level_mark = get_node("levels/fire/" + level_name + "/TextureButton/checkmark")
+			start_mark = get_node("levels/fire/" + level_name + "/TextureRect/HBoxContainer/TextureButton2/checkmark")
+			practice_mark = get_node("levels/fire/" + level_name + "/TextureRect/HBoxContainer/TextureButton/checkmark")
+		13,14,15,16:
+			level_mark = get_node("levels/car/" + level_name + "/TextureButton/checkmark")
+			start_mark = get_node("levels/car/" + level_name + "/TextureRect/HBoxContainer/TextureButton2/checkmark")
+			practice_mark = get_node("levels/car/" + level_name + "/TextureRect/HBoxContainer/TextureButton/checkmark")
+		17,18,19,20:
+			level_mark = get_node("levels/all/" + level_name + "/TextureButton/checkmark")
+			start_mark = get_node("levels/all/" + level_name + "/TextureRect/HBoxContainer/TextureButton2/checkmark")
+			practice_mark = get_node("levels/all/" + level_name + "/TextureRect/HBoxContainer/TextureButton/checkmark")
 	if cleared_normal:
-		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton2/checkmark").show()
-		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureButton/checkmark").show()
+		level_mark.show()
+		start_mark.show()
 	if cleared_practice:
-		get_node("ScrollContainer/levels/" + level.get_name() + "/TextureRect/HBoxContainer/TextureButton/checkmark").show()
+		practice_mark.show()
 
 
 func _on_level_dropdown_pressed(level: String):

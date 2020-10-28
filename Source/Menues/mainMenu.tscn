@@ -18,7 +18,7 @@
 [ext_resource path="res://Character models/Menues/back_button_pressed.png" type="Texture" id=16]
 [ext_resource path="res://Character models/Menues/back_button_hover.png" type="Texture" id=17]
 [ext_resource path="res://Character models/Menues/Fonts/back.tres" type="DynamicFont" id=18]
-[ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Glitch.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Evolution.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/keybinds_buttons.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/World/Backgrounds/credits_background.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Menues/big_link_button.png" type="Texture" id=22]
@@ -32,8 +32,7 @@ size = 90
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 160
-outline_size = 1
+size = 200
 outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
 extra_spacing_char = -5
 font_data = ExtResource( 19 )
@@ -250,11 +249,10 @@ __meta__ = {
 }
 
 [node name="logo" type="Label" parent="."]
-visible = false
-margin_left = 320.0
-margin_top = 100.0
-margin_right = 1301.0
-margin_bottom = 266.0
+margin_left = 206.0
+margin_top = 64.0
+margin_right = 1394.0
+margin_bottom = 271.0
 custom_fonts/font = SubResource( 2 )
 text = "PARALYZED"
 align = 1
