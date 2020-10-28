@@ -19,8 +19,10 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventKey:
+	if (event is InputEventKey) or (event is InputEventJoypadButton):
 		if can_change_key:
+			if get_parent().SETTINGS[2]:
+				$accept_keybind.play()
 			$press_key.hide()
 			change_key(event, false)
 			can_change_key = false
@@ -145,7 +147,10 @@ func show_keybinds():
 func hide_keybinds():
 	$back_keybinds.hide()
 	$press_key.hide()
-	can_change_key = false
+	if can_change_key:
+		can_change_key = false
+		if get_parent().SETTINGS[2]:
+				$decline_keybind.play()
 	$keybinds.hide()
 
 

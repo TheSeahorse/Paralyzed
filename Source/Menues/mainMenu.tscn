@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://Character models/Menues/big_link_button.png" type="Texture" id=22]
 [ext_resource path="res://Character models/Menues/Godot_icon.svg" type="Texture" id=23]
 [ext_resource path="res://Character models/Menues/gimp_logo.png" type="Texture" id=24]
+[ext_resource path="res://Sound/Menu/accept_keybind.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Sound/Menu/decline_keybind.wav" type="AudioStream" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -60,6 +62,14 @@ __meta__ = {
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -5.0
+
+[node name="accept_keybind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -5.0
+
+[node name="decline_keybind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
 volume_db = -5.0
 
 [node name="background" type="Sprite" parent="."]

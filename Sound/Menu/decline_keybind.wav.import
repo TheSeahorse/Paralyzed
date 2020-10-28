@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/decline_keybind.wav-790839e61bb54c96d3e0fe219f0021d9.sample"
+
+[deps]
+
+source_file="res://Sound/Menu/decline_keybind.wav"
+dest_files=[ "res://.import/decline_keybind.wav-790839e61bb54c96d3e0fe219f0021d9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
