@@ -2,6 +2,8 @@ extends Control
 
 
 const LevelMenu = preload("res://Source/Menues/levelMenu.tscn")
+var CAN_EXIT_KEYBINDS = true
+var CANT_BE_NAN_TIMER = 0
 var levelmenu
 var can_change_key = false
 var keybind_string #keybind being changed
@@ -18,12 +20,20 @@ func _ready():
 	set_keys()
 
 
+func _process(delta):
+	if CANT_BE_NAN_TIMER > 1:
+		CANT_BE_NAN_TIMER -= 1
+	elif CANT_BE_NAN_TIMER == 1:
+		$warnings/cant_be_nan.hide()
+		CANT_BE_NAN_TIMER -= 1
+
+
 func _input(event):
 	if (event is InputEventKey) or (event is InputEventJoypadButton):
 		if can_change_key:
 			if get_parent().SETTINGS[2]:
 				$accept_keybind.play()
-			$press_key.hide()
+			$warnings/press_key.hide()
 			change_key(event, false)
 			can_change_key = false
 
@@ -31,7 +41,8 @@ func _input(event):
 func _on_change_keybind_pressed(keybind: String) -> void:
 	click_fx()
 	mark_button(keybind)
-	$press_key.show()
+	$warnings/cant_be_nan.hide()
+	$warnings/press_key.show()
 
 
 func _on_reset_default_pressed() -> void:
@@ -86,6 +97,15 @@ func mark_button(string: String):
 	for j in keybinds:
 		if j != string:
 			get_node("keybinds/separator/buttons/" + str(j)).set_pressed(false)
+
+
+#checks if all keybindings are bound, if not, sets CAN_EXIT_KEYBINDS to false, otherwise to true
+func check_keybindings_nan():
+	for k in default_keybind_strings:
+		if InputMap.get_action_list(k).empty():
+			CAN_EXIT_KEYBINDS = false
+			return
+	CAN_EXIT_KEYBINDS = true
 
 
 func click_fx():
@@ -146,7 +166,9 @@ func show_keybinds():
 
 func hide_keybinds():
 	$back_keybinds.hide()
-	$press_key.hide()
+	$warnings/press_key.hide()
+	$warnings/cant_be_nan.hide()
+	CANT_BE_NAN_TIMER = 0
 	if can_change_key:
 		can_change_key = false
 		if get_parent().SETTINGS[2]:
@@ -253,8 +275,14 @@ func _on_Back_pressed(current: String) -> void:
 			hide_settings()
 			show_menu()
 		"keybinds":
-			hide_keybinds()
-			show_settings()
+			check_keybindings_nan()
+			if CAN_EXIT_KEYBINDS:
+				hide_keybinds()
+				show_settings()
+			else:
+				$warnings/cant_be_nan.show()
+				CANT_BE_NAN_TIMER = 120
+				$decline_keybind.play()
 		"game":
 			hide_game_settings()
 			show_settings()

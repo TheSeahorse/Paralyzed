@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -46,6 +46,12 @@ size = 32
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 128
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -249,6 +255,7 @@ __meta__ = {
 }
 
 [node name="logo" type="Label" parent="."]
+visible = false
 margin_left = 206.0
 margin_top = 64.0
 margin_right = 1394.0
@@ -1095,16 +1102,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="press_key" type="Label" parent="."]
+[node name="warnings" type="VBoxContainer" parent="."]
+margin_top = 350.0
+margin_right = 1600.0
+margin_bottom = 483.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="press_key" type="Label" parent="warnings"]
 visible = false
-margin_left = 240.0
-margin_top = 375.0
+margin_right = 1600.0
+margin_bottom = 133.0
 custom_fonts/font = SubResource( 5 )
 text = "Press any key..."
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="cant_be_nan" type="Label" parent="warnings"]
+visible = false
+margin_right = 1600.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.905882, 0, 0.0431373, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "bind all keys!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
 }
 
 [node name="back_settings" type="TextureButton" parent="."]
