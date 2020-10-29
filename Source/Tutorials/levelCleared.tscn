@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Source/Tutorials/levelCleared.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,10 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 72
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -93,6 +97,7 @@ __meta__ = {
 }
 
 [node name="deaths_attempt" type="Label" parent="Sprite"]
+visible = false
 margin_left = -440.0
 margin_top = -120.0
 margin_right = 418.0
@@ -106,6 +111,7 @@ __meta__ = {
 }
 
 [node name="deaths_total" type="Label" parent="Sprite"]
+visible = false
 margin_left = -440.0
 margin_top = -60.0
 margin_right = 110.0
@@ -119,6 +125,7 @@ __meta__ = {
 }
 
 [node name="timespent" type="Label" parent="Sprite"]
+visible = false
 margin_left = 114.0
 margin_top = -60.0
 margin_right = 447.0
@@ -140,10 +147,11 @@ margin_left = -500.0
 margin_top = -287.5
 margin_right = -500.0
 margin_bottom = -212.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 1, 0.921569, 0.286275, 1 )
 custom_colors/font_outline_modulate = Color( 0.709804, 0.67451, 0, 1 )
-text = "levels unlocked!"
+text = "beat more levels
+to unlock the finale"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,6 +185,22 @@ margin_bottom = -212.5
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "laser-1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level3" type="Label" parent="Sprite"]
+visible = false
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 0.6
+margin_left = -500.0
+margin_top = -212.5
+margin_right = -500.0
+margin_bottom = -137.5
+custom_fonts/font = SubResource( 3 )
+text = "fire-2"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -734,6 +734,7 @@ __meta__ = {
 }
 
 [node name="checkmark" type="TextureRect" parent="levels/cube/level2/TextureRect/HBoxContainer/TextureButton2"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -766,6 +767,7 @@ texture_hover = ExtResource( 37 )
 stretch_mode = 3
 
 [node name="checkmark" type="TextureRect" parent="levels/cube/level2/TextureRect/HBoxContainer/TextureButton"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
