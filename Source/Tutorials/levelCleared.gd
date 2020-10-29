@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var DELAY: int = 50
-var STALLING_DELAY: int = 230
+var STALLING_DELAY: int = 340
 
 func _ready() -> void:
 	randomize_firework_position()
@@ -15,7 +15,7 @@ func _ready() -> void:
 		$confetti.play()
 
 
-func _process(delta):
+func _process(_delta):
 	if DELAY == 0:
 		$Particles2D2.restart()
 		DELAY -= 1
@@ -39,15 +39,20 @@ func _process(delta):
 			$levels_unlocked.play()
 		$Sprite/levels_unlocked.show()
 		STALLING_DELAY -= 1
-	elif STALLING_DELAY == 160:
+	elif STALLING_DELAY == 180:
 		if get_parent().SETTINGS[2]:
 			$pop.play()
 		$Sprite/timespent.show()
 		STALLING_DELAY -= 1
-	elif STALLING_DELAY == 200:
+	elif STALLING_DELAY == 220:
 		if get_parent().SETTINGS[2]:
 			$pop.play()
-		$Sprite/deaths.show()
+		$Sprite/deaths_total.show()
+		STALLING_DELAY -= 1
+	elif STALLING_DELAY == 260:
+		if get_parent().SETTINGS[2]:
+			$pop.play()
+		$Sprite/deaths_attempt.show()
 		STALLING_DELAY -= 1
 	elif STALLING_DELAY > 0:
 		STALLING_DELAY -= 1
@@ -61,7 +66,7 @@ func _input(_event: InputEvent) -> void:
 
 
 func randomize_clear_message():
-	var rand = get_parent().RNG.randi_range(0, 20)
+	var rand = get_parent().RNG.randi_range(0, 40)
 	var message
 	match rand:
 		0:
@@ -83,7 +88,7 @@ func randomize_clear_message():
 		8:
 			message = "wow!"
 		9:
-			message = "no way!?"
+			message = "no way?!"
 		10:
 			message = "attaboy!"
 		11:
@@ -106,6 +111,46 @@ func randomize_clear_message():
 			message = "pro player?!"
 		20:
 			message = "OH MY GEE!"
+		21:
+			message = "Cheezuz!"
+		22:
+			message = "are you a pro?!"
+		23:
+			message = "hallelujah!"
+		24:
+			message = "praise the lord!"
+		25:
+			message = "dayum!"
+		26:
+			message = "gettem tiger!"
+		27:
+			message = "level completed!"
+		28:
+			message = "level obliterated!"
+		29:
+			message = "crushed it!"
+		30:
+			message = "my goodness!"
+		31:
+			message = "finally!"
+		32:
+			message = "played before?!"
+		33:
+			message = "what the heck?!"
+		34:
+			message = "really?!"
+		35:
+			message = "done!"
+		36:
+			message = "level done!"
+		37:
+			message = "wowzerz!"
+		38:
+			message = "that's incredible!"
+		39:
+			message = "euphoria!"
+		40:
+			message = "all hail the king!"
 	$Sprite/level_cleared.set_text(message)
 
 
@@ -123,7 +168,14 @@ func calculate_deaths():
 	for deaths in get_parent().DEATHS:
 		total_deaths += deaths[0]
 		total_deaths += deaths[1]
-	$Sprite/deaths.text = "Deaths: " + str(get_parent().CURRENT_DEATHS)
+	total_deaths += get_parent().CURRENT_DEATHS
+	if total_deaths > 99999:
+		$Sprite/deaths_attempt.text = "Deaths this attempt:99999"
+	elif total_deaths > 9999:
+		$Sprite/deaths_attempt.text = "Deaths this attempt: " + str(get_parent().CURRENT_DEATHS)
+	else:
+		$Sprite/deaths_attempt.text = "Deaths this attempt: " + str(get_parent().CURRENT_DEATHS)
+	$Sprite/deaths_total.text = "All deaths: " + str(total_deaths)
 
 
 func calculate_time():

@@ -81,7 +81,7 @@ func play_level(levelName: String, practice: bool):
 	add_child(player)
 	add_child(level)
 	if PRACTICE:
-		if PRACTICE_SAVED_PLAYER_VECTORS.back() != null:
+		if !PRACTICE_SAVED_PLAYER_VECTORS.empty():
 			player.position = PRACTICE_SAVED_PLAYER_VECTORS.back()
 			player.VELOCITY = PRACTICE_SAVED_PLAYER_VELOCITIES.back()
 			level.spawn_flag(player.position)

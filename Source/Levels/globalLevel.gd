@@ -3,12 +3,12 @@ class_name GlobalLevel
 
 
 func _ready():
-	if get_parent().PRACTICE and $practice_tutorial:
+	if get_parent().PRACTICE and has_node("practice_tutorial"):
 		$practice_tutorial.show()
 		$practice_tutorial/flag_input.set_text(InputMap.get_action_list("flag")[0].as_text())
 		$practice_tutorial/remove_input.set_text(InputMap.get_action_list("remove")[0].as_text())
 		$practice_tutorial/sd_input.set_text(InputMap.get_action_list("sd")[0].as_text())
-	elif !get_parent().PRACTICE and $normal_tutorial:
+	elif !get_parent().PRACTICE and has_node("normal_tutorial"):
 		$normal_tutorial.show()
 		$normal_tutorial/jump_input.set_text(InputMap.get_action_list("action")[0].as_text())
 		$normal_tutorial/jump2_input.set_text(InputMap.get_action_list("action")[0].as_text())

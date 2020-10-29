@@ -8,6 +8,8 @@ var SHOWN_LEVEL: String = "" # the levelname which is currently shown
 func _ready() -> void:
 	var level_node = get_node("levels")
 	$stats/VBoxContainer.add_constant_override("separation", 2)
+	$stats/VBoxContainer/deadliest_colors.add_constant_override("separation", 2)
+	$stats/VBoxContainer/deadliest_enemies.add_constant_override("separation", 2)
 	for group in level_node.get_children():
 		for levels in group.get_children():
 			levels.add_constant_override("separation", 0)
@@ -167,43 +169,45 @@ func count_deaths(deaths: Array) -> int:
 # final is worth 3
 func calculate_completion_percent(levels_cleared: Array) -> int:
 	var counter = 0
-	var total_points = 0
-	var cleared_points = 0
+	var total_points = 0.0
+	var cleared_points = 0.0
 	for level in levels_cleared:
 		var full_points
 		match counter:
 			0:
-				full_points = 0.3
+				full_points = 0.5
 			1, 5, 9, 13:
 				full_points = 1.0
 			2, 6, 10, 14:
-				full_points = 1.3
+				full_points = 1.2
 			3, 7, 11, 15, 17:
-				full_points = 1.6
+				full_points = 1.4
 			4, 8, 12, 16, 18:
-				full_points = 2
+				full_points = 1.8
 			19:
-				full_points = 2.5
+				full_points = 2.0
 			20:
-				full_points = 3
+				full_points = 2.5
 		if level[0]:
 			cleared_points += full_points
 		elif level[1]:
-			cleared_points += full_points/2
+			cleared_points += full_points/2.0
 		total_points += full_points
 		counter += 1
-	var percent = float(cleared_points)/float(total_points)*100
+	var percent = float(cleared_points)/float(total_points)*100.0
 	var dynamic_font = $stats/VBoxContainer/completion.get("custom_colors/font_outline_modulate")
-	if percent < 25.0:
+	if percent < 20.0:
 		dynamic_font = Color.red
-	elif percent < 50.0:
+	elif percent < 40.0:
 		dynamic_font = Color.orange
-	elif percent < 75.0:
+	elif percent < 60.0:
 		dynamic_font = Color.yellow
-	elif percent < 100.0:
+	elif percent < 80.0:
 		dynamic_font = Color.lime
-	else:
+	elif percent < 100.0:
 		dynamic_font = Color.green
+	else:
+		dynamic_font = Color.blue
 	$stats/VBoxContainer/completion.set("custom_colors/font_outline_modulate", dynamic_font)
 	return int(percent)
 
@@ -325,8 +329,6 @@ func enable_level(level: int):
 
 # called in mainMenu
 func show_checkmarks(level_number: int, cleared_normal: bool, cleared_practice: bool):
-	var levels = get_node("levels")
-	var groups = levels.get_children()
 	var level_name = "level" + str(level_number)
 	var level_mark
 	var start_mark
