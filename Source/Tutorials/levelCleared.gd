@@ -38,7 +38,7 @@ func firework_counter():
 	elif FIREWORK_DELAY > 0:
 		FIREWORK_DELAY -= 1
 
-
+#pops the messages one by one and only the last two if unlocked levels is 1 or 2
 func clear_text_counter():
 	if (CLEAR_SCREEN_DELAY == 0) and (UNLOCK_AMOUNT == 2):
 		play_sound("pop")
@@ -54,6 +54,8 @@ func clear_text_counter():
 	elif CLEAR_SCREEN_DELAY == 120:
 		if UNLOCK_AMOUNT == 0:
 			play_sound("pop")
+		elif UNLOCK_AMOUNT == 3:
+			play_sound("game_completed")
 		else:
 			play_sound("levels_unlocked")
 		$Sprite/levels_unlocked.show()
@@ -171,6 +173,7 @@ func decide_unlocked_levels(number: int) -> int:
 			$Sprite/levels_unlocked.set_text("congratulations!!!\nyou beat the game!")
 			return 3
 	return -1
+
 
 func levels_unlocked_color_to_white():
 	var node = get_node("Sprite/levels_unlocked")

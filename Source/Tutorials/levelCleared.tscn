@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Source/Tutorials/levelCleared.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Character models/Tutorials/particle.png" type="Texture" id=6]
 [ext_resource path="res://Sound/Menu/pop.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sound/Menu/levels_unlocked.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sound/Menu/game_done.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -252,6 +253,9 @@ volume_db = -10.0
 [node name="levels_unlocked" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -5.0
+
+[node name="game_completed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [node name="pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
