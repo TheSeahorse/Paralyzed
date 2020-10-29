@@ -250,13 +250,34 @@ func load_savestate():
 		load_game.open("user://savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
 		load_game.close()
-		DEATHS = savestate.death_stats
-		LEVELS_CLEARED = savestate.levels_cleared
-		TIME_PLAYED = savestate.time_played
-		DEATH_BY = savestate.death_by
-		STATS = savestate.stats
-		DEADLIEST_COLOR = savestate.deadliest_color
-		SETTINGS = savestate.settings
+		if savestate.has("death_stats"):
+			DEATHS = savestate.death_stats
+		else:
+			DEATHS = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+		if savestate.has("levels_cleared"):
+			LEVELS_CLEARED = savestate.levels_cleared
+		else:
+			LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
+		if savestate.has("time_played"):
+			TIME_PLAYED = savestate.time_played
+		else:
+			TIME_PLAYED = 0
+		if savestate.has("death_by"):
+			DEATH_BY = savestate.death_by
+		else:
+			DEATH_BY = [0, 0, 0, 0, 0, 0]
+		if savestate.has("stats"):
+			STATS = savestate.stats
+		else:
+			STATS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+		if savestate.has("deadliest_color"):
+			DEADLIEST_COLOR = savestate.deadliest_color
+		else:
+			DEADLIEST_COLOR = [0, 0, 0, 0, 0]
+		if savestate.has("settings"):
+			SETTINGS = savestate.settings
+		else:
+			SETTINGS = [true, true, true, false, false, false, false]
 
 
 func apply_settings():
