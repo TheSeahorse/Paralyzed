@@ -14,87 +14,87 @@
 [ext_resource path="res://Character models/Player/cyan_square_explosion.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 768, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 896, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 768, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 896, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 768, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 896, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=22]
@@ -149,17 +149,17 @@ animations = [ {
 }, {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
-"name": "yellow death",
+"name": "red death",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
-"name": "red death",
+"name": "cyan death",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": false,
-"name": "cyan death",
+"name": "yellow death",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
@@ -218,6 +218,7 @@ process_parent = true
 physics_process_parent = true
 
 [node name="player_detector" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
