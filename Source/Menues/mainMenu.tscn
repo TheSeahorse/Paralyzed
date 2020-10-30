@@ -31,6 +31,18 @@
 size = 90
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 200
 outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
@@ -43,18 +55,6 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 128
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 128
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="mainMenu" type="Control"]
@@ -87,369 +87,6 @@ visible = false
 position = Vector2( 0, -1 )
 texture = ExtResource( 21 )
 centered = false
-
-[node name="menu" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 560.0
-margin_top = 300.0
-margin_bottom = 800.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="TextureButton" parent="menu"]
-margin_right = 480.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="menu/Start"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "levels"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Settings" type="TextureButton" parent="menu"]
-margin_top = 132.0
-margin_right = 480.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="menu/Settings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "Settings"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits" type="TextureButton" parent="menu"]
-margin_top = 264.0
-margin_right = 480.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="menu/Credits"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "credits"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Quit" type="TextureButton" parent="menu"]
-margin_top = 396.0
-margin_right = 480.0
-margin_bottom = 524.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="menu/Quit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 2 )
-text = "quit"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-volume_db = -15.0
-
-[node name="settings" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 560.0
-margin_top = 240.0
-margin_right = 1040.0
-margin_bottom = 632.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Game" type="TextureButton" parent="settings"]
-margin_right = 480.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="settings/Game"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = -1.0
-margin_right = 2.0
-margin_bottom = -1.0
-custom_fonts/font = SubResource( 1 )
-text = "game"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sound" type="TextureButton" parent="settings"]
-margin_top = 132.0
-margin_right = 480.0
-margin_bottom = 260.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="settings/Sound"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = -1.0
-margin_right = 2.0
-margin_bottom = -1.0
-custom_fonts/font = SubResource( 1 )
-text = "sound"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Keybindings" type="TextureButton" parent="settings"]
-margin_top = 264.0
-margin_right = 480.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="settings/Keybindings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = -1.0
-margin_right = 2.0
-margin_bottom = -1.0
-custom_fonts/font = SubResource( 1 )
-text = "keybinds"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="logo" type="Label" parent="."]
-visible = false
-margin_left = 206.0
-margin_top = 64.0
-margin_right = 1394.0
-margin_bottom = 271.0
-custom_fonts/font = SubResource( 2 )
-text = "PARALYZED"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="game" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 573.0
-margin_top = 318.0
-margin_right = 1043.0
-margin_bottom = 534.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="separator" type="HBoxContainer" parent="game"]
-margin_right = 470.0
-margin_bottom = 216.0
-
-[node name="labels" type="VBoxContainer" parent="game/separator"]
-margin_right = 390.0
-margin_bottom = 216.0
-
-[node name="double_click_jump" type="Label" parent="game/separator/labels"]
-margin_right = 390.0
-margin_bottom = 40.0
-hint_tooltip = "Enabling double tap will allow you to perform \"action\"
-when you press the key for the color you already are"
-mouse_filter = 0
-custom_fonts/font = ExtResource( 14 )
-text = "double tap"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hud" type="Label" parent="game/separator/labels"]
-margin_top = 44.0
-margin_right = 390.0
-margin_bottom = 84.0
-hint_tooltip = "Enabling hud will allow you to see
-which keys are bound to each color
-while playing"
-mouse_filter = 0
-custom_fonts/font = ExtResource( 14 )
-text = "hud"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="white_background" type="Label" parent="game/separator/labels"]
-margin_top = 88.0
-margin_right = 390.0
-margin_bottom = 128.0
-hint_tooltip = "Enabling white background will remove the
-colorful level backgrounds with a plain
-white one"
-mouse_filter = 0
-custom_fonts/font = ExtResource( 14 )
-text = "White background"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="fullscreen" type="Label" parent="game/separator/labels"]
-margin_top = 132.0
-margin_right = 390.0
-margin_bottom = 172.0
-hint_tooltip = "Will make the game fullscreen"
-mouse_filter = 0
-custom_fonts/font = ExtResource( 14 )
-text = "fullscreen"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="borderless" type="Label" parent="game/separator/labels"]
-margin_top = 176.0
-margin_right = 390.0
-margin_bottom = 216.0
-hint_tooltip = "Will make the game borderless
-If the game freezes up after enabling
-or disabling this, try tabing
-out and back in again"
-mouse_filter = 0
-custom_fonts/font = ExtResource( 14 )
-text = "borderless"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="buttons" type="VBoxContainer" parent="game/separator"]
-margin_left = 394.0
-margin_right = 470.0
-margin_bottom = 216.0
-
-[node name="double_click_jump" type="CheckButton" parent="game/separator/buttons"]
-margin_right = 76.0
-margin_bottom = 40.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="hud" type="CheckButton" parent="game/separator/buttons"]
-margin_top = 44.0
-margin_right = 76.0
-margin_bottom = 84.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="white_background" type="CheckButton" parent="game/separator/buttons"]
-margin_top = 88.0
-margin_right = 76.0
-margin_bottom = 128.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
-margin_top = 132.0
-margin_right = 76.0
-margin_bottom = 172.0
-focus_mode = 0
-enabled_focus_mode = 0
-
-[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
-margin_top = 176.0
-margin_right = 76.0
-margin_bottom = 216.0
-focus_mode = 0
-enabled_focus_mode = 0
-
-[node name="sound" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 674.0
-margin_top = 364.0
-margin_right = 867.0
-margin_bottom = 448.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="separator" type="HBoxContainer" parent="sound"]
-margin_right = 193.0
-margin_bottom = 84.0
-
-[node name="labels" type="VBoxContainer" parent="sound/separator"]
-margin_right = 113.0
-margin_bottom = 84.0
-
-[node name="music" type="Label" parent="sound/separator/labels"]
-margin_right = 113.0
-margin_bottom = 40.0
-custom_fonts/font = ExtResource( 14 )
-text = "music"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="sfx" type="Label" parent="sound/separator/labels"]
-margin_top = 44.0
-margin_right = 113.0
-margin_bottom = 84.0
-custom_fonts/font = ExtResource( 14 )
-text = "sfx"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="buttons" type="VBoxContainer" parent="sound/separator"]
-margin_left = 117.0
-margin_right = 193.0
-margin_bottom = 84.0
-
-[node name="music" type="CheckButton" parent="sound/separator/buttons"]
-margin_right = 76.0
-margin_bottom = 40.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
-
-[node name="sfx" type="CheckButton" parent="sound/separator/buttons"]
-margin_top = 44.0
-margin_right = 76.0
-margin_bottom = 84.0
-focus_mode = 0
-pressed = true
-enabled_focus_mode = 0
 
 [node name="keybinds" type="VBoxContainer" parent="."]
 visible = false
@@ -841,6 +478,402 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="menu" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 560.0
+margin_top = 300.0
+margin_bottom = 800.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="menu"]
+margin_right = 480.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="menu/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "levels"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="TextureButton" parent="menu"]
+margin_top = 132.0
+margin_right = 480.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="menu/Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureButton" parent="menu"]
+margin_top = 264.0
+margin_right = 480.0
+margin_bottom = 392.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="menu/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="menu"]
+margin_top = 396.0
+margin_right = 480.0
+margin_bottom = 524.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="menu/Quit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="warnings" type="VBoxContainer" parent="."]
+margin_top = 350.0
+margin_right = 1600.0
+margin_bottom = 483.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="press_key" type="Label" parent="warnings"]
+visible = false
+margin_right = 1600.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 5 )
+text = "Press any key..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cant_be_nan" type="Label" parent="warnings"]
+visible = false
+margin_right = 1600.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.905882, 0, 0.0431373, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "bind all keys!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="settings" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 560.0
+margin_top = 240.0
+margin_right = 1040.0
+margin_bottom = 632.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="TextureButton" parent="settings"]
+margin_right = 480.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="settings/Game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 1 )
+text = "game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="TextureButton" parent="settings"]
+margin_top = 132.0
+margin_right = 480.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="settings/Sound"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 1 )
+text = "sound"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keybindings" type="TextureButton" parent="settings"]
+margin_top = 264.0
+margin_right = 480.0
+margin_bottom = 392.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="settings/Keybindings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 1 )
+text = "keybinds"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="Label" parent="."]
+visible = false
+margin_left = 206.0
+margin_top = 64.0
+margin_right = 1394.0
+margin_bottom = 271.0
+custom_fonts/font = SubResource( 2 )
+text = "PARALYZED"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 573.0
+margin_top = 318.0
+margin_right = 1043.0
+margin_bottom = 534.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator" type="HBoxContainer" parent="game"]
+margin_right = 470.0
+margin_bottom = 216.0
+
+[node name="labels" type="VBoxContainer" parent="game/separator"]
+margin_right = 390.0
+margin_bottom = 216.0
+
+[node name="double_click_jump" type="Label" parent="game/separator/labels"]
+margin_right = 390.0
+margin_bottom = 40.0
+hint_tooltip = "Enabling double tap will allow you to perform \"action\"
+when you press the key for the color you already are"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "double tap"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hud" type="Label" parent="game/separator/labels"]
+margin_top = 44.0
+margin_right = 390.0
+margin_bottom = 84.0
+hint_tooltip = "Enabling hud will allow you to see
+which keys are bound to each color
+while playing"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "hud"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="white_background" type="Label" parent="game/separator/labels"]
+margin_top = 88.0
+margin_right = 390.0
+margin_bottom = 128.0
+hint_tooltip = "Enabling white background will remove the
+colorful level backgrounds with a plain
+white one"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "White background"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fullscreen" type="Label" parent="game/separator/labels"]
+margin_top = 132.0
+margin_right = 390.0
+margin_bottom = 172.0
+hint_tooltip = "Will make the game fullscreen"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="borderless" type="Label" parent="game/separator/labels"]
+margin_top = 176.0
+margin_right = 390.0
+margin_bottom = 216.0
+hint_tooltip = "Will make the game borderless
+If the game freezes up after enabling
+or disabling this, try tabing
+out and back in again"
+mouse_filter = 0
+custom_fonts/font = ExtResource( 14 )
+text = "borderless"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="game/separator"]
+margin_left = 394.0
+margin_right = 470.0
+margin_bottom = 216.0
+
+[node name="double_click_jump" type="CheckButton" parent="game/separator/buttons"]
+margin_right = 76.0
+margin_bottom = 40.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="hud" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 44.0
+margin_right = 76.0
+margin_bottom = 84.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="white_background" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 88.0
+margin_right = 76.0
+margin_bottom = 128.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="fullscreen" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 132.0
+margin_right = 76.0
+margin_bottom = 172.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[node name="borderless" type="CheckButton" parent="game/separator/buttons"]
+margin_top = 176.0
+margin_right = 76.0
+margin_bottom = 216.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[node name="sound" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 674.0
+margin_top = 364.0
+margin_right = 867.0
+margin_bottom = 448.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator" type="HBoxContainer" parent="sound"]
+margin_right = 193.0
+margin_bottom = 84.0
+
+[node name="labels" type="VBoxContainer" parent="sound/separator"]
+margin_right = 113.0
+margin_bottom = 84.0
+
+[node name="music" type="Label" parent="sound/separator/labels"]
+margin_right = 113.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 14 )
+text = "music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx" type="Label" parent="sound/separator/labels"]
+margin_top = 44.0
+margin_right = 113.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 14 )
+text = "sfx"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="sound/separator"]
+margin_left = 117.0
+margin_right = 193.0
+margin_bottom = 84.0
+
+[node name="music" type="CheckButton" parent="sound/separator/buttons"]
+margin_right = 76.0
+margin_bottom = 40.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
+[node name="sfx" type="CheckButton" parent="sound/separator/buttons"]
+margin_top = 44.0
+margin_right = 76.0
+margin_bottom = 84.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
 [node name="credits" type="VBoxContainer" parent="."]
 visible = false
 anchor_right = 1.0
@@ -1102,38 +1135,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="warnings" type="VBoxContainer" parent="."]
-margin_top = 350.0
-margin_right = 1600.0
-margin_bottom = 483.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="press_key" type="Label" parent="warnings"]
-visible = false
-margin_right = 1600.0
-margin_bottom = 133.0
-custom_fonts/font = SubResource( 5 )
-text = "Press any key..."
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cant_be_nan" type="Label" parent="warnings"]
-visible = false
-margin_right = 1600.0
-margin_bottom = 133.0
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.905882, 0, 0.0431373, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "bind all keys!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="back_settings" type="TextureButton" parent="."]
 visible = false
 margin_left = 96.0
@@ -1281,6 +1282,16 @@ texture_hover = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="keybinds/separator/buttons/cyan" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/red" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/purple" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/yellow" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/action" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/escape" to="." method="_on_change_keybind_pressed" binds= [ "escape" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/flag" to="." method="_on_change_keybind_pressed" binds= [ "flag" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/remove" to="." method="_on_change_keybind_pressed" binds= [ "remove" ]]
+[connection signal="pressed" from="keybinds/separator/buttons/sd" to="." method="_on_change_keybind_pressed" binds= [ "sd" ]]
+[connection signal="pressed" from="keybinds/reset_default" to="." method="_on_reset_default_pressed"]
 [connection signal="pressed" from="menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="menu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="menu/Credits" to="." method="_on_Credits_pressed"]
@@ -1295,16 +1306,6 @@ __meta__ = {
 [connection signal="toggled" from="game/separator/buttons/borderless" to="." method="_on_CheckBox_toggled" binds= [ 4 ]]
 [connection signal="toggled" from="sound/separator/buttons/music" to="." method="_on_CheckBox_toggled" binds= [ 1 ]]
 [connection signal="toggled" from="sound/separator/buttons/sfx" to="." method="_on_CheckBox_toggled" binds= [ 2 ]]
-[connection signal="pressed" from="keybinds/separator/buttons/cyan" to="." method="_on_change_keybind_pressed" binds= [ "cyan" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/red" to="." method="_on_change_keybind_pressed" binds= [ "red" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/purple" to="." method="_on_change_keybind_pressed" binds= [ "purple" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/yellow" to="." method="_on_change_keybind_pressed" binds= [ "yellow" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/action" to="." method="_on_change_keybind_pressed" binds= [ "action" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/escape" to="." method="_on_change_keybind_pressed" binds= [ "escape" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/flag" to="." method="_on_change_keybind_pressed" binds= [ "flag" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/remove" to="." method="_on_change_keybind_pressed" binds= [ "remove" ]]
-[connection signal="pressed" from="keybinds/separator/buttons/sd" to="." method="_on_change_keybind_pressed" binds= [ "sd" ]]
-[connection signal="pressed" from="keybinds/reset_default" to="." method="_on_reset_default_pressed"]
 [connection signal="pressed" from="credits/twitter" to="." method="_on_link_pressed" binds= [ "twitter" ]]
 [connection signal="pressed" from="credits/youtube" to="." method="_on_link_pressed" binds= [ "youtube" ]]
 [connection signal="pressed" from="credits/linkedin" to="." method="_on_link_pressed" binds= [ "linkedin" ]]

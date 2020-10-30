@@ -16,94 +16,91 @@ __meta__ = {
 position = Vector2( 12156, 0 )
 
 [node name="square2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2782, 0 )
+position = Vector2( 3281, 0 )
 COLOR = "purple"
 
 [node name="square4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2032, 0 )
+position = Vector2( 2281, 0 )
 COLOR = "red"
 
 [node name="square" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1282, 0 )
 
 [node name="square3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3532, 0 )
+position = Vector2( 4281, 0 )
 COLOR = "yellow"
 
 [node name="square5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5032, 0 )
+position = Vector2( 5281, 0 )
 
 [node name="square6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5111, 0 )
+position = Vector2( 5360, 0 )
 
 [node name="square13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8032, 0 )
+position = Vector2( 8231, 0 )
 COLOR = "purple"
 
 [node name="square14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8111, 0 )
+position = Vector2( 8310, 0 )
 COLOR = "purple"
 
 [node name="square15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8190, 0 )
-COLOR = "purple"
-
-[node name="square16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8269, 0 )
+position = Vector2( 8389, 0 )
 COLOR = "purple"
 
 [node name="square17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9532, 0 )
+position = Vector2( 9256, 0 )
 
 [node name="square18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9782, 0 )
+position = Vector2( 9506, 0 )
 COLOR = "red"
 
 [node name="square19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10032, 0 )
+position = Vector2( 9756, 0 )
 COLOR = "purple"
 
-[node name="square20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10282, 0 )
+[node name="square31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11231, 0 )
 COLOR = "yellow"
 
-[node name="square31" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11532, 0 )
-
 [node name="square32" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11607, 0 )
+position = Vector2( 11306, 0 )
+COLOR = "yellow"
 
 [node name="square33" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11682, 0 )
+position = Vector2( 11381, 0 )
+COLOR = "yellow"
 
 [node name="square34" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11757, 0 )
+position = Vector2( 11456, 0 )
+COLOR = "yellow"
 
 [node name="square35" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11832, 0 )
+position = Vector2( 11953, 0 )
+COLOR = "red"
 
 [node name="square7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5532, 0 )
+position = Vector2( 5781, 0 )
 COLOR = "red"
 
 [node name="square8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5611, 0 )
+position = Vector2( 5860, 0 )
 COLOR = "red"
 
 [node name="square9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6032, 0 )
+position = Vector2( 6281, 0 )
 COLOR = "purple"
 
 [node name="square10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6111, 0 )
+position = Vector2( 6360, 0 )
 COLOR = "purple"
 
 [node name="square11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6532, 0 )
+position = Vector2( 6781, 0 )
 COLOR = "yellow"
 
 [node name="square12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6611, 0 )
+position = Vector2( 6860, 0 )
 COLOR = "yellow"
 
 [node name="TileMap" type="TileMap" parent="."]
