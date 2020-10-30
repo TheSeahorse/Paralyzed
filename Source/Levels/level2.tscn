@@ -28,11 +28,11 @@ position = Vector2( 1360, 0 )
 COLOR = "red"
 
 [node name="square3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2782, 0 )
+position = Vector2( 3281, 0 )
 COLOR = "purple"
 
 [node name="square4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2863, 0 )
+position = Vector2( 3362, 0 )
 COLOR = "yellow"
 
 [node name="square5" parent="." instance=ExtResource( 1 )]
@@ -43,122 +43,109 @@ COLOR = "red"
 position = Vector2( 4362, 0 )
 
 [node name="square20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5032, 0 )
+position = Vector2( 5281, 0 )
 COLOR = "yellow"
 
 [node name="square21" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5112, 0 )
+position = Vector2( 5361, 0 )
 COLOR = "purple"
 
 [node name="square8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6940, 0 )
+position = Vector2( 8111, 0 )
 COLOR = "purple"
 
 [node name="square9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6861, 0 )
+position = Vector2( 8032, 0 )
 COLOR = "red"
 
 [node name="square10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6782, 0 )
+position = Vector2( 7281, 0 )
 
 [node name="square12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8282, 0 )
+position = Vector2( 9782, -1 )
 COLOR = "red"
 
 [node name="square13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8361, 0 )
-COLOR = "purple"
+position = Vector2( 9282, 0 )
+COLOR = "yellow"
 
 [node name="square14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8440, 0 )
-COLOR = "yellow"
+position = Vector2( 9532, 0 )
+COLOR = "purple"
 
 [node name="square18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10032, 0 )
-COLOR = "red"
+position = Vector2( 11232, 0 )
 
 [node name="square17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10111, 0 )
-COLOR = "red"
+position = Vector2( 11311, 0 )
 
 [node name="square16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10190, 0 )
-COLOR = "yellow"
+position = Vector2( 11483, 0 )
+COLOR = "purple"
 
 [node name="square15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10269, 0 )
-COLOR = "yellow"
+position = Vector2( 11562, 0 )
+COLOR = "purple"
 
 [node name="square22" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11111, 0 )
-COLOR = "purple"
-
-[node name="square23" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11032, 0 )
-COLOR = "purple"
-
-[node name="square7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11190, 0 )
-
-[node name="square25" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11270, 0 )
-
-[node name="square31" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12690, 0 )
-COLOR = "red"
-
-[node name="square38" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15031, 0 )
-
-[node name="square39" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15269, 0 )
+position = Vector2( 11812, 0 )
 COLOR = "yellow"
 
+[node name="square23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11733, 0 )
+COLOR = "yellow"
+
+[node name="square31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13366, 0 )
+
+[node name="square38" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14656, 0 )
+COLOR = "yellow"
+
+[node name="square39" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14985, 0 )
+
 [node name="square40" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15190, 0 )
+position = Vector2( 14906, 0 )
+
+[node name="square42" parent="." instance=ExtResource( 1 )]
+position = Vector2( 15235, 0 )
+COLOR = "purple"
+
+[node name="square43" parent="." instance=ExtResource( 1 )]
+position = Vector2( 15156, 0 )
 COLOR = "purple"
 
 [node name="square41" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15110, 0 )
-COLOR = "red"
+position = Vector2( 14735, 0 )
+COLOR = "yellow"
 
 [node name="square30" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12611, 0 )
-COLOR = "red"
+position = Vector2( 13284, 0 )
 
 [node name="square33" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12532, 0 )
-COLOR = "red"
+position = Vector2( 13202, 0 )
 
 [node name="square19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12769, 0 )
-COLOR = "yellow"
+position = Vector2( 13448, 0 )
+COLOR = "red"
 
 [node name="square29" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12927, 0 )
-COLOR = "yellow"
+position = Vector2( 13612, 0 )
+COLOR = "red"
 
 [node name="square28" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12848, 0 )
-COLOR = "yellow"
+position = Vector2( 13530, 0 )
+COLOR = "red"
 
 [node name="square27" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13006, 0 )
+position = Vector2( 13694, 0 )
 COLOR = "purple"
 
 [node name="square32" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13085, 0 )
+position = Vector2( 13776, 0 )
 COLOR = "purple"
-
-[node name="square34" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13243, 0 )
 
 [node name="square35" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13164, 0 )
+position = Vector2( 13858, 0 )
 COLOR = "purple"
-
-[node name="square36" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13322, 0 )
-
-[node name="square37" parent="." instance=ExtResource( 1 )]
-position = Vector2( 13401, 0 )
