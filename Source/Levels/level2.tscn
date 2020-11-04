@@ -99,27 +99,27 @@ COLOR = "yellow"
 position = Vector2( 13359, 0 )
 
 [node name="square38" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14656, 0 )
+position = Vector2( 14665, 0 )
 COLOR = "yellow"
 
 [node name="square39" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14982, 0 )
+position = Vector2( 14991, 0 )
 COLOR = "purple"
 
 [node name="square43" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15061, 0 )
+position = Vector2( 15070, 0 )
 COLOR = "purple"
 
 [node name="square40" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14903, 0 )
+position = Vector2( 14912, 0 )
 COLOR = "purple"
 
 [node name="square41" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14735, 0 )
+position = Vector2( 14744, 0 )
 COLOR = "yellow"
 
 [node name="square42" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14814, 0 )
+position = Vector2( 14823, 0 )
 COLOR = "yellow"
 
 [node name="square30" parent="." instance=ExtResource( 1 )]
