@@ -311,8 +311,7 @@ func enable_level(level: int):
 	var node
 	match level:
 		0:
-			# TODO
-			pass
+			node = get_node("tutorials/practice")
 		1,2,3,4:
 			node = get_node("levels/cube/level" + str(level) + "/TextureButton")
 		5,6,7,8:

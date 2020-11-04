@@ -214,7 +214,7 @@ func display_cleared_levels():
 		var cleared_practice = levels[1]
 		if cleared_normal:
 			if count == 0:
-				pass
+				levelmenu.enable_level(count)
 			elif (count % 4 == 1) and (count < 17):
 				levelmenu.enable_level(count + 1)
 				levelmenu.enable_level(count + 4)
