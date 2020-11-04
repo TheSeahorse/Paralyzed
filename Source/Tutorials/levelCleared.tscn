@@ -18,27 +18,27 @@ font_data = ExtResource( 2 )
 size = 60
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=11]
-size = 72
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 72
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 72
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 40
 outline_size = 2
 font_data = ExtResource( 2 )
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0, 0.42963, 1 )
 colors = PoolColorArray( 0, 0.0196078, 1, 1, 0.00484789, 0.42487, 0.586397, 1, 0.0112839, 0.962891, 0.0373044, 1 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=8]
 lifetime_randomness = 0.6
 emission_shape = 1
 emission_sphere_radius = 5.0
@@ -50,16 +50,16 @@ initial_velocity_random = 0.7
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -150.0
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 7 )
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=9]
 offsets = PoolRealArray( 0.0222222, 1 )
 colors = PoolColorArray( 0.99707, 0.128529, 0.128529, 1, 0.936485, 1, 0.121094, 1 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=11]
 lifetime_randomness = 0.6
 emission_shape = 1
 emission_sphere_radius = 5.0
@@ -71,7 +71,7 @@ initial_velocity_random = 0.7
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -150.0
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 10 )
 
 [node name="levelCleared" type="CanvasLayer"]
 pause_mode = 2
@@ -148,7 +148,7 @@ margin_left = -500.0
 margin_top = -287.5
 margin_right = -500.0
 margin_bottom = -212.5
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.921569, 0.286275, 1 )
 custom_colors/font_outline_modulate = Color( 0.709804, 0.67451, 0, 1 )
 text = "beat more levels
@@ -165,7 +165,7 @@ anchor_bottom = 0.75
 margin_left = -450.0
 margin_top = -287.5
 margin_bottom = -212.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "cube-2"
 align = 1
@@ -183,7 +183,7 @@ margin_left = -1000.0
 margin_top = -287.5
 margin_right = -560.0
 margin_bottom = -212.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "laser-1"
 align = 1
@@ -200,7 +200,7 @@ margin_left = -500.0
 margin_top = -212.5
 margin_right = -500.0
 margin_bottom = -137.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "fire-2"
 align = 1
 __meta__ = {
@@ -214,10 +214,11 @@ anchor_bottom = 1.0
 margin_left = -500.0
 margin_top = -325.0
 margin_right = -500.0
-margin_bottom = -258.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = -275.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "fwfewefw"
 align = 1
 valign = 1
 __meta__ = {
@@ -234,7 +235,7 @@ emitting = false
 amount = 300
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 7 )
+process_material = SubResource( 8 )
 texture = ExtResource( 6 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
@@ -243,7 +244,7 @@ emitting = false
 amount = 300
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 10 )
+process_material = SubResource( 11 )
 texture = ExtResource( 6 )
 
 [node name="confetti" type="AudioStreamPlayer" parent="."]

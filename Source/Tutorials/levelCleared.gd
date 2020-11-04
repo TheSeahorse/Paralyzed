@@ -87,11 +87,11 @@ func calculate_levels_unlocked():
 	var cleared_level = get_parent().LEVELS_CLEARED[level_number][0]
 	if level_number == 0:
 		levels_unlocked_color_to_white()
-		node.set_text("tutorial completed\ngood luck!")
+		node.set_text("tutorial completed!\ngood luck!")
 		UNLOCK_AMOUNT = 0
 	elif get_parent().PRACTICE:
 		levels_unlocked_color_to_white()
-		node.set_text("practice complete!\nbeat the real level!")
+		node.set_text("practice completed!\nbeat the real level!")
 		UNLOCK_AMOUNT = 0
 	elif cleared_level:
 		levels_unlocked_color_to_white()
