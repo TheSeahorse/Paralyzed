@@ -22,7 +22,7 @@ func _process(_delta):
 
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_released("action"):
+	if Input.is_action_just_released("action") and CLEAR_SCREEN_DELAY < 260:
 		get_tree().paused = false
 		get_parent().player_cleared_level()
 		self.queue_free()
@@ -70,6 +70,7 @@ func clear_text_counter():
 		CLEAR_SCREEN_DELAY -= 1
 	elif CLEAR_SCREEN_DELAY == 260:
 		play_sound("pop")
+		$Sprite/continue_label.show()
 		$Sprite/deaths_attempt.show()
 		CLEAR_SCREEN_DELAY -= 1
 	elif CLEAR_SCREEN_DELAY > 0:
