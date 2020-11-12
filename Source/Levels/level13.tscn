@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Source/Actors/car.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Source/Actors/laserbeam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Source/Levels/globalLevel.gd" type="Script" id=4]
-[ext_resource path="res://Source/Actors/lava.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Source/Actors/goal.tscn" type="PackedScene" id=10]
 
 [node name="level13" type="Node2D"]
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 364, -320 )
@@ -23,65 +26,64 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 position = Vector2( 10060, 0 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1765, 0 )
-COLOR = "red"
+position = Vector2( 2822, 0 )
 
 [node name="car2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2696, 0 )
+position = Vector2( 3822, 0 )
 COLOR = "purple"
 
 [node name="car3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3548, 0 )
-COLOR = "red"
-
-[node name="car4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3748, 0 )
+position = Vector2( 4322, 4.76837e-07 )
 COLOR = "yellow"
 
-[node name="car9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5548, 0 )
-
-[node name="car10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5640, 0 )
-
-[node name="car13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8201, 0 )
-COLOR = "red"
-
-[node name="car14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8293, 0 )
-COLOR = "red"
-
-[node name="car15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8385, 0 )
+[node name="car11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9322, 0 )
 
 [node name="car12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6465, 0 )
-COLOR = "yellow"
-
-[node name="car5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9633, 0 )
-
-[node name="car6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9833, 0 )
+position = Vector2( 9822, 0 )
 COLOR = "red"
 
-[node name="car7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10033, 0 )
+[node name="car13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10322, 0 )
 COLOR = "purple"
+
+[node name="car14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10822, 0 )
+COLOR = "yellow"
+
+[node name="car15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11015, 0 )
+COLOR = "red"
+
+[node name="car16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11208, 0 )
+
+[node name="car17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11402, 0 )
+COLOR = "purple"
+
+[node name="car4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5572, 0 )
+COLOR = "red"
+
+[node name="car5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5698, -44 )
+COLOR = "red"
+
+[node name="car6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6822, 0 )
+COLOR = "yellow"
+
+[node name="car7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6967, 0 )
 
 [node name="car8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10233, 0 )
-COLOR = "yellow"
-
-[node name="laserbeam2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3808, 0 )
+position = Vector2( 8072, 0 )
 COLOR = "purple"
 
-[node name="lava" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5857, 16 )
-COLOR = "yellow"
+[node name="car10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8217, 0 )
+COLOR = "red"
 
-[node name="lava2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5921, 16 )
-COLOR = "yellow"
+[node name="square" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1281, 0 )
