@@ -300,7 +300,7 @@ animations = [ {
 "name": "car",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 75 ) ],
+"frames": [ ExtResource( 75 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "lava",
 "speed": 5.0

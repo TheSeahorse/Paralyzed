@@ -20,7 +20,7 @@ func _ready():
 	set_keys()
 
 
-func _process(delta):
+func _process(_delta):
 	if CANT_BE_NAN_TIMER > 1:
 		CANT_BE_NAN_TIMER -= 1
 	elif CANT_BE_NAN_TIMER == 1:
