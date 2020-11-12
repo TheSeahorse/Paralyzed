@@ -47,30 +47,26 @@ position = Vector2( 2282, 16 )
 COLOR = "red"
 
 [node name="lava4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3096, 16 )
-COLOR = "yellow"
+position = Vector2( 3346, 16 )
+COLOR = "purple"
 
 [node name="lava5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3032, 16 )
+position = Vector2( 3282, 16 )
+COLOR = "purple"
 
 [node name="lava6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3160, 16 )
-COLOR = "purple"
-
-[node name="lava16" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7596, 16 )
-
-[node name="lava17" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7532, 16 )
+position = Vector2( 3410, 16 )
 COLOR = "yellow"
 
-[node name="lava18" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7660, 16 )
-COLOR = "red"
+[node name="lava52" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3538, 16 )
 
-[node name="lava19" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7724, 16 )
-COLOR = "purple"
+[node name="lava53" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3474, 16 )
+COLOR = "yellow"
+
+[node name="lava54" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3602, 16 )
 
 [node name="lava22" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10910, 16 )
@@ -132,86 +128,137 @@ COLOR = "red"
 position = Vector2( 11742, 16 )
 COLOR = "red"
 
-[node name="lava20" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8782, 16 )
-COLOR = "purple"
-
-[node name="laserbeam" parent="." instance=ExtResource( 5 )]
-position = Vector2( 9008, 0 )
-COLOR = "purple"
-
-[node name="lava21" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9234, 16 )
-COLOR = "purple"
-
-[node name="lava7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4282, 16 )
-COLOR = "red"
-
 [node name="lava35" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4346, 16 )
-COLOR = "red"
+position = Vector2( 6911, 16 )
 
-[node name="lava8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4532, 16 )
-COLOR = "yellow"
+[node name="lava62" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6975, 16 )
 
 [node name="lava36" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4596, 16 )
+position = Vector2( 6783, 16 )
 COLOR = "yellow"
 
-[node name="lava9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4782, 16 )
+[node name="lava63" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6847, 16 )
+COLOR = "yellow"
 
 [node name="lava37" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4846, 16 )
+position = Vector2( 7039, 16 )
+COLOR = "yellow"
 
-[node name="lava10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5034, 16 )
-COLOR = "purple"
+[node name="lava64" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7103, 16 )
+COLOR = "yellow"
 
 [node name="lava38" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5098, 16 )
-COLOR = "purple"
-
-[node name="lava11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5282, 16 )
-COLOR = "red"
+position = Vector2( 7167, 16 )
 
 [node name="lava39" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5346, 16 )
-COLOR = "red"
+position = Vector2( 7295, 16 )
+COLOR = "purple"
 
-[node name="lava12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5532, 16 )
+[node name="lava65" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7359, 16 )
+COLOR = "purple"
 
 [node name="lava40" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5596, 16 )
-
-[node name="lava13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5782, 16 )
-COLOR = "purple"
+position = Vector2( 7231, 16 )
 
 [node name="lava41" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5846, 16 )
+position = Vector2( 7423, 16 )
+COLOR = "red"
+
+[node name="lava66" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7487, 16 )
+COLOR = "red"
+
+[node name="lava67" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7615, 16 )
 COLOR = "purple"
 
+[node name="lava68" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7551, 16 )
+COLOR = "purple"
+
+[node name="lava69" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7679, 16 )
+COLOR = "red"
+
+[node name="lava70" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7743, 16 )
+COLOR = "red"
+
+[node name="lava71" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8782, 16 )
+
+[node name="lava72" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8846, 16 )
+
 [node name="lava14" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6032, 16 )
+position = Vector2( 4282, 16 )
 COLOR = "yellow"
 
 [node name="lava44" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6288, 16 )
-COLOR = "yellow"
+position = Vector2( 4538, 16 )
 
 [node name="lava15" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6096, 16 )
-COLOR = "red"
-
-[node name="lava42" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6160, 16 )
+position = Vector2( 4346, 16 )
 COLOR = "yellow"
 
+[node name="lava42" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4410, 16 )
+COLOR = "red"
+
 [node name="lava43" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6224, 16 )
+position = Vector2( 4474, 16 )
+COLOR = "red"
+
+[node name="lava55" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4730, 16 )
+COLOR = "purple"
+
+[node name="lava56" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4602, 16 )
+
+[node name="lava57" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4666, 16 )
+COLOR = "purple"
+
+[node name="lava58" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5532, 16 )
+COLOR = "purple"
+
+[node name="lava59" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5724, 16 )
+
+[node name="lava60" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5596, 16 )
+COLOR = "red"
+
+[node name="lava61" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5660, 16 )
+COLOR = "yellow"
+
+[node name="laserbeam" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8814, 0 )
+COLOR = "purple"
+
+[node name="lava73" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9032, 16 )
+
+[node name="lava74" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9096, 16 )
+
+[node name="laserbeam2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 9064, 0 )
+COLOR = "yellow"
+
+[node name="lava75" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9282, 16 )
+
+[node name="lava76" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9346, 16 )
+
+[node name="laserbeam3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 9314, 0 )
 COLOR = "red"

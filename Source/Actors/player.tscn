@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Character models/Player/Purple_square.png" type="Texture" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/cube.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Character models/Player/Cyan_square.png" type="Texture" id=6]
 [ext_resource path="res://Character models/World/Backgrounds/all.png" type="Texture" id=7]
 [ext_resource path="res://Character models/World/Backgrounds/tutorial.png" type="Texture" id=8]
+[ext_resource path="res://Character models/World/Backgrounds/test_lava.png" type="Texture" id=9]
 [ext_resource path="res://Character models/Player/red_square_explosion.png" type="Texture" id=10]
 [ext_resource path="res://Character models/Player/purple_square_explosion.png" type="Texture" id=11]
 [ext_resource path="res://Character models/Player/cyan_square_explosion.png" type="Texture" id=12]
@@ -299,9 +300,9 @@ animations = [ {
 "name": "car",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 76 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 75 ) ],
 "loop": false,
-"name": "laser",
+"name": "lava",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -309,9 +310,9 @@ animations = [ {
 "name": "cube",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 75 ) ],
+"frames": [ ExtResource( 76 ) ],
 "loop": false,
-"name": "lava",
+"name": "laser",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
