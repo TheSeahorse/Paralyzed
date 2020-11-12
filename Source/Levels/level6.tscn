@@ -21,27 +21,8 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 [node name="goal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 15048, 0 )
 
-[node name="laserbeam" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1258, 0 )
-COLOR = "purple"
-
-[node name="laserbeam2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1608, 0 )
-COLOR = "red"
-
-[node name="laserbeam3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2308, 0 )
-COLOR = "yellow"
-
-[node name="laserbeam5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2658, 0 )
-
 [node name="laserbeam6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 6594, 0 )
-COLOR = "purple"
-
-[node name="laserbeam4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1958, 0 )
 COLOR = "purple"
 
 [node name="laserbeam11" parent="." instance=ExtResource( 3 )]
@@ -69,14 +50,6 @@ COLOR = "purple"
 
 [node name="laserbeam7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4092, 0 )
-COLOR = "yellow"
-
-[node name="laserbeam18" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5008, 0 )
-COLOR = "red"
-
-[node name="laserbeam19" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5258, 0 )
 COLOR = "yellow"
 
 [node name="square2" parent="." instance=ExtResource( 2 )]
