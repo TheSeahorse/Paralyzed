@@ -97,9 +97,6 @@ COLOR = "yellow"
 position = Vector2( 12200, 0 )
 COLOR = "purple"
 
-[node name="laserbeam28" parent="." instance=ExtResource( 3 )]
-position = Vector2( 12050, 0 )
-
 [node name="laserbeam23" parent="." instance=ExtResource( 3 )]
 position = Vector2( 12350, 0 )
 COLOR = "red"

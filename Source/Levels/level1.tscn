@@ -37,26 +37,26 @@ position = Vector2( 5180, 0 )
 position = Vector2( 5259, 0 )
 
 [node name="square13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8141, 0 )
+position = Vector2( 8162, 0 )
 COLOR = "purple"
 
 [node name="square14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8220, 0 )
+position = Vector2( 8241, 0 )
 COLOR = "purple"
 
 [node name="square15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8299, 0 )
+position = Vector2( 8320, 0 )
 COLOR = "purple"
 
 [node name="square17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9168, 1 )
 
 [node name="square18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9418, 1 )
+position = Vector2( 9438, 1 )
 COLOR = "red"
 
 [node name="square19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9668, 1 )
+position = Vector2( 9708, 1 )
 COLOR = "purple"
 
 [node name="square31" parent="." instance=ExtResource( 1 )]

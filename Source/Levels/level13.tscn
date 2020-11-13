@@ -71,14 +71,14 @@ position = Vector2( 6822, 0 )
 COLOR = "yellow"
 
 [node name="car7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6967, 0 )
+position = Vector2( 6996, 0 )
 
 [node name="car8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 8072, 0 )
 COLOR = "purple"
 
 [node name="car10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8217, 0 )
+position = Vector2( 8246, 0 )
 COLOR = "red"
 
 [node name="square" parent="." instance=ExtResource( 3 )]

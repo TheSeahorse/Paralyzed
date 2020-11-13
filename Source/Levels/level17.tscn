@@ -94,11 +94,11 @@ position = Vector2( 13689, 0 )
 position = Vector2( 13768, 0 )
 
 [node name="lava" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3278, 16 )
+position = Vector2( 3241, 16 )
 COLOR = "red"
 
 [node name="lava2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3342, 16 )
+position = Vector2( 3305, 16 )
 COLOR = "red"
 
 [node name="lava3" parent="." instance=ExtResource( 3 )]
