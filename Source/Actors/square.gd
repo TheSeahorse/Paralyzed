@@ -6,7 +6,7 @@ var PLAYER_OVER: = false #true if the player is over
 var ENABLED: = false #turns true the first time physics process is run
 var GRACE_FRAMES: = 0 #how many frames the player can miss the jump on a square (if its in the air) but the square still jumps
 var TOGGLE_ACTION: = false #if "action" has been input by the user
-var ON_FLOOR: = true #if the square is on any kind of KinematicBody2D
+var ON_FLOOR: = false #if the square is on any kind of KinematicBody2D
 var SPRING_JUMP: = 0 #variable to control the flingy jump of the square, if greater than 0 we're calculating the jump
 var ON_LAVA: = false
 var LAVA
