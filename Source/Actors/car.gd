@@ -4,7 +4,7 @@ class_name Car
 export var COLOR: = "cyan"
 var ENABLED: = false # turns true the first time physics process is called
 var TOGGLE_ACTION: = false #if "action" has been input by the user
-var ON_FLOOR: = true #if the square is on any kind of KinematicBody2D
+var ON_FLOOR: = false #if the square is on any kind of KinematicBody2D
 var ON_LAVA: = false
 var LAVA
 var ON_LASER: = false
