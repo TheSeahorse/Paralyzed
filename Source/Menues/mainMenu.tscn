@@ -31,29 +31,29 @@
 size = 90
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 128
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 128
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=2]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 200
 outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
 extra_spacing_char = -5
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 64
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 4 )
 
@@ -575,7 +575,7 @@ __meta__ = {
 visible = false
 margin_right = 1600.0
 margin_bottom = 133.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "Press any key..."
 align = 1
 __meta__ = {
@@ -586,7 +586,7 @@ __meta__ = {
 visible = false
 margin_right = 1600.0
 margin_bottom = 133.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.905882, 0, 0.0431373, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "bind all keys!"
@@ -683,7 +683,7 @@ margin_left = 206.0
 margin_top = 64.0
 margin_right = 1394.0
 margin_bottom = 271.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "PARALYZED"
 align = 1
 __meta__ = {
@@ -692,25 +692,25 @@ __meta__ = {
 
 [node name="game" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 573.0
-margin_top = 318.0
-margin_right = 1043.0
-margin_bottom = 534.0
+margin_left = 504.0
+margin_top = 290.0
+margin_right = 1184.0
+margin_bottom = 598.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="separator" type="HBoxContainer" parent="game"]
-margin_right = 470.0
-margin_bottom = 216.0
+margin_right = 680.0
+margin_bottom = 308.0
 
 [node name="labels" type="VBoxContainer" parent="game/separator"]
-margin_right = 390.0
-margin_bottom = 216.0
+margin_right = 592.0
+margin_bottom = 308.0
 
 [node name="double_click_jump" type="Label" parent="game/separator/labels"]
-margin_right = 390.0
-margin_bottom = 40.0
+margin_right = 592.0
+margin_bottom = 52.0
 hint_tooltip = "Enabling double tap will allow you to perform \"action\"
 when you press the key for the color you already are"
 mouse_filter = 0
@@ -720,10 +720,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HSeparator" type="HSeparator" parent="game/separator/labels"]
+margin_top = 56.0
+margin_right = 592.0
+margin_bottom = 60.0
+
 [node name="hud" type="Label" parent="game/separator/labels"]
-margin_top = 44.0
-margin_right = 390.0
-margin_bottom = 84.0
+margin_top = 64.0
+margin_right = 592.0
+margin_bottom = 116.0
 hint_tooltip = "Enabling hud will allow you to see
 which keys are bound to each color
 while playing"
@@ -734,24 +739,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HSeparator2" type="HSeparator" parent="game/separator/labels"]
+margin_top = 120.0
+margin_right = 592.0
+margin_bottom = 124.0
+
 [node name="white_background" type="Label" parent="game/separator/labels"]
-margin_top = 88.0
-margin_right = 390.0
-margin_bottom = 128.0
+margin_top = 128.0
+margin_right = 592.0
+margin_bottom = 180.0
 hint_tooltip = "Enabling white background will remove the
 colorful level backgrounds with a plain
 white one"
 mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
-text = "White background"
+text = "White background    "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HSeparator3" type="HSeparator" parent="game/separator/labels"]
+margin_top = 184.0
+margin_right = 592.0
+margin_bottom = 188.0
+
 [node name="fullscreen" type="Label" parent="game/separator/labels"]
-margin_top = 132.0
-margin_right = 390.0
-margin_bottom = 172.0
+margin_top = 192.0
+margin_right = 592.0
+margin_bottom = 244.0
 hint_tooltip = "Will make the game fullscreen"
 mouse_filter = 0
 custom_fonts/font = ExtResource( 14 )
@@ -760,10 +775,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HSeparator4" type="HSeparator" parent="game/separator/labels"]
+margin_top = 248.0
+margin_right = 592.0
+margin_bottom = 252.0
+
 [node name="borderless" type="Label" parent="game/separator/labels"]
-margin_top = 176.0
-margin_right = 390.0
-margin_bottom = 216.0
+margin_top = 256.0
+margin_right = 592.0
+margin_bottom = 308.0
 hint_tooltip = "Will make the game borderless
 If the game freezes up after enabling
 or disabling this, try tabing
@@ -776,9 +796,9 @@ __meta__ = {
 }
 
 [node name="buttons" type="VBoxContainer" parent="game/separator"]
-margin_left = 394.0
-margin_right = 470.0
-margin_bottom = 216.0
+margin_left = 596.0
+margin_right = 672.0
+margin_bottom = 308.0
 
 [node name="double_click_jump" type="CheckButton" parent="game/separator/buttons"]
 margin_right = 76.0
@@ -817,37 +837,50 @@ margin_bottom = 216.0
 focus_mode = 0
 enabled_focus_mode = 0
 
+[node name="VSeparator" type="VSeparator" parent="game/separator"]
+margin_left = 676.0
+margin_right = 680.0
+margin_bottom = 308.0
+
 [node name="sound" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 674.0
-margin_top = 364.0
-margin_right = 867.0
-margin_bottom = 448.0
+margin_left = 685.0
+margin_top = 385.0
+margin_right = 1002.0
+margin_bottom = 501.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="separator" type="HBoxContainer" parent="sound"]
-margin_right = 193.0
-margin_bottom = 84.0
+margin_right = 317.0
+margin_bottom = 116.0
 
 [node name="labels" type="VBoxContainer" parent="sound/separator"]
-margin_right = 113.0
-margin_bottom = 84.0
+margin_right = 229.0
+margin_bottom = 116.0
 
 [node name="music" type="Label" parent="sound/separator/labels"]
-margin_right = 113.0
-margin_bottom = 40.0
+margin_right = 229.0
+margin_bottom = 52.0
 custom_fonts/font = ExtResource( 14 )
-text = "music"
+text = "music    "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="sound/separator/labels"]
+margin_top = 56.0
+margin_right = 229.0
+margin_bottom = 60.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sfx" type="Label" parent="sound/separator/labels"]
-margin_top = 44.0
-margin_right = 113.0
-margin_bottom = 84.0
+margin_top = 64.0
+margin_right = 229.0
+margin_bottom = 116.0
 custom_fonts/font = ExtResource( 14 )
 text = "sfx"
 __meta__ = {
@@ -855,9 +888,9 @@ __meta__ = {
 }
 
 [node name="buttons" type="VBoxContainer" parent="sound/separator"]
-margin_left = 117.0
-margin_right = 193.0
-margin_bottom = 84.0
+margin_left = 233.0
+margin_right = 309.0
+margin_bottom = 116.0
 
 [node name="music" type="CheckButton" parent="sound/separator/buttons"]
 margin_right = 76.0
@@ -874,6 +907,11 @@ focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
+[node name="VSeparator" type="VSeparator" parent="sound/separator"]
+margin_left = 313.0
+margin_right = 317.0
+margin_bottom = 116.0
+
 [node name="credits" type="VBoxContainer" parent="."]
 visible = false
 anchor_right = 1.0
@@ -889,7 +927,7 @@ __meta__ = {
 [node name="alexander" type="Label" parent="credits"]
 margin_right = 690.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Alexander Lahti"
 align = 1
 __meta__ = {
@@ -908,7 +946,7 @@ texture_hover = ExtResource( 22 )
 margin_top = 4.0
 margin_right = 690.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "twitter"
@@ -930,7 +968,7 @@ texture_hover = ExtResource( 22 )
 margin_top = 4.0
 margin_right = 690.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "Youtube"
 align = 1
@@ -951,7 +989,7 @@ texture_hover = ExtResource( 22 )
 margin_top = 4.0
 margin_right = 690.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "linkedin"
 align = 1
@@ -970,7 +1008,7 @@ custom_constants/separation = 20
 margin_top = 209.0
 margin_right = 690.0
 margin_bottom = 276.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "art"
 align = 1
 __meta__ = {
@@ -981,7 +1019,7 @@ __meta__ = {
 margin_top = 280.0
 margin_right = 690.0
 margin_bottom = 314.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "alexander lahti"
 align = 1
 __meta__ = {
@@ -999,7 +1037,7 @@ texture_hover = ExtResource( 22 )
 [node name="spillana" type="Label" parent="credits/spillana"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "spillana"
 align = 1
@@ -1018,7 +1056,7 @@ custom_constants/separation = 20
 margin_top = 380.0
 margin_right = 690.0
 margin_bottom = 447.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "sound"
 align = 1
 __meta__ = {
@@ -1037,7 +1075,7 @@ texture_hover = ExtResource( 22 )
 margin_left = -200.0
 margin_right = 490.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "main theme -"
 align = 1
 valign = 1
@@ -1049,7 +1087,7 @@ __meta__ = {
 margin_left = 115.0
 margin_right = 805.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "Empyrean Media Arts"
 align = 1
@@ -1070,7 +1108,7 @@ texture_hover = ExtResource( 22 )
 margin_left = -105.0
 margin_right = 585.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "level music -"
 align = 1
 valign = 1
@@ -1082,7 +1120,7 @@ __meta__ = {
 margin_left = 90.0
 margin_right = 780.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.25098, 0.25098, 0.933333, 1 )
 text = "teksoda"
 align = 1
@@ -1101,7 +1139,7 @@ custom_constants/separation = 20
 margin_top = 551.0
 margin_right = 690.0
 margin_bottom = 618.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "special thanks to"
 align = 1
 __meta__ = {
@@ -1112,7 +1150,7 @@ __meta__ = {
 margin_top = 622.0
 margin_right = 690.0
 margin_bottom = 656.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "mikael mollberg"
 align = 1
 
@@ -1120,7 +1158,7 @@ align = 1
 margin_top = 660.0
 margin_right = 690.0
 margin_bottom = 694.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "\"the trio\""
 align = 1
 
@@ -1128,7 +1166,7 @@ align = 1
 margin_top = 698.0
 margin_right = 690.0
 margin_bottom = 732.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "my family"
 align = 1
 __meta__ = {

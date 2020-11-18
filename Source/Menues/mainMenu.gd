@@ -16,6 +16,10 @@ func _ready():
 	$keybinds/separator/words.add_constant_override("separation", 11)
 	$keybinds/separator.add_constant_override("separation", 6)
 	$keybinds.add_constant_override("separation", 10)
+	$game/separator/buttons.add_constant_override("separation", 26)
+	$game/separator.add_constant_override("separation", -75)
+	$sound/separator/buttons.add_constant_override("separation", 27)
+	$sound/separator.add_constant_override("separation", -75)
 	set_settings()
 	set_keys()
 

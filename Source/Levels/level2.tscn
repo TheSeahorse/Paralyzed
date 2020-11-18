@@ -21,33 +21,33 @@ tile_data = PoolIntArray( 1376141, 0, 0, 1376142, 0, 0, 1376143, 0, 0, 1376144, 
 position = Vector2( 15548, 0 )
 
 [node name="square" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1214, 0 )
+position = Vector2( 1245, 0 )
 
 [node name="square2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1293, 0 )
+position = Vector2( 1324, 0 )
 COLOR = "red"
 
 [node name="square3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3214, 0 )
+position = Vector2( 3245, 0 )
 COLOR = "purple"
 
 [node name="square4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3295, 0 )
+position = Vector2( 3326, 0 )
 COLOR = "yellow"
 
 [node name="square5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4215, 0 )
+position = Vector2( 4246, 0 )
 COLOR = "red"
 
 [node name="square6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4295, 0 )
+position = Vector2( 4326, 0 )
 
 [node name="square20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5214, 0 )
+position = Vector2( 5245, 0 )
 COLOR = "yellow"
 
 [node name="square21" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5294, 0 )
+position = Vector2( 5325, 0 )
 COLOR = "purple"
 
 [node name="square8" parent="." instance=ExtResource( 1 )]
