@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Source/Actors/lava.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Lava floor/fireanimationcyan.png" type="Texture" id=2]
@@ -79,11 +79,6 @@ region = Rect2( 192, 0, 64, 48 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "cyan off",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "red off",
@@ -118,13 +113,16 @@ animations = [ {
 "loop": true,
 "name": "red on",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "cyan off",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 29, 17 )
-
 [node name="lava" type="KinematicBody2D"]
-collision_layer = 2
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -140,9 +138,9 @@ playing = true
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-modulate = Color( 0.054902, 0.709804, 0, 1 )
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2( 0, -30 )
-shape = SubResource( 19 )
+build_mode = 1
+polygon = PoolVector2Array( -27, 15, 27, 15, 22, -5, 7, -20, -7, -20, -23, -5 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

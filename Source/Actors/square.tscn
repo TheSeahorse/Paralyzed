@@ -42,59 +42,59 @@ atlas = ExtResource( 12 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 768, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 896, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 9 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 512, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 768, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 896, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 11 )
 region = Rect2( 1024, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=22]
@@ -154,12 +154,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
-"name": "yellow death",
+"name": "purple death",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": false,
-"name": "purple death",
+"name": "yellow death",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
@@ -172,7 +172,7 @@ animations = [ {
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 31, 1 )
+extents = Vector2( 31, 33 )
 
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 33, 1 )
@@ -208,6 +208,7 @@ collision_layer = 2
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_detector"]
+position = Vector2( 0, -32 )
 shape = SubResource( 31 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
