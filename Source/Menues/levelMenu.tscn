@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Character models/Menues/level_button_normal.png" type="Texture" id=11]
 [ext_resource path="res://Character models/Menues/back_button_normal.png" type="Texture" id=12]
 [ext_resource path="res://Character models/Menues/StartPractice/start_hover.png" type="Texture" id=13]
+[ext_resource path="res://Character models/Menues/stats_button_arrow.png" type="Texture" id=14]
 [ext_resource path="res://Character models/Menues/Fonts/start_practice.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/Menues/skull.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Menues/blue_checkmark.png" type="Texture" id=22]
@@ -242,6 +243,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="arrow" type="TextureRect" parent="stats/VBoxContainer/deadliest_color/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 12, 12 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="deadliest_colors" type="VBoxContainer" parent="stats/VBoxContainer"]
 visible = false
 margin_top = 174.0
@@ -324,6 +334,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="arrow" type="TextureRect" parent="stats/VBoxContainer/deadliest_enemy/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 12, 12 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="deadliest_enemies" type="VBoxContainer" parent="stats/VBoxContainer"]
 visible = false
 margin_top = 204.0
@@ -389,40 +408,40 @@ margin_bottom = 266.0
 custom_fonts/font = SubResource( 3 )
 text = "square jumps: 332"
 
-[node name="car_jumps" type="Label" parent="stats/VBoxContainer"]
+[node name="phazed_laser" type="Label" parent="stats/VBoxContainer"]
 margin_top = 270.0
 margin_right = 360.0
 margin_bottom = 296.0
 custom_fonts/font = SubResource( 3 )
-text = "car jumps: 222"
+text = "Phazed through laser: 44"
 
-[node name="square_deaths" type="Label" parent="stats/VBoxContainer"]
+[node name="survived_lava" type="Label" parent="stats/VBoxContainer"]
 margin_top = 300.0
 margin_right = 360.0
 margin_bottom = 326.0
 custom_fonts/font = SubResource( 3 )
-text = "square deaths: 332"
+text = "survived lava: 331"
 
-[node name="car_deaths" type="Label" parent="stats/VBoxContainer"]
+[node name="car_jumps" type="Label" parent="stats/VBoxContainer"]
 margin_top = 330.0
 margin_right = 360.0
 margin_bottom = 356.0
 custom_fonts/font = SubResource( 3 )
-text = "car deaths: 222"
+text = "car jumps: 222"
 
-[node name="phazed_laser" type="Label" parent="stats/VBoxContainer"]
+[node name="square_deaths" type="Label" parent="stats/VBoxContainer"]
 margin_top = 360.0
 margin_right = 360.0
 margin_bottom = 386.0
 custom_fonts/font = SubResource( 3 )
-text = "Phazed through laser: 44"
+text = "square deaths: 332"
 
-[node name="survived_lava" type="Label" parent="stats/VBoxContainer"]
+[node name="car_deaths" type="Label" parent="stats/VBoxContainer"]
 margin_top = 390.0
 margin_right = 360.0
 margin_bottom = 416.0
 custom_fonts/font = SubResource( 3 )
-text = "survived lava: 331"
+text = "car deaths: 222"
 
 [node name="TextureRect3" type="TextureRect" parent="stats/VBoxContainer"]
 margin_top = 420.0

@@ -144,11 +144,11 @@ func update_stats():
 	if stats[8] == 0:
 		$stats/VBoxContainer/square_deaths.set_text(hidden_stat)
 	else:
-		$stats/VBoxContainer/square_deaths.set_text("squares killed: " + str(stats[8]))
+		$stats/VBoxContainer/square_deaths.set_text("squares exploded: " + str(stats[8]))
 	if stats[9] == 0:
 		$stats/VBoxContainer/car_deaths.set_text(hidden_stat)
 	else:
-		$stats/VBoxContainer/car_deaths.set_text("cars killed: " + str(stats[9]))
+		$stats/VBoxContainer/car_deaths.set_text("cars exploded: " + str(stats[9]))
 
 
 func count_deaths(deaths: Array) -> int:
@@ -400,12 +400,18 @@ func _on_stats_button_pressed(type: String) -> void:
 		"color":
 			if $stats/VBoxContainer/deadliest_colors.visible:
 				$stats/VBoxContainer/deadliest_colors.hide()
+				$stats/VBoxContainer/deadliest_color/Button/arrow.set_rotation(0)
 			else:
-				$stats/VBoxContainer/deadliest_colors.show()
 				$stats/VBoxContainer/deadliest_enemies.hide()
+				$stats/VBoxContainer/deadliest_enemy/Button/arrow.set_rotation(0)
+				$stats/VBoxContainer/deadliest_colors.show()
+				$stats/VBoxContainer/deadliest_color/Button/arrow.set_rotation(PI)
 		"enemy":
 			if $stats/VBoxContainer/deadliest_enemies.visible:
 				$stats/VBoxContainer/deadliest_enemies.hide()
+				$stats/VBoxContainer/deadliest_enemy/Button/arrow.set_rotation(0)
 			else:
 				$stats/VBoxContainer/deadliest_colors.hide()
+				$stats/VBoxContainer/deadliest_color/Button/arrow.set_rotation(0)
 				$stats/VBoxContainer/deadliest_enemies.show()
+				$stats/VBoxContainer/deadliest_enemy/Button/arrow.set_rotation(PI)
