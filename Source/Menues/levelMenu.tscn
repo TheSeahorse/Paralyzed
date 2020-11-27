@@ -364,13 +364,6 @@ margin_bottom = 22.0
 custom_fonts/font = SubResource( 4 )
 text = "square: 444"
 
-[node name="spikes" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
-margin_top = 26.0
-margin_right = 360.0
-margin_bottom = 48.0
-custom_fonts/font = SubResource( 4 )
-text = "spikes: 232"
-
 [node name="beam" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
 margin_top = 52.0
 margin_right = 360.0
@@ -391,6 +384,13 @@ margin_right = 360.0
 margin_bottom = 126.0
 custom_fonts/font = SubResource( 4 )
 text = "car: 41"
+
+[node name="spikes" type="Label" parent="stats/VBoxContainer/deadliest_enemies"]
+margin_top = 26.0
+margin_right = 360.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 4 )
+text = "spikes: 232"
 
 [node name="TextureRect2" type="TextureRect" parent="stats/VBoxContainer"]
 margin_top = 234.0

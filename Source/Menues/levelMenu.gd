@@ -92,7 +92,7 @@ func update_stats():
 	if death_by[1] == 0:
 		$stats/VBoxContainer/deadliest_enemies/square.set_text(hidden_stat)
 	else:
-		$stats/VBoxContainer/deadliest_enemies/square.set_text("square: " + str(death_by[1]))
+		$stats/VBoxContainer/deadliest_enemies/square.set_text("cube: " + str(death_by[1]))
 	if death_by[2] == 0:
 		$stats/VBoxContainer/deadliest_enemies/beam.set_text(hidden_stat)
 	else:
@@ -252,7 +252,7 @@ func calculate_deadliest_enemy(stats: Array) -> String:
 		0:
 			deadliest = "spikes"
 		1:
-			deadliest = "square"
+			deadliest = "cube"
 		2:
 			deadliest = "laser"
 		3:
