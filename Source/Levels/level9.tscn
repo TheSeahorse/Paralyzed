@@ -235,16 +235,6 @@ COLOR = "yellow"
 position = Vector2( 9564, 0 )
 COLOR = "purple"
 
-[node name="lava73" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9832, 16 )
-
-[node name="lava74" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9896, 16 )
-
-[node name="laserbeam2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 9864, 0 )
-COLOR = "yellow"
-
 [node name="lava75" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10132, 16 )
 
