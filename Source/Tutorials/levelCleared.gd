@@ -168,7 +168,7 @@ func decide_unlocked_levels(number: int) -> int:
 				return 1
 			else:
 				levels_unlocked_color_to_white()
-				$Sprite/levels_unlocked.set_text("beat all levels\to unlock the finale")
+				$Sprite/levels_unlocked.set_text("beat all levels\nto unlock the finale")
 				return 0
 		20:
 			$Sprite/levels_unlocked.set_text("congratulations!!!\nyou beat the game!")

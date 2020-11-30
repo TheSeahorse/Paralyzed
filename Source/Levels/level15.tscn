@@ -24,7 +24,7 @@ tile_data = PoolIntArray( -64751, 0, 0, -64750, 0, 0, -64749, 0, 0, -64748, 0, 0
 position = Vector2( 19994, 0 )
 
 [node name="car8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8762, -224 )
+position = Vector2( 8764, -224 )
 
 [node name="car" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1822, 0 )
