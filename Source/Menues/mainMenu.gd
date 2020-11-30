@@ -317,7 +317,6 @@ func _on_Game_pressed() -> void:
 
 
 func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
-	click_fx()
 	get_parent().SETTINGS[setting_nr] = button_pressed
 	match setting_nr:
 		1:
@@ -331,6 +330,7 @@ func _on_CheckBox_toggled(button_pressed: bool, setting_nr: int) -> void:
 		4:
 			OS.window_borderless = button_pressed
 			ProjectSettings.set_setting("display/window/size/borderless", button_pressed)
+	click_fx()
 
 
 func _on_link_pressed(link_name: String) -> void:
