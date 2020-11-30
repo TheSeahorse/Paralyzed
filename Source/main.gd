@@ -78,6 +78,7 @@ func play_level(levelName: String, practice: bool):
 	level = load("res://Source/Levels/" + levelName + ".tscn").instance()
 	if SETTINGS[0]:
 		hud = load("res://Source/Tutorials/playerHud.tscn").instance()
+		add_child(hud)
 	add_child(player)
 	add_child(level)
 	if PRACTICE:
@@ -85,7 +86,6 @@ func play_level(levelName: String, practice: bool):
 			player.position = PRACTICE_SAVED_PLAYER_VECTORS.back()
 			player.VELOCITY = PRACTICE_SAVED_PLAYER_VELOCITIES.back()
 			level.spawn_flag(player.position)
-	add_child(hud)
 	player.is_color("cyan")
 	player.display_background(levelName)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
