@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Source/Other/camera_changer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Source/Levels/globalLevel.gd" type="Script" id=4]
+[ext_resource path="res://Character models/World/Backgrounds/zulul.png" type="Texture" id=5]
+[ext_resource path="res://Character models/Menues/Fonts/Sunset Boulevard.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Source/Actors/spikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Source/Actors/goal.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 6 )
 
 [node name="level3" type="Node2D"]
 script = ExtResource( 4 )
@@ -260,3 +266,28 @@ FIXED = true
 [node name="Camera_changer2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 5141, 1 )
 rotation = 1.5708
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_left = 21497.0
+margin_top = -304.0
+margin_right = 21707.0
+margin_bottom = -229.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "if forsen sees this
+vi von"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 21453.0
+margin_top = -210.0
+margin_right = 22053.0
+margin_bottom = 490.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
