@@ -615,7 +615,6 @@ rotation = 0.10472
 [node name="lava98" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10978, -254 )
 rotation = 0.314159
-scale = Vector2( 1, 1 )
 
 [node name="lava97" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10919, -270 )
@@ -644,7 +643,6 @@ rotation = 0.10472
 [node name="lava123" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11392, -34.9998 )
 rotation = 0.314159
-scale = Vector2( 1, 1 )
 
 [node name="lava124" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11452, -17.9998 )
@@ -653,12 +651,10 @@ rotation = 0.226893
 [node name="lava99" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11036, -232 )
 rotation = 0.401426
-scale = Vector2( 1, 1 )
 
 [node name="lava117" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11334, -57.0005 )
 rotation = 0.401426
-scale = Vector2( 1, 1 )
 
 [node name="lava113" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11091, -206 )

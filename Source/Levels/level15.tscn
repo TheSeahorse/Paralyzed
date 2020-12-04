@@ -147,6 +147,7 @@ position = Vector2( 14500, 0 )
 
 [node name="car17" parent="." instance=ExtResource( 2 )]
 position = Vector2( 16997, -128 )
+COLOR = "purple"
 
 [node name="car18" parent="." instance=ExtResource( 2 )]
 position = Vector2( 19581, 0 )

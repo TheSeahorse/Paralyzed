@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Source/Menues/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Fonts/menu.tres" type="DynamicFont" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://Character models/Menues/back_button_pressed.png" type="Texture" id=16]
 [ext_resource path="res://Character models/Menues/back_button_hover.png" type="Texture" id=17]
 [ext_resource path="res://Character models/Menues/Fonts/back.tres" type="DynamicFont" id=18]
-[ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Evolution.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/keybinds_buttons.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/World/Backgrounds/credits_background.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Menues/big_link_button.png" type="Texture" id=22]
@@ -26,6 +25,7 @@
 [ext_resource path="res://Character models/Menues/gimp_logo.png" type="Texture" id=24]
 [ext_resource path="res://Sound/Menu/accept_keybind.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Sound/Menu/decline_keybind.wav" type="AudioStream" id=26]
+[ext_resource path="res://Character models/Menues/Fonts/title_logo.png" type="Texture" id=27]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -42,12 +42,6 @@ size = 128
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 200
-outline_color = Color( 0.905882, 0.176471, 0.0784314, 1 )
-extra_spacing_char = -5
-font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 64
@@ -78,13 +72,11 @@ stream = ExtResource( 26 )
 volume_db = -5.0
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 0, -1 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="credits_background" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -1 )
 texture = ExtResource( 21 )
 centered = false
 
@@ -677,15 +669,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="logo" type="Label" parent="."]
+[node name="logo" type="TextureRect" parent="."]
 visible = false
-margin_left = 206.0
+margin_left = 253.0
 margin_top = 64.0
-margin_right = 1394.0
+margin_right = 1349.0
 margin_bottom = 271.0
-custom_fonts/font = SubResource( 4 )
-text = "PARALYZED"
-align = 1
+texture = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
