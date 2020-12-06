@@ -128,7 +128,7 @@ func update_stats():
 	if stats[4] == 0:
 		$stats/VBoxContainer/survived_lava.set_text(hidden_stat)
 	else:
-		$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(stats[4]))
+		$stats/VBoxContainer/survived_lava.set_text("fires survived: " + str(int(stats[4] / 2)))
 	if stats[5] == 0:
 		$stats/VBoxContainer/placed_flags.set_text(hidden_stat)
 	else:
@@ -364,6 +364,11 @@ func show_checkmarks(level_number: int, cleared_normal: bool, cleared_practice: 
 		practice_mark.show()
 
 
+func reset_stat_buttons():
+	$stats/VBoxContainer/deadliest_color/Button/arrow.set_rotation(0)
+	$stats/VBoxContainer/deadliest_enemy/Button/arrow.set_rotation(0)
+
+
 func _on_level_dropdown_pressed(level: String):
 	if get_parent().get_parent().SETTINGS[2]:
 		$click.play()
@@ -383,6 +388,7 @@ func _on_level_pressed(level: String, practice: bool) -> void:
 	emit_signal("levelselected", level, practice)
 	get_parent().get_parent().set_level_start_time()
 	get_parent().stop_music()
+	reset_stat_buttons()
 	hide_level_menu()
 
 
@@ -391,6 +397,7 @@ func _on_goBack_pressed() -> void:
 		$click.play()
 	hide_level_menu()
 	self.get_parent().show_menu()
+	reset_stat_buttons()
 
 
 func _on_stats_button_pressed(type: String) -> void:
