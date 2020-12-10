@@ -231,14 +231,14 @@ func save_game():
 		"settings" : SETTINGS
 	}
 	var save_game = File.new()
-	save_game.open("user://savegame.save", File.WRITE)
+	save_game.open("user://paralyzed_savegame.save", File.WRITE)
 	save_game.store_line(to_json(save_data))
 	save_game.close()
 
 
 func load_savestate():
 	var load_game = File.new()
-	if not load_game.file_exists("user://savegame.save"):
+	if not load_game.file_exists("user://paralyzed_savegame.save"):
 		DEATHS = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
 		LEVELS_CLEARED = [[false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false], [false, false]]
 		TIME_PLAYED = 0
@@ -247,7 +247,7 @@ func load_savestate():
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
 		SETTINGS = [true, true, true, false, false, false, false]
 	else:
-		load_game.open("user://savegame.save", File.READ)
+		load_game.open("user://paralyzed_savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
 		load_game.close()
 		if savestate.has("death_stats"):

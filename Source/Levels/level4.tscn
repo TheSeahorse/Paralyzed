@@ -123,18 +123,18 @@ COLOR = "red"
 position = Vector2( 9981, -320 )
 
 [node name="square36" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9357, 224 )
+position = Vector2( 9231, 224 )
 COLOR = "purple"
 
 [node name="square37" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9607, 224 )
+position = Vector2( 9481, 224 )
 COLOR = "red"
 
 [node name="square38" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9857, 224 )
+position = Vector2( 9731, 224 )
 
 [node name="square39" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10107, 224 )
+position = Vector2( 9981, 224 )
 COLOR = "yellow"
 
 [node name="square54" parent="." instance=ExtResource( 2 )]
