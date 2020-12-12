@@ -691,18 +691,19 @@ COLOR = "yellow"
 
 [node name="lava134" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13596, 16 )
+COLOR = "purple"
 
 [node name="lava135" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13660, 16 )
+COLOR = "purple"
 
 [node name="lava136" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13724, 16 )
-COLOR = "purple"
+COLOR = "red"
 
 [node name="lava137" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13596, -112 )
 rotation = 3.14159
-COLOR = "red"
 
 [node name="lava141" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13532, -112 )
@@ -712,12 +713,11 @@ COLOR = "yellow"
 [node name="lava142" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13660, -112 )
 rotation = 3.14159
-COLOR = "red"
 
 [node name="lava138" parent="." instance=ExtResource( 2 )]
 position = Vector2( 13724, -112 )
 rotation = 3.14159
-COLOR = "purple"
+COLOR = "red"
 
 [node name="lava130" parent="." instance=ExtResource( 2 )]
 position = Vector2( 15532, -544 )

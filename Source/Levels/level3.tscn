@@ -66,9 +66,6 @@ COLOR = "purple"
 [node name="spikes4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5454, 460 )
 
-[node name="spikes5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 5454, 120 )
-
 [node name="spikes6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5454, 66 )
 
@@ -193,20 +190,11 @@ position = Vector2( 8222, -429 )
 [node name="spikes14" parent="." instance=ExtResource( 7 )]
 position = Vector2( 9310, -360 )
 
-[node name="spikes15" parent="." instance=ExtResource( 7 )]
-position = Vector2( 9310, -306 )
-
 [node name="spikes16" parent="." instance=ExtResource( 7 )]
 position = Vector2( 9310, -1 )
 
 [node name="spikes17" parent="." instance=ExtResource( 7 )]
 position = Vector2( 11486, 64 )
-
-[node name="spikes12" parent="." instance=ExtResource( 7 )]
-position = Vector2( 8222, -375 )
-
-[node name="spikes13" parent="." instance=ExtResource( 7 )]
-position = Vector2( 8222, -321 )
 
 [node name="spikes9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 7486, -220 )
@@ -217,9 +205,6 @@ position = Vector2( 13454, -11 )
 [node name="spikes19" parent="." instance=ExtResource( 7 )]
 position = Vector2( 13518, -85 )
 
-[node name="spikes20" parent="." instance=ExtResource( 7 )]
-position = Vector2( 13518, -328 )
-
 [node name="spikes21" parent="." instance=ExtResource( 7 )]
 position = Vector2( 13518, -382 )
 
@@ -228,9 +213,6 @@ position = Vector2( 14974, 50 )
 
 [node name="spikes23" parent="." instance=ExtResource( 7 )]
 position = Vector2( 15038, -24 )
-
-[node name="spikes24" parent="." instance=ExtResource( 7 )]
-position = Vector2( 15038, -267 )
 
 [node name="spikes25" parent="." instance=ExtResource( 7 )]
 position = Vector2( 15038, -321 )

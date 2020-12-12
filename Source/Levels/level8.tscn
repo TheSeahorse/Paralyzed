@@ -312,3 +312,9 @@ COLOR = "red"
 [node name="laserbeam51" parent="." instance=ExtResource( 3 )]
 position = Vector2( 19608, 112 )
 COLOR = "red"
+
+[node name="spikes5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5496, -4 )
+
+[node name="spikes6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5496, -351 )

@@ -388,26 +388,14 @@ position = Vector2( 2536, 63 )
 [node name="spikes2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4168, 288 )
 
-[node name="spikes3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 13400, 174 )
-
-[node name="spikes4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 13400, 228 )
-
 [node name="spikes5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 13400, 282 )
-
-[node name="spikes6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 13400, 120 )
 
 [node name="spikes7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 13400, 66 )
 
 [node name="spikes10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 15288, -6 )
-
-[node name="spikes11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 15288, -312 )
 
 [node name="spikes12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 15288, -366 )

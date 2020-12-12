@@ -237,14 +237,6 @@ position = Vector2( 14472, 63.9937 )
 position = Vector2( 15435, -0.00674438 )
 COLOR = "yellow"
 
-[node name="lava29" parent="." instance=ExtResource( 3 )]
-position = Vector2( 15180, -400.007 )
-COLOR = "red"
-
-[node name="lava30" parent="." instance=ExtResource( 3 )]
-position = Vector2( 15116, -400.007 )
-COLOR = "red"
-
 [node name="lava31" parent="." instance=ExtResource( 3 )]
 position = Vector2( 15244, -400.007 )
 COLOR = "red"

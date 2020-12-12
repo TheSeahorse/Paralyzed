@@ -102,7 +102,6 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 		SPRING_JUMP -= 1
 	else:
 		linear_velocity.y += GRAVITY * 0.3 * delta #slower fall
-
 	return linear_velocity
 
 
