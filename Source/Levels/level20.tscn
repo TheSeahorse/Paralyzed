@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Source/Actors/lava.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Source/Actors/car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Source/Actors/spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Source/Other/camera_changer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Source/Actors/goal.tscn" type="PackedScene" id=10]
 
 [node name="level20" type="Node2D"]
@@ -603,3 +604,10 @@ COLOR = "red"
 [node name="car16" parent="." instance=ExtResource( 6 )]
 position = Vector2( 45822, 0 )
 COLOR = "yellow"
+
+[node name="camera_changer" parent="." instance=ExtResource( 8 )]
+position = Vector2( 25349, 174 )
+FIXED = true
+
+[node name="camera_changer2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 26128, 8 )

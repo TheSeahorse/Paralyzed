@@ -183,33 +183,33 @@ position = Vector2( 21268, 0 )
 COLOR = "yellow"
 
 [node name="square66" parent="." instance=ExtResource( 2 )]
-position = Vector2( 22781, 0 )
+position = Vector2( 22731, 0 )
 COLOR = "yellow"
 
 [node name="square67" parent="." instance=ExtResource( 2 )]
-position = Vector2( 22860, 0 )
+position = Vector2( 22810, 0 )
 COLOR = "purple"
 
 [node name="square68" parent="." instance=ExtResource( 2 )]
-position = Vector2( 22939, 0 )
+position = Vector2( 22889, 0 )
 COLOR = "red"
 
 [node name="square69" parent="." instance=ExtResource( 2 )]
-position = Vector2( 23018, 0 )
+position = Vector2( 22968, 0 )
 
 [node name="square70" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24531, 0 )
+position = Vector2( 24431, 0 )
 COLOR = "purple"
 
 [node name="square71" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24610, 0 )
+position = Vector2( 24510, 0 )
 
 [node name="square72" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24689, 0 )
+position = Vector2( 24589, 0 )
 COLOR = "yellow"
 
 [node name="square73" parent="." instance=ExtResource( 2 )]
-position = Vector2( 24768, 0 )
+position = Vector2( 24668, 0 )
 COLOR = "red"
 
 [node name="square74" parent="." instance=ExtResource( 2 )]
@@ -273,27 +273,27 @@ position = Vector2( 27186, 0 )
 COLOR = "yellow"
 
 [node name="square90" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28500, 0 )
+position = Vector2( 28750, 0 )
 COLOR = "purple"
 
 [node name="square91" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28575, 0 )
+position = Vector2( 28825, 0 )
 COLOR = "purple"
 
 [node name="square92" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28650, 0 )
+position = Vector2( 28900, 0 )
 COLOR = "purple"
 
 [node name="square93" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28725, 0 )
+position = Vector2( 28975, 0 )
 COLOR = "purple"
 
 [node name="square94" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28800, 0 )
+position = Vector2( 29050, 0 )
 COLOR = "purple"
 
 [node name="square95" parent="." instance=ExtResource( 2 )]
-position = Vector2( 29528, 0 )
+position = Vector2( 29778, 0 )
 
 [node name="square18" parent="." instance=ExtResource( 2 )]
 position = Vector2( 6781, 224 )
