@@ -6,7 +6,7 @@
 
 [node name="laser2" type="Node2D"]
 script = ExtResource( 2 )
-all_diff = true
+ALL_DIFF = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

@@ -44,10 +44,16 @@ func despawn_chunk():
 
 func decide_chunk() -> String:
 	var name: String
-	var files = list_files_in_directory("res://Source/Levels/Endless/Easy")
-	name = name + "Easy/"
-	var scene = files[RNG.randi_range(0, files.size() - 1)]
-	name = name + scene
+	var files: Array
+	var scene: String
+	if CHUNK_NR < 8:
+		files = list_files_in_directory("res://Source/Levels/Endless/Easy")
+		scene = files[RNG.randi_range(0, files.size() - 1)]
+		name = "Easy/" + scene
+	else:
+		files = list_files_in_directory("res://Source/Levels/Endless/Moderate")
+		scene = files[RNG.randi_range(0, files.size() - 1)]
+		name = "Moderate/" + scene
 	return name
 
 

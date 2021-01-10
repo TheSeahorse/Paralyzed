@@ -6,7 +6,8 @@
 
 [node name="fire2" type="Node2D"]
 script = ExtResource( 2 )
-all_diff = true
+ALL_SAME = true
+SAME_RANGE = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -20,8 +21,10 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 position = Vector2( 704, 16 )
 
 [node name="lava3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 896, 16 )
+position = Vector2( 768, 16 )
 
 [node name="lava2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 800, 16 )
-scale = Vector2( 2, 1 )
+position = Vector2( 832, 16 )
+
+[node name="lava4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 896, 16 )

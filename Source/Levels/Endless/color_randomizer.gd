@@ -1,35 +1,68 @@
 extends Node2D
 
 
-#don't turn on if there are more than 4 enemies
-export var all_diff: bool
-export var all_same: bool
-export var same_range: int
+
+export var ALL_DIFF: bool #don't turn on if there are more than 4 enemies
+export var ALL_SAME: bool
+export var SAME_RANGE: int #total amount of enemies/SAME_RANGE can be greater than 4 (unless it's 0)
 var RNG
 var PLAYER_COLOR
 var COLORS = ["cyan", "red", "purple", "yellow"]
+var CURRENT_COLOR = "none"
+var LEFT: int
 
 
 func _ready():
 	RNG = get_parent().get_parent().RNG
 	PLAYER_COLOR = get_parent().get_parent().player.PLAYER_COLOR
-	if all_diff:
+	if ALL_DIFF:
 		all_different()
+	elif ALL_SAME:
+		all_same()
 	else:
 		all_random()
 
 
-#will give the rest cyan if more than 4 colors
 func all_different():
 	for child in get_children():
 		if (child is Square) or (child is LaserBeam) or (child is Lava) or (child is Car):
-			if COLORS.size() < 1:
-				child.change_color("cyan", PLAYER_COLOR)
+			var index = RNG.randi_range(0, COLORS.size() - 1)
+			child.change_color(COLORS[index], PLAYER_COLOR)
+			COLORS.remove(index)
+
+
+func all_same():
+	LEFT = SAME_RANGE
+	for child in get_children():
+		if (child is Square) or (child is LaserBeam) or (child is Lava) or (child is Car):
+			if SAME_RANGE == 0:
+				all_same_no_intervals(child)
 			else:
-				var index = RNG.randi_range(0, COLORS.size() - 1)
-				child.change_color(COLORS[index], PLAYER_COLOR)
-				COLORS.remove(index)
-				
+				all_same_intervals(child)
+
+
+func all_same_no_intervals(child: Node):
+	if CURRENT_COLOR == "none":
+		var index = RNG.randi_range(0, COLORS.size() - 1)
+		CURRENT_COLOR = COLORS[index]
+		child.change_color(COLORS[index], PLAYER_COLOR)
+	else:
+		child.change_color(CURRENT_COLOR, PLAYER_COLOR)
+
+
+func all_same_intervals(child: Node):
+	if CURRENT_COLOR == "none" or LEFT == 0:
+		var index = RNG.randi_range(0, COLORS.size() - 1)
+		CURRENT_COLOR = COLORS[index]
+		child.change_color(COLORS[index], PLAYER_COLOR)
+		COLORS.remove(index)
+		if LEFT < 1:
+			LEFT = SAME_RANGE - 1
+		else:
+			LEFT -= 1
+	else:
+		child.change_color(CURRENT_COLOR, PLAYER_COLOR)
+		LEFT -= 1
 
 
 func all_random():
