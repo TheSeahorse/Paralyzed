@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Source/Levels/endless.gd" type="Script" id=3]
+
+[node name="endless" type="Node2D"]
+script = ExtResource( 3 )

@@ -73,6 +73,10 @@ run/main_scene="res://Source/main.tscn"
 boot_splash/image="res://Character models/World/Backgrounds/splash.png"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1600

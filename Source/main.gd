@@ -17,6 +17,7 @@ var DEATH_BY: Array # [spikes, square, beam, lava, car, self-destruct]
 var DEADLIEST_COLOR: Array # how many times you've died to each color [cyan, red, purple, yellow, none]
 var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused, goals-reached, square-killed, car-killed]
 var CURRENT_LEVEL # name of most recent level as a string
+var ENDLESS # if we're in endless mode
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var PRACTICE_SAVED_PLAYER_VELOCITIES: = [] # all the saved player velocities from first to last in a practice round
@@ -70,6 +71,10 @@ func _on_resart() -> void:
 
 
 func play_level(levelName: String, practice: bool):
+	if levelName == "endless":
+		ENDLESS = true
+	else:
+		ENDLESS = false
 	PRACTICE = practice
 	CURRENT_LEVEL = levelName
 	player = load("res://Source/Actors/player.tscn").instance()
