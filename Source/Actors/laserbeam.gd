@@ -13,6 +13,16 @@ func _ready() -> void:
 		$beam_sprite.play(COLOR)
 
 
+func change_color(color: String, player_color: String):
+	COLOR = color
+	if color == player_color:
+		BEAMING = false
+		$beam_sprite.play(str(color, " fade"))
+	else:
+		BEAMING = true
+		$beam_sprite.play(color)
+
+
 func fade_out():
 	BEAMING = false
 	$beam_sprite.play(str(COLOR, " fade"))

@@ -43,6 +43,11 @@ func _physics_process(delta: float) -> void:
 	VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 
+func change_color(color: String, _player_color: String):
+	COLOR = color
+	$car_sprite.play(color)
+
+
 func car_dead():
 	if !DEAD:
 		if get_parent().get_parent().SETTINGS[2]:

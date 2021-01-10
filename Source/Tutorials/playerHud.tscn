@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character models/Menues/keyboard_hud.png" type="Texture" id=2]
 [ext_resource path="res://Character models/Menues/Fonts/tourmaline/Tourmaline-Bold.ttf" type="DynamicFontData" id=3]
@@ -7,6 +7,10 @@
 [sub_resource type="DynamicFont" id=1]
 size = 82
 outline_size = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
 font_data = ExtResource( 3 )
 
 [node name="playerHud" type="CanvasLayer"]
@@ -77,6 +81,18 @@ text = "q"
 align = 1
 valign = 1
 clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+visible = false
+margin_left = 50.0
+margin_top = 40.0
+margin_right = 295.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 2 )
+text = "Score: "
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -84,6 +84,8 @@ func play_level(levelName: String, practice: bool):
 	if SETTINGS[0]:
 		hud = load("res://Source/Tutorials/playerHud.tscn").instance()
 		add_child(hud)
+		if ENDLESS:
+			hud.show_score()
 	add_child(player)
 	add_child(level)
 	if PRACTICE:
@@ -99,7 +101,7 @@ func play_level(levelName: String, practice: bool):
 
 
 func play_music():
-	if PRACTICE or CURRENT_LEVEL == "tutorial":
+	if PRACTICE or CURRENT_LEVEL == "tutorial" or CURRENT_LEVEL == "endless":
 		if !$practice.is_playing():
 			$practice.play()
 	elif CURRENT_LEVEL.length() < 8:
@@ -355,6 +357,11 @@ func add_stat(stat: String, amount: int):
 		STATS[8] += amount
 	elif stat == "car-killed":
 		STATS[9] += amount
+
+
+func update_endless_score(score: int):
+	if hud:
+		hud.update_endless_score(score)
 
 
 func show_main_menu():

@@ -24,6 +24,17 @@ func _process(_delta: float) -> void:
 		get_parent().get_parent().add_stat("phazed-lava", -1)
 		PLAYER_ON = false
 
+
+func change_color(color: String, player_color: String):
+	COLOR = color
+	if color == player_color:
+		BURNING = true
+		$sprite.play(color + " on")
+	else:
+		BURNING = false
+		$sprite.play(color + " off")
+
+
 func turn_on():
 	BURNING = true
 	$sprite.play(COLOR + " on")

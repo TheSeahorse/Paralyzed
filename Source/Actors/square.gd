@@ -41,6 +41,11 @@ func _physics_process(delta: float) -> void:
 		VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
 
 
+func change_color(color: String, _player_color: String):
+	COLOR = color
+	$square_sprite.play(color)
+
+
 func square_dead():
 	if !DEAD:
 		if get_parent().get_parent().SETTINGS[2]:

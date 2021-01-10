@@ -105,6 +105,8 @@ func calculate_y(velocity: Vector2, delta: float) -> Vector2:
 func display_background(level: String):
 	if get_parent().SETTINGS[5]:
 		$ParallaxBackground/background.play("white")
+	elif level == "endless":
+		$ParallaxBackground/background.play("laser")
 	elif level.length() == 8:
 		$ParallaxBackground/background.play("tutorial")
 	else:

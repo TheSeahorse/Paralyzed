@@ -11,8 +11,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
-outline_size = 2
-outline_color = Color( 0.0745098, 0.662745, 0.623529, 1 )
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]

@@ -502,9 +502,9 @@ __meta__ = {
 
 [node name="levels" type="HBoxContainer" parent="."]
 margin_left = 60.0
-margin_top = 200.0
+margin_top = 280.0
 margin_right = 1076.0
-margin_bottom = 532.0
+margin_bottom = 612.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4053,9 +4053,9 @@ text = ": 221"
 
 [node name="endless" type="TextureButton" parent="."]
 margin_left = 406.0
-margin_top = 648.0
+margin_top = 700.0
 margin_right = 726.0
-margin_bottom = 728.0
+margin_bottom = 780.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
