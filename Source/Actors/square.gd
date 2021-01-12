@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		calculate_jump()
 	if !DEAD:
 		VELOCITY = calculate_move_velocity(VELOCITY, delta)
-		VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL)
+		VELOCITY = move_and_slide(VELOCITY, FLOOR_NORMAL, true)
 
 
 func change_color(color: String, _player_color: String):

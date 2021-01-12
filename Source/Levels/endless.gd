@@ -2,10 +2,10 @@ extends Node
 
 const CHUNK_0 = preload("res://Source/Levels/Endless/empty.tscn")
 
-var CHUNK_NR = 0
+var CHUNK_NR = 0 #what chunk we're currently on, always three chunks live, you're on one, one behind and one infront, the rest should free up.
 var CHUNK_LENGTH = 1600
-var SETTINGS
-var RNG
+var SETTINGS # copied from main onload
+var RNG # copied from main onload
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,19 +42,80 @@ func despawn_chunk():
 	get_child(0).queue_free()
 
 
+# increasing difficulty every 5 scores (starts at 6 since you don't get anything for the first blank chunk)
 func decide_chunk() -> String:
-	var name: String
-	var files: Array
-	var scene: String
-	if CHUNK_NR < 8:
-		files = list_files_in_directory("res://Source/Levels/Endless/Easy")
-		scene = files[RNG.randi_range(0, files.size() - 1)]
-		name = "Easy/" + scene
+	var difficulty: String
+	var rand: int
+	if CHUNK_NR < 6:
+		difficulty = "Easy"
+	elif CHUNK_NR < 11:
+		if RNG.randi_range(0,2) > 0:
+			difficulty = "Easy"
+		else:
+			difficulty = "Moderate"
+	elif CHUNK_NR < 16:
+		if RNG.randi_range(0,2) > 1:
+			difficulty = "Easy"
+		else:
+			difficulty = "Moderate"
+	elif CHUNK_NR < 21:
+		rand = RNG.randi_range(0,5)
+		if rand > 4:
+			difficulty = "Easy"
+		elif rand > 1:
+			difficulty = "Moderate"
+		else:
+			difficulty = "Hard"
+	elif CHUNK_NR < 26:
+		if RNG.randi_range(0,3) > 1:
+			difficulty = "Moderate"
+		else:
+			difficulty = "Hard"
+	elif CHUNK_NR < 31:
+		rand = RNG.randi_range(0,9)
+		if rand > 6:
+			difficulty = "Moderate"
+		elif rand > 0:
+			difficulty = "Hard"
+		else:
+			difficulty = "Insanity"
+	elif CHUNK_NR < 36:
+		rand = RNG.randi_range(0,9)
+		if rand > 8:
+			difficulty = "Moderate"
+		elif rand > 2:
+			difficulty = "Hard"
+		else:
+			difficulty = "Insanity"
+	elif CHUNK_NR < 41:
+		if RNG.randi_range(0,3) > 1:
+			difficulty = "Hard"
+		else:
+			difficulty = "Insanity"
+	elif CHUNK_NR < 46:
+		if RNG.randi_range(0,2) > 1:
+			difficulty = "Hard"
+		else:
+			difficulty = "Insanity"
+	elif CHUNK_NR < 51:
+		if RNG.randi_range(0,7) > 6:
+			difficulty = "Hard"
+		else:
+			difficulty = "Insanity"
 	else:
-		files = list_files_in_directory("res://Source/Levels/Endless/Moderate")
-		scene = files[RNG.randi_range(0, files.size() - 1)]
-		name = "Moderate/" + scene
-	return name
+		difficulty = "Insanity"
+	var chunk_name = get_chunk_name(difficulty)
+	print(CHUNK_NR)
+	print(chunk_name)
+	print("============================")
+	return chunk_name
+
+
+# Easy, Moderate, Hard, Insanity
+func get_chunk_name(difficulty: String) -> String:
+	var files = list_files_in_directory("res://Source/Levels/Endless/" + difficulty)
+	var scene = files[RNG.randi_range(0, files.size() - 1)]
+	return difficulty + "/" + scene
 
 
 # gets all files in a directory as a list

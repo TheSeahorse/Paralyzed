@@ -1,12 +1,11 @@
 extends Node2D
 
-
-
 export var ALL_DIFF: bool #don't turn on if there are more than 4 enemies
 export var ALL_SAME: bool
 export var SAME_RANGE: int #total amount of enemies/SAME_RANGE can be greater than 4 (unless it's 0)
 var RNG
 var PLAYER_COLOR
+var FIXED_COLORS = ["cyan", "red", "purple", "yellow"] #don't modify this one
 var COLORS = ["cyan", "red", "purple", "yellow"]
 var CURRENT_COLOR = "none"
 var LEFT: int
@@ -68,4 +67,21 @@ func all_same_intervals(child: Node):
 func all_random():
 	for child in get_children():
 		if (child is Square) or (child is LaserBeam) or (child is Lava) or (child is Car):
-			child.change_color(COLORS[RNG.randi_range(0, 3)], PLAYER_COLOR)
+			if SAME_RANGE == 0:
+				child.change_color(COLORS[RNG.randi_range(0, 3)], PLAYER_COLOR)
+			else:
+				all_random_intervals(child)
+
+
+func all_random_intervals(child: Node):
+	if CURRENT_COLOR == "none" or LEFT == 0:
+		var index = RNG.randi_range(0, COLORS.size() - 1)
+		CURRENT_COLOR = COLORS[index]
+		child.change_color(COLORS[index], PLAYER_COLOR)
+		if LEFT < 1:
+			LEFT = SAME_RANGE - 1
+		else:
+			LEFT -= 1
+	else:
+		child.change_color(CURRENT_COLOR, PLAYER_COLOR)
+		LEFT -= 1
