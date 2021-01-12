@@ -46,32 +46,32 @@ func despawn_chunk():
 func decide_chunk() -> String:
 	var difficulty: String
 	var rand: int
-	if CHUNK_NR < 6:
+	if CHUNK_NR < 11:
 		difficulty = "Easy"
-	elif CHUNK_NR < 11:
+	elif CHUNK_NR < 21:
 		if RNG.randi_range(0,2) > 0:
 			difficulty = "Easy"
 		else:
 			difficulty = "Moderate"
-	elif CHUNK_NR < 16:
+	elif CHUNK_NR < 26:
 		if RNG.randi_range(0,2) > 1:
 			difficulty = "Easy"
 		else:
 			difficulty = "Moderate"
-	elif CHUNK_NR < 21:
+	elif CHUNK_NR < 31:
 		rand = RNG.randi_range(0,5)
 		if rand > 4:
 			difficulty = "Easy"
-		elif rand > 1:
+		elif rand > 0:
 			difficulty = "Moderate"
 		else:
 			difficulty = "Hard"
-	elif CHUNK_NR < 26:
+	elif CHUNK_NR < 36:
 		if RNG.randi_range(0,3) > 1:
 			difficulty = "Moderate"
 		else:
 			difficulty = "Hard"
-	elif CHUNK_NR < 31:
+	elif CHUNK_NR < 41:
 		rand = RNG.randi_range(0,9)
 		if rand > 6:
 			difficulty = "Moderate"
@@ -79,7 +79,7 @@ func decide_chunk() -> String:
 			difficulty = "Hard"
 		else:
 			difficulty = "Insanity"
-	elif CHUNK_NR < 36:
+	elif CHUNK_NR < 46:
 		rand = RNG.randi_range(0,9)
 		if rand > 8:
 			difficulty = "Moderate"
@@ -87,17 +87,17 @@ func decide_chunk() -> String:
 			difficulty = "Hard"
 		else:
 			difficulty = "Insanity"
-	elif CHUNK_NR < 41:
+	elif CHUNK_NR < 51:
 		if RNG.randi_range(0,3) > 1:
 			difficulty = "Hard"
 		else:
 			difficulty = "Insanity"
-	elif CHUNK_NR < 46:
+	elif CHUNK_NR < 56:
 		if RNG.randi_range(0,2) > 1:
 			difficulty = "Hard"
 		else:
 			difficulty = "Insanity"
-	elif CHUNK_NR < 51:
+	elif CHUNK_NR < 61:
 		if RNG.randi_range(0,7) > 6:
 			difficulty = "Hard"
 		else:
