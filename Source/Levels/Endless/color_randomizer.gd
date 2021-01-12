@@ -3,7 +3,7 @@ extends Node2D
 export var ALL_DIFF: bool #don't turn on if there are more than 4 enemies
 export var ALL_SAME: bool
 export var SAME_RANGE: int #total amount of enemies/SAME_RANGE can be greater than 4 (unless it's 0)
-var RNG
+var RNG = RandomNumberGenerator.new()
 var PLAYER_COLOR
 var FIXED_COLORS = ["cyan", "red", "purple", "yellow"] #don't modify this one
 var COLORS = ["cyan", "red", "purple", "yellow"]
@@ -12,7 +12,7 @@ var LEFT: int
 
 
 func _ready():
-	RNG = get_parent().get_parent().RNG
+	RNG.randomize()
 	PLAYER_COLOR = get_parent().get_parent().player.PLAYER_COLOR
 	if ALL_DIFF:
 		all_different()
