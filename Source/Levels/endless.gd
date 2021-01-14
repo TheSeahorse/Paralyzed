@@ -5,12 +5,13 @@ const CHUNK_0 = preload("res://Source/Levels/Endless/empty.tscn")
 var CHUNK_NR = 0 #what chunk we're currently on, always three chunks live, you're on one, one behind and one infront, the rest should free up.
 var CHUNK_LENGTH = 1600
 var SETTINGS # copied from main onload
-var RNG # copied from main onload
+var RECENT = ["fake1", "fake2", "fake3", "fake4", "fake5"] # the five most recent chunks, the next one cannot be one of these
+var RNG = RandomNumberGenerator.new()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	RNG = get_parent().RNG
+	RNG.randomize()
 	SETTINGS = get_parent().SETTINGS
 	var chunk_pre = CHUNK_0.instance()
 	var chunk_0 = CHUNK_0.instance()
@@ -113,9 +114,15 @@ func decide_chunk() -> String:
 
 # Easy, Moderate, Hard, Insanity
 func get_chunk_name(difficulty: String) -> String:
+	RNG.randomize()
 	var files = list_files_in_directory("res://Source/Levels/Endless/" + difficulty)
 	var scene = files[RNG.randi_range(0, files.size() - 1)]
-	return difficulty + "/" + scene
+	if scene in RECENT:
+		return get_chunk_name(difficulty)
+	else:
+		RECENT.append(scene)
+		RECENT.remove(0)
+		return difficulty + "/" + scene
 
 
 # gets all files in a directory as a list
@@ -131,6 +138,7 @@ func list_files_in_directory(path):
 		elif not file.begins_with("."):
 			files.append(file)
 	dir.list_dir_end()
+	print("==============\n files:" + str(files) + "\n")
 	return files
 
 
