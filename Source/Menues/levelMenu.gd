@@ -149,6 +149,14 @@ func update_stats():
 		$stats/VBoxContainer/car_deaths.set_text(hidden_stat)
 	else:
 		$stats/VBoxContainer/car_deaths.set_text("cars exploded: " + str(stats[9]))
+	if stats[10] == 0:
+		$stats/VBoxContainer/endless_runs.set_text(hidden_stat)
+	else:
+		$stats/VBoxContainer/endless_runs.set_text("endless runs: " + str(stats[10]))
+	if stats[11] == 0:
+		$stats/VBoxContainer/endless_high_score.set_text(hidden_stat)
+	else:
+		$stats/VBoxContainer/endless_high_score.set_text("endless high score: " + str(stats[11]))
 
 
 func count_deaths(deaths: Array) -> int:

@@ -44,7 +44,7 @@ size = 100
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 24
+size = 22
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -198,7 +198,7 @@ __meta__ = {
 }
 
 [node name="header" type="Label" parent="stats/VBoxContainer"]
-margin_right = 360.0
+margin_right = 367.0
 margin_bottom = 104.0
 custom_fonts/font = SubResource( 2 )
 text = "STATS"
@@ -207,7 +207,7 @@ valign = 1
 
 [node name="TextureRect" type="TextureRect" parent="stats/VBoxContainer"]
 margin_top = 108.0
-margin_right = 360.0
+margin_right = 367.0
 margin_bottom = 110.0
 texture = ExtResource( 25 )
 __meta__ = {
@@ -216,29 +216,29 @@ __meta__ = {
 
 [node name="completion" type="Label" parent="stats/VBoxContainer"]
 margin_top = 114.0
-margin_right = 360.0
+margin_right = 367.0
 margin_bottom = 140.0
 custom_fonts/font = ExtResource( 29 )
 
 [node name="total_deaths" type="Label" parent="stats/VBoxContainer"]
 margin_top = 144.0
-margin_right = 360.0
-margin_bottom = 170.0
+margin_right = 367.0
+margin_bottom = 167.0
 custom_fonts/font = SubResource( 3 )
 text = "total deaths: 2222"
 
 [node name="deadliest_color" type="Label" parent="stats/VBoxContainer"]
-margin_top = 174.0
-margin_right = 360.0
-margin_bottom = 200.0
+margin_top = 171.0
+margin_right = 367.0
+margin_bottom = 194.0
 custom_fonts/font = SubResource( 3 )
 text = "deadliest color: yellow"
 
 [node name="Button" type="TextureButton" parent="stats/VBoxContainer/deadliest_color"]
 margin_left = 336.0
-margin_top = 1.0
+margin_top = -4.0
 margin_right = 360.0
-margin_bottom = 25.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 28 )
 texture_hover = ExtResource( 27 )
@@ -320,17 +320,17 @@ __meta__ = {
 }
 
 [node name="deadliest_enemy" type="Label" parent="stats/VBoxContainer"]
-margin_top = 204.0
-margin_right = 360.0
-margin_bottom = 230.0
+margin_top = 198.0
+margin_right = 367.0
+margin_bottom = 221.0
 custom_fonts/font = SubResource( 3 )
 text = "deadliest enemy: square"
 
 [node name="Button" type="TextureButton" parent="stats/VBoxContainer/deadliest_enemy"]
 margin_left = 336.0
-margin_top = 1.0
+margin_top = -2.0
 margin_right = 360.0
-margin_bottom = 25.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 28 )
 texture_hover = ExtResource( 27 )
@@ -397,104 +397,127 @@ custom_fonts/font = SubResource( 4 )
 text = "spikes: 232"
 
 [node name="TextureRect2" type="TextureRect" parent="stats/VBoxContainer"]
-margin_top = 234.0
-margin_right = 360.0
-margin_bottom = 236.0
+margin_top = 225.0
+margin_right = 367.0
+margin_bottom = 227.0
 texture = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="square_jumps" type="Label" parent="stats/VBoxContainer"]
-margin_top = 240.0
-margin_right = 360.0
-margin_bottom = 266.0
+margin_top = 231.0
+margin_right = 367.0
+margin_bottom = 254.0
 custom_fonts/font = SubResource( 3 )
 text = "square jumps: 332"
 
 [node name="phazed_laser" type="Label" parent="stats/VBoxContainer"]
-margin_top = 270.0
-margin_right = 360.0
-margin_bottom = 296.0
+margin_top = 258.0
+margin_right = 367.0
+margin_bottom = 281.0
 custom_fonts/font = SubResource( 3 )
 text = "Phazed through laser: 44"
 
 [node name="survived_lava" type="Label" parent="stats/VBoxContainer"]
-margin_top = 300.0
-margin_right = 360.0
-margin_bottom = 326.0
+margin_top = 285.0
+margin_right = 367.0
+margin_bottom = 308.0
 custom_fonts/font = SubResource( 3 )
 text = "survived lava: 331"
 
 [node name="car_jumps" type="Label" parent="stats/VBoxContainer"]
-margin_top = 330.0
-margin_right = 360.0
-margin_bottom = 356.0
+margin_top = 312.0
+margin_right = 367.0
+margin_bottom = 335.0
 custom_fonts/font = SubResource( 3 )
 text = "car jumps: 222"
 
 [node name="square_deaths" type="Label" parent="stats/VBoxContainer"]
-margin_top = 360.0
-margin_right = 360.0
-margin_bottom = 386.0
+margin_top = 339.0
+margin_right = 367.0
+margin_bottom = 362.0
 custom_fonts/font = SubResource( 3 )
 text = "square deaths: 332"
 
 [node name="car_deaths" type="Label" parent="stats/VBoxContainer"]
-margin_top = 390.0
-margin_right = 360.0
-margin_bottom = 416.0
+margin_top = 366.0
+margin_right = 367.0
+margin_bottom = 389.0
 custom_fonts/font = SubResource( 3 )
 text = "car deaths: 222"
 
 [node name="TextureRect3" type="TextureRect" parent="stats/VBoxContainer"]
-margin_top = 420.0
-margin_right = 360.0
-margin_bottom = 422.0
+margin_top = 393.0
+margin_right = 367.0
+margin_bottom = 395.0
 texture = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="changed_color" type="Label" parent="stats/VBoxContainer"]
-margin_top = 426.0
-margin_right = 360.0
-margin_bottom = 452.0
+margin_top = 399.0
+margin_right = 367.0
+margin_bottom = 422.0
 custom_fonts/font = SubResource( 3 )
 text = "changed color: 4300 times"
 
 [node name="paused" type="Label" parent="stats/VBoxContainer"]
-margin_top = 456.0
-margin_right = 360.0
-margin_bottom = 482.0
+margin_top = 426.0
+margin_right = 367.0
+margin_bottom = 449.0
 custom_fonts/font = SubResource( 3 )
 text = "paused game: 5"
 
 [node name="placed_flags" type="Label" parent="stats/VBoxContainer"]
-margin_top = 486.0
-margin_right = 360.0
-margin_bottom = 512.0
+margin_top = 453.0
+margin_right = 367.0
+margin_bottom = 476.0
 custom_fonts/font = SubResource( 3 )
 text = "practice flags placed: 55"
 
 [node name="self_destructs" type="Label" parent="stats/VBoxContainer"]
-margin_top = 516.0
-margin_right = 360.0
-margin_bottom = 542.0
+margin_top = 480.0
+margin_right = 367.0
+margin_bottom = 503.0
 custom_fonts/font = SubResource( 3 )
 text = "self destructs: 7"
 
 [node name="goals_reached" type="Label" parent="stats/VBoxContainer"]
-margin_top = 546.0
-margin_right = 360.0
-margin_bottom = 572.0
+margin_top = 507.0
+margin_right = 367.0
+margin_bottom = 530.0
 custom_fonts/font = SubResource( 3 )
 text = "goals reached: Nan"
 
 [node name="TextureRect4" type="TextureRect" parent="stats/VBoxContainer"]
-margin_top = 576.0
-margin_right = 360.0
-margin_bottom = 578.0
+margin_top = 534.0
+margin_right = 367.0
+margin_bottom = 536.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endless_runs" type="Label" parent="stats/VBoxContainer"]
+margin_top = 540.0
+margin_right = 367.0
+margin_bottom = 563.0
+custom_fonts/font = SubResource( 3 )
+text = "endless runs: Nan"
+
+[node name="endless_high_score" type="Label" parent="stats/VBoxContainer"]
+margin_top = 567.0
+margin_right = 367.0
+margin_bottom = 590.0
+custom_fonts/font = SubResource( 3 )
+text = "endless high score: Nan"
+
+[node name="TextureRect5" type="TextureRect" parent="stats/VBoxContainer"]
+margin_top = 594.0
+margin_right = 367.0
+margin_bottom = 596.0
 texture = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
