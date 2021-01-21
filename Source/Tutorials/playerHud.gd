@@ -7,7 +7,7 @@ func _ready() -> void:
 	$qwer/yellow.set_text(InputMap.get_action_list("yellow")[0].as_text())
 
 
-func update_endless_score(score: int):
+func hud_update_endless_score(score: int):
 	if score < 0:
 		$score.set_text("Score: 0")
 	else:

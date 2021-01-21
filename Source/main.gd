@@ -27,7 +27,14 @@ var CAN_PAUSE: = true # whether or not the player can input pause by pressing es
 var SETTINGS: Array #settings in an array HUD, Music, Sound, Fullscreen, Borderless, White_Background, Double_click_jump
 var RNG = RandomNumberGenerator.new()
 
+var STEAM_INIT
+var STEAM_ONLINE
+var STEAM_ID
+var STEAM_OWNED
+
+
 func _ready():
+	steam_init()
 	RNG.randomize()
 	START_TIME = OS.get_unix_time()
 	load_savestate()
@@ -35,6 +42,10 @@ func _ready():
 	add_child(mainmenu)
 	mainmenu.show_menu()
 	apply_settings()
+
+
+func _process(_delta):
+	Steam.run_callbacks()
 
 
 func _input(_event: InputEvent) -> void:
@@ -70,8 +81,38 @@ func _on_resart() -> void:
 	play_level(CURRENT_LEVEL, PRACTICE)
 
 
+func steam_init():
+	STEAM_INIT = Steam.steamInit()
+	STEAM_ONLINE = Steam.loggedOn()
+	STEAM_ID = Steam.getSteamID()
+	STEAM_OWNED = Steam.isSubscribed()
+	print("Did Steam initialize?: "+str(STEAM_INIT))
+	
+	Steam.connect("leaderboard_find_result", self, "steam_leaderboard_find_result", [])
+	Steam.connect("leaderboard_score_uploaded", self, "steam_leaderboard_score_uploaded", [])
+	
+	if STEAM_INIT['status'] != 1:
+		print("Failed to initialize Steam. "+str(STEAM_INIT['verbal'])+" Shutting down...")
+		get_tree().quit()
+	# Check if account owns the game
+	if STEAM_OWNED == false:
+		print("User does not own this game")
+		#get_tree().quit()
+
+
+func steam_leaderboard_score_uploaded(success: bool, score: int, score_changed: bool, global_rank_new: int, global_rank_previous: int):
+	print("Success?: " + str(success))
+	print("Score: " + str(score))
+
+
+func steam_leaderboard_find_result(leaderboard: int, found: int):
+	print("Leaderboard int: " + str(leaderboard))
+	print("Found: " + str(found))
+
+
 func play_level(levelName: String, practice: bool):
 	if levelName == "endless":
+		Steam.findLeaderboard("Endless Mode High Score")
 		ENDLESS = true
 		add_stat("endless-runs", 1)
 	else:
@@ -185,26 +226,6 @@ func handle_practice_delete_save():
 				$flag_remove.play()
 
 
-func kill_player(cause: String, color: String):
-		if !player.DEAD:
-			player.player_dead(cause, color)
-
-
-func player_cleared_level():
-	stop_music()
-	save_deaths()
-	calculate_cleared_level()
-	PRACTICE_SAVED_PLAYER_VECTORS = []
-	PRACTICE_SAVED_PLAYER_VELOCITIES = []
-	save_game()
-	mainmenu.show_level_menu()
-	if SETTINGS[1]:
-		mainmenu.start_music()
-	add_stat("goals-reached", 1)
-	remove_player_and_level()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-
 func calculate_cleared_level():
 	var index = LEVEL_ORDER.find(CURRENT_LEVEL)
 	var current_clear_array = LEVELS_CLEARED[index]
@@ -298,19 +319,49 @@ func apply_settings():
 		mainmenu.start_music()
 
 
+func kill_player(cause: String, color: String):
+		if !player.DEAD:
+			player.player_dead(cause, color)
+
+
+func player_cleared_level():
+	stop_music()
+	save_deaths()
+	calculate_cleared_level()
+	PRACTICE_SAVED_PLAYER_VECTORS = []
+	PRACTICE_SAVED_PLAYER_VELOCITIES = []
+	save_game()
+	mainmenu.show_level_menu()
+	if SETTINGS[1]:
+		mainmenu.start_music()
+	add_stat("goals-reached", 1)
+	remove_player_and_level()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
 func player_died(cause: String, color: String):
 	# ADD save here if you don't want stats to disappear if the user would rage quit
-	if ENDLESS:
-		if STATS[11] < level.CHUNK_NR - 3:
-			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
 	add_deadliest_color(color)
 	add_death_by(cause)
 	CURRENT_DEATHS += 1
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
-	remove_player_and_level()
-	play_level(CURRENT_LEVEL, PRACTICE)
+	if ENDLESS:
+		if STATS[11] < level.CHUNK_NR - 3:
+			update_steam_leaderboard(level.CHUNK_NR - 3)
+			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
+		stop_music()
+		save_deaths()
+		save_game()
+		add_stat("goals-reached", 1)
+		display_popup("endlessLeaderboard")
+	else:
+		remove_player_and_level()
+		play_level(CURRENT_LEVEL, PRACTICE)
 
+
+func update_steam_leaderboard(score: int):
+	Steam.uploadLeaderboardScore(score, true)
 
 # DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
 func add_death_by(cause: String):
@@ -372,9 +423,9 @@ func add_stat(stat: String, amount: int):
 		STATS[11] += amount
 
 
-func update_endless_score(score: int):
+func hud_update_endless_score(score: int):
 	if hud:
-		hud.update_endless_score(score)
+		hud.hud_update_endless_score(score)
 
 
 func show_main_menu():

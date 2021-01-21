@@ -28,7 +28,7 @@ func _process(_delta):
 	if player.position.x > (((CHUNK_NR - 1) * CHUNK_LENGTH)):
 		spawn_chunk()
 		despawn_chunk()
-	get_parent().update_endless_score(CHUNK_NR - 3)
+	get_parent().hud_update_endless_score(CHUNK_NR - 3)
 
 
 func spawn_chunk():
@@ -138,7 +138,7 @@ func list_files_in_directory(path):
 		elif not file.begins_with("."):
 			files.append(file)
 	dir.list_dir_end()
-	print("==============\n files:" + str(files) + "\n")
+	#print("==============\n files:" + str(files) + "\n")
 	return files
 
 
