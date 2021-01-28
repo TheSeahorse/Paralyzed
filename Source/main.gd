@@ -93,7 +93,7 @@ func steam_init():
 	
 	if STEAM_INIT['status'] != 1:
 		print("Failed to initialize Steam. "+str(STEAM_INIT['verbal'])+" Shutting down...")
-		get_tree().quit()
+		#get_tree().quit()
 	# Check if account owns the game
 	if STEAM_OWNED == false:
 		print("User does not own this game")
@@ -197,6 +197,9 @@ func handle_action():
 
 # auto is used when calling function from tutorial window.
 func handle_pause(auto: bool):
+	if Input.is_action_just_pressed("escape") and ENDLESS:
+		hud.show_no_pause()
+		return
 	if ((Input.is_action_just_pressed("escape") or auto) and !player.DEAD) and CAN_PAUSE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		add_stat("paused", 1)

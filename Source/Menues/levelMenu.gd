@@ -152,7 +152,7 @@ func update_stats():
 	if stats[10] == 0:
 		$stats/VBoxContainer/endless_runs.set_text(hidden_stat)
 	else:
-		$stats/VBoxContainer/endless_runs.set_text("endless runs: " + str(stats[10]))
+		$stats/VBoxContainer/endless_runs.set_text("endless attempts: " + str(stats[10]))
 	if stats[11] == 0:
 		$stats/VBoxContainer/endless_high_score.set_text(hidden_stat)
 	else:
