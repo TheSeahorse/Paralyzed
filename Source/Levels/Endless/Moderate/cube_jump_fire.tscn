@@ -25,3 +25,4 @@ position = Vector2( 924, 63 )
 
 [node name="lava" parent="." instance=ExtResource( 4 )]
 position = Vector2( 752, -384 )
+scale = Vector2( 1, 1.5 )
