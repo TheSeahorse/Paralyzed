@@ -3,6 +3,7 @@ extends CanvasLayer
 
 var NO_PAUSE_TIME = 0
 
+
 func _ready() -> void:
 	$qwer/cyan.set_text(InputMap.get_action_list("cyan")[0].as_text())
 	$qwer/red.set_text(InputMap.get_action_list("red")[0].as_text())
@@ -10,7 +11,7 @@ func _ready() -> void:
 	$qwer/yellow.set_text(InputMap.get_action_list("yellow")[0].as_text())
 
 
-func _process(delta):
+func _process(_delta):
 	if NO_PAUSE_TIME == 1:
 		$no_pause.hide()
 		NO_PAUSE_TIME -= 1

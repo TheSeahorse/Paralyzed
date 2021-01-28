@@ -7,6 +7,7 @@ var player # player node
 var level # current level node
 var hud # the player hud
 var gameover # game over menu node
+var popup # the popup/leaderboard currently displayed
 
 var START_TIME # the unix.time the game booted up
 var LEVEL_START_TIME # the unix.time current level started playing
@@ -90,6 +91,7 @@ func steam_init():
 	
 	Steam.connect("leaderboard_find_result", self, "steam_leaderboard_find_result", [])
 	Steam.connect("leaderboard_score_uploaded", self, "steam_leaderboard_score_uploaded", [])
+	Steam.connect("leaderboard_scores_downloaded", self, "steam_leaderboard_scores_downloaded", [])
 	
 	if STEAM_INIT['status'] != 1:
 		print("Failed to initialize Steam. "+str(STEAM_INIT['verbal'])+" Shutting down...")
@@ -100,7 +102,12 @@ func steam_init():
 		#get_tree().quit()
 
 
-func steam_leaderboard_score_uploaded(success: bool, score: int, score_changed: bool, global_rank_new: int, global_rank_previous: int):
+func steam_leaderboard_scores_downloaded(_one, _two):
+	if popup:
+		popup.receive_display_leaderboard(Steam.getLeaderboardEntries())
+
+
+func steam_leaderboard_score_uploaded(success: bool, score: int, _score_changed: bool, _global_rank_new: int, _global_rank_previous: int):
 	print("Success?: " + str(success))
 	print("Score: " + str(score))
 
@@ -350,21 +357,24 @@ func player_died(cause: String, color: String):
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	if ENDLESS:
+		Steam.downloadLeaderboardEntries(1, 12, 0)
 		if STATS[11] < level.CHUNK_NR - 3:
-			update_steam_leaderboard(level.CHUNK_NR - 3)
 			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
+			update_steam_leaderboard()
 		stop_music()
 		save_deaths()
 		save_game()
 		add_stat("goals-reached", 1)
 		display_popup("endlessLeaderboard")
+		remove_player_and_level()
 	else:
 		remove_player_and_level()
 		play_level(CURRENT_LEVEL, PRACTICE)
 
 
-func update_steam_leaderboard(score: int):
-	Steam.uploadLeaderboardScore(score, true)
+# STATS[10] = endless-runs, STATS[11] = endless-high-score
+func update_steam_leaderboard():
+	Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
 
 # DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
 func add_death_by(cause: String):
@@ -450,10 +460,11 @@ func remove_player_and_level():
 		hud = null
 
 
-func display_popup(tutorial_name: String):
-	var tutorial = load("res://Source/Tutorials/" + tutorial_name + ".tscn").instance()
-	add_child(tutorial)
-	get_tree().paused = true
+func display_popup(popup_name: String):
+	popup = load("res://Source/Tutorials/" + popup_name + ".tscn").instance()
+	add_child(popup)
+	if not ENDLESS:
+		get_tree().paused = true
 
 
 # called from levelMenu
