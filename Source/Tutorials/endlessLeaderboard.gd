@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-var ENTRIES
+var ENTRIES: Array
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,17 +16,52 @@ func _input(_event: InputEvent) -> void:
 		back()
 
 
+func display_user_leaderboard(leaderboard: Array):
+	var username = Steam.getPersonaName()
+	$leaderboard/HBoxContainer13/placement.set_text(str(leaderboard[0].global_rank) + ".")
+	$leaderboard/HBoxContainer13/username.set_text(username)
+	$leaderboard/HBoxContainer13/score.set_text(str(leaderboard[0].score))
+	$leaderboard/HBoxContainer13/attempts.set_text(set_attempts_label(leaderboard[0].details[0]))
+
+
 func receive_display_leaderboard(leaderboard: Array):
 	ENTRIES = leaderboard
-	print(ENTRIES)
+	print("Entries: " + str(ENTRIES))
 	var counter = 0
 	for node in $leaderboard.get_children():
+		if ENTRIES.size() < counter:
+			break
 		if node is HBoxContainer:
-			if counter == 0:
+			if counter == 0: #this skips the header
 				counter += 1
 			else:
-				# håller på att hämta och skriva ut leaderboarden
-				get_node("leaderboard/" + node.get_name() + "/username").set_text()
+				var name_label = get_node("leaderboard/HBoxContainer" + str(counter) + "/username")
+				var score_label = get_node("leaderboard/HBoxContainer" + str(counter) + "/score")
+				var attempts_label = get_node("leaderboard/HBoxContainer" + str(counter) + "/attempts")
+				var username = Steam.getFriendPersonaName(ENTRIES[counter - 1].steamID)
+				name_label.set_text(username)
+				score_label.set_text(str(ENTRIES[counter - 1].score))
+				attempts_label.set_text(set_attempts_label(ENTRIES[counter - 1].details[0]))
+				counter += 1
+
+
+func set_attempts_label(attempts: int):
+	if attempts < 10:
+		return "       " + str(attempts) + "  "
+	elif attempts < 100:
+		return "      " + str(attempts) + "  "
+	elif attempts < 1000:
+		return "     " + str(attempts) + "  "
+	elif attempts < 10000:
+		return "    " + str(attempts) + "  "
+	elif attempts < 100000:
+		return "   " + str(attempts) + "  "
+	elif attempts < 1000000:
+		return "  " + str(attempts) + "  "
+	elif attempts < 10000000:
+		return " " + str(attempts) + "  "
+	else:
+		return " 9999999  "
 
 
 func reset():

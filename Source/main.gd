@@ -102,14 +102,21 @@ func steam_init():
 		#get_tree().quit()
 
 
-func steam_leaderboard_scores_downloaded(_one, _two):
+func steam_leaderboard_scores_downloaded(_one, entries: Array):
 	if popup:
-		popup.receive_display_leaderboard(Steam.getLeaderboardEntries())
+		if entries.size() > 1:
+			print("global")
+			popup.receive_display_leaderboard(entries)
+			Steam.downloadLeaderboardEntries(0, 0, 1) #user
+		else:
+			print("local")
+			popup.display_user_leaderboard(entries)
 
 
 func steam_leaderboard_score_uploaded(success: bool, score: int, _score_changed: bool, _global_rank_new: int, _global_rank_previous: int):
 	print("Success?: " + str(success))
 	print("Score: " + str(score))
+	Steam.downloadLeaderboardEntries(1, 12, 0)
 
 
 func steam_leaderboard_find_result(leaderboard: int, found: int):
@@ -357,10 +364,11 @@ func player_died(cause: String, color: String):
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	if ENDLESS:
-		Steam.downloadLeaderboardEntries(1, 12, 0)
 		if STATS[11] < level.CHUNK_NR - 3:
 			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
-			update_steam_leaderboard()
+			Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+		else:
+			Steam.downloadLeaderboardEntries(1, 12, 0) #top 12
 		stop_music()
 		save_deaths()
 		save_game()
@@ -371,10 +379,6 @@ func player_died(cause: String, color: String):
 		remove_player_and_level()
 		play_level(CURRENT_LEVEL, PRACTICE)
 
-
-# STATS[10] = endless-runs, STATS[11] = endless-high-score
-func update_steam_leaderboard():
-	Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
 
 # DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
 func add_death_by(cause: String):

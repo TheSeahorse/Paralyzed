@@ -525,9 +525,9 @@ __meta__ = {
 
 [node name="levels" type="HBoxContainer" parent="."]
 margin_left = 60.0
-margin_top = 280.0
+margin_top = 250.0
 margin_right = 1076.0
-margin_bottom = 612.0
+margin_bottom = 582.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
