@@ -18,10 +18,12 @@ func _input(_event: InputEvent) -> void:
 
 func display_user_leaderboard(leaderboard: Array):
 	var username = Steam.getPersonaName()
-	$leaderboard/HBoxContainer13/placement.set_text(str(leaderboard[0].global_rank) + ".")
+	$leaderboard/HBoxContainer13/placement.set_text(str(leaderboard[0].global_rank) + ". ")
 	$leaderboard/HBoxContainer13/username.set_text(username)
 	$leaderboard/HBoxContainer13/score.set_text(str(leaderboard[0].score))
 	$leaderboard/HBoxContainer13/attempts.set_text(set_attempts_label(leaderboard[0].details[0]))
+	$loading.hide()
+	$leaderboard.show()
 
 
 func receive_display_leaderboard(leaderboard: Array):
@@ -43,6 +45,11 @@ func receive_display_leaderboard(leaderboard: Array):
 				score_label.set_text(str(ENTRIES[counter - 1].score))
 				attempts_label.set_text(set_attempts_label(ENTRIES[counter - 1].details[0]))
 				counter += 1
+
+
+func offline():
+	$loading.hide()
+	$offline.show()
 
 
 func set_attempts_label(attempts: int):

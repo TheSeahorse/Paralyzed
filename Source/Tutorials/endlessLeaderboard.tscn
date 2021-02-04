@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Source/Tutorials/endlessLeaderboard.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Endless/endless_leaderboard_background.png" type="Texture" id=2]
@@ -71,6 +71,10 @@ font_data = ExtResource( 3 )
 size = 46
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=10]
+size = 64
+font_data = ExtResource( 3 )
+
 [node name="levelCleared" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -80,6 +84,7 @@ position = Vector2( 800, 450 )
 texture = ExtResource( 2 )
 
 [node name="leaderboard" type="VBoxContainer" parent="."]
+visible = false
 margin_left = 350.0
 margin_top = 100.0
 margin_right = 1250.0
@@ -146,41 +151,41 @@ margin_bottom = 84.0
 margin_right = 54.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.909804, 0.917647, 0, 1 )
+custom_colors/font_color = Color( 0.890196, 0.831373, 0.2, 1 )
 text = "1. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer1"]
 margin_left = 58.0
-margin_right = 508.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.909804, 0.917647, 0, 1 )
-text = "wwwwwwwwwwwwwwwwwwwwwwwww"
+custom_colors/font_color = Color( 0.890196, 0.831373, 0.2, 1 )
+text = "Bot1"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer1"]
-margin_left = 512.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 658.0
+margin_right = 676.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer1"]
-margin_left = 662.0
+margin_left = 680.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.909804, 0.917647, 0, 1 )
-text = "102"
+custom_colors/font_color = Color( 0.890196, 0.831373, 0.2, 1 )
+text = "12"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer1"]
 margin_left = 720.0
 margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.909804, 0.917647, 0, 1 )
-text = "    3102  "
+custom_colors/font_color = Color( 0.890196, 0.831373, 0.2, 1 )
+text = "     100  "
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="leaderboard"]
 margin_top = 88.0
@@ -191,19 +196,19 @@ margin_bottom = 124.0
 margin_right = 54.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
 text = "2. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer2"]
 margin_left = 58.0
-margin_right = 274.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-text = "The Seahorse"
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "Bot2"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer2"]
-margin_left = 278.0
+margin_left = 134.0
 margin_top = 2.0
 margin_right = 676.0
 margin_bottom = 33.0
@@ -216,16 +221,16 @@ margin_left = 680.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-text = "42"
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "11"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer2"]
 margin_left = 720.0
 margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-text = "     111  "
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "      99  "
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="leaderboard"]
 margin_top = 128.0
@@ -236,19 +241,19 @@ margin_bottom = 164.0
 margin_right = 54.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.729412, 0.411765, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
 text = "3. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer3"]
 margin_left = 58.0
-margin_right = 238.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.729412, 0.411765, 0, 1 )
-text = "angelatchy"
+custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+text = "Bot3"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer3"]
-margin_left = 242.0
+margin_left = 134.0
 margin_top = 2.0
 margin_right = 676.0
 margin_bottom = 33.0
@@ -261,15 +266,15 @@ margin_left = 680.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.729412, 0.411765, 0, 1 )
-text = "40"
+custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+text = "10"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer3"]
 margin_left = 720.0
 margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.729412, 0.411765, 0, 1 )
+custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
 text = "      98  "
 
 [node name="HSeparator7" type="HSeparator" parent="leaderboard"]
@@ -291,28 +296,28 @@ text = "4. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer4"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot4"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer4"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer4"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "9"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer4"]
 margin_left = 720.0
@@ -320,7 +325,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      97  "
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="leaderboard"]
 margin_top = 216.0
@@ -336,28 +341,28 @@ text = "5. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer5"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot5"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer5"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer5"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "8"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer5"]
 margin_left = 720.0
@@ -365,7 +370,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      96  "
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="leaderboard"]
 margin_top = 256.0
@@ -381,28 +386,28 @@ text = "6. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer6"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot6"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer6"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer6"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "7"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer6"]
 margin_left = 720.0
@@ -410,7 +415,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      95  "
 
 [node name="HSeparator13" type="HSeparator" parent="leaderboard"]
 margin_top = 296.0
@@ -431,28 +436,28 @@ text = "7. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer7"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot7"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer7"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer7"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "6"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer7"]
 margin_left = 720.0
@@ -460,7 +465,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      94  "
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="leaderboard"]
 margin_top = 344.0
@@ -476,28 +481,28 @@ text = "8. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer8"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot8"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer8"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer8"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "5"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer8"]
 margin_left = 720.0
@@ -505,7 +510,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      93  "
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="leaderboard"]
 margin_top = 384.0
@@ -521,28 +526,28 @@ text = "9. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer9"]
 margin_left = 58.0
-margin_right = 256.0
+margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot9"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer9"]
-margin_left = 260.0
+margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer9"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "4"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer9"]
 margin_left = 720.0
@@ -550,7 +555,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      92  "
 
 [node name="HSeparator10" type="HSeparator" parent="leaderboard"]
 margin_top = 424.0
@@ -571,28 +576,28 @@ text = "10. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer10"]
 margin_left = 76.0
-margin_right = 274.0
+margin_right = 166.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot10"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer10"]
-margin_left = 278.0
+margin_left = 170.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer10"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "3"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer10"]
 margin_left = 720.0
@@ -600,7 +605,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      91  "
 
 [node name="HBoxContainer11" type="HBoxContainer" parent="leaderboard"]
 margin_top = 472.0
@@ -616,28 +621,28 @@ text = "11. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer11"]
 margin_left = 76.0
-margin_right = 274.0
+margin_right = 166.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot11"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer11"]
-margin_left = 278.0
+margin_left = 170.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer11"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "2"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer11"]
 margin_left = 720.0
@@ -645,7 +650,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      90  "
 
 [node name="HBoxContainer12" type="HBoxContainer" parent="leaderboard"]
 margin_top = 512.0
@@ -661,28 +666,28 @@ text = "12. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer12"]
 margin_left = 76.0
-margin_right = 274.0
+margin_right = 166.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "xXCoolBoyXx"
+text = "Bot12"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer12"]
-margin_left = 278.0
+margin_left = 170.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer12"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "31"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer12"]
 margin_left = 720.0
@@ -690,7 +695,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "     150  "
+text = "      89  "
 
 [node name="HSeparator15" type="HSeparator" parent="leaderboard"]
 margin_top = 552.0
@@ -714,22 +719,22 @@ margin_right = 900.0
 margin_bottom = 625.0
 
 [node name="placement" type="Label" parent="leaderboard/HBoxContainer13"]
-margin_right = 54.0
+margin_right = 72.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "43."
+text = "99. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer13"]
-margin_left = 58.0
-margin_right = 310.0
+margin_left = 76.0
+margin_right = 328.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Your name here"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer13"]
-margin_left = 314.0
+margin_left = 332.0
 margin_top = 2.0
 margin_right = 676.0
 margin_bottom = 33.0
@@ -829,5 +834,36 @@ custom_fonts/font = SubResource( 9 )
 text = "retry"
 align = 1
 valign = 1
+
+[node name="offline" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You are offline,
+connect to steam
+and restart the game
+to view the leaderboard
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loading" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "retrieving
+ leaderboard...
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]

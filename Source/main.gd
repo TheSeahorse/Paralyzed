@@ -364,16 +364,22 @@ func player_died(cause: String, color: String):
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	if ENDLESS:
-		if STATS[11] < level.CHUNK_NR - 3:
-			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
-			Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+		display_popup("endlessLeaderboard")
+		if STEAM_ONLINE:
+			if STATS[11] < level.CHUNK_NR - 3:
+				add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
+				Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+			else:
+				Steam.downloadLeaderboardEntries(1, 12, 0) #top 12
 		else:
-			Steam.downloadLeaderboardEntries(1, 12, 0) #top 12
+			if popup:
+				popup.offline()
+			if STATS[11] < level.CHUNK_NR - 3:
+				add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
 		stop_music()
 		save_deaths()
 		save_game()
 		add_stat("goals-reached", 1)
-		display_popup("endlessLeaderboard")
 		remove_player_and_level()
 	else:
 		remove_player_and_level()
