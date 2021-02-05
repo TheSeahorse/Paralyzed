@@ -87,6 +87,7 @@ func steam_init():
 	STEAM_ONLINE = Steam.loggedOn()
 	STEAM_ID = Steam.getSteamID()
 	STEAM_OWNED = Steam.isSubscribed()
+	Steam.findLeaderboard("Endless Mode High Score")
 	print("Did Steam initialize?: "+str(STEAM_INIT))
 	
 	Steam.connect("leaderboard_find_result", self, "steam_leaderboard_find_result", [])
@@ -126,7 +127,6 @@ func steam_leaderboard_find_result(leaderboard: int, found: int):
 
 func play_level(levelName: String, practice: bool):
 	if levelName == "endless":
-		Steam.findLeaderboard("Endless Mode High Score")
 		ENDLESS = true
 		add_stat("endless-runs", 1)
 	else:
@@ -364,19 +364,9 @@ func player_died(cause: String, color: String):
 	player.play_death_animation()
 	yield(get_tree().create_timer(1), "timeout")
 	if ENDLESS:
-		display_popup("endlessLeaderboard")
-		if STEAM_ONLINE:
-			if STATS[11] < level.CHUNK_NR - 3:
-				add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
-				Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
-			else:
-				Steam.downloadLeaderboardEntries(1, 12, 0) #top 12
-		else:
-			if popup:
-				popup.offline()
-			if STATS[11] < level.CHUNK_NR - 3:
-				add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
-		stop_music()
+		if SETTINGS[1]:
+			mainmenu.start_music()
+		show_leaderboard()
 		save_deaths()
 		save_game()
 		add_stat("goals-reached", 1)
@@ -384,6 +374,21 @@ func player_died(cause: String, color: String):
 	else:
 		remove_player_and_level()
 		play_level(CURRENT_LEVEL, PRACTICE)
+
+
+func show_leaderboard():
+	display_popup("endlessLeaderboard")
+	if STEAM_ONLINE:
+		if level and STATS[11] < level.CHUNK_NR - 3:
+			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
+			Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+		else:
+			Steam.downloadLeaderboardEntries(1, 12, 0) #top 12
+	else:
+		if popup:
+			popup.offline()
+		if level and STATS[11] < level.CHUNK_NR - 3:
+			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
 
 
 # DEATH_BY: [spikes, square, beam, lava, car, self-destruct]
@@ -473,10 +478,15 @@ func remove_player_and_level():
 func display_popup(popup_name: String):
 	popup = load("res://Source/Tutorials/" + popup_name + ".tscn").instance()
 	add_child(popup)
-	if not ENDLESS:
+	if popup_name != "endlessLeaderboard":
 		get_tree().paused = true
 
 
 # called from levelMenu
 func set_level_start_time():
 	LEVEL_START_TIME = OS.get_unix_time()
+
+
+func click():
+	if SETTINGS[2]:
+		$click.play()

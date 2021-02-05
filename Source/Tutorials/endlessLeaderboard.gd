@@ -73,19 +73,20 @@ func set_attempts_label(attempts: int):
 
 func reset():
 	get_parent().play_level("endless", false)
+	get_parent().mainmenu.stop_music()
 	self.queue_free()
 
 
 func back():
 	get_parent().mainmenu.show_level_menu()
-	if get_parent().SETTINGS[1]:
-		get_parent().mainmenu.start_music()
 	self.queue_free()
 
 
 func _on_back_button_pressed():
+	get_parent().click()
 	back()
 
 
 func _on_retry_button_pressed():
+	get_parent().click()
 	reset()

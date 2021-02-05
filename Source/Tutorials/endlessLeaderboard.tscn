@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Source/Tutorials/endlessLeaderboard.gd" type="Script" id=1]
 [ext_resource path="res://Character models/Menues/Endless/endless_leaderboard_background.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Character models/Menues/level_button_pressed.png" type="Texture" id=14]
 [ext_resource path="res://Character models/Menues/level_button_normal.png" type="Texture" id=15]
 [ext_resource path="res://Character models/Menues/Fonts/UbuntuMono-Bold.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -255,19 +256,19 @@ text = "Bot3"
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer3"]
 margin_left = 134.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer3"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
-text = "10"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer3"]
 margin_left = 720.0
@@ -317,7 +318,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "9"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer4"]
 margin_left = 720.0
@@ -362,7 +363,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "8"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer5"]
 margin_left = 720.0
@@ -407,7 +408,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "7"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer6"]
 margin_left = 720.0
@@ -457,7 +458,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "6"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer7"]
 margin_left = 720.0
@@ -502,7 +503,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "5"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer8"]
 margin_left = 720.0
@@ -547,7 +548,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer9"]
 margin_left = 720.0
@@ -597,7 +598,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "3"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer10"]
 margin_left = 720.0
@@ -642,7 +643,7 @@ margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "2"
+text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer11"]
 margin_left = 720.0
@@ -865,5 +866,9 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -5.0
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]

@@ -430,3 +430,11 @@ func _on_stats_button_pressed(type: String) -> void:
 				$stats/VBoxContainer/deadliest_color/Button/arrow.set_rotation(0)
 				$stats/VBoxContainer/deadliest_enemies.show()
 				$stats/VBoxContainer/deadliest_enemy/Button/arrow.set_rotation(PI)
+
+
+func _on_leaderboard_pressed():
+	if get_parent().get_parent().SETTINGS[2]:
+		$click.play()
+	get_parent().get_parent().show_leaderboard()
+	reset_stat_buttons()
+	hide_level_menu()

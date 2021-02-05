@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -54,6 +54,10 @@ font_data = ExtResource( 24 )
 [sub_resource type="DynamicFont" id=5]
 size = 17
 outline_size = 1
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 72
 font_data = ExtResource( 24 )
 
 [node name="menu" type="Control"]
@@ -525,9 +529,9 @@ __meta__ = {
 
 [node name="levels" type="HBoxContainer" parent="."]
 margin_left = 60.0
-margin_top = 250.0
+margin_top = 400.0
 margin_right = 1076.0
-margin_bottom = 582.0
+margin_bottom = 732.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4074,11 +4078,36 @@ margin_bottom = -9.0
 custom_fonts/font = ExtResource( 20 )
 text = ": 221"
 
-[node name="endless" type="TextureButton" parent="."]
-margin_left = 406.0
-margin_top = 700.0
-margin_right = 726.0
-margin_bottom = 780.0
+[node name="endless" type="VBoxContainer" parent="."]
+margin_left = 240.0
+margin_top = 180.0
+margin_right = 884.0
+margin_bottom = 339.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="endless"]
+margin_right = 644.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 6 )
+text = "endless mode"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="endless"]
+margin_top = 79.0
+margin_right = 644.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="TextureButton" parent="endless/HBoxContainer"]
+margin_right = 320.0
+margin_bottom = 80.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 5 )
@@ -4087,7 +4116,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="checkmark" type="TextureRect" parent="endless"]
+[node name="checkmark" type="TextureRect" parent="endless/HBoxContainer/play"]
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -4103,11 +4132,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="endless"]
+[node name="Label" type="Label" parent="endless/HBoxContainer/play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 4 )
-text = "endless"
+text = "play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leaderboard" type="TextureButton" parent="endless/HBoxContainer"]
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="checkmark" type="TextureRect" parent="endless/HBoxContainer/leaderboard"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = -29.0
+margin_bottom = -30.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="endless/HBoxContainer/leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "leaderboard"
 align = 1
 valign = 1
 __meta__ = {
@@ -4178,4 +4246,5 @@ __meta__ = {
 [connection signal="pressed" from="levels/all/level20/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level20" ]]
 [connection signal="pressed" from="levels/all/level20/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level20", false ]]
 [connection signal="pressed" from="levels/all/level20/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level20", true ]]
-[connection signal="pressed" from="endless" to="." method="_on_level_pressed" binds= [ "endless", false ]]
+[connection signal="pressed" from="endless/HBoxContainer/play" to="." method="_on_level_pressed" binds= [ "endless", false ]]
+[connection signal="pressed" from="endless/HBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]
