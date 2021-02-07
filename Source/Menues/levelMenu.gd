@@ -3,6 +3,8 @@ signal levelselected
 
 
 var SHOWN_LEVEL: String = "" # the levelname which is currently shown
+var FIREWORK_DELAY = 50
+var POP_FIREWORKS = false
 
 
 func _ready() -> void:
@@ -15,6 +17,22 @@ func _ready() -> void:
 			levels.add_constant_override("separation", 0)
 
 
+func _process(delta):
+	if POP_FIREWORKS:
+		firework_counter()
+
+
+func firework_counter():
+	if FIREWORK_DELAY == 0:
+		$endless/Particles2D2.restart()
+		FIREWORK_DELAY -= 1
+	if FIREWORK_DELAY == 43:
+		$endless/Particles2D.restart()
+		FIREWORK_DELAY -= 1
+	elif FIREWORK_DELAY > 0:
+		FIREWORK_DELAY -= 1
+
+
 func hide_level_menu():
 	self.hide()
 
@@ -25,6 +43,19 @@ func show_level_menu():
 	update_death_counts()
 	update_tooltips()
 	hide_current_level_and_stat()
+	calculate_endless()
+
+
+func pop_endless_confetti():
+	POP_FIREWORKS = true
+	var width1 = get_parent().get_parent().RNG.randi_range(100, 540)
+	var height1 = get_parent().get_parent().RNG.randi_range(0, 200)
+	var width2 = get_parent().get_parent().RNG.randi_range(100, 540)
+	var height2 = get_parent().get_parent().RNG.randi_range(0, 200)
+	$endless/Particles2D.set_position(Vector2(width1, height1))
+	$endless/Particles2D2.set_position(Vector2(width2, height2))
+	if get_parent().get_parent().SETTINGS[2]:
+		$confetti.play()
 
 
 func update_tooltips():
@@ -219,6 +250,7 @@ func calculate_completion_percent(levels_cleared: Array) -> int:
 	$stats/VBoxContainer/completion.set("custom_colors/font_outline_modulate", dynamic_font)
 	return int(percent)
 
+
 # no color gills inte, därför så komplicerad funktion
 func calculate_deadliest_color(stats: Array) -> String:
 	var deadliest: String
@@ -312,6 +344,19 @@ func toggle_button_node(level_name: String):
 		button_node.set_hover_texture(load("res://Character models/Menues/LevelMenu/level_button_hover_drop.png"))
 		button_node.set_pressed_texture(load("res://Character models/Menues/LevelMenu/level_button_pressed_drop.png"))
 		node.show()
+
+
+func calculate_endless():
+	if get_parent().get_parent().LEVELS_CLEARED[17][0]:
+		enable_endless()
+
+
+func enable_endless():
+	$endless/HBoxContainer/play.set_disabled(false)
+	$endless/HBoxContainer/leaderboard.set_disabled(false)
+	$endless/Label.set_text("Endless")
+	$endless/HBoxContainer/play/Label.set_text("play")
+	$endless/HBoxContainer/leaderboard/Label.set_text("leaderboard")
 
 
 # called in mainMenu

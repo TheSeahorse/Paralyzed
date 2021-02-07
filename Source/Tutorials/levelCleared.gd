@@ -100,6 +100,7 @@ func calculate_levels_unlocked():
 		UNLOCK_AMOUNT = 0
 	else:
 		UNLOCK_AMOUNT = decide_unlocked_levels(level_number)
+		get_parent().LEVELS_CLEARED[level_number][0] = false #this will be set in main later, has to do with checking if endless is unlocked
 
 
 #returns the amount of unlocked levels and modifies the level labels inside Sprite

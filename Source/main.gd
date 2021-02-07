@@ -249,6 +249,8 @@ func calculate_cleared_level():
 	if PRACTICE:
 		current_clear_array[1] = true
 	else:
+		if current_clear_array[0] != true and CURRENT_LEVEL == "level17":
+			mainmenu.levelmenu.pop_endless_confetti()
 		current_clear_array[0] = true
 	LEVELS_CLEARED[index] = current_clear_array
 
