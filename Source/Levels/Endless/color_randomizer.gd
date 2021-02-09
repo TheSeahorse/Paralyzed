@@ -2,7 +2,9 @@ extends Node2D
 
 export var ALL_DIFF: bool #don't turn on if there are more than 4 enemies
 export var ALL_SAME: bool
-export var SAME_RANGE: int #total amount of enemies/SAME_RANGE can be greater than 4 (unless it's 0)
+export var SAME_RANGE: int #if all diff on then same range means that the groups are totally random, 
+						   #if all same is on then the groups will be different from each other, 
+						   #but the total amount of items can't be greater than same_range*4
 var RNG = RandomNumberGenerator.new()
 var PLAYER_COLOR
 var FIXED_COLORS = ["cyan", "red", "purple", "yellow"] #don't modify this one
