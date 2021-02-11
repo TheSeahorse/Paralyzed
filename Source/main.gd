@@ -383,7 +383,9 @@ func show_leaderboard():
 	if STEAM_ONLINE:
 		if level and STATS[11] < level.CHUNK_NR - 3:
 			add_stat("endless-high-score", (level.CHUNK_NR - 3) - STATS[11])
-		Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+			Steam.uploadLeaderboardScore(STATS[11], true, [STATS[10]])
+		else:
+			Steam.downloadLeaderboardEntries(1, 12, 0)
 	else:
 		if popup:
 			popup.offline()

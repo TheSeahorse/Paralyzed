@@ -17,7 +17,7 @@ func _ready() -> void:
 			levels.add_constant_override("separation", 0)
 
 
-func _process(delta):
+func _process(_delta):
 	if POP_FIREWORKS:
 		firework_counter()
 

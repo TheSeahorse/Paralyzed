@@ -62,14 +62,14 @@ font_data = ExtResource( 24 )
 size = 72
 font_data = ExtResource( 24 )
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 0, 0.42963, 1 )
 colors = PoolColorArray( 0, 0.0196078, 1, 1, 0.00484789, 0.42487, 0.586397, 1, 0.0112839, 0.962891, 0.0373044, 1 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=9]
 lifetime_randomness = 0.6
 emission_shape = 1
 emission_sphere_radius = 5.0
@@ -81,7 +81,7 @@ initial_velocity_random = 0.7
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = -150.0
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 8 )
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -4181,7 +4181,7 @@ emitting = false
 amount = 300
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 8 )
+process_material = SubResource( 9 )
 texture = ExtResource( 16 )
 
 [node name="Particles2D2" type="Particles2D" parent="endless"]
@@ -4190,7 +4190,7 @@ emitting = false
 amount = 300
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 8 )
+process_material = SubResource( 9 )
 texture = ExtResource( 16 )
 
 [node name="confetti" type="AudioStreamPlayer" parent="."]
