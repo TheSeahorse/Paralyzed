@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Source/Menues/levelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/levels_background.png" type="Texture" id=2]
@@ -16,6 +16,9 @@
 [ext_resource path="res://Character models/Menues/stats_button_arrow.png" type="Texture" id=14]
 [ext_resource path="res://Sound/Menu/confetti_pop.wav" type="AudioStream" id=15]
 [ext_resource path="res://Character models/Tutorials/particle.png" type="Texture" id=16]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_normal.png" type="Texture" id=17]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_pressed.png" type="Texture" id=18]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_hover.png" type="Texture" id=19]
 [ext_resource path="res://Character models/Menues/Fonts/start_practice.tres" type="DynamicFont" id=20]
 [ext_resource path="res://Character models/Menues/skull.png" type="Texture" id=21]
 [ext_resource path="res://Character models/Menues/blue_checkmark.png" type="Texture" id=22]
@@ -36,6 +39,7 @@
 [ext_resource path="res://Character models/Menues/StartPractice/practice_hover.png" type="Texture" id=37]
 [ext_resource path="res://Character models/Menues/StartPractice/start_pressed.png" type="Texture" id=38]
 [ext_resource path="res://Character models/Menues/StartPractice/practice_pressed.png" type="Texture" id=39]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_disabled.png" type="Texture" id=40]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -97,10 +101,10 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="tutorials" type="HBoxContainer" parent="."]
-margin_left = 245.0
-margin_top = 315.0
-margin_right = 889.0
-margin_bottom = 395.0
+margin_left = 340.0
+margin_top = 56.0
+margin_right = 984.0
+margin_bottom = 136.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -550,11 +554,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="endless_label" type="Label" parent="."]
+margin_left = 245.0
+margin_top = 636.0
+margin_right = 889.0
+margin_bottom = 711.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "???"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endless" type="VBoxContainer" parent="."]
+margin_left = 245.0
+margin_top = 715.0
+margin_right = 889.0
+margin_bottom = 795.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="endless"]
+margin_right = 644.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="TextureButton" parent="endless/HBoxContainer"]
+margin_right = 320.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+texture_disabled = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="endless/HBoxContainer/play"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leaderboard" type="TextureButton" parent="endless/HBoxContainer"]
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 80.0
+disabled = true
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+texture_disabled = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="endless/HBoxContainer/leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="endless"]
+position = Vector2( 320, 100 )
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 9 )
+texture = ExtResource( 16 )
+
+[node name="Particles2D2" type="Particles2D" parent="endless"]
+position = Vector2( 320, 100 )
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 9 )
+texture = ExtResource( 16 )
+
 [node name="levels" type="HBoxContainer" parent="."]
 margin_left = 60.0
-margin_top = 400.0
+margin_top = 240.0
 margin_right = 1076.0
-margin_bottom = 732.0
+margin_bottom = 572.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4101,98 +4199,6 @@ margin_bottom = -9.0
 custom_fonts/font = ExtResource( 20 )
 text = ": 221"
 
-[node name="endless" type="VBoxContainer" parent="."]
-margin_left = 245.0
-margin_top = 80.0
-margin_right = 889.0
-margin_bottom = 239.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="endless"]
-margin_right = 644.0
-margin_bottom = 75.0
-custom_fonts/font = SubResource( 6 )
-text = "???"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="endless"]
-margin_top = 79.0
-margin_right = 644.0
-margin_bottom = 159.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="play" type="TextureButton" parent="endless/HBoxContainer"]
-margin_right = 320.0
-margin_bottom = 80.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="endless/HBoxContainer/play"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "???"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="leaderboard" type="TextureButton" parent="endless/HBoxContainer"]
-margin_left = 324.0
-margin_right = 644.0
-margin_bottom = 80.0
-disabled = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 5 )
-texture_disabled = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="endless/HBoxContainer/leaderboard"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 4 )
-text = "???"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Particles2D" type="Particles2D" parent="endless"]
-position = Vector2( 320, 100 )
-emitting = false
-amount = 300
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource( 9 )
-texture = ExtResource( 16 )
-
-[node name="Particles2D2" type="Particles2D" parent="endless"]
-position = Vector2( 320, 100 )
-emitting = false
-amount = 300
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource( 9 )
-texture = ExtResource( 16 )
-
 [node name="confetti" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 volume_db = -10.0
@@ -4201,6 +4207,8 @@ volume_db = -10.0
 [connection signal="pressed" from="go_back" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="stats/VBoxContainer/deadliest_color/Button" to="." method="_on_stats_button_pressed" binds= [ "color" ]]
 [connection signal="pressed" from="stats/VBoxContainer/deadliest_enemy/Button" to="." method="_on_stats_button_pressed" binds= [ "enemy" ]]
+[connection signal="pressed" from="endless/HBoxContainer/play" to="." method="_on_level_pressed" binds= [ "endless", false ]]
+[connection signal="pressed" from="endless/HBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="levels/cube/level1/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level1" ]]
 [connection signal="pressed" from="levels/cube/level1/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level1", false ]]
 [connection signal="pressed" from="levels/cube/level1/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level1", true ]]
@@ -4261,5 +4269,3 @@ volume_db = -10.0
 [connection signal="pressed" from="levels/all/level20/TextureButton" to="." method="_on_level_dropdown_pressed" binds= [ "level20" ]]
 [connection signal="pressed" from="levels/all/level20/TextureRect/HBoxContainer/TextureButton2" to="." method="_on_level_pressed" binds= [ "level20", false ]]
 [connection signal="pressed" from="levels/all/level20/TextureRect/HBoxContainer/TextureButton" to="." method="_on_level_pressed" binds= [ "level20", true ]]
-[connection signal="pressed" from="endless/HBoxContainer/play" to="." method="_on_level_pressed" binds= [ "endless", false ]]
-[connection signal="pressed" from="endless/HBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]

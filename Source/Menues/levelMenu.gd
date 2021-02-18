@@ -5,6 +5,7 @@ signal levelselected
 var SHOWN_LEVEL: String = "" # the levelname which is currently shown
 var FIREWORK_DELAY = 50
 var POP_FIREWORKS = false
+var OKAY_TO_SHOW: Array = ["","level1", "level2", "level3", "level4", "level17", "level18", "level19", "level20"] #levels that arent in the way of the endless label
 
 
 func _ready() -> void:
@@ -18,6 +19,10 @@ func _ready() -> void:
 
 
 func _process(_delta):
+	if SHOWN_LEVEL in OKAY_TO_SHOW:
+		$endless_label.show()
+	else:
+		$endless_label.hide()
 	if POP_FIREWORKS:
 		firework_counter()
 
@@ -347,14 +352,14 @@ func toggle_button_node(level_name: String):
 
 
 func calculate_endless():
-	if get_parent().get_parent().LEVELS_CLEARED[17][0]:
+	if get_parent().get_parent().LEVELS_CLEARED[13][0]:
 		enable_endless()
 
 
 func enable_endless():
 	$endless/HBoxContainer/play.set_disabled(false)
 	$endless/HBoxContainer/leaderboard.set_disabled(false)
-	$endless/Label.set_text("Endless")
+	$endless_label.set_text("Endless")
 	$endless/HBoxContainer/play/Label.set_text("play")
 	$endless/HBoxContainer/leaderboard/Label.set_text("leaderboard")
 

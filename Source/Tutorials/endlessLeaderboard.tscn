@@ -12,9 +12,9 @@
 [ext_resource path="res://Character models/Menues/back_button_normal.png" type="Texture" id=10]
 [ext_resource path="res://Character models/Menues/back_button_pressed.png" type="Texture" id=11]
 [ext_resource path="res://Character models/Menues/back_button_hover.png" type="Texture" id=12]
-[ext_resource path="res://Character models/Menues/level_button_hover.png" type="Texture" id=13]
-[ext_resource path="res://Character models/Menues/level_button_pressed.png" type="Texture" id=14]
-[ext_resource path="res://Character models/Menues/level_button_normal.png" type="Texture" id=15]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_normal.png" type="Texture" id=13]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_pressed.png" type="Texture" id=14]
+[ext_resource path="res://Character models/Menues/Endless/endless_button_hover.png" type="Texture" id=15]
 [ext_resource path="res://Character models/Menues/Fonts/UbuntuMono-Bold.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://Sound/Menu/click.wav" type="AudioStream" id=17]
 
@@ -821,9 +821,9 @@ margin_left = 640.0
 margin_top = 760.0
 margin_right = 960.0
 margin_bottom = 840.0
-texture_normal = ExtResource( 15 )
+texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 13 )
+texture_hover = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -845,7 +845,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "You are offline,
 connect to steam
 and restart the game
-to view the leaderboard
+to view the leaderboard.
+new high scores will not
+get uploaded while offline
 "
 align = 1
 valign = 1

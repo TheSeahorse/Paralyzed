@@ -12,11 +12,13 @@ var ON_LAVA: = false
 var LAVA
 var DEAD: = false
 var DEATH_COUNTDOWN: = 0
+var POSITION_X #cubes initial x position, should always be fixed
 
 
 func _ready() -> void:
 	$square_sprite.play(COLOR)
 	set_physics_process(false)
+	POSITION_X = self.position.x
 
 
 func _process(_delta: float) -> void:
@@ -31,6 +33,7 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	self.position.x = POSITION_X
 	if !ENABLED:
 		TOGGLE_ACTION = false
 		ENABLED = true

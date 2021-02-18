@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character models/World/Tilemap/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Source/Levels/Endless/color_randomizer.gd" type="Script" id=2]
+[ext_resource path="res://Source/Actors/spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Source/Actors/square.tscn" type="PackedScene" id=4]
+
+[node name="cube_jump_cube3_same" type="Node2D"]
+script = ExtResource( 2 )
+ALL_SAME = true
+SAME_RANGE = 3
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 2, 0, 70, -1073741822, 0, 71, 0, 0, 72, 0, 0, 73, 0, 0, 74, 0, 0, 75, 0, 0, 76, 0, 0, 77, 0, 0, 78, 0, 0, 79, 0, 0, 80, 0, 0, 81, 0, 0, 82, 0, 0, 83, 0, 0, 84, 0, 0, 85, 0, 0, 86, 0, 0, 87, 0, 0, 88, 0, 0, 89, 0, 0, 90, 0, 0, 91, 0, 0, 92, 0, 0, 93, 0, 0, 94, 0, 0, 95, 0, 0, 96, 0, 0, 97, 0, 0, 98, 0, 0, 99, 0, 0, 65571, -1610612736, 0, 65606, -1073741824, 0, 131107, -1610612736, 0, 131142, -1073741824, 0, 196643, -1610612736, 0, 196678, -1073741824, 0, 262179, -1610612733, 0, 262180, 0, 0, 262181, 0, 0, 262182, 0, 0, 262183, 0, 0, 262184, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0, 262188, 0, 0, 262189, 0, 0, 262190, 0, 0, 262191, 0, 0, 262192, 0, 0, 262193, 0, 0, 262194, 0, 0, 262195, 0, 0, 262196, 0, 0, 262197, 0, 0, 262198, 0, 0, 262199, 0, 0, 262200, 0, 0, 262201, 0, 0, 262202, 0, 0, 262203, 0, 0, 262204, 0, 0, 262205, 0, 0, 262206, 0, 0, 262207, 0, 0, 262208, 0, 0, 262209, 0, 0, 262210, 0, 0, 262211, 0, 0, 262212, 0, 0, 262213, 0, 0, 262214, 3, 0 )
+
+[node name="square3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1300, 0 )
+
+[node name="square4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1379, 0 )
+
+[node name="square5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1458, 0 )
+
+[node name="square2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 617, 64 )
+
+[node name="spikes" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1116, 63 )
