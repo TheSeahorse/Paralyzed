@@ -106,9 +106,6 @@ func decide_chunk() -> String:
 	else:
 		difficulty = "Insanity"
 	var chunk_name = get_chunk_name(difficulty)
-	print(CHUNK_NR)
-	print(chunk_name)
-	print("============================")
 	return chunk_name
 
 
@@ -138,7 +135,6 @@ func list_files_in_directory(path):
 		elif not file.begins_with("."):
 			files.append(file)
 	dir.list_dir_end()
-	#print("==============\n files:" + str(files) + "\n")
 	return files
 
 

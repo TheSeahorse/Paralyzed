@@ -101,9 +101,9 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="tutorials" type="HBoxContainer" parent="."]
-margin_left = 340.0
+margin_left = 350.0
 margin_top = 56.0
-margin_right = 984.0
+margin_right = 994.0
 margin_bottom = 136.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -559,6 +559,8 @@ margin_left = 245.0
 margin_top = 636.0
 margin_right = 889.0
 margin_bottom = 711.0
+hint_tooltip = "Beat Car-1 to unlock"
+mouse_filter = 1
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "???"

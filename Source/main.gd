@@ -19,6 +19,7 @@ var DEADLIEST_COLOR: Array # how many times you've died to each color [cyan, red
 var STATS: Array # [switched-color, square-jumped, car-jumped, phazed-beam, phazed-lava, placed-flag, paused, goals-reached, square-killed, car-killed, endless runs, endless-runs, endless-high-score]
 var CURRENT_LEVEL # name of most recent level as a string
 var ENDLESS # if we're in endless mode
+var ENDLESS_UNLOCKED # if we've unlocked enless or not
 var PRACTICE # true if practice play is on, false if real play is on
 var PRACTICE_SAVED_PLAYER_VECTORS: = [] # all the saved player positions from first to last in a practice round
 var PRACTICE_SAVED_PLAYER_VELOCITIES: = [] # all the saved player velocities from first to last in a practice round
@@ -88,41 +89,22 @@ func steam_init():
 	STEAM_ID = Steam.getSteamID()
 	STEAM_OWNED = Steam.isSubscribed()
 	Steam.findLeaderboard("Endless Mode High Score")
-	print("Did Steam initialize?: "+str(STEAM_INIT))
 	
-	Steam.connect("leaderboard_find_result", self, "steam_leaderboard_find_result", [])
 	Steam.connect("leaderboard_score_uploaded", self, "steam_leaderboard_score_uploaded", [])
 	Steam.connect("leaderboard_scores_downloaded", self, "steam_leaderboard_scores_downloaded", [])
-	
-	if STEAM_INIT['status'] != 1:
-		print("Failed to initialize Steam. "+str(STEAM_INIT['verbal'])+" Shutting down...")
-		#get_tree().quit()
-	# Check if account owns the game
-	if STEAM_OWNED == false:
-		print("User does not own this game")
-		#get_tree().quit()
 
 
 func steam_leaderboard_scores_downloaded(_one, entries: Array):
 	if popup:
 		if entries.size() > 1:
-			print("global")
 			popup.receive_display_leaderboard(entries)
 			Steam.downloadLeaderboardEntries(0, 0, 1) #user
 		else:
-			print("local")
 			popup.display_user_leaderboard(entries)
 
 
 func steam_leaderboard_score_uploaded(success: bool, score: int, _score_changed: bool, _global_rank_new: int, _global_rank_previous: int):
-	print("Success?: " + str(success))
-	print("Score: " + str(score))
 	Steam.downloadLeaderboardEntries(1, 12, 0)
-
-
-func steam_leaderboard_find_result(leaderboard: int, found: int):
-	print("Leaderboard int: " + str(leaderboard))
-	print("Found: " + str(found))
 
 
 func play_level(levelName: String, practice: bool):
@@ -249,8 +231,6 @@ func calculate_cleared_level():
 	if PRACTICE:
 		current_clear_array[1] = true
 	else:
-		if current_clear_array[0] != true and CURRENT_LEVEL == "level17":
-			mainmenu.levelmenu.pop_endless_confetti()
 		current_clear_array[0] = true
 	LEVELS_CLEARED[index] = current_clear_array
 
@@ -276,7 +256,8 @@ func save_game():
 		"death_by" : DEATH_BY,
 		"stats" : STATS,
 		"deadliest_color" : DEADLIEST_COLOR,
-		"settings" : SETTINGS
+		"settings" : SETTINGS,
+		"endless_unlocked" : ENDLESS_UNLOCKED
 	}
 	var save_game = File.new()
 	save_game.open("user://paralyzed_savegame.save", File.WRITE)
@@ -294,6 +275,7 @@ func load_savestate():
 		STATS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		DEADLIEST_COLOR = [0, 0, 0, 0, 0]
 		SETTINGS = [true, true, true, false, false, false, false]
+		ENDLESS_UNLOCKED = false
 	else:
 		load_game.open("user://paralyzed_savegame.save", File.READ)
 		var savestate = parse_json(load_game.get_line())
@@ -315,12 +297,9 @@ func load_savestate():
 		else:
 			DEATH_BY = [0, 0, 0, 0, 0, 0]
 		if savestate.has("stats"):
-			if savestate.stats.size() == 10:
-				STATS = savestate.stats
+			STATS = savestate.stats
+			while STATS.size() < 12:
 				STATS.append(0)
-				STATS.append(0)
-			else:
-				STATS = savestate.stats
 		else:
 			STATS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		if savestate.has("deadliest_color"):
@@ -331,6 +310,10 @@ func load_savestate():
 			SETTINGS = savestate.settings
 		else:
 			SETTINGS = [true, true, true, false, false, false, false]
+		if savestate.has("endless_unlocked"):
+			ENDLESS_UNLOCKED = savestate.endless_unlocked
+		else:
+			ENDLESS_UNLOCKED = false
 
 
 func apply_settings():

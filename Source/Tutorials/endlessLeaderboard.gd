@@ -28,7 +28,6 @@ func display_user_leaderboard(leaderboard: Array):
 
 func receive_display_leaderboard(leaderboard: Array):
 	ENTRIES = leaderboard
-	print("Entries: " + str(ENTRIES))
 	var counter = 0
 	for node in $leaderboard.get_children():
 		if ENTRIES.size() < counter:

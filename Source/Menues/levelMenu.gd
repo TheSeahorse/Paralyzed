@@ -30,7 +30,7 @@ func _process(_delta):
 func firework_counter():
 	if FIREWORK_DELAY == 0:
 		$endless/Particles2D2.restart()
-		FIREWORK_DELAY -= 1
+		POP_FIREWORKS = false
 	if FIREWORK_DELAY == 43:
 		$endless/Particles2D.restart()
 		FIREWORK_DELAY -= 1
@@ -44,12 +44,21 @@ func hide_level_menu():
 
 func show_level_menu():
 	self.show()
+	check_unlocked_endless()
+	calculate_endless()
 	update_stats()
 	update_death_counts()
 	update_tooltips()
 	hide_current_level_and_stat()
-	calculate_endless()
+	
 
+
+func check_unlocked_endless():
+	if not get_parent().get_parent().ENDLESS_UNLOCKED and get_parent().get_parent().LEVELS_CLEARED[13][0]:
+		get_parent().get_parent().ENDLESS_UNLOCKED = true
+		get_parent().get_parent().save_game()
+		pop_endless_confetti()
+		
 
 func pop_endless_confetti():
 	POP_FIREWORKS = true
@@ -73,6 +82,10 @@ func update_tooltips():
 				label_node.set_mouse_filter(1)
 			else:
 				label_node.set_mouse_filter(2)
+	if $endless/HBoxContainer/play.is_disabled():
+		$endless_label.set_mouse_filter(MOUSE_FILTER_PASS)
+	else:
+		$endless_label.set_mouse_filter(MOUSE_FILTER_IGNORE)
 
 
 func update_death_counts():
