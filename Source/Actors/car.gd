@@ -4,7 +4,7 @@ class_name Car
 export var COLOR: = "cyan"
 var ENABLED: = false # turns true the first time physics process is called
 var TOGGLE_ACTION: = false #if "action" has been input by the user
-var ON_FLOOR: = false #if the square is on any kind of KinematicBody2D
+var ON_FLOORS: = 0 #if the square is on any kind of KinematicBody2D
 var ON_LAVA: = false
 var LAVA
 var ON_LASER: = false
@@ -68,22 +68,23 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 
 func jump() -> void:
 	TOGGLE_ACTION = false
-	if ON_FLOOR:
+	if ON_FLOORS > 0:
 		if get_parent().get_parent().SETTINGS[2]:
 			$jump.play()
 		get_parent().get_parent().add_stat("car-jump", 1)
 		VELOCITY.y =- MAX_SPEED.y * 1.2
-		ON_FLOOR = false
+		ON_FLOORS -= 1
 
 
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body is TileMap:
-		ON_FLOOR = true
+		ON_FLOORS += 1
 
 
 func _on_Area2D_body_exited(body: Node) -> void:
 	if body is TileMap:
-		ON_FLOOR = false
+		if ON_FLOORS > 0:
+			ON_FLOORS -= 1
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

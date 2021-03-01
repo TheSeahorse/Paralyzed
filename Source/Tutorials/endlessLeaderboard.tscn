@@ -242,7 +242,7 @@ margin_bottom = 164.0
 margin_right = 54.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+custom_colors/font_color = Color( 0.654902, 0.352941, 0, 1 )
 text = "3. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer3"]
@@ -250,7 +250,7 @@ margin_left = 58.0
 margin_right = 130.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+custom_colors/font_color = Color( 0.654902, 0.352941, 0, 1 )
 text = "Bot3"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer3"]
@@ -267,7 +267,7 @@ margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+custom_colors/font_color = Color( 0.654902, 0.352941, 0, 1 )
 text = "1"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer3"]
@@ -275,7 +275,7 @@ margin_left = 720.0
 margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.866667, 0.466667, 0, 1 )
+custom_colors/font_color = Color( 0.654902, 0.352941, 0, 1 )
 text = "      98  "
 
 [node name="HSeparator7" type="HSeparator" parent="leaderboard"]
@@ -724,32 +724,32 @@ margin_right = 72.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "99. "
+text = "??. "
 
 [node name="username" type="Label" parent="leaderboard/HBoxContainer13"]
 margin_left = 76.0
-margin_right = 328.0
+margin_right = 652.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Your name here"
+text = "Play a game to enter leaderboard"
 
 [node name="blank" type="Label" parent="leaderboard/HBoxContainer13"]
-margin_left = 332.0
+margin_left = 656.0
 margin_top = 2.0
-margin_right = 676.0
+margin_right = 694.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "
 "
 
 [node name="score" type="Label" parent="leaderboard/HBoxContainer13"]
-margin_left = 680.0
+margin_left = 698.0
 margin_right = 716.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "21"
+text = "?"
 
 [node name="attempts" type="Label" parent="leaderboard/HBoxContainer13"]
 margin_left = 720.0
@@ -757,7 +757,7 @@ margin_right = 900.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "       3  "
+text = "       ?  "
 
 [node name="clear_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -36,10 +36,10 @@ var STEAM_OWNED
 
 
 func _ready():
+	load_savestate()
 	steam_init()
 	RNG.randomize()
 	START_TIME = OS.get_unix_time()
-	load_savestate()
 	mainmenu = MainMenu.instance()
 	add_child(mainmenu)
 	mainmenu.show_menu()
@@ -94,13 +94,19 @@ func steam_init():
 	Steam.connect("leaderboard_scores_downloaded", self, "steam_leaderboard_scores_downloaded", [])
 
 
-func steam_leaderboard_scores_downloaded(_one, entries: Array):
+func steam_leaderboard_scores_downloaded(one, entries: Array):
+	print(one)
+	print(entries)
 	if popup:
-		if entries.size() > 1:
+		if entries.size() < 1:
+			popup.show_leaderboard()
+		if entries.size() == 1:
+			print("solo")
+			popup.display_user_leaderboard(entries)
+		elif entries.size() > 1:
+			print("highscore")
 			popup.receive_display_leaderboard(entries)
 			Steam.downloadLeaderboardEntries(0, 0, 1) #user
-		else:
-			popup.display_user_leaderboard(entries)
 
 
 func steam_leaderboard_score_uploaded(success: bool, score: int, _score_changed: bool, _global_rank_new: int, _global_rank_previous: int):

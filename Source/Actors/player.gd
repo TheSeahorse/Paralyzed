@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_enemy_head_entered(body: Node) -> void:
 	if body is Square and body.ON_FLOOR:
+		body.player_over_enter()
 		ON_HEADS += 1
 		if ON_HEADS == 1:
 			SQUARE1 = body
@@ -34,6 +35,7 @@ func _on_enemy_head_entered(body: Node) -> void:
 
 func _on_enemy_head_body_exited(body: Node) -> void:
 	if body is Square:
+		body.player_over_exit()
 		ON_HEADS -= 1
 		if ON_HEADS == 0:
 			SQUARE1 = null
@@ -106,7 +108,7 @@ func display_background(level: String):
 	if get_parent().SETTINGS[5]:
 		$ParallaxBackground/background.play("white")
 	elif level == "endless":
-		$ParallaxBackground/background.play("laser")
+		$ParallaxBackground/background.play("endless")
 	elif level.length() == 8:
 		$ParallaxBackground/background.play("tutorial")
 	else:

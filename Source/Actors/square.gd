@@ -113,11 +113,11 @@ func calculate_move_velocity(linear_velocity: Vector2, delta: float) -> Vector2:
 	return linear_velocity
 
 
-func _on_player_detector_area_entered(_area: Area2D) -> void:
+func player_over_enter() -> void:
 	PLAYER_OVER = true
 
 
-func _on_player_detector_area_exited(_area: Area2D) -> void:
+func player_over_exit() -> void:
 	PLAYER_OVER = false
 
 

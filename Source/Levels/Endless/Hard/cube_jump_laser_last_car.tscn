@@ -31,4 +31,4 @@ scale = Vector2( 1, 3 )
 position = Vector2( 348, -2 )
 
 [node name="car" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1600, 0 )
+position = Vector2( 1650, 0 )

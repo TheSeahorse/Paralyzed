@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Character models/Player/Purple_square.png" type="Texture" id=1]
 [ext_resource path="res://Character models/World/Backgrounds/cube.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Character models/Player/purple_square_explosion.png" type="Texture" id=11]
 [ext_resource path="res://Character models/Player/cyan_square_explosion.png" type="Texture" id=12]
 [ext_resource path="res://Character models/Player/yellow_square_explosion.png" type="Texture" id=13]
+[ext_resource path="res://Character models/World/Backgrounds/endless.png" type="Texture" id=14]
 [ext_resource path="res://Character models/Player/Cyan_red0.png" type="Texture" id=23]
 [ext_resource path="res://Character models/Player/Cyan_red2.png" type="Texture" id=24]
 [ext_resource path="res://Character models/Player/Cyan_red1.png" type="Texture" id=25]
@@ -294,9 +295,9 @@ animations = [ {
 "name": "all",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "tutorial",
+"name": "lava",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 74 ) ],
@@ -304,9 +305,9 @@ animations = [ {
 "name": "car",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": false,
-"name": "lava",
+"name": "endless",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -318,6 +319,11 @@ animations = [ {
 "loop": false,
 "name": "laser",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "tutorial",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=31]
@@ -327,7 +333,7 @@ extents = Vector2( 31, 30 )
 extents = Vector2( 30, 17 )
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 31, 1 )
+extents = Vector2( 34, 1 )
 
 [node name="player" type="KinematicBody2D"]
 collision_mask = 14
@@ -343,7 +349,7 @@ playing = true
 
 [node name="background" type="AnimatedSprite" parent="ParallaxBackground"]
 frames = SubResource( 30 )
-animation = "white"
+animation = "endless"
 centered = false
 
 [node name="Deathcollision" type="Area2D" parent="."]

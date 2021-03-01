@@ -16,8 +16,13 @@ func _input(_event: InputEvent) -> void:
 		back()
 
 
+func show_leaderboard():
+	$loading.hide()
+	$leaderboard.show()
+
+
 func display_user_leaderboard(leaderboard: Array):
-	var username = Steam.getPersonaName()
+	var username = Steam.getFriendPersonaName(leaderboard[0].steamID)
 	$leaderboard/HBoxContainer13/placement.set_text(str(leaderboard[0].global_rank) + ". ")
 	$leaderboard/HBoxContainer13/username.set_text(username)
 	$leaderboard/HBoxContainer13/score.set_text(str(leaderboard[0].score))
