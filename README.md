@@ -1,5 +1,4 @@
 # Paralyzed
 
 2D Auto-scroller in the style of Geometry Dash and Impossible Game  
-Planned Steam release early 2021  
-Demo: https://theseahorse.itch.io/paralyzed
+Get it here: https://store.steampowered.com/app/1412500/Paralyzed/
